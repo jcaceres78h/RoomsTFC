@@ -25,3 +25,15 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Para desplegarlo en GitHub Pages
+
+* ng build --prod --base-href="./"
+* npx angular-cli-ghpages – dir=dist
+* Enlace: https://jcaceres78h.github.io/RoomsTFC/
+
+```
+En el archivo angular.json, el outputpath tiene que estar de la siguiente manera
+> "outputPath": "dist",
+```
+
