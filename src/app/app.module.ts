@@ -32,6 +32,8 @@ import { FormCompaneroComponent } from './views/form-companero/form-companero.co
 import { FormPublicarComponent } from './views/form-publicar/form-publicar.component';
 import { FormLoginComponent } from './views/form-login/form-login.component';
 import { FormRegistroComponent } from './views/form-registro/form-registro.component';
+import { FormCrearCuentaComponent } from './views/form-crear-cuenta/form-crear-cuenta.component';
+
 
 @NgModule({
   declarations: [
@@ -63,6 +65,7 @@ import { FormRegistroComponent } from './views/form-registro/form-registro.compo
     FormPublicarComponent,
     FormLoginComponent,
     FormRegistroComponent,
+    FormCrearCuentaComponent,
   ],
   imports: [
     BrowserModule,
