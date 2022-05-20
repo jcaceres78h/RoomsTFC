@@ -1,0 +1,15 @@
+/*Jonathan Cáceres, 20/05/2022 18:36:07*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap');
+
+:root{
+  /*--- COLORES ---*/
+  --light_blue: #9FCACE;
+  --dark_blue: #8EAEB1;
+  --text_principal: #000000;
+  --black_rooms: #484848;
+  --light_dark: #C4C4C4;
+  --btn_dark: #393939;
+  /*--- FUENTES ---*/
+  --ralewayFont: 'Raleway', sans-serif;
+  --padding-g-lateral: 13%;
+}

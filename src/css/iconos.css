@@ -1,0 +1,78 @@
+.iconoTrabajo,
+.iconoVegano,
+.iconoEstudioTrabajo,
+.iconoEstudio,
+.iconoFumador,
+.iconoNoFumador,
+.iconoMascotas {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.selectedTrabajo,
+.selectedVegano,
+.selectedEstudioTrabajo,
+.selectedEstudio,
+.selectedFumador,
+.selectedNoFumador,
+.selectedMascotas {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.iconoTrabajo {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/ade0614c0ae054ce136e85baae935ba3e43fc2cc/icons/work.svg");
+}
+.selectedTrabajo {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/ade0614c0ae054ce136e85baae935ba3e43fc2cc/icons/work.svg"),
+  var(--dark_blue);
+}
+
+.iconoVegano {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/ade0614c0ae054ce136e85baae935ba3e43fc2cc/icons/vegan.svg");
+}
+.selectedVegano {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/ade0614c0ae054ce136e85baae935ba3e43fc2cc/icons/vegan.svg"),
+  var(--dark_blue);
+}
+
+.iconoEstudioTrabajo {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/ade0614c0ae054ce136e85baae935ba3e43fc2cc/icons/study_and_work.svg");
+}
+.selectedEstudioTrabajo {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/ade0614c0ae054ce136e85baae935ba3e43fc2cc/icons/study_and_work.svg"),
+  var(--dark_blue);
+}
+
+.iconoEstudio {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/ade0614c0ae054ce136e85baae935ba3e43fc2cc/icons/study.svg");
+}
+.selectedEstudio {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/ade0614c0ae054ce136e85baae935ba3e43fc2cc/icons/study.svg"),
+  var(--dark_blue);
+}
+
+.iconoFumador {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/ade0614c0ae054ce136e85baae935ba3e43fc2cc/icons/smoke.svg");
+}
+.selectedFumador {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/ade0614c0ae054ce136e85baae935ba3e43fc2cc/icons/smoke.svg"),
+  var(--dark_blue);
+}
+
+.iconoMascotas {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/ade0614c0ae054ce136e85baae935ba3e43fc2cc/icons/pets.svg");
+}
+.selectedMascotas {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/ade0614c0ae054ce136e85baae935ba3e43fc2cc/icons/pets.svg"),
+  var(--dark_blue);
+}
+
+.iconoNoFumador {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/ade0614c0ae054ce136e85baae935ba3e43fc2cc/icons/no_smoke.svg");
+}
+.selectedNoFumador {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/ade0614c0ae054ce136e85baae935ba3e43fc2cc/icons/no_smoke.svg"),
+  var(--dark_blue);
+}
+
