@@ -4,10 +4,10 @@
 :root{
   /*--- COLORES ---*/
   --light_blue: #9FCACE;
-  --dark_blue: #8EAEB1;
-  --text_principal: #000000;
+  --dark_blue: #607A7B;
+  --text_principal: #222;
   --black_rooms: #484848;
-  --light_dark: #C4C4C4;
+  --light_dark: #707070;
   --btn_dark: #393939;
   /*--- FUENTES ---*/
   --ralewayFont: 'Raleway', sans-serif;
