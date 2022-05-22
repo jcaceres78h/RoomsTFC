@@ -10,4 +10,5 @@
   font-family: var(--ralewayFont);
   font-size: 16px;
   color: var(--text_principal);
+  box-sizing: border-box;
 }

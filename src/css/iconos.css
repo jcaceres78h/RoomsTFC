@@ -7,7 +7,8 @@
 .iconoMascotas,
 .iconoInstagram,
 .iconoFacebook,
-.iconoTwitter {
+.iconoTwitter,
+.iconoSearch {
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -22,7 +23,8 @@
 .selectedMascotas,
 .selectedInstagram,
 .selectedFacebook,
-.selectedTwitter {
+.selectedTwitter,
+.selectedSearch {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
@@ -116,6 +118,14 @@
 }
 .selectedTwitter {
   background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/twitter.svg"),
+  var(--dark_blue);
+}
+
+.iconoSearch {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/search.svg");
+}
+.selectedSearch {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/search.svg"),
   var(--dark_blue);
 }
 

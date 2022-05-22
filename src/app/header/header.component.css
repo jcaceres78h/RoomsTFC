@@ -1,0 +1,63 @@
+header {
+  background: white;
+  z-index: 999;
+  min-height: 100px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 45px;
+  position: sticky;
+  top: 0;
+}
+nav {
+  width: fit-content;
+  height: fit-content;
+}
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+li {
+}
+a {
+  text-decoration: none;
+  font-size: 1.1em;
+}
+a:not(.nombreUsuario) {
+  font-weight: normal;
+  padding-right: 1.5em;
+}
+.iconoSearch {
+  width: 15px;
+  height: 15px;
+}
+.nombreUsuario {
+  font-weight: bold;
+  color: var(--light_blue)
+}
+.logo {
+  height: 40px;
+  margin-left: 1em;
+}
+#logoBox {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container_buscador {
+  margin-left: 10px;
+  border: solid 1px black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+}
+input {
+  border: none;
+}
+
