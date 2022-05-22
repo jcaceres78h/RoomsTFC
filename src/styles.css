@@ -12,3 +12,6 @@
   color: var(--text_principal);
   box-sizing: border-box;
 }
+.home__container{
+  padding: 100px 50px;
+}
