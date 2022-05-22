@@ -9,3 +9,6 @@ body {
   padding: 0;
   font-family: var(--ralewayFont);
 }
+.home__container{
+  padding: 100px 50px;
+}
