@@ -4,11 +4,19 @@ import { Error404PageComponent } from './error404-page/error404-page.component';
 import { FavoritosComponent } from './views/favoritos/favoritos.component';
 import { HomeComponent } from './views/home/home.component';
 import { PublicacionesComponent } from './views/publicaciones/publicaciones.component';
+import { PerfilUsuarioComponent } from './views/perfil-usuario/perfil-usuario.component';
+import { NosotrosComponent } from './views/nosotros/nosotros.component';
+import { AyudaComponent } from './views/ayuda/ayuda.component';
+import { FormPublicarComponent } from './views/form-publicar/form-publicar.component';
 
 const routes: Routes = [
   { path: 'rooms', component: HomeComponent },
   { path: 'mis-favoritos', component: FavoritosComponent },
   { path: 'mis-publicaciones', component: PublicacionesComponent },
+  { path: 'mi-perfil', component: PerfilUsuarioComponent },
+  { path: 'nosotros', component: NosotrosComponent },
+  { path: 'como-funciona', component: AyudaComponent },
+  { path: 'publicar-habitacion', component: FormPublicarComponent },
   { path: '',   redirectTo: '/rooms', pathMatch: 'full' },
   { path: '**', component: Error404PageComponent },
 

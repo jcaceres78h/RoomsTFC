@@ -77,7 +77,7 @@ footer {
 .card_redes {
   margin-top: 8px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 #info_first {

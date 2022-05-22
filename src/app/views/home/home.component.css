@@ -16,9 +16,10 @@
     width: 90%;
 }
 .title_home{
-    padding-top: 250px;
+    padding-top: 200px;
     color: var(--black_rooms);
     margin-bottom: 50px;
+    font-size: 30px;
 }
 
 .container__buscador{
