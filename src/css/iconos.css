@@ -4,7 +4,10 @@
 .iconoEstudio,
 .iconoFumador,
 .iconoNoFumador,
-.iconoMascotas {
+.iconoMascotas,
+.iconoInstagram,
+.iconoFacebook,
+.iconoTwitter {
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -16,8 +19,24 @@
 .selectedEstudio,
 .selectedFumador,
 .selectedNoFumador,
-.selectedMascotas {
+.selectedMascotas,
+.selectedInstagram,
+.selectedFacebook,
+.selectedTwitter {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.iconoApple {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/e15a83804bf36e0562951cb1bc22ab8a5f284561/icons/apple.svg");
+  background-size: cover;
+  width: 30px;
+  height: 40px;
+}
+.iconoGoogle_play {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/google_play.svg");
+  background-size: cover;
+  height: 36px;
+  width: 32px;
 }
 
 .iconoTrabajo {
@@ -73,6 +92,30 @@
 }
 .selectedNoFumador {
   background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/ade0614c0ae054ce136e85baae935ba3e43fc2cc/icons/no_smoke.svg"),
+  var(--dark_blue);
+}
+
+.iconoInstagram {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/instagram.svg");
+}
+.selectedInstagram {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/instagram.svg"),
+  var(--dark_blue);
+}
+
+.iconoFacebook {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/facebook.svg");
+}
+.selectedFacebook {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/facebook.svg"),
+  var(--dark_blue);
+}
+
+.iconoTwitter {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/twitter.svg");
+}
+.selectedTwitter {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/twitter.svg"),
   var(--dark_blue);
 }
 
