@@ -33,6 +33,7 @@ import { FormPublicarComponent } from './views/form-publicar/form-publicar.compo
 import { FormLoginComponent } from './views/form-login/form-login.component';
 import { FormRegistroComponent } from './views/form-registro/form-registro.component';
 import { FormCrearCuentaComponent } from './views/form-crear-cuenta/form-crear-cuenta.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import { FormCrearCuentaComponent } from './views/form-crear-cuenta/form-crear-c
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
