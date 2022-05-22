@@ -11,6 +11,7 @@ export class ListarUsersComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+    this.userService.getUpdateAllUser();
   }
 
   getUsers(){
