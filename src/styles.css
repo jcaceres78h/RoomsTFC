@@ -15,3 +15,19 @@
 .home__container{
   padding: 100px 50px;
 }
+.flex-row-wrap {
+  display: flex;
+  flex-flow: row wrap;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+/*--- SECCCIONES ---*/
+.section {
+  margin-left: var(--padding-g-lateral);
+  margin-right: var(--padding-g-lateral);
+}
+button {
+  cursor: pointer;
+}

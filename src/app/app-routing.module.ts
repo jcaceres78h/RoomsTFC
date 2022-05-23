@@ -8,6 +8,7 @@ import { PerfilUsuarioComponent } from './views/perfil-usuario/perfil-usuario.co
 import { NosotrosComponent } from './views/nosotros/nosotros.component';
 import { AyudaComponent } from './views/ayuda/ayuda.component';
 import { FormPublicarComponent } from './views/form-publicar/form-publicar.component';
+import {FormCrearCuentaComponent} from "./views/form-crear-cuenta/form-crear-cuenta.component";
 
 const routes: Routes = [
   { path: 'rooms', component: HomeComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'nosotros', component: NosotrosComponent },
   { path: 'como-funciona', component: AyudaComponent },
   { path: 'publicar-habitacion', component: FormPublicarComponent },
+  { path: 'crear-cuenta', component: FormCrearCuentaComponent },
   { path: '',   redirectTo: '/rooms', pathMatch: 'full' },
   { path: '**', component: Error404PageComponent },
 

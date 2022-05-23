@@ -8,7 +8,60 @@
 .iconoInstagram,
 .iconoFacebook,
 .iconoTwitter,
-.iconoSearch {
+.iconoSearch,
+.iconoAtras,
+.icono1,
+.icono2,
+.icono3,
+.iconoUser,
+.iconoAdd,
+.iconoMenos,
+.iconoChica,
+.iconoChico,
+.iconoMixto,
+.iconoAccesible,
+.iconoAireAcondicionado,
+.iconoBalcon,
+.iconoBath,
+.iconoBed,
+.iconoBudget,
+.iconoLitera,
+.iconoCamera,
+.iconoCheck,
+.iconoClose,
+.iconoCouples,
+.iconoLavavajillas,
+.iconoDoorman,
+.iconoCamaDoble,
+.iconoSecadora,
+.iconoAscensor,
+.iconoEmail,
+.iconoOjo,
+.iconoFiltro,
+.iconoCompaneros,
+.iconoMuebles,
+.iconoJardin,
+.iconoCorazon,
+.iconoFav,
+.iconoFavBlanco,
+.iconoFavBlancoSolid,
+.iconoCalefaccion,
+.iconoHome,
+.iconoLeft,
+.iconoLiving,
+.iconoMisPublicaciones,
+.iconoParking,
+.iconoTelefono,
+.iconoRefresh,
+.iconoRight,
+.iconoCompartir,
+.iconoApagar,
+.iconoEncender,
+.iconoTypeBed,
+.iconoVerify,
+.iconoLavadora,
+.iconoWifi,
+.iconoVentana {
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -24,21 +77,361 @@
 .selectedInstagram,
 .selectedFacebook,
 .selectedTwitter,
-.selectedSearch {
+.selectedSearch,
+.selectedAtras,
+.selected1,
+.selected2,
+.selected3,
+.selectedUser,
+.selectedAdd,
+.selectedMenos,
+.selectedChico,
+.selectedChica,
+.selectedMixto,
+.selectedAccesible,
+.selectedAireAcondicionado,
+.selectedBalcon,
+.selectedBath,
+.selectedBed,
+.selectedBudget,
+.selectedLitera,
+.selectedCamera,
+.selectedCheck,
+.selectedClose,
+.selectedCouples,
+.selectedLavavajillas,
+.selectedDoorman,
+.selectedCamaDoble,
+.selectedSecadora,
+.selectedAscensor,
+.selectedEmail,
+.selectedOjo,
+.selectedFiltro,
+.selectedCompaneros,
+.selectedMuebles,
+.selectedJardin,
+.selectedCorazon,
+.selectedFav,
+.selectedFavBlanco,
+.selectedFavBlancoSolid,
+.selectedCalefaccion,
+.selectedHome,
+.selectedLeft,
+.selectedLiving,
+.selectedMisPublicaciones,
+.selectedParking,
+.selectedTelefono,
+.selectedRefresh,
+.selectedRight,
+.selectedCompartir,
+.selectedApagar,
+.selectedEncender,
+.selectedTypeBed,
+.selectedVerify,
+.selectedLavadora,
+.selectedWifi,
+.selectedVentana {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
-.iconoApple {
-  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/e15a83804bf36e0562951cb1bc22ab8a5f284561/icons/apple.svg");
-  background-size: cover;
-  width: 32px;
-  height: 40px;
+
+.iconoMisPublicaciones {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/my_publications.svg");
 }
-.iconoGoogle_play {
-  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/google_play.svg");
-  background-size: cover;
-  height: 36px;
-  width: 32px;
+.selectedMisPublicaciones {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/my_publications.svg"),
+  var(--dark_blue);
+}
+
+.iconoParking {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/parking.svg");
+}
+.selectedParking {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/parking.svg"),
+  var(--dark_blue);
+}
+
+.iconoTelefono {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/phone.svg");
+}
+.selectedTelefono {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/phone.svg"),
+  var(--dark_blue);
+}
+
+.iconoRefresh {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/refresh.svg");
+}
+.selectedRefresh {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/refresh.svg"),
+  var(--dark_blue);
+}
+
+.iconoRight {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/right.svg");
+}
+.selectedRight {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/right.svg"),
+  var(--dark_blue);
+}
+
+.iconoCompartir {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/share.svg");
+}
+.selectedCompartir {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/share.svg"),
+  var(--dark_blue);
+}
+
+.iconoApagar {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/switch_off.svg");
+}
+.selectedApagar {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/switch_off.svg"),
+  var(--dark_blue);
+}
+
+.iconoEncender {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/switch_on.svg");
+}
+.selectedEncender {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/switch_on.svg"),
+  var(--dark_blue);
+}
+
+.iconoTypeBed {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/type_bed.svg");
+}
+.selectedTypeBed {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/type_bed.svg"),
+  var(--dark_blue);
+}
+
+.iconoVerify {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/verify.svg");
+}
+.selectedVerify {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/verify.svg"),
+  var(--dark_blue);
+}
+
+.iconoLavadora {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/washer.svg");
+}
+.selectedLavadora {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/washer.svg"),
+  var(--dark_blue);
+}
+
+.iconoWifi {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/wifi.svg");
+}
+.selectedWifi {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/wifi.svg"),
+  var(--dark_blue);
+}
+
+.iconoVentana {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/window.svg");
+}
+.selectedVentana {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/window.svg"),
+  var(--dark_blue);
+}
+
+.iconoLiving {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/living.svg");
+}
+.selectedLiving {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/living.svg"),
+  var(--dark_blue);
+}
+
+.iconoLeft {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/left.svg");
+}
+.selectedLeft {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/left.svg"),
+  var(--dark_blue);
+}
+
+.iconoHome {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/home.svg");
+}
+.selectedHome {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/home.svg"),
+  var(--dark_blue);
+}
+
+.iconoCalefaccion {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/heating.svg");
+}
+.selectedCalefaccion {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/heating.svg"),
+  var(--dark_blue);
+}
+
+.iconoFavBlancoSolid {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/heart_favs_white_solid.svg");
+}
+.selectedFavBlancoSolid {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/heart_favs_white_solid.svg"),
+  var(--dark_blue);
+}
+
+.iconoFavBlanco {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/heart_favs_white.svg");
+}
+.selectedFavBlanco {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/heart_favs_white.svg"),
+  var(--dark_blue);
+}
+
+.iconoFav {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/heart_favs.svg");
+}
+.selectedFav {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/heart_favs.svg"),
+  var(--dark_blue);
+}
+
+.iconoCorazon {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/heart.svg");
+}
+.selectedCorazon {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/heart.svg"),
+  var(--dark_blue);
+}
+
+.iconoJardin {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/garden.svg");
+}
+.selectedJardin {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/garden.svg"),
+  var(--dark_blue);
+}
+
+.iconoMuebles {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/furniture.svg");
+}
+.selectedMuebles {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/furniture.svg"),
+  var(--dark_blue);
+}
+
+.iconoCompaneros {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/flatmates.svg");
+}
+.selectedCompaneros {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/flatmates.svg"),
+  var(--dark_blue);
+}
+
+.iconoFiltro {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/filters.svg");
+}
+.selectedFiltro {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/filters.svg"),
+  var(--dark_blue);
+}
+
+.iconoOjo {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/eye.svg");
+}
+.selectedOjo {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/eye.svg"),
+  var(--dark_blue);
+}
+
+.iconoEmail {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/email.svg");
+}
+.selectedEmail {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/email.svg"),
+  var(--dark_blue);
+}
+
+.iconoAscensor {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/elevator.svg");
+}
+.selectedAscensor {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/elevator.svg"),
+  var(--dark_blue);
+}
+
+.iconoSecadora {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/dryer.svg");
+}
+.selectedSecadora {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/dryer.svg"),
+  var(--dark_blue);
+}
+
+.iconoCamaDoble {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/double_bed.svg");
+}
+.selectedCamaDoble {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/double_bed.svg"),
+  var(--dark_blue);
+}
+
+.iconoDoorman {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/doorman.svg");
+}
+.selectedDoorman {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/doorman.svg"),
+  var(--dark_blue);
+}
+
+.iconoLavavajillas {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/dishwasher.svg");
+}
+.selectedLavavajillas {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/dishwasher.svg"),
+  var(--dark_blue);
+}
+
+.iconoCouples {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/couples.svg");
+}
+.selectedCouples {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/couples.svg"),
+  var(--dark_blue);
+}
+
+.iconoClose {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/close.svg");
+}
+.selectedClose {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/close.svg"),
+  var(--dark_blue);
+}
+
+.iconoCheck {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/check_preferences.svg");
+}
+.selectedCheck {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/check_preferences.svg"),
+  var(--dark_blue);
+}
+
+.iconoCamera {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/camera.svg");
+}
+.selectedCamera {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/camera.svg"),
+  var(--dark_blue);
+}
+
+.iconoAdd {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/add.svg");
+}
+.selectedAdd {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/ade0614c0ae054ce136e85baae935ba3e43fc2cc/icons/add.svg"),
+  var(--dark_blue);
 }
 
 .iconoTrabajo {
@@ -129,3 +522,145 @@
   var(--dark_blue);
 }
 
+.iconoAtras {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/back.svg");
+}
+.selectedAtras {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/back.svg"),
+  var(--dark_blue);
+}
+
+.icono1 {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/step1.svg");
+}
+.selected1 {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/step1.svg"),
+  var(--dark_blue);
+}
+
+.icono2 {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/step2.svg");
+}
+.selected2 {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/step2.svg"),
+  var(--dark_blue);
+}
+
+.icono3 {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/step3.svg");
+}
+.selected3 {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/step3.svg"),
+  var(--dark_blue);
+}
+
+.iconoUser {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/user.svg");
+}
+.selectedUser {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/user.svg"),
+  var(--dark_blue);
+}
+
+.iconoMenos {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/minus.svg");
+}
+.selectedMenos {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/minus.svg"),
+  var(--dark_blue);
+}
+
+.iconoChica {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/female.svg");
+}
+.selectedChica {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/female.svg"),
+  var(--dark_blue);
+}
+
+.iconoChico {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/male.svg");
+}
+.selectedChico {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/male.svg"),
+  var(--dark_blue);
+}
+
+.iconoMixto {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/mixed.svg");
+}
+.selectedMixto {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/mixed.svg"),
+  var(--dark_blue);
+}
+
+.iconoAccesible {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/accessible.svg");
+}
+.selectedAccesible {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/accessible.svg"),
+  var(--dark_blue);
+}
+
+.iconoAireAcondicionado {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/air_conditioner.svg");
+}
+.selectedAireAcondicionado {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/air_conditioner.svg"),
+  var(--dark_blue);
+}
+
+.iconoBalcon {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/balcony.svg");
+}
+.selectedBalcon {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/balcony.svg"),
+  var(--dark_blue);
+}
+
+.iconoBath {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/bath.svg");
+}
+.selectedBath {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/bath.svg"),
+  var(--dark_blue);
+}
+
+.iconoBed {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/bed.svg");
+}
+.selectedBed {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/bed.svg"),
+  var(--dark_blue);
+}
+
+.iconoBudget {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/budget.svg");
+}
+.selectedBudget {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/budget.svg"),
+  var(--dark_blue);
+}
+
+.iconoLitera {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/bunk_bed.svg");
+}
+.selectedLitera {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/bunk_bed.svg"),
+  var(--dark_blue);
+}
+
+
+
+.iconoApple {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/e15a83804bf36e0562951cb1bc22ab8a5f284561/icons/apple.svg");
+  background-size: cover;
+  width: 32px;
+  height: 40px;
+}
+.iconoGoogle_play {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/google_play.svg");
+  background-size: cover;
+  height: 36px;
+  width: 32px;
+}
