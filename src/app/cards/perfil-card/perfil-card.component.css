@@ -1,9 +1,8 @@
 .perfil-card{
     display: flex;
     justify-content: flex-end;
-    margin-right: 5%;
-    /* AL HACER CLICK EN NOMBRE_USUARIO EN EL NAV CAMBIA A DISPLAY */
-    display: none;
+    margin-right: 3%;
+    position: fixed;
 }
 .container_perfil-card{
     background-color: white;

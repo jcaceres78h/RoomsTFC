@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  mostrarPerfil = true
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  mostrarPerfilCard(){
+    this.mostrarPerfil = !this.mostrarPerfil
+  }
+
 
 }

@@ -58,4 +58,9 @@ a:not(.nombreUsuario) {
 input {
   border: none;
 }
-
+app-perfil-card{
+  position: fixed;
+  margin-left: 80%;
+  top: 90px;
+  z-index: 1000;
+}
