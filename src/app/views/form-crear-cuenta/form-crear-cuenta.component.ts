@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Usuario} from "../../interfaces/usuario";
 
 @Component({
   selector: 'app-form-crear-cuenta',
@@ -46,7 +45,7 @@ export class FormCrearCuentaComponent implements OnInit {
   }
 
 
-  step = 3;
+  step = 1;
 
   constructor() {
   }
