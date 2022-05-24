@@ -1,1 +1,72 @@
-<p>room works!</p>
+<section class="sectionDos">
+  <article class="art1">
+    <div class="div1_1">
+      <figure class="fotoPiso">
+        <img src="https://github.com/Cintia-Andujar/rooms/blob/main/images/room_mate.jpg?raw=true"
+             alt="Foto de piso en {{room.street}}, {{room.locality}}">
+        <figcaption>
+          <div class="iconoFav"></div>
+          <div class="iconoCompartir"></div>
+        </figcaption>
+      </figure>
+      <div class="info">
+        <h1 class="tituloRoom">Habitación {{cama}}</h1>
+        <p class="lugarRoom">{{room.street}}, {{room.locality}}</p>
+        <p class="precio1">{{room.price}}€/mes</p>
+      </div>
+    </div>
+    <div class="part1">
+      <div class="part1_1">
+        <h4 class="infoTitle">Descripción</h4>
+        <p class="descripcion">{{room.room_description}}</p>
+        <h4 class="infoTitle">Características de la habitación</h4>
+        <div class="caracteristicas">
+          <div *ngFor="let opt of opcionesRoom"
+              class="caracteristicaCard">
+            <div class="{{opt.clase}}"></div>
+            <span class="camaDescription">{{opt.texto}}</span>
+          </div>
+        </div>
+        <h4 class="infoTitle">Características del piso</h4>
+        <div class="caracteristicas">
+          <div *ngFor="let opt of opcionesPiso"
+               class="caracteristicaCard">
+            <div class="{{opt.clase}}"></div>
+            <span class="camaDescription">{{opt.texto}}</span>
+          </div>
+        </div>
+        <h4 class="infoTitle">Normas de convivencia</h4>
+        <div class="caracteristicas">
+          <div *ngFor="let opt of normasConvivencia"
+               class="caracteristicaCard">
+            <div class="{{opt.clase}}"></div>
+            <span class="camaDescription">{{opt.texto}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="part1_2">
+        <h3 class="interesado tituloRoom">Estoy interesado en esta habitación</h3>
+        <a class="btnPrimary" href="#">Contactar</a>
+      </div>
+    </div>
+  </article>
+  <article class="art3">
+    <h4 class="infoTitle">Localización</h4>
+    <p class="direction">
+      Calle {{room.street}}, {{room.number}}
+      {{room.postcode}} {{room.locality}} {{room.province}}
+    </p>
+    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6290.7049806082705!2d-1.122276937736596!3d37.968902406885626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1652573815779!5m2!1ses!2ses"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </article>
+
+  <div class="part3_3">
+    <h3 class="tInteres">Estoy interesado en esta habitación</h3>
+    <a class="btnPrimary" href="#">Contactar</a>
+  </div>
+  <article class="art4">
+    <h3 class="infoTitle t3">Habitaciones similares</h3>
+    <div class="similares">
+
+    </div>
+  </article>
+</section>
