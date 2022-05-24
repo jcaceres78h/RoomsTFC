@@ -286,3 +286,6 @@ header {
   margin: 0;
   padding: 0;
 }
+.buscarHabitacion>.formulario {
+  margin-left: 7%;
+}
