@@ -35,6 +35,7 @@ import { FormRegistroComponent } from './views/form-registro/form-registro.compo
 import { FormCrearCuentaComponent } from './views/form-crear-cuenta/form-crear-cuenta.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
+import { ResultadosCompanerosComponent } from './views/resultados-companeros/resultados-companeros.component';
 
 
 @NgModule({
@@ -68,6 +69,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormLoginComponent,
     FormRegistroComponent,
     FormCrearCuentaComponent,
+    ResultadosCompanerosComponent,
   ],
   imports: [
     BrowserModule,
