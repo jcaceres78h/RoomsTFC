@@ -1,7 +1,23 @@
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{user.name}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{user.age}}</h6>
-    <p class="card-text">{{user.email}}</p>
-  </div>
+<div class="card_user">
+        
+    <div class="flechas_user">
+      <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/left.svg" alt="Icono felcha izquierda" class="flecha-izq_user" width="20" (click)="next('left')">
+      <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/right.svg" alt="Icono flecha derecha" class="flecha-der_user" width="20" (click)="next('right')">
+    </div>
+
+  <div class="info_user">
+      <div class="nombre_user">
+          <span>{{user.name}}</span>
+          <br>
+          <span>{{user.age}} años</span>
+      </div>
+      <div>
+          <a href="user/{{user.id}}">
+              <button class="btn_contactar">Contactar</button>
+            </a>
+        </div>
+    </div>
 </div>
+
+
+

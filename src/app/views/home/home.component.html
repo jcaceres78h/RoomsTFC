@@ -7,8 +7,8 @@
             <h1 class="title_home">Aquí empieza tu nueva historia</h1>
 
             <div class="container__buscador">
-                <div>
-                    <input class="buscador" type="text" id="buscador" placeholder="¿Dónde quieres vivir?">
+                <div>            
+                    <input class="buscador" type="search" #buscador (keyup.enter)="buscarPorLocalidad(buscador.value)" placeholder="¿Dónde quieres vivir?"> 
                 </div>
                 <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/ade0614c0ae054ce136e85baae935ba3e43fc2cc/icons/search.svg" alt="Icono lupa" width="25" class="img_lupa">
             </div>
@@ -22,13 +22,17 @@
 <div class="card_container">
 
     <div class="card_box_container">
+
+        <app-buscar-room></app-buscar-room>
     
-        <a href="#buscador">
-            <div class="card" style="background-image: url('https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/form_search.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
-                <div class="card_label">¿Buscas habitación?</div>   
-                <p>Buscar habitación <br> Encuentra tu habitación ideal</p>
-            </div>
-        </a>
+        <!-- 
+            <a href="#buscador">
+                <div class="card" style="background-image: url('https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/form_search.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
+                    <div class="card_label">¿Buscas habitación?</div>   
+                    <p>Buscar habitación <br> Encuentra tu habitación ideal</p>
+                </div>
+            </a>
+        -->
 
         <div class="card" style="background-image: url('https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/card_roommate.jpg'); background-position: bottom; background-repeat: no-repeat; background-size: cover;">
             <div class="card_label">¿Buscas compañero?</div>

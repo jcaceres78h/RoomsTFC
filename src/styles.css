@@ -34,3 +34,11 @@ html{
 button {
   cursor: pointer;
 }
+.main_principal{
+  padding: 40px 160px;
+}
+.title_view{
+  font-size: 25px;
+  margin-bottom: 50px;
+}
+
