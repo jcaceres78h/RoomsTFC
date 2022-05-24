@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RoomService} from "../../servicios/room/room.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-room',
@@ -12,8 +12,8 @@ export class RoomComponent implements OnInit {
   aux: any;
   private id: any;
 
-  constructor(private roomService: RoomService, private ac: ActivatedRoute) {
-    this.aux = this.roomService.getRoomById();
+  constructor(private roomService: RoomService, private ac: ActivatedRoute,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -200,5 +200,9 @@ export class RoomComponent implements OnInit {
     }
 
     return lista;
+  }
+
+  contactar() {
+    alert("Nombre" + "\n" + "email" + "\n" + "Teléfono")
   }
 }
