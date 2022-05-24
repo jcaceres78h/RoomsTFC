@@ -12,6 +12,7 @@ import { FormCrearCuentaComponent } from "./views/form-crear-cuenta/form-crear-c
 import { EditarPerfilUsuarioComponent } from './views/editar-perfil-usuario/editar-perfil-usuario.component';
 import { ResultadosRoomComponent } from './views/resultados-room/resultados-room.component';
 import { RoomComponent } from "./views/room/room.component";
+import { ResultadosCompanerosComponent } from './views/resultados-companeros/resultados-companeros.component';
 
 const routes: Routes = [
   { path: 'rooms', component: HomeComponent },
@@ -20,6 +21,9 @@ const routes: Routes = [
   { path: 'mi-perfil', component: PerfilUsuarioComponent },
   { path: 'editar-perfil', component: EditarPerfilUsuarioComponent },
   { path: 'resultados-room', component: ResultadosRoomComponent },
+  { path: 'resultados-companeros', component: ResultadosCompanerosComponent },
+  { path: 'user/:id', component: PerfilUsuarioComponent },
+  { path: 'resultados-room/:localidad', component: ResultadosRoomComponent },
   { path: 'nosotros', component: NosotrosComponent },
   { path: 'como-funciona', component: AyudaComponent },
   { path: 'publicar-habitacion', component: FormPublicarComponent },

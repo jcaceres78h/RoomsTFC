@@ -36,6 +36,7 @@ import { FormCrearCuentaComponent } from './views/form-crear-cuenta/form-crear-c
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { RoomComponent } from './views/room/room.component';
+import { ResultadosCompanerosComponent } from './views/resultados-companeros/resultados-companeros.component';
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import { RoomComponent } from './views/room/room.component';
     FormRegistroComponent,
     FormCrearCuentaComponent,
     RoomComponent,
+    ResultadosCompanerosComponent,
   ],
   imports: [
     BrowserModule,

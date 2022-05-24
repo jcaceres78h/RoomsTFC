@@ -7,6 +7,7 @@ import {HttpClient} from '@angular/common/http';
 export class UserService {
 
   private allUsers: any;
+  private userId : any;
 
 
   constructor(private http : HttpClient) { this.getUpdateAllUser();}
@@ -26,19 +27,19 @@ export class UserService {
       return this.allUsers;
   }
 
-  getUserById(id: number)
+  getUserUpdateById(id: number)
   {
-    for(let user of this.allUsers){
-      if(user.id == id)
-        return user;
-    }
-    var user :any;
     this.http.get("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/user/"+id).subscribe(
       (response) => {
         console.log(response);
-        user = response
+        this.userId = response
       })
-      return user;
+      //return user;
+  }
+  
+  getUserById()
+  {
+      return this.userId;
   }
 
 }

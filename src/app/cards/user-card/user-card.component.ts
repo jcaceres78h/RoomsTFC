@@ -14,4 +14,16 @@ export class UserCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  next(direction:string){
+    
+    if(direction == 'left'){
+       window.alert('click!')
+       console.log('click!')
+   }
+   if(direction == 'right'){
+        window.alert('click!')
+
+    }
+}
+
 }
