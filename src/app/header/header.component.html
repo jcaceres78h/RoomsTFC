@@ -27,11 +27,13 @@
         </a>
       </li>
       <li>
-        <a href="mi-perfil"
-           class="nombreUsuario">
+        <span
+           class="nombreUsuario"
+           (click)="mostrarPerfilCard()">
           NombreUsuario
-        </a>
+        </span>
       </li>
     </ul>
   </nav>
+  <app-perfil-card [hidden]="mostrarPerfil"></app-perfil-card>
 </header>

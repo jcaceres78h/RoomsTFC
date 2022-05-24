@@ -9,12 +9,16 @@ import { NosotrosComponent } from './views/nosotros/nosotros.component';
 import { AyudaComponent } from './views/ayuda/ayuda.component';
 import { FormPublicarComponent } from './views/form-publicar/form-publicar.component';
 import {FormCrearCuentaComponent} from "./views/form-crear-cuenta/form-crear-cuenta.component";
+import { EditarPerfilUsuarioComponent } from './views/editar-perfil-usuario/editar-perfil-usuario.component';
+import { ResultadosRoomComponent } from './views/resultados-room/resultados-room.component';
 
 const routes: Routes = [
   { path: 'rooms', component: HomeComponent },
   { path: 'mis-favoritos', component: FavoritosComponent },
   { path: 'mis-publicaciones', component: PublicacionesComponent },
   { path: 'mi-perfil', component: PerfilUsuarioComponent },
+  { path: 'editar-perfil', component: EditarPerfilUsuarioComponent },
+  { path: 'resultados-room', component: ResultadosRoomComponent },
   { path: 'nosotros', component: NosotrosComponent },
   { path: 'como-funciona', component: AyudaComponent },
   { path: 'publicar-habitacion', component: FormPublicarComponent },

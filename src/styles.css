@@ -12,6 +12,9 @@
   color: var(--text_principal);
   box-sizing: border-box;
 }
+html{
+  scroll-behavior: smooth;
+}
 .home__container{
   padding: 100px 50px;
 }
