@@ -14,6 +14,8 @@ import { ResultadosRoomComponent } from './views/resultados-room/resultados-room
 import { RoomComponent } from "./views/room/room.component";
 import { ResultadosCompanerosComponent } from './views/resultados-companeros/resultados-companeros.component';
 import { FormCompaneroComponent } from './views/form-companero/form-companero.component';
+import { FormLoginComponent } from './views/form-login/form-login.component';
+import { FormRegistroComponent } from './views/form-registro/form-registro.component';
 
 const routes: Routes = [
   { path: 'rooms', component: HomeComponent },
@@ -26,6 +28,8 @@ const routes: Routes = [
   { path: 'user/:id', component: PerfilUsuarioComponent },
   { path: 'resultados-room/:localidad', component: ResultadosRoomComponent },
   { path: 'form-companero', component: FormCompaneroComponent },
+  { path: 'iniciar-sesion', component: FormLoginComponent },
+  { path: 'registrarse', component: FormRegistroComponent },
   { path: 'nosotros', component: NosotrosComponent },
   { path: 'como-funciona', component: AyudaComponent },
   { path: 'publicar-habitacion', component: FormPublicarComponent },
