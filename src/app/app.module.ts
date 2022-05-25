@@ -37,6 +37,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { RoomComponent } from './views/room/room.component';
 import { ResultadosCompanerosComponent } from './views/resultados-companeros/resultados-companeros.component';
+import { ListarRoomByUserComponent } from './listados/listar-room-By-User/listar-room-by-user/listar-room-by-user.component';
 
 
 @NgModule({
@@ -72,6 +73,7 @@ import { ResultadosCompanerosComponent } from './views/resultados-companeros/res
     FormCrearCuentaComponent,
     RoomComponent,
     ResultadosCompanerosComponent,
+    ListarRoomByUserComponent,
   ],
   imports: [
     BrowserModule,

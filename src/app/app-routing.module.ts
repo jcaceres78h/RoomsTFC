@@ -18,7 +18,7 @@ import { FormCompaneroComponent } from './views/form-companero/form-companero.co
 const routes: Routes = [
   { path: 'rooms', component: HomeComponent },
   { path: 'mis-favoritos', component: FavoritosComponent },
-  { path: 'mis-publicaciones', component: PublicacionesComponent },
+  { path: 'mis-publicaciones/:id', component: PublicacionesComponent },
   { path: 'mi-perfil', component: PerfilUsuarioComponent },
   { path: 'editar-perfil', component: EditarPerfilUsuarioComponent },
   { path: 'resultados-room', component: ResultadosRoomComponent },
