@@ -28,7 +28,7 @@ const routes: Routes = [
   { path: 'como-funciona', component: AyudaComponent },
   { path: 'publicar-habitacion', component: FormPublicarComponent },
   { path: 'crear-cuenta', component: FormCrearCuentaComponent },
-  { path: 'rooms/:id', component: RoomComponent },
+  { path: 'room/:id', component: RoomComponent },
   { path: 'ayuda', component: AyudaComponent },
   { path: '',   redirectTo: '/rooms', pathMatch: 'full' },
   { path: '**', component: Error404PageComponent },
