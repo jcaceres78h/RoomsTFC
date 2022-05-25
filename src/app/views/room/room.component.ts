@@ -14,16 +14,20 @@ export class RoomComponent implements OnInit {
 
   constructor(private roomService: RoomService, private ac: ActivatedRoute,
               private router: Router) {
+    this.ac.paramMap.subscribe(params => {this.id = params.get('id')})
+    this.roomService.getUpdateRoomById(this.id)
   }
 
   ngOnInit(): void {
-      this.ac.paramMap.subscribe(params => {this.id = params.get('id')})
-      this.roomService.getUpdateRoomById(this.id)
   }
 
   get room() {
     // return this.roomService.getRoomById(8)
     // return this.aux;
+    if (!this.roomService.getRoomById()) {
+      // this.router.navigate(['/'])
+
+    }
     return this.roomService.getRoomById();
   }
 
