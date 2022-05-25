@@ -49,7 +49,7 @@ export class RoomService {
       return room;
   }
 
-  getRoomByLocality(locality: string)
+  getRoomByLocality()
   {
       return this.localityRoom;
   }

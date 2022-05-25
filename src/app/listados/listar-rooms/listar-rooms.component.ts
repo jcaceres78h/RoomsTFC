@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { RoomService } from 'src/app/servicios/room/room.service';
 
 @Component({
@@ -10,15 +11,20 @@ export class ListarRoomsComponent implements OnInit {
 
   localidad:any
 
-  constructor(private roomService: RoomService) { }
+  constructor(private roomService: RoomService, private ac: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.roomService.getUpdateAllRoom();
+    this.ac.paramMap.subscribe(params => {this.localidad = params.get('localidad')})
+    this.roomService.getUpdateRoomByLocality(this.localidad);
+
   }
 
   getRooms(){
-     return this.roomService.getRoomByLocality('murcia');
+    console.log(this.roomService.getRoomByLocality())
+     return this.roomService.getRoomByLocality();
   }
+
+
 
   
 
