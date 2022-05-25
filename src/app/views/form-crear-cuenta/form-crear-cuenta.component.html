@@ -1,1 +1,527 @@
-<p>form-crear-cuenta works!</p>
+<header>
+  <button class="iconoAtras"
+          (click)="stepDiscount()"></button>
+  <div class="steps flex-col">
+    <div id="numeros">
+        <span [ngClass]="{
+            'icono1': step < 1,
+            'selected1': step >= 1
+          }" (click)="step = 1"></span>
+      <div [ngClass]="{
+            'linea': step < 2,
+            'activeLinea': step >= 2
+          }"></div>
+      <span [ngClass]="{
+            'icono2': step < 2,
+            'selected2': step >= 2
+          }" (click)="step = 2"></span>
+      <div [ngClass]="{
+            'linea': step < 3,
+            'activeLinea': step >= 3
+          }"></div>
+      <span [ngClass]="{
+            'icono3': step < 3,
+            'selected3': step >= 3
+          }" (click)="step = 3"></span>
+    </div>
+    <div id="stepText">
+      <span [ngClass]="{ activeText: step >= 1 }">Datos personales</span>
+      <span [ngClass]="{ activeText: step >= 2 }">Preferencias de tu habitación ideal</span>
+      <span [ngClass]="{ activeText: step >= 3 }">Todo listo para empezar a buscar</span>
+    </div>
+  </div>
+</header>
+
+<section class="section" [hidden]="step === 3">
+  <h1 class="tituloRooms">Rooms</h1>
+  <p class="textRooms">
+    Rellena el siguiente formulario para que tus posibles
+    futuros compañeros puedan conocerte mejor, sabemos que
+    tus necesidades pueden cambiar, así que no te preocupes,
+    más adelante podrás hacer cambios en tus preferencias
+  </p>
+  <p class="textRooms textObligatorio">
+    Los campos con <span>*</span> son obligatorios
+  </p>
+  <div class="datosPersonales" [hidden]="step !== 1">
+    <h2 class="roomSectionTitle">Datos personales</h2>
+    <p class="textRooms tr2">
+      Añade tus datos para que tus compañeros de piso
+      puedan encontrarte y contactar contigo.
+    </p>
+    <div class="introduceDatosPersonales">
+      <div class="formulario flex-row-wrap">
+        <div class="flex-col">
+          <label>
+            <span>Nombre de usuario*</span>
+            <input type="text" placeholder="nombre*"
+                   [(ngModel)]="user.name">
+          </label>
+          <label>
+            <span>Correo electrónico*</span>
+            <input type="email" placeholder="correo electrónico*"
+                   [(ngModel)]="user.email">
+          </label>
+          <label>
+            <span>Teléfono</span>
+            <input type="tel" placeholder="telefono"
+                   [(ngModel)]="user.phone">
+          </label>
+          <label>
+            <span>Descripción</span>
+            <textarea name="" id="" cols="30" rows="10"
+                      placeholder="¿cómo te describes?"
+                      [(ngModel)]="user.about_me"></textarea>
+          </label>
+        </div>
+        <div class="fotoPerfil">
+          <div class="iconoUser">
+            <input class="iconoUser" type="file" name="fotoPerfil" id="fotoPerfil" accept=".jpg, .jpeg, .png">
+          </div>
+        </div>
+      </div>
+      <div>
+        <p id="sobreMi">Sobre mí</p>
+        <div class="opCard">
+          <p class="textRooms">
+            Selecciona las etiquetas que te identifiquen
+            si quieres que tus posibles compañeros te
+            conozcan un poco mejor
+          </p>
+          <ul class="listaOpciones flex-row-wrap">
+            <li>
+              <label>
+                <input class="options"
+                       type="checkbox"
+                       name="Estudio y trabajo"
+                       id="sm1">
+                <div class="iconoEstudioTrabajo"
+                      [ngClass]="{selectedEstudioTrabajo: estudioTrabajo()}"></div>
+                Estudio y trabajo
+              </label>
+            </li>
+            <li>
+              <label>
+                <input class="options"
+                       type="checkbox"
+                       name="Trabajo"
+                       id="sm2"
+                        [(ngModel)]="user.working">
+                <div class="iconoTrabajo"
+                      [ngClass]="{selectedTrabajo: user.working}"></div>
+                Trabajo
+              </label>
+            </li>
+            <li>
+              <label>
+                <input class="options"
+                       type="checkbox"
+                       name="Estudio"
+                       id="sm3"
+                       [(ngModel)]="user.studing">
+                <div class="iconoEstudio"
+                     [ngClass]="{selectedEstudio: user.studing}"></div>
+                Estudio
+              </label>
+            </li>
+            <li>
+              <label>
+                <input class="options"
+                       type="checkbox"
+                       name="Vegano"
+                       id="sm4"
+                       [(ngModel)]="user.user_vegan">
+                <div class="iconoVegano"
+                     [ngClass]="{selectedVegano: user.user_vegan}"></div>
+                Vegano
+              </label>
+            </li>
+            <li>
+              <label>
+                <input class="options"
+                       type="checkbox"
+                       name="Fumador"
+                       id="sm5"
+                       [(ngModel)]="user.user_smoke">
+                <div class="iconoFumador"
+                     [ngClass]="{selectedFumador: user.user_smoke}"></div>
+                Fumador
+              </label>
+            </li>
+            <li>
+              <label>
+                <input class="options"
+                       type="checkbox"
+                       name="No fumandor"
+                       id="sm6"
+                       disabled>
+                <div class="iconoNoFumador"
+                     [ngClass]="{selectedNoFumador: !user.user_smoke}"></div>
+                No fumador
+              </label>
+            </li>
+            <li>
+              <label>
+                <input class="options"
+                       type="checkbox"
+                       name="Mascotas"
+                       id="sm7"
+                       [(ngModel)]="user.user_pet">
+                <div class="iconoMascotas"
+                     [ngClass]="{selectedMascotas: user.user_pet}"></div>
+                Mascotas
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <h2 class="roomSectionTitle">Galería de imágenes</h2>
+    <p class="textRooms tr2">
+      Comparte algunas fotos sobre ti,
+      ¿cuáles son tus hobbies?, ¿tienes mascotas?,
+      ¿qué te apasiona hacer? Quizás sean puntos en
+      común con tus nuevos compañeros de piso.
+    </p>
+    <div id="addFoto">
+      <input class="iconoAdd" type="file" id="subirFoto" name="subirFoto" accept=".jpg, .jpeg, .png" multiple>
+      <button class="iconoAdd"></button>
+      <p id="addText">Añadir foto a la galería</p>
+    </div>
+  </div>
+
+  <div class="datosPersonales dp2" [hidden]="step !== 2">
+    <h2 class="roomSectionTitle">Datos personales</h2>
+    <p class="textRooms tr2">
+      Añade tus datos para que tus compañeros de piso
+      puedan encontrarte y contactar contigo.
+    </p>
+    <div class="buscarHabitacion">
+      <div class="formulario flex-row-wrap">
+        <div class="flex-col">
+          <label>
+            <span>¿Donde quieres vivir?</span>
+            <input type="text" placeholder="¿Dónde quieres vivir?"
+                   [(ngModel)]="user.locality">
+          </label>
+          <label>
+            <span>¿Con cuántos compañeros?</span>
+            <div class="flex-row-wrap countCompañeros">
+              <span class="iconoAdd"
+                    (click)="addRoomMate(+1)"></span>
+              <p>{{user.num_roommate}}</p>
+              <span class="iconoMenos"
+                    (click)="addRoomMate(-1)"></span>
+            </div>
+          </label>
+          <label>
+            <span>Preferiría vivir con...</span>
+            <div class="flex-row-wrap countCompañeros">
+              <label (click)="user.roommate_gender = 0">
+                <input class="options"
+                       type="checkbox"
+                       name="Mascotas"
+                       id="sm10">
+                <div class="iconoMixto"
+                     [ngClass]="{selectedMixto: user.roommate_gender === 0}"
+                    ></div>
+                Mixto
+              </label>
+              <label (click)="user.roommate_gender = 1">
+                <input class="options"
+                       type="checkbox"
+                       name="Mixto"
+                       id="sm11">
+                <div class="iconoChica"
+                     [ngClass]="{selectedChica: user.roommate_gender === 1}"
+                    ></div>
+                Chicas
+              </label>
+              <label (click)="user.roommate_gender = 2">
+                <input class="options"
+                       type="checkbox"
+                       name="Mascotas"
+                       id="sm12">
+                <div class="iconoChico"
+                     [ngClass]="{selectedChico: user.roommate_gender === 2}"
+                    ></div>
+                Chicos
+              </label>
+            </div>
+          </label>
+        </div>
+      </div>
+      <div class="flex-row-wrap optionsContainer">
+        <div class="optionCard">
+          <p>Tu habitación ideal...</p>
+          <div>
+            <label (click)="user.bed_type = 0">
+              <input class="options"
+                     type="checkbox"
+                     name="Individual"
+                     id="sm20">
+              <div class="iconoBed"
+                   [ngClass]="{selectedBed: user.bed_type === 0}"
+              ></div>
+              Individual
+            </label>
+            <label (click)="user.bed_type = 1">
+              <input class="options"
+                     type="checkbox"
+                     name="Doble"
+                     id="sm21">
+              <div class="iconoCamaDoble"
+                   [ngClass]="{selectedCamaDoble: user.bed_type === 1}"
+              ></div>
+              Doble
+            </label>
+            <label (click)="user.bed_type = 2">
+              <input class="options"
+                     type="checkbox"
+                     name="Litera"
+                     id="sm22">
+              <div class="iconoLitera"
+                   [ngClass]="{selectedLitera: user.bed_type === 2}"
+              ></div>
+              Litera
+            </label>
+
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Individual"
+                     id="sm23"
+                      [(ngModel)]="user.is_furnished">
+              <div class="iconoMuebles"
+                   [ngClass]="{selectedMuebles: user.is_furnished}"
+              ></div>
+              Amueblada
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="PrivateBath"
+                     id="sm24"
+                      [(ngModel)]="user.has_private_bath">
+              <div class="iconoBath"
+                   [ngClass]="{selectedBath: user.has_private_bath}"
+              ></div>
+              Baño privado
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="externalView"
+                     id="sm25"
+                      [(ngModel)]="user.has_private_view">
+              <div class="iconoVentana"
+                   [ngClass]="{selectedVentana: user.has_private_view}"
+              ></div>
+              Vista exterior
+            </label>
+          </div>
+        </div>
+        <div class="optionCard">
+          <p>Tus imprescindibles...</p>
+          <div>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Wifi"
+                     id="sm30"
+                     [(ngModel)]="user.has_internet">
+              <div class="iconoWifi"
+                   [ngClass]="{selectedWifi: user.has_internet}"
+              ></div>
+              WiFi
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Ascensor"
+                     id="sm31"
+                     [(ngModel)]="user.has_elevator">
+              <div class="iconoAscensor"
+                   [ngClass]="{selectedAscensor: user.has_elevator}"
+              ></div>
+              Ascensor
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Lavadora"
+                     id="sm32"
+                     [(ngModel)]="user.has_whashing_machine">
+              <div class="iconoLavadora"
+                   [ngClass]="{selectedLavadora: user.has_whashing_machine}"
+              ></div>
+              Lavadora
+            </label>
+
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Secadora"
+                     id="sm33"
+                     [(ngModel)]="user.has_drying_machine">
+              <div class="iconoSecadora"
+                   [ngClass]="{selectedSecadora: user.has_drying_machine}"
+              ></div>
+              Secadora
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Lavavajillas"
+                     id="sm34"
+                     [(ngModel)]="user.has_dishwasher">
+              <div class="iconoLavavajillas"
+                   [ngClass]="{selectedLavavajillas: user.has_dishwasher}"
+              ></div>
+              Lavavajillas
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Jardin"
+                     id="sm35"
+                     [(ngModel)]="user.has_garden">
+              <div class="iconoJardin"
+                   [ngClass]="{selectedJardin: user.has_garden}"
+              ></div>
+              Jardín
+            </label>
+
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Balcon"
+                     id="sm36"
+                     [(ngModel)]="user.has_balcony">
+              <div class="iconoBalcon"
+                   [ngClass]="{selectedBalcon: user.has_balcony}"
+              ></div>
+              Balcón
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Calefaccion"
+                     id="sm37"
+                     [(ngModel)]="user.has_heating">
+              <div class="iconoCalefaccion"
+                   [ngClass]="{selectedCalefaccion: user.has_heating}"
+              ></div>
+              Calefacción
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Portero"
+                     id="sm38"
+                     [(ngModel)]="user.has_doorman">
+              <div class="iconoDoorman"
+                   [ngClass]="{selectedDoorman: user.has_doorman}"
+              ></div>
+              Portero
+            </label>
+
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Accesible"
+                     id="sm39"
+                     [(ngModel)]="user.is_accessibility">
+              <div class="iconoAccesible"
+                   [ngClass]="{selectedAccesible: user.is_accessibility}"
+              ></div>
+              Accesible
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Parking"
+                     id="sm40"
+                     [(ngModel)]="user.has_parking">
+              <div class="iconoParking"
+                   [ngClass]="{selectedParking: user.has_parking}"
+              ></div>
+              Parking
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="AireAcondicionado"
+                     id="sm41"
+                     [(ngModel)]="user.has_air_conditioning">
+              <div class="iconoAireAcondicionado"
+                   [ngClass]="{selectedAireAcondicionado: user.has_air_conditioning}"
+              ></div>
+              Aire acondicionado
+            </label>
+          </div>
+        </div>
+        <div class="optionCard">
+          <p>Conviviendo buscas...</p>
+          <div>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="roomFumar"
+                     id="sm60"
+                     [(ngModel)]="user.room_smoke">
+              <div class="iconoFumador"
+                   [ngClass]="{selectedFumador: user.room_smoke}"
+              ></div>
+              Fumar
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="roomMascotas"
+                     id="sm61"
+                     [(ngModel)]="user.room_pet">
+              <div class="iconoMascotas"
+                   [ngClass]="{selectedMascotas: user.room_pet}"
+              ></div>
+              Mascotas
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Parejas"
+                     id="sm62"
+                     [(ngModel)]="user.room_couples">
+              <div class="iconoCouples"
+                   [ngClass]="{selectedCouples: user.room_couples}"
+              ></div>
+              Parejas
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="btnBox">
+    <button class="guardarBtn" (click)="stepAdd()">Continuar</button>
+  </div>
+  <div id="circles">
+    <div [ngClass]="{
+          circle: step !== 1,
+          activeCircle: step === 1}"></div>
+    <div [ngClass]="{
+          circle: step !== 2,
+          activeCircle: step === 2}"></div>
+  </div>
+</section>
+
+<section class="sec2" [hidden]="step < 3" *ngIf="step === 3">
+  <h1>Bienvenido a Rooms, {{user.name}}</h1>
+  <div>
+    <p>Te has registrado correctamente,</p>
+    <p>Ya puedes empezar a buscar habitación o compañero</p>
+  </div>
+  <a href="#" routerLink="/rooms"
+      class="btnPrimary">Empezar</a>
+</section>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +7,7 @@ import {HttpClient} from '@angular/common/http';
 export class UserService {
 
   private allUsers: any;
+  private userId : any;
 
 
   constructor(private http : HttpClient) { this.getUpdateAllUser();}
@@ -26,19 +27,32 @@ export class UserService {
       return this.allUsers;
   }
 
-  getUserById(id: number)
+  getUserUpdateById(id: number)
   {
-    for(let user of this.allUsers){
-      if(user.id == id)
-        return user;
-    }
-    var user :any;
     this.http.get("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/user/"+id).subscribe(
       (response) => {
         console.log(response);
-        user = response
+        this.userId = response
       })
-      return user;
+      //return user;
   }
 
+  getUserById()
+  {
+      return this.userId;
+  }
+
+  private  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      'authorization': '750e8b43e5ed564462c90ef0d382db26'
+    })
+  };
+
+
+  postNewUser(user : any)
+  {
+    let params = "json="+user;
+    return this.http.post( "http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/", params, this.httpOptions);
+  }
 }

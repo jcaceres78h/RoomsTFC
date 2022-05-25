@@ -1,0 +1,9 @@
+.container_resultados{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card_resultados_rooms{
+    margin-bottom: 40px;
+}

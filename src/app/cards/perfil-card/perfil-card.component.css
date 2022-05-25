@@ -1,9 +1,7 @@
 .perfil-card{
     display: flex;
     justify-content: flex-end;
-    margin-right: 5%;
-    /* AL HACER CLICK EN NOMBRE_USUARIO EN EL NAV CAMBIA A DISPLAY */
-    display: none;
+    position: fixed;
 }
 .container_perfil-card{
     background-color: white;
@@ -14,6 +12,11 @@
     display: flex;
     flex-direction: column;
     justify-self: flex-end;
+}
+.nombreUsuario_card{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
 }
 .container__{
     padding: 20px 30px;
@@ -33,14 +36,24 @@
 .edit_switch{
     display: flex;
     justify-content: space-around;
+    margin-top: 10px;
 }
 .enlaces_perfil-card{
     margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 30px;
 }
 .enlaces_perfil-card > div{
     display: flex;
-    justify-content: space-evenly;
 }
 .enlaces_perfil-card > div:first-child{
     margin-bottom: 10px;
+}
+.enlaces_perfil-card > div > img {
+    margin-right: 10px;
+}
+.enlaces_perfil-card > div > a {
+    text-decoration: none;
 }

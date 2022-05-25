@@ -12,6 +12,33 @@
   color: var(--text_principal);
   box-sizing: border-box;
 }
+html{
+  scroll-behavior: smooth;
+}
 .home__container{
   padding: 100px 50px;
 }
+.flex-row-wrap {
+  display: flex;
+  flex-flow: row wrap;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+/*--- SECCCIONES ---*/
+.section {
+  margin-left: var(--padding-g-lateral);
+  margin-right: var(--padding-g-lateral);
+}
+button {
+  cursor: pointer;
+}
+.main_principal{
+  padding: 40px 160px;
+}
+.title_view{
+  font-size: 1.5em;
+  margin-bottom: 50px;
+}
+

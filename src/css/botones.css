@@ -1,1 +1,22 @@
 /*Jonathan Cáceres, 20/05/2022 18:33:38*/
+.guardarBtn {
+  border: none;
+  padding: 36px 175px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  color: white;
+  background-color: var(--black_rooms);
+  font-size: 1.5em;
+}
+.btnPrimary {
+  color: var(--light_blue);
+  font-weight: bold;
+  font-size: 1.25em;
+  padding: .85em 36px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  border: solid 1px var(--black_rooms);
+  text-decoration: none;
+}

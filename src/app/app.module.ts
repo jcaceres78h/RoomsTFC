@@ -33,7 +33,10 @@ import { FormPublicarComponent } from './views/form-publicar/form-publicar.compo
 import { FormLoginComponent } from './views/form-login/form-login.component';
 import { FormRegistroComponent } from './views/form-registro/form-registro.component';
 import { FormCrearCuentaComponent } from './views/form-crear-cuenta/form-crear-cuenta.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
+import { RoomComponent } from './views/room/room.component';
+import { ResultadosCompanerosComponent } from './views/resultados-companeros/resultados-companeros.component';
 
 
 @NgModule({
@@ -67,9 +70,14 @@ import { HttpClientModule } from '@angular/common/http';
     FormLoginComponent,
     FormRegistroComponent,
     FormCrearCuentaComponent,
+    RoomComponent,
+    ResultadosCompanerosComponent,
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule
   ],

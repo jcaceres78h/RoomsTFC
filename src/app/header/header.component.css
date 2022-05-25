@@ -34,7 +34,8 @@ a:not(.nombreUsuario) {
 }
 .nombreUsuario {
   font-weight: bold;
-  color: var(--light_blue)
+  color: var(--light_blue);
+  cursor: pointer;
 }
 .logo {
   height: 40px;
@@ -58,4 +59,9 @@ a:not(.nombreUsuario) {
 input {
   border: none;
 }
-
+app-perfil-card{
+  position: fixed;
+  margin-left: 80%;
+  top: 90px;
+  z-index: 1000;
+}
