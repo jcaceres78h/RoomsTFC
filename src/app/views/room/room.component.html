@@ -1,12 +1,11 @@
-<section class="main_principal">
-    <article class="art1">
+<section class="sectionDos">
+  <article class="art1">
     <div class="div1_1">
       <figure class="fotoPiso">
         <img src="https://github.com/Cintia-Andujar/rooms/blob/main/images/room_mate.jpg?raw=true"
              alt="Foto de piso en {{room.street}}, {{room.locality}}">
         <figcaption>
-          <figcaption>
-          <div div class="iconoFav"></div>
+          <div class="iconoFav"></div>
           <div class="iconoCompartir"></div>
         </figcaption>
       </figure>
@@ -23,10 +22,7 @@
         <h4 class="infoTitle">Características de la habitación</h4>
         <div class="caracteristicas">
           <div *ngFor="let opt of opcionesRoom"
-              class="caracteristicaCard">
-
-          class="caracteristicaCard">
-
+               class="caracteristicaCard">
             <div class="{{opt.clase}}"></div>
             <span class="camaDescription">{{opt.texto}}</span>
           </div>
@@ -42,16 +38,10 @@
         <h4 class="infoTitle">Normas de convivencia</h4>
         <div class="caracteristicas">
           <div *ngFor="let opt of normasConvivencia"
-
                class="caracteristicaCard">
             <div class="{{opt.clase}}"></div>
             <span class="camaDescription">{{opt.texto}}</span>
           </div>
-          class="caracteristicaCard">
-          <div class="{{opt.clase}}"></div>
-          <span class="camaDescription">{{opt.texto}}</span>
-        </div>
-
         </div>
       </div>
       <div class="part1_2">
@@ -80,5 +70,3 @@
     </div>
   </article>
 </section>
-
-
