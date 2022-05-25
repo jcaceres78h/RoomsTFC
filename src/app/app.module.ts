@@ -35,6 +35,7 @@ import { FormRegistroComponent } from './views/form-registro/form-registro.compo
 import { FormCrearCuentaComponent } from './views/form-crear-cuenta/form-crear-cuenta.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
+import { RoomComponent } from './views/room/room.component';
 import { ResultadosCompanerosComponent } from './views/resultados-companeros/resultados-companeros.component';
 
 
@@ -69,6 +70,7 @@ import { ResultadosCompanerosComponent } from './views/resultados-companeros/res
     FormLoginComponent,
     FormRegistroComponent,
     FormCrearCuentaComponent,
+    RoomComponent,
     ResultadosCompanerosComponent,
   ],
   imports: [

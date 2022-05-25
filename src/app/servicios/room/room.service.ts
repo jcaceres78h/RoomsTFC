@@ -12,6 +12,8 @@ export class RoomService {
 
   private userRoom: any;
 
+  private idRoom: any;
+
   private  httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
@@ -20,12 +22,12 @@ export class RoomService {
   };
 
 
-  constructor(private http : HttpClient) { this.getAllRoom()}
+  constructor(private http : HttpClient) { this.getUpdateAllRoom()}
 
   getUpdateAllRoom(){
     this.http.get("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room").subscribe(
       (response) => {
-        console.log(response);
+        // console.log(response);
         this.allRooms = response;
       })
   }
@@ -34,19 +36,23 @@ export class RoomService {
       return this.allRooms;
   }
 
-  getRoomById(id: number)
+  getUpdateRoomById(id: number)
   {
-    for(let Room of this.allRooms){
+/*    for(let Room of this.allRooms){
       if(Room.id == id)
         return Room;
-    }
-    var room :any;
+    }*/
     this.http.get("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/"+id).subscribe(
       (response) => {
-        console.log(response);
-        room = response
+        // console.log(response);
+        this.idRoom = response
       })
-      return room;
+  }
+
+  getRoomById() {
+    if (this.idRoom != null)
+      return this.idRoom;
+    return null;
   }
 
   getRoomByLocality()
