@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultadosRoomComponent implements OnInit {
 
+  localidad:any
+
   constructor() { }
 
   ngOnInit(): void {

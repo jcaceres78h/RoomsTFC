@@ -1,0 +1,75 @@
+/* CARDS ROOM - RESULTADOS */
+a{
+    text-decoration: none;
+}
+.container_card_room{
+    display: flex;
+    width: 380px;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.25);
+}
+.card_room{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+}
+.img_carrusel{
+    background-image: url(https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/rooms/room1/room-1.jpg);
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.heart_favs_room{
+    display: flex;
+    align-self: flex-end;
+    margin-right: 20px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+.flechas_room{
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    align-self: center;
+    margin-top: 60px;
+}
+.flecha_room{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 20px;
+}
+.info_room{
+    background-color: white;
+    width: 100%;
+    height: 100px;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-self: flex-end;
+}
+.container_text_info_room{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    align-items: center;
+}
+.info_text_room > p{
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+.precio > p{
+    font-size: 30px;
+}

@@ -1,0 +1,94 @@
+<<<<<<< Updated upstream
+=======
+.fotoPiso {
+  width: 47%;
+  position: relative;
+}
+.fotoPiso>img {
+  width: 100%;
+  aspect-ratio: 4/3;
+}
+.fotoPiso>figcaption {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+.fotoPiso>figcaption>div {
+  margin-left: 20px;
+}
+.lugarRoom {
+  text-transform: capitalize;
+}
+.div1_1 {
+  display: flex;
+  align-items: center;
+}
+.info {
+  margin-left: 9%;
+}
+.tituloRoom {
+  font-weight: bold;
+  font-size: 2em;
+  color: var(--black_rooms);
+}
+.lugarRoom {
+  font-size: 1.25em;
+  color: var(--black_rooms);
+}
+.precio1 {
+  font-size: 3em;
+  color: var(--black_rooms)
+}
+.part1 {
+  display: flex;
+  justify-content: space-between;
+}
+.part1_1 {
+  width: 47%;
+}
+.infoTitle {
+  font-size: 1.9em;
+  margin-top: 30px;
+}
+.part1_2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  text-align: center;
+  justify-content: center;
+}
+.caracteristicas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.caracteristicaCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+}
+.caracteristicaCard>.camaDescription {
+  text-align: center;
+  font-size: .75em;
+}
+.map {
+  width: 100%;
+  aspect-ratio: 16/9;
+  margin-bottom: 130px;
+}
+.tInteres {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.part3_3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+>>>>>>> Stashed changes

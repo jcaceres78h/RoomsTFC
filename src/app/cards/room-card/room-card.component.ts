@@ -34,4 +34,17 @@ export class RoomCardComponent implements OnInit {
     }
   }
 
+  next(direction:string){
+    if(direction == 'left'){
+      alert('has hecho click izquierda')
+    }
+    if(direction == 'right'){
+      alert('has hecho click derecha')
+    }
+  }
+
+  addFavs(){
+    alert('añadir a favoritos')
+  }
+
 }
