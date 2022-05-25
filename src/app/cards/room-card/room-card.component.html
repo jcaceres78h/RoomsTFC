@@ -1,25 +1,31 @@
-<a href={{this.enlace}}>
+<div class="container_card_room">
+
     <div class="card_room">
         
-        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/rooms/room1/room-1.jpg" alt="habitación" >
-    
+        <div class="img_carrusel">
 
-    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/heart_favs_white.svg" alt="corazón favoritos" class="heart_favs">
+            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/heart_favs_white.svg" alt="corazón favoritos" width="30" class="heart_favs_room" (click)="addFavs()">
+            
+            <div class="flechas_room"> 
+                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/left.svg" alt="Izquierda" class="flecha_room" width="20" (click)="next('left')">
+                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/right.svg" alt="Derecha" class="flecha_room" width="20" (click)="next('right')">
+            </div>
     
-    
-    <div class="flechas"> 
-        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/left.svg" alt="Izquierda" class="flecha" width="20">
-        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/right.svg" alt="Derecha" class="flecha" width="20">
+            <a href={{this.enlace}}>
+                <div class="info_room">
+                    <div class="container_text_info_room">
+                        <div class="info_text_room">
+                            <p>{{this.type_bed}}</p>
+                            <small>{{room.street}}}</small>
+                        </div>
+                        <div class="precio">
+                            <p>{{room.price}} €</p>
+                        </div>
+                    </div>            
+                </div>
+            </a>
+        </div>   
+
     </div>
-    
-    <div class="info_room">
-        <div>
-            <p>{{this.type_bed}}</p>
-            <small>{{room.street}}}</small>
-        </div>
-        <div class="precio">
-            <p>{{room.price}} €</p>
-        </div>
-    </div>
+
 </div>
-</a>
