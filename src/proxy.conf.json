@@ -1,0 +1,8 @@
+{
+  "/api/*": {
+    "target": "http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/",
+    "pathRewrite": {"^/api": ""},
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from "../../servicios/user/user.service";
 
 @Component({
   selector: 'app-form-crear-cuenta',
@@ -47,7 +48,7 @@ export class FormCrearCuentaComponent implements OnInit {
 
   step = 1;
 
-  constructor() {
+  constructor(private userService: UserService) {
   }
 
   ngOnInit(): void {
@@ -59,9 +60,10 @@ export class FormCrearCuentaComponent implements OnInit {
   }
 
   stepAdd() {
-    if (this.step < 3)
-      this.step++;
-    console.log(this.user)
+    if (this.step >= 2)
+      console.log(this.userService.postNewUser(this.user))
+    this.step++;
+    // console.log(this.user)
   }
 
   estudioTrabajo(): boolean {
