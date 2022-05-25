@@ -8,7 +8,7 @@ import {Router} from "@angular/router"
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
   }
@@ -19,4 +19,11 @@ export class HomeComponent implements OnInit {
     this.router.navigate([url])
   }
 
+  scrollToBuscador() {
+    // @ts-ignore
+    document.getElementById( 'buscadorInput' ).focus();
+    // @ts-ignore
+    document.getElementById( 'buscadorScroll' ).scrollIntoView();
+
+  }
 }

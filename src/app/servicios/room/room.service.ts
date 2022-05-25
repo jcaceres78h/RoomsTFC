@@ -55,7 +55,7 @@ export class RoomService {
     return null;
   }
 
-  getRoomByLocality(locality: string)
+  getRoomByLocality()
   {
       return this.localityRoom;
   }

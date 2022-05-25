@@ -54,3 +54,6 @@
 .enlaces_perfil-card > div > img {
     margin-right: 10px;
 }
+.enlaces_perfil-card > div > a {
+    text-decoration: none;
+}

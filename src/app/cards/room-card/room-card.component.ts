@@ -8,10 +8,43 @@ import { Component, Input, OnInit } from '@angular/core';
 export class RoomCardComponent implements OnInit {
 
   @Input() room : any
+  public type_bed : any
+  public enlace:any
 
   constructor() { }
 
   ngOnInit(): void {
+    this.tipoHabitacion()
+    this.enlace = '/room/'+this.room.id;
+  }
+
+  tipoHabitacion(){
+    switch (this.room.bed_type) {
+      case 0:
+          this.type_bed = 'Habitación con literas'
+        break;
+        case 1: 
+          this.type_bed = 'Habitación individual'
+        break;
+        case 2: 
+          this.type_bed = 'Habitación doble'
+        break;
+      default: this.type_bed = 'Habitación'
+        break;
+    }
+  }
+
+  next(direction:string){
+    if(direction == 'left'){
+      alert('has hecho click izquierda')
+    }
+    if(direction == 'right'){
+      alert('has hecho click derecha')
+    }
+  }
+
+  addFavs(){
+    alert('añadir a favoritos')
   }
 
 }
