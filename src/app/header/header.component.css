@@ -34,7 +34,8 @@ a:not(.nombreUsuario) {
 }
 .nombreUsuario {
   font-weight: bold;
-  color: var(--light_blue)
+  color: var(--light_blue);
+  cursor: pointer;
 }
 .logo {
   height: 40px;
