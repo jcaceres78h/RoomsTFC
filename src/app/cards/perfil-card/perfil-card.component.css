@@ -1,0 +1,46 @@
+.perfil-card{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5%;
+    /* AL HACER CLICK EN NOMBRE_USUARIO EN EL NAV CAMBIA A DISPLAY */
+    display: none;
+}
+.container_perfil-card{
+    background-color: white;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    width: 274px;
+    height: 346px;
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-end;
+}
+.container__{
+    padding: 20px 30px;
+}
+.close_perfil-card{
+    display: flex;
+   justify-content: flex-end;
+}
+.nombre_perfil-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.nombre_perfil-card > p{
+    font-weight: bold;
+}
+.edit_switch{
+    display: flex;
+    justify-content: space-around;
+}
+.enlaces_perfil-card{
+    margin-top: 30px;
+}
+.enlaces_perfil-card > div{
+    display: flex;
+    justify-content: space-evenly;
+}
+.enlaces_perfil-card > div:first-child{
+    margin-bottom: 10px;
+}
