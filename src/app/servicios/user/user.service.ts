@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Axios} from 'axios'
 
 @Injectable({
   providedIn: 'root'
