@@ -36,7 +36,7 @@ export class RoomComponent implements OnInit {
     switch (this.room.bed_type) {
       case 0: cama = "individual"; break;
       case 1: cama = "doble"; break;
-      case 2: cama = "litera"; break;
+      case 2: cama = "con litera"; break;
       default: cama = "Sin datos";
     }
     return cama;
