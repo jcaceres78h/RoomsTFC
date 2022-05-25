@@ -12,6 +12,7 @@ import {FormCrearCuentaComponent} from "./views/form-crear-cuenta/form-crear-cue
 import { EditarPerfilUsuarioComponent } from './views/editar-perfil-usuario/editar-perfil-usuario.component';
 import { ResultadosRoomComponent } from './views/resultados-room/resultados-room.component';
 import { ResultadosCompanerosComponent } from './views/resultados-companeros/resultados-companeros.component';
+import { FormCompaneroComponent } from './views/form-companero/form-companero.component';
 
 const routes: Routes = [
   { path: 'rooms', component: HomeComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'resultados-companeros', component: ResultadosCompanerosComponent },
   { path: 'user/:id', component: PerfilUsuarioComponent },
   { path: 'resultados-room/:localidad', component: ResultadosRoomComponent },
+  { path: 'form-companero', component: FormCompaneroComponent },
   { path: 'nosotros', component: NosotrosComponent },
   { path: 'como-funciona', component: AyudaComponent },
   { path: 'publicar-habitacion', component: FormPublicarComponent },
