@@ -1,7 +1,7 @@
-<div class="card_room">
-    
-     
-    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/rooms/room1/room-1.jpg" alt="" >
+<a href={{this.enlace}}>
+    <div class="card_room">
+        
+        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/rooms/room1/room-1.jpg" alt="" >
     
 
     <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/heart_favs_white.svg" alt="corazón favoritos" class="heart_favs">
@@ -14,11 +14,12 @@
     
     <div class="info_room">
         <div>
-            <p>Tipo de habitación</p>
-            <small>Ubicación</small>
+            <p>{{this.type_bed}}</p>
+            <small>{{room.street}}}</small>
         </div>
         <div class="precio">
-            <p>Precio</p>
+            <p>{{room.price}} €</p>
         </div>
     </div>
 </div>
+</a>
