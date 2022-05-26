@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import {RoomService} from "../../servicios/room/room.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
@@ -14,29 +14,30 @@ export class RoomComponent implements OnInit {
 
   constructor(private roomService: RoomService, private ac: ActivatedRoute,
               private router: Router) {
+  }
+
+  ngOnInit(): void {
     this.ac.paramMap.subscribe(params => {this.id = params.get('id')})
     this.roomService.getUpdateRoomById(this.id)
   }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
+    if (this.roomService.getRoomById().status === 404)
+      this.router.navigate(['/404'])
   }
 
   get room() {
     // return this.roomService.getRoomById(8)
     // return this.aux;
-    if (!this.roomService.getRoomById()) {
-      // this.router.navigate(['/'])
-
-    }
     return this.roomService.getRoomById();
   }
 
   get cama(): string {
     let cama = "";
     switch (this.room.bed_type) {
-      case 0: cama = "individual"; break;
-      case 1: cama = "doble"; break;
-      case 2: cama = "con litera"; break;
+      case 1: cama = "individual"; break;
+      case 2: cama = "doble"; break;
+      case 0: cama = "con litera"; break;
       default: cama = "Sin datos";
     }
     return cama;
@@ -48,17 +49,17 @@ export class RoomComponent implements OnInit {
       "texto": ""
     }
     switch (this.room.bed_type) {
-      case 0: {
+      case 1: {
         cama.clase = "iconoBed";
         cama.texto = "Individual"
       }
         break;
-      case 1: {
+      case 2: {
         cama.clase = "iconoCamaDoble";
         cama.texto = "Cama doble"
       }
         break;
-      case 2: {
+      case 0: {
         cama.clase = "iconoLitera";
         cama.texto = "Litera"
       }

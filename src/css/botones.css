@@ -20,3 +20,7 @@
   border: solid 1px var(--black_rooms);
   text-decoration: none;
 }
+.btnPrimary:active {
+  background-color: var(--dark_blue);
+  box-shadow: var(--shadow-g);
+}

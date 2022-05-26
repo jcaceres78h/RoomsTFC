@@ -14,6 +14,7 @@ import { ResultadosRoomComponent } from './views/resultados-room/resultados-room
 import { RoomComponent } from "./views/room/room.component";
 import { ResultadosCompanerosComponent } from './views/resultados-companeros/resultados-companeros.component';
 import { FormCompaneroComponent } from './views/form-companero/form-companero.component';
+import {ErrorPageComponent} from "./views/error-page/error-page.component";
 
 const routes: Routes = [
   { path: 'rooms', component: HomeComponent },
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'crear-cuenta', component: FormCrearCuentaComponent },
   { path: 'room/:id', component: RoomComponent },
   { path: 'ayuda', component: AyudaComponent },
+  { path: 'error/:id', component: ErrorPageComponent },
   { path: '',   redirectTo: '/rooms', pathMatch: 'full' },
   { path: '**', component: Error404PageComponent },
 

@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import axios from "axios";
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,15 @@ export class RoomService {
 
   private idRoom: any;
 
+  async updateAllRooms() {
+    try {
+      const response = await axios.get('/api/room');
+      this.allRooms = response.data;
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
   private  httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
@@ -22,31 +32,20 @@ export class RoomService {
   };
 
 
-  constructor(private http : HttpClient) { this.getUpdateAllRoom()}
-
-  getUpdateAllRoom(){
-    this.http.get("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room").subscribe(
-      (response) => {
-        // console.log(response);
-        this.allRooms = response;
-      })
-  }
+  constructor(private http : HttpClient) { this.updateAllRooms() }
 
   getAllRoom(){
       return this.allRooms;
   }
 
-  getUpdateRoomById(id: number)
+  async getUpdateRoomById(id: number)
   {
-/*    for(let Room of this.allRooms){
-      if(Room.id == id)
-        return Room;
-    }*/
-    this.http.get("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/"+id).subscribe(
-      (response) => {
-        // console.log(response);
-        this.idRoom = response
-      })
+    try {
+      const response = await axios.get('/api/room/' + id);
+      this.idRoom = response.data;
+    } catch (e) {
+      this.idRoom = {status: 404}
+    }
   }
 
   getRoomById() {
@@ -82,7 +81,7 @@ export class RoomService {
   {
       return this.userRoom;
   }
-
+  
   postNewRoom(room : JSON)
   {
     let json = JSON.stringify(room);

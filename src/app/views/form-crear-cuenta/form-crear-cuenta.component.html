@@ -217,33 +217,33 @@
           <label>
             <span>Preferiría vivir con...</span>
             <div class="flex-row-wrap countCompañeros">
-              <label (click)="user.roommate_gender = 0">
+              <label (click)="user.roommate_gender = 2">
                 <input class="options"
                        type="checkbox"
-                       name="Mascotas"
+                       name="Mixto"
                        id="sm10">
                 <div class="iconoMixto"
-                     [ngClass]="{selectedMixto: user.roommate_gender === 0}"
+                     [ngClass]="{selectedMixto: user.roommate_gender === 2}"
                     ></div>
                 Mixto
               </label>
               <label (click)="user.roommate_gender = 1">
                 <input class="options"
                        type="checkbox"
-                       name="Mixto"
+                       name="Chica"
                        id="sm11">
                 <div class="iconoChica"
                      [ngClass]="{selectedChica: user.roommate_gender === 1}"
                     ></div>
                 Chicas
               </label>
-              <label (click)="user.roommate_gender = 2">
+              <label (click)="user.roommate_gender = 0">
                 <input class="options"
                        type="checkbox"
-                       name="Mascotas"
+                       name="Chico"
                        id="sm12">
                 <div class="iconoChico"
-                     [ngClass]="{selectedChico: user.roommate_gender === 2}"
+                     [ngClass]="{selectedChico: user.roommate_gender === 0}"
                     ></div>
                 Chicos
               </label>
@@ -255,33 +255,33 @@
         <div class="optionCard">
           <p>Tu habitación ideal...</p>
           <div>
-            <label (click)="user.bed_type = 0">
+            <label (click)="user.bed_type = 1">
               <input class="options"
                      type="checkbox"
                      name="Individual"
                      id="sm20">
               <div class="iconoBed"
-                   [ngClass]="{selectedBed: user.bed_type === 0}"
+                   [ngClass]="{selectedBed: user.bed_type === 1}"
               ></div>
               Individual
             </label>
-            <label (click)="user.bed_type = 1">
+            <label (click)="user.bed_type = 2">
               <input class="options"
                      type="checkbox"
                      name="Doble"
                      id="sm21">
               <div class="iconoCamaDoble"
-                   [ngClass]="{selectedCamaDoble: user.bed_type === 1}"
+                   [ngClass]="{selectedCamaDoble: user.bed_type === 2}"
               ></div>
               Doble
             </label>
-            <label (click)="user.bed_type = 2">
+            <label (click)="user.bed_type = 0">
               <input class="options"
                      type="checkbox"
                      name="Litera"
                      id="sm22">
               <div class="iconoLitera"
-                   [ngClass]="{selectedLitera: user.bed_type === 2}"
+                   [ngClass]="{selectedLitera: user.bed_type === 0}"
               ></div>
               Litera
             </label>
