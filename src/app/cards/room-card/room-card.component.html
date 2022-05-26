@@ -3,7 +3,7 @@
     <div class="card_room">
         
         <div class="img_carrusel">
-
+           
             <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/heart_favs_white.svg" alt="corazón favoritos" width="30" class="heart_favs_room" (click)="addFavs()">
             
             <div class="flechas_room"> 
@@ -16,7 +16,7 @@
                     <div class="container_text_info_room">
                         <div class="info_text_room">
                             <p>{{this.type_bed}}</p>
-                            <small>{{room.street}}}</small>
+                            <small class="nombre_ciudad">{{room.locality}}, {{room.province}} </small>
                         </div>
                         <div class="precio">
                             <p>{{room.price}}€</p>

@@ -10,7 +10,7 @@
   font-size: 1.5em;
 }
 .btnPrimary {
-  color: var(--light_blue);
+  color: var(--dark_blue);
   font-weight: bold;
   font-size: 1.25em;
   padding: .85em 36px;

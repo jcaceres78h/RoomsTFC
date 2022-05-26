@@ -39,7 +39,6 @@ header {
 }
 .activeText {
   font-weight: bold;
-  color: var(--dark_blue)
 }
 .activeLinea {
   border: solid 2px var(--dark_blue);

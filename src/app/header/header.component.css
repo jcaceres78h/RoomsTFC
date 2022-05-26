@@ -61,7 +61,13 @@ input {
 }
 app-perfil-card{
   position: fixed;
-  margin-left: 80%;
   top: 90px;
   z-index: 1000;
+  margin-left: 80%;
+}
+.contenedor_card_perfil{
+  width: 100%;
+  height: 100vh;
+  z-index: 1001;
+  background-color: transparent;
 }

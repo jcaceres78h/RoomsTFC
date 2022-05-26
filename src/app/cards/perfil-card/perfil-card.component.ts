@@ -11,5 +11,4 @@ export class PerfilCardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
