@@ -77,7 +77,7 @@ export class RoomService {
       })
   }
 
-  getRoomsByUserId(userId: number)
+  getRoomsByUserId()
   {
       return this.userRoom;
   }
