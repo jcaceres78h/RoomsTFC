@@ -48,6 +48,9 @@
     justify-content: space-around;
     margin-top: 10px;
 }
+.edit_switch > img {
+    cursor: pointer;
+}
 .enlaces_perfil-card{
     margin-top: 30px;
     display: flex;
