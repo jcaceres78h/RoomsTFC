@@ -2,7 +2,7 @@
 
     <div class="container__buscador">
         <div>
-            <input type="text" class="buscador_filtros" placeholder="Ciudad, Provincia">
+            <input type="text" class="buscador_filtros" placeholder="Ciudad, Provincia" #buscar (keyup.enter)="buscarPorLocalidad(buscar.value)">
         </div>
         <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/ade0614c0ae054ce136e85baae935ba3e43fc2cc/icons/search.svg" alt="Icono lupa" width="20">
     </div>
