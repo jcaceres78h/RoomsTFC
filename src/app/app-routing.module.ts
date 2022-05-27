@@ -16,6 +16,7 @@ import { ResultadosCompanerosComponent } from './views/resultados-companeros/res
 import { FormCompaneroComponent } from './views/form-companero/form-companero.component';
 import { FormLoginComponent } from './views/form-login/form-login.component';
 import { FormRegistroComponent } from './views/form-registro/form-registro.component';
+import { FormBtnComponent } from './views/form-btn/form-btn.component';
 
 const routes: Routes = [
   { path: 'rooms', component: HomeComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'user/:id', component: PerfilUsuarioComponent },
   { path: 'resultados-room/:localidad', component: ResultadosRoomComponent },
   { path: 'form-companero', component: FormCompaneroComponent },
+  { path: 'form', component: FormBtnComponent },
   { path: 'iniciar-sesion', component: FormLoginComponent },
   { path: 'registrarse', component: FormRegistroComponent },
   { path: 'nosotros', component: NosotrosComponent },

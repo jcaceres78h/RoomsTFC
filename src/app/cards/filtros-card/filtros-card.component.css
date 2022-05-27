@@ -1,0 +1,27 @@
+.container_card_filtros{
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+    padding: 10px;
+}
+.card_filtros{
+    display: flex;
+    flex-direction: column ;
+}
+.close_card{
+    display: flex;
+    justify-content: flex-end;
+}
+.close_card > img{
+    margin-right: 20px;
+}
+.text_filtros_card{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+    margin-left: 43px;
+}

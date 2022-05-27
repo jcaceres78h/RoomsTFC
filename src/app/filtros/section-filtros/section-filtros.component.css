@@ -1,0 +1,33 @@
+.container_filtros{
+    display: flex;
+    margin-bottom: 50px;
+    align-items: center ;
+    margin-left: 50px;
+}
+.container__buscador{
+    display: flex;
+    border: .5px solid var(--black_rooms);
+    border-radius: 50px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    width: 50%;
+    padding: 10px;
+    border-radius: 20px;
+    width: 300px;
+}
+.buscador_filtros{
+    border: none;
+}
+.container__buscador > img{
+    cursor: pointer;
+}
+.filtros_icon{
+    display: flex;
+    margin-left: 20px;
+    align-items: center;
+    cursor: pointer;
+}
+.filtros_icon > img{
+    margin-right: 5px;
+}

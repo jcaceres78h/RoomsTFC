@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-section-filtros',
-  templateUrl: './section-filtros.component.html',
-  styleUrls: ['./section-filtros.component.css']
+  selector: 'app-categorias-filtros',
+  templateUrl: './categorias-filtros.component.html',
+  styleUrls: ['./categorias-filtros.component.css']
 })
-export class SectionFiltrosComponent implements OnInit {
+export class CategoriasFiltrosComponent implements OnInit {
 
   mostrarCard = true
 

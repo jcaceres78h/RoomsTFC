@@ -38,6 +38,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { RoomComponent } from './views/room/room.component';
 import { ResultadosCompanerosComponent } from './views/resultados-companeros/resultados-companeros.component';
 import { PerfilCardNologueadoComponent } from './cards/perfil-card-nologueado/perfil-card-nologueado.component';
+import { FiltrosCardComponent } from './cards/filtros-card/filtros-card.component';
+import { CategoriasFiltrosComponent } from './filtros/categorias-filtros/categorias-filtros.component';
+import { TooltipComponent } from './filtros/tooltip/tooltip.component';
 
 
 @NgModule({
@@ -74,6 +77,9 @@ import { PerfilCardNologueadoComponent } from './cards/perfil-card-nologueado/pe
     RoomComponent,
     ResultadosCompanerosComponent,
     PerfilCardNologueadoComponent,
+    FiltrosCardComponent,
+    CategoriasFiltrosComponent,
+    TooltipComponent,
   ],
   imports: [
     BrowserModule,
