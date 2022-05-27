@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoadingPageComponent implements OnInit {
 
-  constructor() { }
+  public load: boolean;
+
+  constructor() { 
+    this.load = false;
+  }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      this.load = true;
+    }, 5000);
   }
 
 }

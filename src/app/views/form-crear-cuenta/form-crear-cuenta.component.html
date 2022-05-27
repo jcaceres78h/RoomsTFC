@@ -1,6 +1,7 @@
 <header>
-  <button class="iconoAtras"
-          (click)="stepDiscount()"></button>
+    <a href="registrarse" class="iconoAtras"></a>
+ <!--  <button class="iconoAtras"
+          (click)="stepDiscount()"></button> -->
   <div class="steps flex-col">
     <div id="numeros">
         <span [ngClass]="{
@@ -200,7 +201,7 @@
       <div class="formulario flex-row-wrap">
         <div class="flex-col">
           <label>
-            <span>¿Donde quieres vivir?</span>
+            <span>¿Dónde quieres vivir?</span>
             <input type="text" placeholder="¿Dónde quieres vivir?"
                    [(ngModel)]="user.locality">
           </label>

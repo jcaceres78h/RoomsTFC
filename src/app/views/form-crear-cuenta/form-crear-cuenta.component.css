@@ -39,10 +39,9 @@ header {
 }
 .activeText {
   font-weight: bold;
-  color: var(--dark_blue)
 }
 .activeLinea {
-  border: solid 2px var(--dark_blue);
+  border: solid 1px var(--black_rooms);
   width: 100%;
 }
 
@@ -112,7 +111,7 @@ header {
   padding-left: 1.5em;
 }
 .flex-col>label>input {
-  width: 100%;
+  width: 90%;
   padding-top: .9em;
   padding-bottom: .9em;
   padding-left: 1.5em;

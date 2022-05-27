@@ -45,6 +45,7 @@
 }
 .img_lupa{
     justify-self: flex-end;
+    cursor: pointer;
 }
 .card_container{
     margin-top: 100px;

@@ -17,11 +17,11 @@ export class UserCardComponent implements OnInit {
   next(direction:string){
     
     if(direction == 'left'){
-       window.alert('click!')
+      alert('click!')
        console.log('click!')
    }
    if(direction == 'right'){
-        window.alert('click!')
+        alert('click!')
 
     }
 }

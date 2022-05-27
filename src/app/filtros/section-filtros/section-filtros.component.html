@@ -1,1 +1,17 @@
-<p>section-filtros works!</p>
+<div class="container_filtros">
+
+    <div class="container__buscador">
+        <div>
+            <input type="text" class="buscador_filtros" placeholder="Ciudad, Provincia" #buscar (keyup.enter)="buscarPorLocalidad(buscar.value)">
+        </div>
+        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/ade0614c0ae054ce136e85baae935ba3e43fc2cc/icons/search.svg" alt="Icono lupa" width="20">
+    </div>
+
+    <div class="filtros_icon" (click)="mostrarCardFiltros()">
+        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/filters.svg" alt="Filtros" width="20">
+        <p>Filtros</p>
+    </div>
+
+</div>
+
+<app-categorias-filtros [hidden]="mostrarCard"></app-categorias-filtros>

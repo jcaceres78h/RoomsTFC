@@ -7,10 +7,10 @@
             <h1 class="title_home">Aquí empieza tu nueva historia</h1>
 
             <div class="container__buscador">
-                <div>
-                    <input class="buscador" id="buscadorInput" type="search" #buscador (keyup.enter)="buscarPorLocalidad(buscador.value)" placeholder="¿Dónde quieres vivir?">
-                </div>
-                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/ade0614c0ae054ce136e85baae935ba3e43fc2cc/icons/search.svg" alt="Icono lupa" width="25" class="img_lupa">
+                    <div>
+                        <input class="buscador" id="buscadorInput" #buscador (keyup.enter)="buscarPorLocalidad(buscador.value)" placeholder="¿Dónde quieres vivir?">
+                    </div>
+                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/ade0614c0ae054ce136e85baae935ba3e43fc2cc/icons/search.svg" alt="Icono lupa" width="25" class="img_lupa" (click)="buscarPorLocalidad(buscador.value)">
             </div>
         </div>
     </div>
