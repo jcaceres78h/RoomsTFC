@@ -8,14 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class CategoriasFiltrosComponent implements OnInit {
 
   mostrarCard = true
+  control = 0
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  mostrarCardFiltros(){
-    this.mostrarCard = !this.mostrarCard
+  mostrarCardFiltros(num:number){
+    this.control = num
+    this.mostrarCard = true;
+    console.log(this.control)
   }
 
 }
