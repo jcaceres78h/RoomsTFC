@@ -3,6 +3,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    z-index: 99;
+    margin-top: 50px ;
 }
 .card_resultados_rooms{
     margin-bottom: 40px;

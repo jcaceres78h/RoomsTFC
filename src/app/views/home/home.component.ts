@@ -14,11 +14,12 @@ export class HomeComponent implements OnInit {
   }
 
   buscarPorLocalidad(localidad:string){
-    let url = '/resultados-room/'+localidad;
-    //window.location.href(url);
-    this.router.navigate([url])
+    if(localidad){
+      let url = '/resultados-room/'+localidad;
+      //window.location.href(url);
+      this.router.navigate([url])
+    }
   }
-
   scrollToBuscador() {
     // @ts-ignore
     document.getElementById( 'buscadorInput' ).focus();

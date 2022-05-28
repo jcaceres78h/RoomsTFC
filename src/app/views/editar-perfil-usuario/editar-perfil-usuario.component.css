@@ -1,0 +1,74 @@
+.pack_btns{
+    display: flex;
+    justify-content: space-between;
+}
+h2{
+    font-size: 24px;
+    font-weight: 400;
+}
+.btn_delete_myaccount{
+    text-decoration: none;
+}
+.btn_delete_myaccount > button{
+    padding: 10px;
+    border-radius: 20px;
+    color: var(--dark_blue);
+    border: .5px solid var(--dark_blue);
+    background-color: transparent;
+}
+.btn_delete_myaccount > button:hover{
+    background-color: var(--light_blue);
+    color: white;
+}
+.container_form_edit_profile{
+    display: flex;
+    flex-direction: column;
+}
+.form_edit_profile{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding-left: 50px;
+}
+.form_edit_profile > input, .form_edit_profile > textarea, .form_edit_profile > div{
+    border-radius: 20px;
+    border: .5px solid var(--black_rooms);
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.form_edit_profile > div{
+    width: 600px;
+    height: 100px;
+}
+.form_edit_profile > label{
+    margin-left: 20px;
+}
+.container_container_form_edit_profile{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.profile_picture{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: .5px solid var(--black_rooms);
+    width: 300px;
+    height: 400px;
+}
+.profile_picture:hover{
+    background-color: var(--light_blue);
+    cursor: pointer;
+}
+.container_preferences_1{
+    display: flex;
+    justify-content: center  ;
+}
+.container_preferences{
+    width: 940px;
+    height: 860px;
+    background-color: var(--light_blue);
+    border-radius: 10px;
+}

@@ -37,7 +37,10 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { RoomComponent } from './views/room/room.component';
 import { ResultadosCompanerosComponent } from './views/resultados-companeros/resultados-companeros.component';
-import { ListarRoomByUserComponent } from './listados/listar-room-By-User/listar-room-by-user/listar-room-by-user.component';
+import { PerfilCardNologueadoComponent } from './cards/perfil-card-nologueado/perfil-card-nologueado.component';
+import { FiltrosCardComponent } from './cards/filtros-card/filtros-card.component';
+import { CategoriasFiltrosComponent } from './filtros/categorias-filtros/categorias-filtros.component';
+import { TooltipComponent } from './filtros/tooltip/tooltip.component';
 
 
 @NgModule({
@@ -73,7 +76,10 @@ import { ListarRoomByUserComponent } from './listados/listar-room-By-User/listar
     FormCrearCuentaComponent,
     RoomComponent,
     ResultadosCompanerosComponent,
-    ListarRoomByUserComponent,
+    PerfilCardNologueadoComponent,
+    FiltrosCardComponent,
+    CategoriasFiltrosComponent,
+    TooltipComponent,
   ],
   imports: [
     BrowserModule,

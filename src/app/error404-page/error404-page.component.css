@@ -1,0 +1,28 @@
+.container_error-page{
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+.title_error{
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.subtitle_error{
+    font-size: 30px;
+}
+.rotate{
+    margin: 0 auto;
+    margin-top: 40px;
+    animation: rotation 8s infinite linear;
+}
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
