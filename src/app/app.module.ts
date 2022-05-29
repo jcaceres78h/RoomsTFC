@@ -41,6 +41,10 @@ import { PerfilCardNologueadoComponent } from './cards/perfil-card-nologueado/pe
 import { FiltrosCardComponent } from './cards/filtros-card/filtros-card.component';
 import { CategoriasFiltrosComponent } from './filtros/categorias-filtros/categorias-filtros.component';
 import { TooltipComponent } from './filtros/tooltip/tooltip.component';
+import {
+  ListarRoomByUserComponent
+} from './listados/listar-room-By-User/listar-room-by-user/listar-room-by-user.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 
 @NgModule({
@@ -80,15 +84,17 @@ import { TooltipComponent } from './filtros/tooltip/tooltip.component';
     FiltrosCardComponent,
     CategoriasFiltrosComponent,
     TooltipComponent,
+    ListarRoomByUserComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    FormsModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		ReactiveFormsModule,
+		FormsModule,
+		AppRoutingModule,
+		HttpClientModule,
+		GoogleMapsModule
+	],
   providers: [],
   bootstrap: [AppComponent]
 })

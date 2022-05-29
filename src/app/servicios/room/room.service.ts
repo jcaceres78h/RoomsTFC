@@ -38,13 +38,22 @@ export class RoomService {
       return this.allRooms;
   }
 
-  async getUpdateRoomById(id: number)
-  {
-    try {
-      const response = await axios.get('/api/room/' + id);
-      this.idRoom = response.data;
-    } catch (e) {
-      this.idRoom = {status: 404}
+  async getUpdateRoomById(id: number) {
+    if (this.idRoom != null && this.idRoom.id == id) {
+      console.log("Hola mundo")
+      return this.idRoom
+    } else {
+      console.log("Adios mundo")
+      try {
+        const response = await axios.get('/api/room/' + id);
+        this.idRoom = response.data;
+        return this.idRoom;
+      } catch (e) {
+        // @ts-ignore
+        this.idRoom = e.response.data
+        // @ts-ignore
+        return e.response.data
+      }
     }
   }
 
@@ -81,7 +90,7 @@ export class RoomService {
   {
       return this.userRoom;
   }
-  
+
   postNewRoom(room : JSON)
   {
     let json = JSON.stringify(room);

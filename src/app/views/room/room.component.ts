@@ -1,13 +1,14 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, AfterViewChecked, AfterViewInit } from '@angular/core';
 import {RoomService} from "../../servicios/room/room.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import axios from 'axios';
 
 @Component({
   selector: 'app-room',
   templateUrl: './room.component.html',
   styleUrls: ['./room.component.css']
 })
-export class RoomComponent implements OnInit {
+export class RoomComponent implements OnInit, AfterViewInit {
 
   aux: any;
   private id: any;
@@ -19,22 +20,26 @@ export class RoomComponent implements OnInit {
   ngOnInit(): void {
     this.ac.paramMap.subscribe(params => {this.id = params.get('id')})
     this.roomService.getUpdateRoomById(this.id)
+      .then(e => {
+        if (e.status == 404) {
+          this.router.navigate(['/404'])
+        } else {
+          this._room = e
+        }
+      })
   }
 
-  ngOnChanges(): void {
-    if (this.roomService.getRoomById().status === 404)
-      this.router.navigate(['/404'])
+  count = 0
+
+  ngAfterViewInit() {
+    this.verMapa()
   }
 
-  get room() {
-    // return this.roomService.getRoomById(8)
-    // return this.aux;
-    return this.roomService.getRoomById();
-  }
+  _room: any
 
   get cama(): string {
-    let cama = "";
-    switch (this.room.bed_type) {
+    let cama: string;
+    switch (this._room.bed_type) {
       case 1: cama = "individual"; break;
       case 2: cama = "doble"; break;
       case 0: cama = "con litera"; break;
@@ -48,7 +53,7 @@ export class RoomComponent implements OnInit {
       "clase": "",
       "texto": ""
     }
-    switch (this.room.bed_type) {
+    switch (this._room.bed_type) {
       case 1: {
         cama.clase = "iconoBed";
         cama.texto = "Individual"
@@ -76,19 +81,19 @@ export class RoomComponent implements OnInit {
     let lista = [];
 
     lista.push(this.tipoCama);
-    if (this.room.is_furnished) {
+    if (this._room.is_furnished) {
       lista.push({
         "clase": "iconoMuebles",
         "texto": "Amueblado"
       })
     }
-    if (this.room.has_private_bath) {
+    if (this._room.has_private_bath) {
       lista.push({
         "clase": "iconoBath",
         "texto": "Baño privado"
       })
     }
-    if (this.room.has_private_view) {
+    if (this._room.has_private_view) {
       lista.push({
         "clase": "iconoVentana",
         "texto": "Vista exterior"
@@ -101,73 +106,73 @@ export class RoomComponent implements OnInit {
   get opcionesPiso() {
     let lista = [];
 
-    if (this.room.has_internet) {
+    if (this._room.has_internet) {
       lista.push({
         "clase": "iconoWifi",
         "texto": "WiFi"
       })
     }
-    if (this.room.has_elevator) {
+    if (this._room.has_elevator) {
       lista.push({
         "clase": "iconoAscensor",
         "texto": "Ascensor"
       })
     }
-    if (this.room.has_whashing_machine) {
+    if (this._room.has_whashing_machine) {
       lista.push({
         "clase": "iconoLavadora",
         "texto": "Lavadora"
       })
     }
-    if (this.room.has_drying_machine) {
+    if (this._room.has_drying_machine) {
       lista.push({
         "clase": "iconoSecadora",
         "texto": "Secadora"
       })
     }
-    if (this.room.has_dishwasher) {
+    if (this._room.has_dishwasher) {
       lista.push({
         "clase": "iconoLavavajillas",
         "texto": "Lavavajillas"
       })
     }
-    if (this.room.has_garden) {
+    if (this._room.has_garden) {
       lista.push({
         "clase": "iconoJardin",
         "texto": "Jardín"
       })
     }
-    if (this.room.has_balcony) {
+    if (this._room.has_balcony) {
       lista.push({
         "clase": "iconoBalcon",
         "texto": "Balcón"
       })
     }
-    if (this.room.has_heating) {
+    if (this._room.has_heating) {
       lista.push({
         "clase": "iconoCalefaccion",
         "texto": "Calefacción"
       })
     }
-    if (this.room.has_doorman) {
+    if (this._room.has_doorman) {
       lista.push({
         "clase": "iconoDoorman",
         "texto": "Portero"
       })
     }
-    if (this.room.is_accessibility) {
+    if (this._room.is_accessibility) {
       lista.push({
         "clase": "iconoAccesible",
         "texto": "Accesible"
       })
     }
-    if (this.room.has_parking) {
+    if (this._room.has_parking) {
       lista.push({
         "clase": "iconoParking",
         "texto": "Parking"
       })
     }
-    if (this.room.has_air_conditioning) {
+    if (this._room.has_air_conditioning) {
       lista.push({
         "clase": "iconoAireAcondicionado",
         "texto": "Aire acondicionado"
@@ -180,7 +185,7 @@ export class RoomComponent implements OnInit {
   get normasConvivencia() {
     let lista = [];
 
-    if (this.room.room_smoke) {
+    if (this._room.room_smoke) {
       lista.push({
         "clase": "iconoFumador",
         "texto": "Fumar"
@@ -191,13 +196,13 @@ export class RoomComponent implements OnInit {
         "texto": "No fumar"
       })
     }
-    if (this.room.room_pet) {
+    if (this._room.room_pet) {
       lista.push({
         "clase": "iconoMascotas",
         "texto": "Mascotas"
       })
     }
-    if (this.room.room_couples) {
+    if (this._room.room_couples) {
       lista.push({
         "clase": "iconoCouples",
         "texto": "Parejas"
@@ -210,4 +215,57 @@ export class RoomComponent implements OnInit {
   contactar() {
     alert("Nombre" + "\n" + "email" + "\n" + "Teléfono")
   }
+
+
+  //A partir de aquí va la funcionalidad de los mapas
+  lat = 37.991386
+  lng = -1.1246448
+
+  center = {
+    lat: this.lat,
+    lng: this.lng
+  }
+
+  zoom = 16
+  mapOptions = {
+    mapTypeId: 'hybrid',
+    minZoom: 14
+  }
+
+  markerOptions = {
+    animation: google.maps.Animation.DROP
+  }
+
+  markerLabel = {
+    text: 'Aquí',
+    fontWeight: 'bold',
+    fontFamily: 'Raleway',
+    className: 'markerLabel'
+  }
+
+  markerTitle = 'Aquí'
+
+  dirToString(): string {
+    let dir = ""
+    dir += ",+" + this._room.number
+    dir += ",+" + this._room.locality.replace(/ +/g, '+')
+    dir += ",+" + this._room.postcode
+    dir += ",+" + this._room.province.replace(/ +/g, '+')
+    dir += ",+" + this._room.country.replace(/ +/g, '+')
+    return dir
+  }
+
+  verMapa() {
+    axios.get('https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyCaqj3oLA89jfftw8Ll1NKvYKNZT2KEuyo&address=' + this.dirToString())
+      .then(response => {
+        this.lat = response.data.results[0].geometry.location.lat
+        this.lng = response.data.results[0].geometry.location.lng
+        this.center = {
+          lat: this.lat,
+          lng: this.lng
+        }
+        console.log(this.center)
+      })
+  }
+
 }

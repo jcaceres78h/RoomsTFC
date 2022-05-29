@@ -9,7 +9,7 @@ export class LoadingPageComponent implements OnInit {
 
   public load: boolean;
 
-  constructor() { 
+  constructor() {
     this.load = false;
   }
 
