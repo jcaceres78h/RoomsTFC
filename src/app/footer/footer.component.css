@@ -88,7 +88,9 @@ footer {
   margin-top: 45px;
   color: var(--black_rooms);
 }
-
+.item_addr{
+  font-style: normal;
+}
 a {
   color: var(--black_rooms);
 }
@@ -154,3 +156,34 @@ a {
     transform: translate(160px, -60px);
   }
 }
+
+/*  RESPONSIVE TABLET */
+@media screen and (max-width: 820px){
+  .container_footer{
+    height: 700px;
+  }
+  .row_col{
+    margin-top: 50px;
+  }
+  .footer_text{
+    width: 80%;
+    align-self: center;
+  }
+}
+/*  RESPONSIVE MÓVIL */
+@media screen and (max-width: 480px){
+  .container_footer{
+    height: 900px;
+  }
+  #row{
+    margin-left: 40px;
+    justify-content: left;
+  }
+  .row_col {
+    margin-top: 20px;
+  }
+  .item_title{
+    margin-top: 20px;
+}
+}
+

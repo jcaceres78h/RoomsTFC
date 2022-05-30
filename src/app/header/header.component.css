@@ -45,6 +45,10 @@ a:not(.nombreUsuario) {
   display: flex;
   flex-wrap: wrap;
 }
+.menu_responsive{
+  width: 100%;
+  justify-content: space-between;
+}
 .container_buscador {
   margin-left: 10px;
   border: solid 1px black;
@@ -70,4 +74,11 @@ app-perfil-card{
   height: 100vh;
   z-index: 1001;
   background-color: transparent;
+}
+
+@media screen and (max-width: 480px){
+  .logo {
+    height: 30px;
+    margin-left: 2em;
+  }
 }

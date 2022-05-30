@@ -1,5 +1,5 @@
 <header>
-  <div id="logoBox">
+  <div id="logoBox" class="menu_responsive">
     <a href="http://localhost:4200/rooms">
       <img src="assets/logo_rooms.svg"
       alt="Logo de rooms"
@@ -13,8 +13,9 @@
         <div class="iconoSearch"></div>
       </div>
     -->
+    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/icons/menu.png" alt="menú" width="30" [hidden]="mostrarMenu">
   </div>
-  <nav>
+  <nav [hidden]="mostrarNav">
     <ul>
       <li>
         <a href="mis-publicaciones">

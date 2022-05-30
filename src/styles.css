@@ -43,3 +43,19 @@ button {
   margin-bottom: 50px;
 }
 
+/* RESPONSIVE TABLET */
+.main_principal{
+  padding: 20px 100px;
+}
+.title_view{
+  font-size: 18px;
+
+}
+
+/* RESPONSIVE MÓVIL */
+.main_principal{
+  padding: 10px 50px;
+}
+.title_view{
+  font-size: 16px;
+}
