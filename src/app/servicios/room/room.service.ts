@@ -40,10 +40,10 @@ export class RoomService {
 
   async getUpdateRoomById(id: number) {
     if (this.idRoom != null && this.idRoom.id == id) {
-      console.log("Hola mundo")
+      // console.log("Hola mundo")
       return this.idRoom
     } else {
-      console.log("Adios mundo")
+      // console.log("Adios mundo")
       try {
         const response = await axios.get('/api/room/' + id);
         this.idRoom = response.data;
@@ -63,16 +63,35 @@ export class RoomService {
     return null;
   }
 
+  async getRoomByLocalityName(locality: string) {
+    if (this.localityRoom && this.localityRoom.length > 0 && this.localityRoom[0].locality == locality) {
+      console.log("Se ha encontrado el locality")
+      return this.localityRoom
+    } else {
+      console.log("No se ha encontrado el locality")
+      try {
+        const response = await axios.get('/api/room/locality/' + locality);
+        this.localityRoom = response.data;
+        return this.localityRoom;
+      } catch (e) {
+        // @ts-ignore
+        return e.response.data
+      }
+    }
+  }
+
   getRoomByLocality()
   {
+    // console.log("Entrando a room")
       return this.localityRoom;
   }
 
   getUpdateRoomByLocality(locality: string)
   {
+    console.log(`Entrando a getUpdateRoomByLocality con ${locality}`)
     this.http.get("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/locality/"+locality).subscribe(
       (response) => {
-        console.log(response);
+        // console.log(response);
         this.localityRoom = response
       })
   }
@@ -81,7 +100,7 @@ export class RoomService {
   {
     this.http.get("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/user/"+userId).subscribe(
       (response) => {
-        console.log(response);
+        // console.log(response);
         this.userRoom = response
       })
   }

@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import {RoomService} from "../../servicios/room/room.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import axios from 'axios';
+import { UserService } from '../../servicios/user/user.service';
 
 @Component({
   selector: 'app-room',
@@ -13,11 +14,12 @@ export class RoomComponent implements OnInit, AfterViewInit {
   aux: any;
   private id: any;
 
-  constructor(private roomService: RoomService, private ac: ActivatedRoute,
+  constructor(private roomService: RoomService, private userService: UserService, private ac: ActivatedRoute,
               private router: Router) {
   }
 
   ngOnInit(): void {
+    this._room = false
     this.ac.paramMap.subscribe(params => {this.id = params.get('id')})
     this.roomService.getUpdateRoomById(this.id)
       .then(e => {
@@ -29,10 +31,22 @@ export class RoomComponent implements OnInit, AfterViewInit {
       })
   }
 
+  volver() {
+    //TODO función para volver atrás en la navegación
+    window.history.back();
+  }
+
   count = 0
 
   ngAfterViewInit() {
     this.verMapa()
+  }
+
+  ruta = '';
+
+  getRutaFoto() {
+    this.userService.getUserUpdateById(this._room)
+    this.ruta += this.userService.getUserById().name;
   }
 
   _room: any

@@ -14,9 +14,9 @@ export class LoadingPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    setTimeout(() => {
+/*    setTimeout(() => {
       this.load = true;
-    }, 5000);
+    }, 5000);*/
   }
 
 }
