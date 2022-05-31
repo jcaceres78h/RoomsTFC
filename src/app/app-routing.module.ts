@@ -18,6 +18,7 @@ import { FormLoginComponent } from './views/form-login/form-login.component';
 import { FormRegistroComponent } from './views/form-registro/form-registro.component';
 import { FormBtnComponent } from './views/form-btn/form-btn.component';
 import { MiPerfilComponent } from './views/mi-perfil/mi-perfil.component';
+import { EliminarPerfilComponent } from './views/eliminar-perfil/eliminar-perfil.component';
 
 const routes: Routes = [
   { path: 'rooms', component: HomeComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'mi-perfil', component: MiPerfilComponent },
   { path: 'perfil/:id', component: PerfilUsuarioComponent },
   { path: 'editar-perfil', component: EditarPerfilUsuarioComponent },
+  { path: 'eliminar-cuenta', component: EliminarPerfilComponent },
   { path: 'resultados-room', component: ResultadosRoomComponent },
   { path: 'resultados-companeros', component: ResultadosCompanerosComponent },
   { path: 'user/:id', component: PerfilUsuarioComponent },
