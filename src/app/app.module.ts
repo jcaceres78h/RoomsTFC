@@ -44,6 +44,7 @@ import { TooltipComponent } from './filtros/tooltip/tooltip.component';
 import { ListarRoomByUserComponent } from './listados/listar-room-By-User/listar-room-by-user/listar-room-by-user.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MiPerfilComponent } from './views/mi-perfil/mi-perfil.component';
+import { NosotrosComponent } from './views/nosotros/nosotros.component';
 
 
 @NgModule({
@@ -84,7 +85,8 @@ import { MiPerfilComponent } from './views/mi-perfil/mi-perfil.component';
     CategoriasFiltrosComponent,
     TooltipComponent,
     MiPerfilComponent,
-    ListarRoomByUserComponent
+    ListarRoomByUserComponent,
+    NosotrosComponent
   ],
   imports: [
     BrowserModule,

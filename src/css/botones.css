@@ -24,3 +24,14 @@
   background-color: var(--dark_blue);
   box-shadow: var(--shadow-g);
 }
+.darkButton {
+  color: white;
+  font-size: 1em;
+  font-weight: 700;
+  text-decoration: none;
+  background-color: var(--black_rooms);
+  padding: .8em 1.5em;
+  border-radius: 50px;
+  width: fit-content;
+  max-width: 90%;
+}

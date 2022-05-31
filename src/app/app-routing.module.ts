@@ -34,7 +34,7 @@ const routes: Routes = [
   { path: 'form', component: FormBtnComponent },
   { path: 'iniciar-sesion', component: FormLoginComponent },
   { path: 'registrarse', component: FormRegistroComponent },
-  { path: 'nosotros', component: NosotrosComponent },
+  { path: 'nosotros', component: NosotrosComponent},
   { path: 'como-funciona', component: AyudaComponent },
   { path: 'publicar-habitacion', component: FormPublicarComponent },
   { path: 'crear-cuenta', component: FormCrearCuentaComponent },
