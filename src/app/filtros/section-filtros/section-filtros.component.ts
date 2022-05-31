@@ -22,9 +22,9 @@ export class SectionFiltrosComponent implements OnInit {
   buscarPorLocalidad(localidad:string){
     if(localidad){
       //recargar la página para que se note que cambia de búsqueda, pero tiene que recargar antes de mostrar los cambios
-      window.location.reload()
-      let url = '/resultados-room/'+localidad;
-      this.router.navigate([url])
+      // window.location.reload()
+      let url = '/resultados-room/';
+      this.router.navigate([url, localidad])
     }
   }
 

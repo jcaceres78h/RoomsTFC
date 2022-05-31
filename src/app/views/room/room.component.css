@@ -1,5 +1,6 @@
 .fotoPiso {
   width: 47%;
+  min-width: 250px;
   position: relative;
 }
 .fotoPiso>img {
@@ -21,6 +22,7 @@
 .div1_1 {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 .info {
   margin-left: 9%;
@@ -88,4 +90,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+header {
+  margin-top: 30px;
+  margin-left: 11%;
+}
+.iconoAtras {
+  cursor: pointer;
+}
+.iconoAtras:active {
+  background-color: var(--dark_blue);
+  box-shadow: var(--shadow-g);
 }

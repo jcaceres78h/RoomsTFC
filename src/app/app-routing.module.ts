@@ -23,7 +23,7 @@ import { EliminarPerfilComponent } from './views/eliminar-perfil/eliminar-perfil
 const routes: Routes = [
   { path: 'rooms', component: HomeComponent },
   { path: 'mis-favoritos', component: FavoritosComponent },
-  { path: 'mis-publicaciones', component: PublicacionesComponent },
+  { path: 'mis-publicaciones/:id', component: PublicacionesComponent },
   { path: 'mi-perfil', component: MiPerfilComponent },
   { path: 'perfil/:id', component: PerfilUsuarioComponent },
   { path: 'editar-perfil', component: EditarPerfilUsuarioComponent },
@@ -36,7 +36,7 @@ const routes: Routes = [
   { path: 'form', component: FormBtnComponent },
   { path: 'iniciar-sesion', component: FormLoginComponent },
   { path: 'registrarse', component: FormRegistroComponent },
-  { path: 'nosotros', component: NosotrosComponent },
+  { path: 'nosotros', component: NosotrosComponent},
   { path: 'como-funciona', component: AyudaComponent },
   { path: 'publicar-habitacion', component: FormPublicarComponent },
   { path: 'crear-cuenta', component: FormCrearCuentaComponent },

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from "../../servicios/user/user.service";
+import {Router} from "@angular/router"
 
 @Component({
   selector: 'app-form-crear-cuenta',
@@ -47,7 +49,7 @@ export class FormCrearCuentaComponent implements OnInit {
 
   step = 1;
 
-  constructor() {
+  constructor(private userService: UserService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -58,10 +60,18 @@ export class FormCrearCuentaComponent implements OnInit {
       this.step--;
   }
 
-  stepAdd() {
-    if (this.step < 3)
-      this.step++;
-    console.log(this.user)
+  async stepAdd() {
+    if (this.step >= 2) {
+      this.userService.postNewUser(this.user)
+        .then(e => {
+          if (e.estado == 400) {
+            console.log(e.errores)
+            this.router.navigate(['/error', 5])
+          }
+        })
+    }
+    this.step++;
+    // console.log(this.user)
   }
 
   estudioTrabajo(): boolean {

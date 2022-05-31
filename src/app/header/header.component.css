@@ -94,7 +94,7 @@ app-perfil-card{
   nav{
     display: none;
   }
-} 
+}
 
 /* RESPONSIVE TABLET */
 @media screen and (max-width: 820px){

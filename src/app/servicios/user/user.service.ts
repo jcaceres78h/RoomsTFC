@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import axios from "axios";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,14 @@ export class UserService {
 
   constructor(private http : HttpClient) { this.getUpdateAllUser();}
 
-
+  async updateAllUsers() {
+    try {
+      const response = await axios.get('/api/user');
+      this.allUsers = response.data;
+    } catch (e) {
+      // console.error(e);
+    }
+  }
 
 
   getUpdateAllUser(){
@@ -31,7 +39,7 @@ export class UserService {
   {
     this.http.get("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/user/"+id).subscribe(
       (response) => {
-        console.log(response);
+        // console.log(response);
         this.userId = response
       })
       //return user;
@@ -42,17 +50,23 @@ export class UserService {
       return this.userId;
   }
 
-  private  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type':  'application/json',
-      'authorization': '750e8b43e5ed564462c90ef0d382db26'
-    })
-  };
+  status: any = null
 
+  async postNewUser(user: any) {
+    try {
+      this.status = await axios.post('/api/user', user)
+    } catch (e) {
+      this.status = {
+        // @ts-ignore
+        estado: e.response.data.status,
+        // @ts-ignore
+        errores: e.response.data.errors
+      }
+    }
+    return this.status;
+  }
 
-  postNewUser(user : any)
-  {
-    let params = "json="+user;
-    return this.http.post( "http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/", params, this.httpOptions);
+  async getEstado() {
+    return this.status
   }
 }
