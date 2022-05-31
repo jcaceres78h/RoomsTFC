@@ -41,6 +41,7 @@ import { PerfilCardNologueadoComponent } from './cards/perfil-card-nologueado/pe
 import { FiltrosCardComponent } from './cards/filtros-card/filtros-card.component';
 import { CategoriasFiltrosComponent } from './filtros/categorias-filtros/categorias-filtros.component';
 import { TooltipComponent } from './filtros/tooltip/tooltip.component';
+import { MiPerfilComponent } from './views/mi-perfil/mi-perfil.component';
 
 
 @NgModule({
@@ -80,6 +81,7 @@ import { TooltipComponent } from './filtros/tooltip/tooltip.component';
     FiltrosCardComponent,
     CategoriasFiltrosComponent,
     TooltipComponent,
+    MiPerfilComponent,
   ],
   imports: [
     BrowserModule,
