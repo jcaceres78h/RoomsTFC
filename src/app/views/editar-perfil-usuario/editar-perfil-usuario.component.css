@@ -59,8 +59,15 @@ h2{
     height: 400px;
 }
 .profile_picture:hover{
-    background-color: var(--light_blue);
+    background-color: var(--light_dark);
     cursor: pointer;
+}
+.profile_picture:hover > img{
+    background-color: white;
+    border-radius: 50%;
+}
+.profile_picture:hover > p{
+    color: white;
 }
 .container_preferences_1{
     display: flex;

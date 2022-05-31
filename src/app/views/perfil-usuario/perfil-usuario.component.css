@@ -1,0 +1,163 @@
+.pack_btns{
+    display: flex;
+    justify-content: space-between;
+}
+h2{
+    font-size: 24px;
+    font-weight: 400;
+}
+.edit_myaccount{
+    text-decoration: none;
+}
+.edit_myaccount {
+    color: var(--dark_blue);
+    text-decoration: underline;
+}
+.edit_myaccount:hover{
+    font-weight: bold;
+}
+.container__mi_perfil{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.container_datospersonales{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    align-items: flex-end;
+    margin-top: 20px;
+}
+.datos_personales{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.datos_personales > p{
+    margin-top: 20px;
+}
+.profile_picture{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: .5px solid var(--black_rooms);
+    width: 300px;
+    height: 400px;
+}
+.profile_picture:hover > img{
+    background-color: white;
+    border-radius: 50%;
+}
+.profile_picture:hover > p{
+    color: white;
+}
+.sobremi{
+    margin-top: 20px;
+    display: flex;
+}
+.sobremi > div{
+    margin-right: 20px;
+}
+.icono_sobremi{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* MIS PREFERENCIAS */
+.container_preferences{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container_preferences > h2{
+    align-self: flex-start;
+    margin-bottom: 50px;
+}
+.container_container_preferences{
+    background-color: var(--light_blue);
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    padding: 40px;
+}
+.checks > div{
+    display: flex;
+    margin-bottom: 20px;
+}
+.checks > div > img{
+   margin-right: 10px;
+}
+.boxes_preferences{
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-evenly;
+}
+.box{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box > div > div {
+    margin: 10px;
+}
+h3{
+    font-weight: 400;
+    font-size: 18px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+/* GALERIA DE FOTOS */
+.container__gallery{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container__gallery > h2{
+    align-self: flex-start;
+    margin-bottom: 50px;
+}
+
+/* DATOS DE CONTACTO */
+.container__data_contact{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container__data_contact > h2{
+    margin-bottom: 50px;
+    font-size: 40px;
+    font-weight: bold;
+}
+.data_contact{
+    width: 40%;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.data_contact, .data {
+    display: flex;
+    align-items: center;
+}
+.data > div {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-left: 20px;
+}
+

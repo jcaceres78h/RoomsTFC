@@ -16,8 +16,11 @@
 html{
   scroll-behavior: smooth;
 }
+body{
+  overflow-x: hidden;
+}
 .home__container{
-  padding: 100px 50px;
+  padding: 150px 50px;
   width: 100%;
 }
 .flex-row-wrap {
@@ -37,7 +40,7 @@ button {
   cursor: pointer;
 }
 .main_principal{
-  padding: 40px 160px;
+  padding: 50px 160px;
   width: 100%;
 }
 .title_view{
@@ -50,12 +53,10 @@ button {
   .main_principal{
     padding: 140px 100px;
     width: 100%;
-    height: 100vh;
   }
   .home__container{
     padding: 140px 50px;
     width: 100%;
-    height: 100vh;
   }
   .title_view{
     font-size: 18px;
@@ -66,12 +67,10 @@ button {
   .home__container{
     padding: 120px 50px;
     width: 100%;
-    height: 100vh;
   }
   .main_principal{
     padding: 120px 50px;
     width: 100%;
-    height: 100vh;
   }
   .title_view{
     font-size: 16px;

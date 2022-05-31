@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'mis-favoritos', component: FavoritosComponent },
   { path: 'mis-publicaciones', component: PublicacionesComponent },
   { path: 'mi-perfil', component: MiPerfilComponent },
-  { path: 'mi-perfil/:id', component: PerfilUsuarioComponent },
+  { path: 'perfil/:id', component: PerfilUsuarioComponent },
   { path: 'editar-perfil', component: EditarPerfilUsuarioComponent },
   { path: 'resultados-room', component: ResultadosRoomComponent },
   { path: 'resultados-companeros', component: ResultadosCompanerosComponent },
