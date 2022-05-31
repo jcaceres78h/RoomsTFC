@@ -1,8 +1,9 @@
 <main class="main_principal">
-    <h1 class="title_view">El perfil de {{getUser().name}}</h1>
+    <h1 class="title_view">Mi perfil</h1>
 
     <div class="pack_btns">
-        <a href="room/:id"><img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/back.svg" alt="Atrás" width="30"></a>
+        <a href="rooms"><img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/back.svg" alt="Atrás" width="30"></a>
+        <a href="editar-perfil" class="edit_myaccount">Editar perfil</a>
     </div>
 
     <div class="container__mi_perfil">
@@ -10,6 +11,7 @@
         <div class="container_datospersonales">
             <div class="profile_picture">
                 <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/user.svg" alt="" width="30">
+                <p>Añadir foto de perfil</p>
             </div>  
             <div class="datos_personales">
                 <h2>NombreUsuario, EdadUsuario <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/50d24df13c00ba2a1434057f97430bd360815234/icons/verify.svg" alt="perfil verificado" width="20"></h2>
@@ -37,10 +39,9 @@
 
         </div>
 
-       <!--  MOSTRAR SÓLO SI LAS TIENE -->
         <div class="container_preferences">
 
-            <h2>Preferencias</h2>
+            <h2>Mis preferencias</h2>
 
             <div class="container_container_preferences">
 
@@ -130,7 +131,7 @@
 
         <div class="container__gallery">
 
-            <h2>Conóce un poco más a nombreUsuario</h2>
+            <h2>Mi galería</h2>
 
             <div class="galley">
                 <img src="" alt="foto1">
@@ -141,7 +142,7 @@
 
         <div class="container__data_contact">
 
-            <h2>¿Te gustaría compartir piso con nombreUsuario?</h2>
+            <h2>Mis datos de contacto</h2>
 
             <div class="data_contact">
                 <div class="data">
@@ -165,4 +166,7 @@
         </div>
 
     </div>
+
+
 </main>
+

@@ -17,13 +17,14 @@ import { FormCompaneroComponent } from './views/form-companero/form-companero.co
 import { FormLoginComponent } from './views/form-login/form-login.component';
 import { FormRegistroComponent } from './views/form-registro/form-registro.component';
 import { FormBtnComponent } from './views/form-btn/form-btn.component';
-import {ErrorPageComponent} from "./views/error-page/error-page.component";
+import { MiPerfilComponent } from './views/mi-perfil/mi-perfil.component';
 
 const routes: Routes = [
   { path: 'rooms', component: HomeComponent },
   { path: 'mis-favoritos', component: FavoritosComponent },
-  { path: 'mis-publicaciones/:id', component: PublicacionesComponent },
-  { path: 'mi-perfil', component: PerfilUsuarioComponent },
+  { path: 'mis-publicaciones', component: PublicacionesComponent },
+  { path: 'mi-perfil', component: MiPerfilComponent },
+  { path: 'perfil/:id', component: PerfilUsuarioComponent },
   { path: 'editar-perfil', component: EditarPerfilUsuarioComponent },
   { path: 'resultados-room', component: ResultadosRoomComponent },
   { path: 'resultados-companeros', component: ResultadosCompanerosComponent },
@@ -39,7 +40,6 @@ const routes: Routes = [
   { path: 'crear-cuenta', component: FormCrearCuentaComponent },
   { path: 'room/:id', component: RoomComponent },
   { path: 'ayuda', component: AyudaComponent },
-  { path: 'error/:id', component: ErrorPageComponent },
   { path: '',   redirectTo: '/rooms', pathMatch: 'full' },
   { path: '**', component: Error404PageComponent },
 

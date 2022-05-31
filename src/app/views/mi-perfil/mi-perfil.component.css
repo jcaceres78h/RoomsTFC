@@ -46,6 +46,11 @@ h2{
     width: 300px;
     height: 400px;
 }
+.profile_picture:hover{
+    background-color: var(--light_dark);
+    cursor: pointer;
+    border: none;
+}
 .profile_picture:hover > img{
     background-color: white;
     border-radius: 50%;

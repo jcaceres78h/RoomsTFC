@@ -41,10 +41,7 @@ import { PerfilCardNologueadoComponent } from './cards/perfil-card-nologueado/pe
 import { FiltrosCardComponent } from './cards/filtros-card/filtros-card.component';
 import { CategoriasFiltrosComponent } from './filtros/categorias-filtros/categorias-filtros.component';
 import { TooltipComponent } from './filtros/tooltip/tooltip.component';
-import {
-  ListarRoomByUserComponent
-} from './listados/listar-room-By-User/listar-room-by-user/listar-room-by-user.component';
-import { GoogleMapsModule } from '@angular/google-maps';
+import { MiPerfilComponent } from './views/mi-perfil/mi-perfil.component';
 
 
 @NgModule({
@@ -84,17 +81,16 @@ import { GoogleMapsModule } from '@angular/google-maps';
     FiltrosCardComponent,
     CategoriasFiltrosComponent,
     TooltipComponent,
-    ListarRoomByUserComponent
+    MiPerfilComponent,
   ],
-	imports: [
-		BrowserModule,
-		AppRoutingModule,
-		ReactiveFormsModule,
-		FormsModule,
-		AppRoutingModule,
-		HttpClientModule,
-		GoogleMapsModule
-	],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

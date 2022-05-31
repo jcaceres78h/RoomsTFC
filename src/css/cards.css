@@ -80,6 +80,7 @@
     .card_box_container{
         flex-direction: column;
         align-items: center;
+        gap: 50px;
     }
     .card:first-of-type{
         margin-bottom: 60px;
