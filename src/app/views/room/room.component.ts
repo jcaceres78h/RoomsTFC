@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, AfterViewChecked, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import {RoomService} from "../../servicios/room/room.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import axios from 'axios';

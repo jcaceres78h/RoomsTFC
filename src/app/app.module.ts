@@ -33,7 +33,7 @@ import { FormPublicarComponent } from './views/form-publicar/form-publicar.compo
 import { FormLoginComponent } from './views/form-login/form-login.component';
 import { FormRegistroComponent } from './views/form-registro/form-registro.component';
 import { FormCrearCuentaComponent } from './views/form-crear-cuenta/form-crear-cuenta.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { RoomComponent } from './views/room/room.component';
 import { ResultadosCompanerosComponent } from './views/resultados-companeros/resultados-companeros.component';
@@ -41,6 +41,8 @@ import { PerfilCardNologueadoComponent } from './cards/perfil-card-nologueado/pe
 import { FiltrosCardComponent } from './cards/filtros-card/filtros-card.component';
 import { CategoriasFiltrosComponent } from './filtros/categorias-filtros/categorias-filtros.component';
 import { TooltipComponent } from './filtros/tooltip/tooltip.component';
+import { ListarRoomByUserComponent } from './listados/listar-room-By-User/listar-room-by-user/listar-room-by-user.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 import { MiPerfilComponent } from './views/mi-perfil/mi-perfil.component';
 
 
@@ -82,6 +84,7 @@ import { MiPerfilComponent } from './views/mi-perfil/mi-perfil.component';
     CategoriasFiltrosComponent,
     TooltipComponent,
     MiPerfilComponent,
+    ListarRoomByUserComponent
   ],
   imports: [
     BrowserModule,
@@ -89,7 +92,8 @@ import { MiPerfilComponent } from './views/mi-perfil/mi-perfil.component';
     ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
