@@ -1,5 +1,5 @@
 <app-loading-page *ngIf="!_room"></app-loading-page>
-<div [hidden]="!_room">
+<div *ngIf="_room">
   <header>
     <div class="iconoAtras" (click)="volver()"></div>
   </header>
@@ -8,11 +8,11 @@
       <div class="div1_1">
         <figure class="fotoPiso">
           <div class="carrusel_imagenes">
-            <div class="flechas_room"> 
+            <div class="flechas_room">
               <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/left.svg" alt="Izquierda" class="flecha_room" width="20">
               <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/right.svg" alt="Derecha" class="flecha_room" width="20">
             </div>
-            <img src="https://github.com/Cintia-Andujar/rooms/blob/main/images/room_mate.jpg?raw=true" alt="Foto de piso en {{_room.street}}, {{_room.locality}}" class="fotoPiso"> 
+            <img src="https://github.com/Cintia-Andujar/rooms/blob/main/images/room_mate.jpg?raw=true" alt="Foto de piso en {{_room.street}}, {{_room.locality}}" class="fotoPiso">
           </div>
           <figcaption>
             <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/e06ab3cc00bd6f42fe7aaabafc438ac2dfbde2a5/icons/heart_favs.svg" alt="Añadir a favoritos" width="30">

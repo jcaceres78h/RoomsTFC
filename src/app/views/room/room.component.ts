@@ -1,20 +1,19 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {RoomService} from "../../servicios/room/room.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import axios from 'axios';
-import { UserService } from '../../servicios/user/user.service';
 
 @Component({
   selector: 'app-room',
   templateUrl: './room.component.html',
   styleUrls: ['./room.component.css']
 })
-export class RoomComponent implements OnInit, AfterViewInit {
+export class RoomComponent implements OnInit {
 
   aux: any;
   private id: any;
 
-  constructor(private roomService: RoomService, private userService: UserService, private ac: ActivatedRoute,
+  constructor(private roomService: RoomService, private ac: ActivatedRoute,
               private router: Router) {
   }
 
@@ -27,6 +26,7 @@ export class RoomComponent implements OnInit, AfterViewInit {
           this.router.navigate(['/404'])
         } else {
           this._room = e
+          this.verMapa()
         }
       })
   }
@@ -37,17 +37,6 @@ export class RoomComponent implements OnInit, AfterViewInit {
   }
 
   count = 0
-
-  ngAfterViewInit() {
-    this.verMapa()
-  }
-
-  ruta = '';
-
-  getRutaFoto() {
-    this.userService.getUserUpdateById(this._room)
-    this.ruta += this.userService.getUserById().name;
-  }
 
   _room: any
 

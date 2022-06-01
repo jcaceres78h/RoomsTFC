@@ -22,7 +22,6 @@ import { MiPerfilComponent } from './views/mi-perfil/mi-perfil.component';
 const routes: Routes = [
   { path: 'rooms', component: HomeComponent },
   { path: 'mis-favoritos', component: FavoritosComponent },
-  { path: 'mis-publicaciones', component: PublicacionesComponent },
   { path: 'mis-publicaciones/:id', component: PublicacionesComponent },
   { path: 'mi-perfil', component: MiPerfilComponent },
   { path: 'perfil/:id', component: PerfilUsuarioComponent },

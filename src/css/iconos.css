@@ -415,10 +415,10 @@
 }
 
 .iconoClose {
-  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/icons/close.png");
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/close.svg");
 }
 .selectedClose {
-  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/icons/close.png"),
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/close.svg"),
   var(--dark_blue);
 }
 
@@ -543,26 +543,26 @@
 }
 
 .icono1 {
-  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/icons/step1.png");
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/step1.svg");
 }
 .selected1 {
-  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/icons/step1.png"),
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/step1.svg"),
   var(--light_blue);
 }
 
 .icono2 {
-  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/icons/step2.png");
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/step2.svg");
 }
 .selected2 {
-  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/icons/step2.png"),
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/step2.svg"),
   var(--light_blue);
 }
 
 .icono3 {
-  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/icons/step3.png");
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/step3.svg");
 }
 .selected3 {
-  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/icons/step3.png"),
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/514e9f01dc7630bd14b29b0f9f3e1cfafeae7965/icons/step3.svg"),
   var(--light_blue);
 }
 
