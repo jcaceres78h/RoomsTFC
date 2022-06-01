@@ -19,7 +19,6 @@ import { ErrorPageComponent } from './views/error-page/error-page.component';
 import { FormBtnComponent } from './views/form-btn/form-btn.component';
 import { PerfilUsuarioComponent } from './views/perfil-usuario/perfil-usuario.component';
 import { EditarPerfilUsuarioComponent } from './views/editar-perfil-usuario/editar-perfil-usuario.component';
-import { EliminarPerfilComponent } from './views/eliminar-perfil/eliminar-perfil.component';
 import { FavoritosComponent } from './views/favoritos/favoritos.component';
 import { PerfilCardComponent } from './cards/perfil-card/perfil-card.component';
 import { SectionFiltrosComponent } from './filtros/section-filtros/section-filtros.component';
@@ -45,6 +44,7 @@ import { ListarRoomByUserComponent } from './listados/listar-room-By-User/listar
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MiPerfilComponent } from './views/mi-perfil/mi-perfil.component';
 import { NosotrosComponent } from './views/nosotros/nosotros.component';
+import { EliminarCuentaComponent } from './cards/eliminar-cuenta/eliminar-cuenta.component';
 
 
 @NgModule({
@@ -64,7 +64,6 @@ import { NosotrosComponent } from './views/nosotros/nosotros.component';
     FormBtnComponent,
     PerfilUsuarioComponent,
     EditarPerfilUsuarioComponent,
-    EliminarPerfilComponent,
     FavoritosComponent,
     PerfilCardComponent,
     SectionFiltrosComponent,
@@ -86,7 +85,8 @@ import { NosotrosComponent } from './views/nosotros/nosotros.component';
     TooltipComponent,
     MiPerfilComponent,
     ListarRoomByUserComponent,
-    NosotrosComponent
+    NosotrosComponent,
+    EliminarCuentaComponent
   ],
   imports: [
     BrowserModule,

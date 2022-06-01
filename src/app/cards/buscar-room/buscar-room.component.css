@@ -14,11 +14,11 @@
     align-items: center;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
+    flex-direction: column;
 }
 .buscar_room:hover{
-    filter: opacity(100%);
-    filter: contrast(40%);
-    transition:all .5s ease-in-out;
+    background-image: url(https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/form_search2.jpeg);
+    transition: all 0.1s step-end;
     z-index: 0;
 }
 .texto_arriba{
@@ -27,6 +27,16 @@
     align-items: center;
     justify-content: center;
     z-index: 1;
+    opacity: 1;
+}
+.buscar_room:hover .texto_arriba{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    opacity: 0;
+    transition:all .5s ease-in-out;
 }
 .texto1{
     background-color: white;
@@ -34,13 +44,11 @@
     width: 100%;
     padding: 12px 20px;
     text-align: center;
+    align-self: center;
 }
 .texto1 > p {
     font-size: 32px;
     color: var(--dark_blue);
-}
-.texto_arriba:hover{
-    display: none;
 }
 .texto_abajo{
     width: 100%;
@@ -49,6 +57,8 @@
     align-items: center;
     justify-content: center;
     z-index: 0;
+    opacity: 1;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
 }
 .texto2{
     text-align: center;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-editar-perfil-usuario',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarPerfilUsuarioComponent implements OnInit {
 
+  mostrarCardEliminar = true
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  abrirEliminarCard(){
+    this.mostrarCardEliminar = !this.mostrarCardEliminar
+  }
 }

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EliminarPerfilComponent } from './eliminar-perfil.component';
+import { EliminarCuentaComponent } from './eliminar-cuenta.component';
 
-describe('EliminarPerfilComponent', () => {
-  let component: EliminarPerfilComponent;
-  let fixture: ComponentFixture<EliminarPerfilComponent>;
+describe('EliminarCuentaComponent', () => {
+  let component: EliminarCuentaComponent;
+  let fixture: ComponentFixture<EliminarCuentaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EliminarPerfilComponent ]
+      declarations: [ EliminarCuentaComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EliminarPerfilComponent);
+    fixture = TestBed.createComponent(EliminarCuentaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

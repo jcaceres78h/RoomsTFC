@@ -7,11 +7,16 @@
     <article class="art1">
       <div class="div1_1">
         <figure class="fotoPiso">
-          <img src="https://github.com/Cintia-Andujar/rooms/blob/main/images/room_mate.jpg?raw=true"
-               alt="Foto de piso en {{_room.street}}, {{_room.locality}}">
+          <div class="carrusel_imagenes">
+            <div class="flechas_room"> 
+              <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/left.svg" alt="Izquierda" class="flecha_room" width="20">
+              <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/right.svg" alt="Derecha" class="flecha_room" width="20">
+            </div>
+            <img src="https://github.com/Cintia-Andujar/rooms/blob/main/images/room_mate.jpg?raw=true" alt="Foto de piso en {{_room.street}}, {{_room.locality}}" class="fotoPiso"> 
+          </div>
           <figcaption>
-            <div class="iconoFav"></div>
-            <div class="iconoCompartir"></div>
+            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/e06ab3cc00bd6f42fe7aaabafc438ac2dfbde2a5/icons/heart_favs.svg" alt="Añadir a favoritos" width="30">
+            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/e06ab3cc00bd6f42fe7aaabafc438ac2dfbde2a5/icons/share.svg" alt="Compartir" width="30">
           </figcaption>
         </figure>
         <div class="info">
@@ -54,7 +59,7 @@
         </div>
         <div class="part1_2">
           <h3 class="interesado tituloRoom">Estoy interesado en esta habitación</h3>
-          <a class="btnPrimary" href="#" (click)="contactar()">Contactar</a>
+          <a class="btnPrimary" href="perfil/:id">Contactar</a>
         </div>
       </div>
     </article>
@@ -91,7 +96,7 @@
 
     <div class="part3_3">
       <h3 class="tInteres">Estoy interesado en esta habitación</h3>
-      <a class="btnPrimary" href="#" (click)="contactar()">Contactar</a>
+      <a class="btnPrimary" href="perfil/:id">Contactar</a>
     </div>
     <article class="art4">
       <h3 class="infoTitle t3">Habitaciones similares</h3>

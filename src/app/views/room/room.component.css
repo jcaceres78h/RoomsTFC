@@ -16,16 +16,25 @@
 .fotoPiso>figcaption>div {
   margin-left: 20px;
 }
+figcaption > img:first-of-type{
+  margin-right: 20px;
+}
+figcaption > img{
+  cursor: pointer;
+}
 .lugarRoom {
   text-transform: capitalize;
 }
 .div1_1 {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   flex-wrap: wrap;
 }
 .info {
-  margin-left: 9%;
+  margin-left: 10%;
+}
+.info > h1{
+  margin-bottom: 5px;
 }
 .tituloRoom {
   font-weight: bold;
@@ -38,7 +47,8 @@
 }
 .precio1 {
   font-size: 3em;
-  color: var(--black_rooms)
+  color: var(--black_rooms);
+  margin-top: 20px;
 }
 .part1 {
   display: flex;
@@ -58,6 +68,10 @@
   width: 300px;
   text-align: center;
   justify-content: center;
+  margin-right: 23%;
+}
+.part1_2 > h3{
+  margin-bottom: 20px;
 }
 .caracteristicas {
   display: flex;
@@ -77,8 +91,8 @@
 }
 .map {
   width: 100%;
-  aspect-ratio: 16/9;
-  margin-bottom: 130px;
+ /*  aspect-ratio: 16/9; */
+  margin-bottom: 100px;
 }
 .tInteres {
   font-size: 2em;
@@ -91,6 +105,9 @@
   flex-direction: column;
   align-items: center;
 }
+.part3_3 > h3{
+  margin-bottom: 20px;
+}
 header {
   margin-top: 30px;
   margin-left: 11%;
@@ -101,4 +118,28 @@ header {
 .iconoAtras:active {
   background-color: var(--dark_blue);
   box-shadow: var(--shadow-g);
+}
+.flechas_room{
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  align-self: center;
+  margin-top: 60px;
+  position: relative;
+  z-index: 999;
+  top: 280px;
+}
+.flecha_room{
+  width: 20px;
+  cursor: pointer;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.carrusel_imagenes{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.carrusel_imagenes > img {
+  width: 100%;
 }

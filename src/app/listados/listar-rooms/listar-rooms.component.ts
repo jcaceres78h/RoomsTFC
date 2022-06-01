@@ -17,10 +17,4 @@ export class ListarRoomsComponent implements OnInit {
   ngOnInit(): void {
   }
   
-
-
-
-
-  
-
 }

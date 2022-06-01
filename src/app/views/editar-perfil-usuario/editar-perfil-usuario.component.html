@@ -3,8 +3,10 @@
 
     <div class="pack_btns">
         <a href="mi-perfil"><img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/back.svg" alt="Atrás" width="30"></a>
-        <a href="eliminar-cuenta" class="btn_delete_myaccount"><button>Eliminar cuenta</button></a>
+        <div class="btn_delete_myaccount" (click)="abrirEliminarCard()" ><button>Eliminar cuenta</button></div>
     </div>
+
+    <app-eliminar-cuenta [hidden]="mostrarCardEliminar"></app-eliminar-cuenta>
 
     <div class="container_form_edit_profile">
         <br><br>

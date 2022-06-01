@@ -16,9 +16,8 @@
     cursor: pointer;
 }
 .publicar_room:hover{
-    filter: opacity(100%);
-    filter: contrast(40%);
-    transition:all .5s ease-in-out;
+    background-image: url(https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/free_room2.jpeg);
+    transition:all .1s ease-in-out;
     z-index: 0;
 }
 .texto_arriba{
@@ -27,6 +26,11 @@
     align-items: center;
     justify-content: center;
     z-index: 1;
+    opacity: 1;
+}
+.publicar_room:hover .texto_arriba{
+    opacity: 0;
+    transition:all .5s ease-in-out;
 }
 .texto1{
     background-color: white;
@@ -49,6 +53,7 @@
     align-items: center;
     justify-content: center;
     z-index: 0;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
 }
 .texto2{
     text-align: center;

@@ -1,8 +1,12 @@
+.title_help{
+  padding: 50px 11%;
+}
 h4 {
   margin-bottom: 15px;
 }
 section:first-of-type {
   background-color: var(--light_blue);
+  width: 100%;
 }
 ul.listaInfo {
   padding-bottom: 100px;
@@ -13,6 +17,7 @@ img.icono {
 }
 .tituloInfoAyuda {
   max-width: 345px;
+  margin-top: 10px;
 }
 .tituloInfoAyuda2 {
   max-width: 460px;
@@ -27,6 +32,7 @@ img.icono {
   align-items: center;
   padding-bottom: 55px;
   padding-top: 55px;
+  margin-bottom: 100px;
 }
 .tituloInfo {
   text-align: center;
@@ -48,13 +54,16 @@ img.icono {
   align-items: center;
 }
 .descripcionEquipo {
-  margin-top: 40px;
-  width: 275px;
+  margin-top: 20px;
+  width: 340px;
   font-size: 1.25em;
   line-height: 1.23em;
   text-align: center;
   letter-spacing: -0.02em;
   font-weight: normal;
+}
+strong{
+  font-size: 1em;
 }
 .tituloInfoAyuda2 {
   max-width: 460px;
@@ -71,4 +80,7 @@ img.icono {
   text-align: center;
   letter-spacing: -0.02em;
   max-width: 275px;
+}
+.iconoHome, .iconoCamera, .iconoRefresh{
+  margin-bottom: 10px;
 }
