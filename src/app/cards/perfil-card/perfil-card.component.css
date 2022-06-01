@@ -34,6 +34,7 @@
 .close_perfil-card{
     display: flex;
    justify-content: flex-end;
+   cursor: pointer;
 }
 .nombre_perfil-card{
     display: flex;
@@ -66,4 +67,19 @@
 }
 .enlaces_perfil-card > div > img {
     margin-right: 10px;
+}
+.btn_cerrar_sesion{
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+.btn_cs{
+    border: .5px solid var(--black_rooms);
+    border-radius: 20px;
+    color: var(--dark_blue);
+    padding: 10px;
+    background-color: white;
+}
+.btn_cs:hover{
+    font-weight: bold;
 }
