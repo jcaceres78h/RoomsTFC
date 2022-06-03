@@ -17,8 +17,7 @@ h2{
     background-color: transparent;
 }
 .btn_delete_myaccount > button:hover{
-    background-color: var(--light_blue);
-    color: white;
+   font-weight: bold;
 }
 .container_form_edit_profile{
     display: flex;
@@ -48,6 +47,7 @@ h2{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-top: 30px;
 }
 .profile_picture{
     display: flex;
@@ -77,10 +77,13 @@ h2{
     display: flex;
     flex-direction: column;
     margin: 10px;
+    text-align: center;
+    align-items: center;
 }
 .container_preferences_1{
     display: flex;
-    justify-content: center  ;
+    justify-content: center;
+    margin-top: 30px;
 }
 .container_preferences{
     width: 70%;

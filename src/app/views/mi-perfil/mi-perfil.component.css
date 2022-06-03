@@ -129,8 +129,12 @@ h3{
     margin-left: 20px;
     margin-bottom: 10px;
 }
+.icono_sobremi{
+    width: 60px;
+}
 .icono_sobremi > label{
     text-align: center;
+    font-size: 14px;
 }
 /* GALERIA DE FOTOS */
 .container__gallery{
