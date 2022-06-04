@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormCompaneroComponent implements OnInit {
 
+  titulo = "Te ayudamos a encontrar a tu compñaero ideal"
+  descripcion = "Si tienes claro cómo sería tu compañero de piso perfecto"
+
+  pasar = false;
+
   constructor() { }
 
   ngOnInit(): void {

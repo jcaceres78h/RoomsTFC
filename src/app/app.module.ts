@@ -16,7 +16,7 @@ import { UserCardComponent } from './cards/user-card/user-card.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { ErrorPageComponent } from './views/error-page/error-page.component';
-import { FormBtnComponent } from './views/form-btn/form-btn.component';
+import { FormBtnComponent } from './form-btn/form-btn.component';
 import { PerfilUsuarioComponent } from './views/perfil-usuario/perfil-usuario.component';
 import { EditarPerfilUsuarioComponent } from './views/editar-perfil-usuario/editar-perfil-usuario.component';
 import { FavoritosComponent } from './views/favoritos/favoritos.component';

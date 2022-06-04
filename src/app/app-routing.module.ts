@@ -16,7 +16,7 @@ import { ResultadosCompanerosComponent } from './views/resultados-companeros/res
 import { FormCompaneroComponent } from './views/form-companero/form-companero.component';
 import { FormLoginComponent } from './views/form-login/form-login.component';
 import { FormRegistroComponent } from './views/form-registro/form-registro.component';
-import { FormBtnComponent } from './views/form-btn/form-btn.component';
+import { FormBtnComponent } from './form-btn/form-btn.component';
 import { MiPerfilComponent } from './views/mi-perfil/mi-perfil.component';
 
 const routes: Routes = [
