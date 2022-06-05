@@ -1,0 +1,104 @@
+#img {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/form_search.jpg");
+  background-repeat: no-repeat;
+  background-attachment: initial;
+  background-position: center center;
+  background-size: cover;
+  width: 716px;
+  max-width: 100%;
+  aspect-ratio: 5/7;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+.formulario-container {
+  min-width: 45%;
+  width: 463px;
+  max-width: 100%;
+  background-color: var(--light_blue);
+  padding: 90px 7%;
+}
+.tituloRooms {
+  font-weight: normal;
+  font-size: 2.25em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.textRooms, p.textRooms {
+  font-size: .9em;
+  color: var(--black_rooms);
+}
+.textObligatorio {
+  font-size: .8em;
+  margin-top: 8px;
+  margin-bottom: 36px;
+}
+.textObligatorio span {
+  font-size: 1.5em;
+}
+input[type=text] {
+  width: 100%;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  border: none;
+  padding: 15px 23px;
+  -webkit-box-shadow: var(--shadow-g);
+  -moz-box-shadow: var(--shadow-g);
+  box-shadow: var(--shadow-g);
+  margin-bottom: 40px;
+}
+.title, p.title {
+  font-size: 1.25em;
+  margin-bottom: 10px;
+}
+.countCompañeros {
+  margin-top: 20px;
+  width: 90%;
+  display: flex;
+  margin: auto;
+  justify-content: space-around;
+  align-items: center;
+  padding: 23px;
+  background-color: white;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 45px;
+  -webkit-box-shadow: var(--shadow-g);
+  -moz-box-shadow: var(--shadow-g);
+  box-shadow: var(--shadow-g);
+}
+.countCompañeros > p {
+  font-size: 1.5em;
+}
+.options {
+  display: none;
+}
+label {
+  font-size: .75em;
+  color: var(--black_rooms);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.room {
+  padding-left: 50px;
+  padding-right: 50px;
+  justify-content: space-between;
+}
+.piso {
+  justify-content: space-around;
+  padding: 30px;
+}
+.guardarBtn {
+  max-width: 60%;
+  padding: 10px 50px;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 100px;
+}
