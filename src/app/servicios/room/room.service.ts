@@ -32,13 +32,13 @@ export class RoomService {
   };
 
 
-  constructor(private http : HttpClient) { this.updateAllRooms() }
+  constructor(private http : HttpClient) {  }
 
   getAllRoom(){
       return this.allRooms;
   }
 
-  async getUpdateRoomById(id: number) {
+  /*async getUpdateRoomById(id: number) {
     if (this.idRoom != null && this.idRoom.id == id) {
       // console.log("Hola mundo")
       return this.idRoom
@@ -55,12 +55,23 @@ export class RoomService {
         return e.response.data
       }
     }
+  }*/
+  getUpdateRoomById(id: number) {
+    if (this.idRoom != null && this.idRoom.id == id) {
+      // console.log("Hola mundo")
+      return this.idRoom
+    } else {
+      // console.log("Adios mundo")
+      this.http.get("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/"+id).subscribe(
+        (response) => {
+           //console.log(response);
+          this.idRoom = response
+        })
+    }
   }
 
   getRoomById() {
-    if (this.idRoom != null)
       return this.idRoom;
-    return null;
   }
 
   async getRoomByLocalityName(locality: string) {
@@ -82,7 +93,8 @@ export class RoomService {
 
   getRoomByLocality()
   {
-    // console.log("Entrando a room")
+     console.log("Entrando a room")
+     console.log(this.localityRoom)
       return this.localityRoom;
   }
 
@@ -91,7 +103,7 @@ export class RoomService {
     console.log(`Entrando a getUpdateRoomByLocality con ${locality}`)
     this.http.get("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/locality/"+locality).subscribe(
       (response) => {
-        // console.log(response);
+         console.log(response);
         this.localityRoom = response
       })
   }

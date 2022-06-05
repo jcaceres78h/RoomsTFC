@@ -12,23 +12,39 @@ export class RoomComponent implements OnInit {
 
   aux: any;
   private id: any;
+  //_room: any
 
   constructor(private roomService: RoomService, private ac: ActivatedRoute,
               private router: Router) {
   }
 
   ngOnInit(): void {
-    this._room = false
+    //this._room = false
     this.ac.paramMap.subscribe(params => {this.id = params.get('id')})
-    this.roomService.getUpdateRoomById(this.id)
+    /*this.roomService.getUpdateRoomById(this.id)
       .then(e => {
         if (e.status == 404) {
           this.router.navigate(['/404'])
         } else {
+          console.log(e)
           this._room = e
           this.verMapa()
         }
-      })
+      })*/
+      this.roomService.getUpdateRoomById(this.id)
+      console.log(this.roomService.getRoomById())
+  }
+ _room = true
+
+  room(){
+   // this._room = this.roomService.getRoomById();
+    return this.roomService.getRoomById();
+  }
+
+  cargando(){
+    if(this.roomService.getRoomById())
+      return true
+    return false
   }
 
   volver() {
@@ -38,11 +54,10 @@ export class RoomComponent implements OnInit {
 
   count = 0
 
-  _room: any
 
   get cama(): string {
     let cama: string;
-    switch (this._room.bed_type) {
+    switch (this.room().bed_type) {
       case 1: cama = "individual"; break;
       case 2: cama = "doble"; break;
       case 0: cama = "con litera"; break;
@@ -56,7 +71,7 @@ export class RoomComponent implements OnInit {
       "clase": "",
       "texto": ""
     }
-    switch (this._room.bed_type) {
+    switch (this.room().bed_type) {
       case 1: {
         cama.clase = "iconoBed";
         cama.texto = "Individual"
@@ -84,19 +99,19 @@ export class RoomComponent implements OnInit {
     let lista = [];
 
     lista.push(this.tipoCama);
-    if (this._room.is_furnished) {
+    if (this.room().is_furnished) {
       lista.push({
         "clase": "iconoMuebles",
         "texto": "Amueblado"
       })
     }
-    if (this._room.has_private_bath) {
+    if (this.room().has_private_bath) {
       lista.push({
         "clase": "iconoBath",
         "texto": "Baño privado"
       })
     }
-    if (this._room.has_private_view) {
+    if (this.room().has_private_view) {
       lista.push({
         "clase": "iconoVentana",
         "texto": "Vista exterior"
@@ -109,73 +124,73 @@ export class RoomComponent implements OnInit {
   get opcionesPiso() {
     let lista = [];
 
-    if (this._room.has_internet) {
+    if (this.room().has_internet) {
       lista.push({
         "clase": "iconoWifi",
         "texto": "WiFi"
       })
     }
-    if (this._room.has_elevator) {
+    if (this.room().has_elevator) {
       lista.push({
         "clase": "iconoAscensor",
         "texto": "Ascensor"
       })
     }
-    if (this._room.has_whashing_machine) {
+    if (this.room().has_whashing_machine) {
       lista.push({
         "clase": "iconoLavadora",
         "texto": "Lavadora"
       })
     }
-    if (this._room.has_drying_machine) {
+    if (this.room().has_drying_machine) {
       lista.push({
         "clase": "iconoSecadora",
         "texto": "Secadora"
       })
     }
-    if (this._room.has_dishwasher) {
+    if (this.room().has_dishwasher) {
       lista.push({
         "clase": "iconoLavavajillas",
         "texto": "Lavavajillas"
       })
     }
-    if (this._room.has_garden) {
+    if (this.room().has_garden) {
       lista.push({
         "clase": "iconoJardin",
         "texto": "Jardín"
       })
     }
-    if (this._room.has_balcony) {
+    if (this.room().has_balcony) {
       lista.push({
         "clase": "iconoBalcon",
         "texto": "Balcón"
       })
     }
-    if (this._room.has_heating) {
+    if (this.room().has_heating) {
       lista.push({
         "clase": "iconoCalefaccion",
         "texto": "Calefacción"
       })
     }
-    if (this._room.has_doorman) {
+    if (this.room().has_doorman) {
       lista.push({
         "clase": "iconoDoorman",
         "texto": "Portero"
       })
     }
-    if (this._room.is_accessibility) {
+    if (this.room().is_accessibility) {
       lista.push({
         "clase": "iconoAccesible",
         "texto": "Accesible"
       })
     }
-    if (this._room.has_parking) {
+    if (this.room().has_parking) {
       lista.push({
         "clase": "iconoParking",
         "texto": "Parking"
       })
     }
-    if (this._room.has_air_conditioning) {
+    if (this.room().has_air_conditioning) {
       lista.push({
         "clase": "iconoAireAcondicionado",
         "texto": "Aire acondicionado"
@@ -188,7 +203,7 @@ export class RoomComponent implements OnInit {
   get normasConvivencia() {
     let lista = [];
 
-    if (this._room.room_smoke) {
+    if (this.room().room_smoke) {
       lista.push({
         "clase": "iconoFumador",
         "texto": "Fumar"
@@ -199,13 +214,13 @@ export class RoomComponent implements OnInit {
         "texto": "No fumar"
       })
     }
-    if (this._room.room_pet) {
+    if (this.room().room_pet) {
       lista.push({
         "clase": "iconoMascotas",
         "texto": "Mascotas"
       })
     }
-    if (this._room.room_couples) {
+    if (this.room().room_couples) {
       lista.push({
         "clase": "iconoCouples",
         "texto": "Parejas"
@@ -250,11 +265,11 @@ export class RoomComponent implements OnInit {
 
   dirToString(): string {
     let dir = ""
-    dir += ",+" + this._room.number
-    dir += ",+" + this._room.locality.replace(/ +/g, '+')
-    dir += ",+" + this._room.postcode
-    dir += ",+" + this._room.province.replace(/ +/g, '+')
-    dir += ",+" + this._room.country.replace(/ +/g, '+')
+    dir += ",+" + this.room().number
+    dir += ",+" + this.room().locality.replace(/ +/g, '+')
+    dir += ",+" + this.room().postcode
+    dir += ",+" + this.room().province.replace(/ +/g, '+')
+    dir += ",+" + this.room().country.replace(/ +/g, '+')
     return dir
   }
 
