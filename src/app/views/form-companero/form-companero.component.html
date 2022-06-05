@@ -1,10 +1,10 @@
-<app-form-btn *ngIf="pasar"
+<app-form-btn *ngIf="!pasar"
   [titulo]="titulo"
   [descripcion]="descripcion"
   (clickedBtn)="pasar = $event"
 ></app-form-btn>
 
-<div *ngIf="!pasar" class="main_principal">
+<div *ngIf="pasar" class="main_principal">
   <div class="formulario-container">
     <form (submit)="$event.preventDefault()" (ngSubmit)="buscar()">
       <h1 class="tituloRooms">Rooms</h1>
@@ -342,4 +342,4 @@
     </form>
   </div>
 </div>
-<div id="img"></div>
+<div id="img" *ngIf="pasar"></div>
