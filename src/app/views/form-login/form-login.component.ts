@@ -19,7 +19,6 @@ export class FormLoginComponent implements OnInit {
   }
 
   login() {
-    console.log(`Entrando a login con usuario={${this.user.email},${this.user.password}}`)
     this.ls.login(this.user)
       .then( e => {
         console.log(e)

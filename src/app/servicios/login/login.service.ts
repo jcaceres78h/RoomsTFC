@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UserService } from '../user/user.service';
+// @ts-ignore
+import Cookies from "js-cookie";
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +15,9 @@ export class LoginService {
     await this.us.getTodosUsuarios()
       .then(e => {
         id = this.comprobarContrasena(e, user)
+        if (id >= 0) {
+          Cookies.set("userLogged", id)
+        }
       })
     return id;
   }
@@ -31,5 +36,17 @@ export class LoginService {
       }
     }
     return -2;
+  }
+
+  get userLogged() {
+    return Cookies.get("userLogged");
+  }
+
+  get isLoggeado() {
+    return this.userLogged;
+  }
+
+  logOut() {
+    return Cookies.remove("userLogged");
   }
 }
