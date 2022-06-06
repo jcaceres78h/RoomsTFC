@@ -32,7 +32,7 @@ export class RoomService {
   };
 
 
-  constructor(private http : HttpClient) { this.updateAllRooms() }
+  constructor(private http : HttpClient) {  }
 
   getAllRoom(){
       return this.allRooms;
@@ -82,7 +82,8 @@ export class RoomService {
 
   getRoomByLocality()
   {
-    // console.log("Entrando a room")
+     console.log("Entrando a room")
+     console.log(this.localityRoom)
       return this.localityRoom;
   }
 
@@ -91,7 +92,7 @@ export class RoomService {
     console.log(`Entrando a getUpdateRoomByLocality con ${locality}`)
     this.http.get("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/locality/"+locality).subscribe(
       (response) => {
-        // console.log(response);
+         console.log(response);
         this.localityRoom = response
       })
   }
