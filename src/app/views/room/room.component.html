@@ -21,7 +21,7 @@
         </figure>
         <div class="info">
           <h1 class="tituloRoom">Habitación {{cama}}</h1>
-          <p class="lugarRoom">{{_room.street}}, {{_room.locality}}</p>
+          <p class="lugarRoom"><span *ngIf="islogeado">{{_room.street}},</span> {{_room.locality}}</p>
           <p class="precio1">{{_room.price}}€/mes</p>
         </div>
       </div>
@@ -59,7 +59,7 @@
         </div>
         <div class="part1_2">
           <h3 class="interesado tituloRoom">Estoy interesado en esta habitación</h3>
-          <a class="btnPrimary" href="perfil/:id">Contactar</a>
+          <button class="btnPrimary" (click)="contactar()">Contactar</button>
         </div>
       </div>
     </article>
@@ -67,8 +67,10 @@
       <h4 class="infoTitle">Localización</h4>
       <br>
       <p class="direction">
-        Calle {{_room.street}}, {{_room.number}}
-        {{_room.postcode}} {{_room.locality}} {{_room.province}}
+        <span *ngIf="islogeado">Calle {{_room.street}}, {{_room.number}}
+          {{_room.postcode}}</span>
+        <span *ngIf="!islogeado">Regístrese para ver la hubicación precisa</span>
+        {{_room.locality}} {{_room.province}}
       </p>
       <br><br>
       <!--    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6290.7049806082705!2d-1.122276937736596!3d37.968902406885626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1652573815779!5m2!1ses!2ses"
@@ -80,13 +82,13 @@
           [zoom]="zoom"
           [options]="mapOptions"
         >
-          <map-marker
+          <map-marker *ngIf="islogeado"
             [position]="center"
             [label]="markerLabel"
             [title]="markerTitle"
             [options]="markerOptions"
           ></map-marker>
-          <map-circle
+          <map-circle *ngIf="!islogeado"
             [center]="center"
             [radius]="150"
           ></map-circle>
@@ -96,7 +98,7 @@
 
     <div class="part3_3">
       <h3 class="tInteres">Estoy interesado en esta habitación</h3>
-      <a class="btnPrimary" href="perfil/:id">Contactar</a>
+      <button class="btnPrimary" (click)="contactar()">Contactar</button>
     </div>
     <article class="art4">
       <h3 class="infoTitle t3">Habitaciones similares</h3>

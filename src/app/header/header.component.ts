@@ -1,21 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { UserService } from '../servicios/user/user.service';
+import { LoginService } from '../servicios/login/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit{
 
   mostrarPerfil = true
   mostrarNav = false
   mostrarMenu = true
-  ancho:any
-  enlace:any
-  
-  constructor() {}
-  
+  ancho: any
+  enlace: any
+
+  constructor(private us: UserService, private ls: LoginService, private router: Router) {
+  }
+
+  get isLogeado() {
+    return this.ls.isLoggeado
+  }
+
+  get nameLogged() {
+    return this.ls.nameLogged;
+  }
+
   ngOnInit(): void {
+    console.log("entrando a oninit")
 
     /* //this.ancho = document.querySelector('.main_principal')?.clientWidth;
     this.ancho = screen.width
@@ -29,8 +42,11 @@ export class HeaderComponent implements OnInit {
       menu?.classList.remove('menu_responsive')
     }
     console.log(this.ancho) */
+
   }
-  
+
+
+
   mostrarPerfilCard(){
     this.mostrarPerfil = !this.mostrarPerfil
   }
@@ -42,8 +58,9 @@ export class HeaderComponent implements OnInit {
     console.log(this.enlace)
   }
 
-  
-
-
+  logOut() {
+    this.ls.logOut();
+    this.router.navigate([''])
+  }
 
 }

@@ -6,7 +6,7 @@
       width="85"
       class="logo">
     </a>
-    <!-- 
+    <!--
       <div class="container_buscador">
         <input type="text" name="buscador" id="buscador"
         placeholder="Escribe aquí un lugar">
@@ -19,28 +19,30 @@
     <div class="menu__container_responsive" [hidden]="mostrarMenu">
       <ul class="lista_menuresp">
         <a href="mi-perfil" class="enlace_mr">
-          <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/e15a83804bf36e0562951cb1bc22ab8a5f284561/icons/user.svg" alt="Imagen de perfil" width="20"> 
+          <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/e15a83804bf36e0562951cb1bc22ab8a5f284561/icons/user.svg" alt="Imagen de perfil" width="20">
           <li>NombreUsuario</li>
         </a>
         <a href="editar-perfil" class="enlace_mr">
           <li class="edit_profile">Editar perfil</li>
         </a>
         <a href="mis-publicaciones" class="enlace_mr">
-          <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/e15a83804bf36e0562951cb1bc22ab8a5f284561/icons/my_publications.svg" alt="Imagen de perfil" width="20"> 
+          <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/e15a83804bf36e0562951cb1bc22ab8a5f284561/icons/my_publications.svg" alt="Imagen de perfil" width="20">
           <li>Mis publicaciones</li>
         </a>
         <a href="mis-favoritos" class="enlace_mr">
-          <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/e15a83804bf36e0562951cb1bc22ab8a5f284561/icons/heart.svg" alt="Imagen de perfil" width="20"> 
+          <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/e15a83804bf36e0562951cb1bc22ab8a5f284561/icons/heart.svg" alt="Imagen de perfil" width="20">
           <li>Mis favoritos</li>
         </a>
-        <a href="rooms" class="enlace_mr"> 
-          <li><button class="cerrar_ss">Cerrar sesión</button></li>
-        </a>
+        <div class="enlace_mr">
+          <li>
+            <button class="cerrar_ss" (click)="logOut()">Cerrar sesión</button>
+          </li>
+        </div>
       </ul>
     </div>
   </div>
   <nav [hidden]="mostrarNav">
-    <ul>
+    <ul *ngIf="isLogeado">
       <li>
         <a href="mis-publicaciones">
           Mis publicaciones
@@ -53,12 +55,17 @@
       </li>
       <li>
         <span
-        class="nombreUsuario"
-        (click)="mostrarPerfilCard()">
-        NombreUsuario
+          class="nombreUsuario"
+          (click)="mostrarPerfilCard()">
+          {{ nameLogged }}
       </span>
     </li>
   </ul>
+    <ul *ngIf="!isLogeado">
+      <li>
+        <a class="nombreUsuario" href="iniciar-sesion">Entrar</a>
+      </li>
+    </ul>
 </nav>
-<app-perfil-card [hidden]="mostrarPerfil"></app-perfil-card>
+<app-perfil-card *ngIf="isLogeado" [hidden]="mostrarPerfil"></app-perfil-card>
 </header>

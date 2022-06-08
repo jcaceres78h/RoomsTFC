@@ -10,6 +10,8 @@ export class LoginService {
 
   constructor(private us: UserService) {}
 
+  user: any;
+
   async login (user: {email: string, password: string} = {email: '', password: ''}) {
     let id = -2;
     await this.us.getTodosUsuarios()
@@ -30,6 +32,7 @@ export class LoginService {
     for (let i = 0; i < users.length && !encontrado; i++) {
       if (user.email.toLowerCase() === users[i].email.toLowerCase()) {
         if (user.password === users[i].password) {
+          Cookies.set("nombreLogged", users[i].name)
           return users[i].id;
         }
         return -1;
@@ -42,11 +45,22 @@ export class LoginService {
     return Cookies.get("userLogged");
   }
 
+  get nameLogged() {
+    return Cookies.get("nombreLogged")
+  }
+
   get isLoggeado() {
     return this.userLogged;
   }
 
   logOut() {
+    this.user = false;
+    Cookies.remove("nombreLogged")
     return Cookies.remove("userLogged");
   }
+
+  get usuarioLogeado() {
+    return this.user;
+  }
+
 }
