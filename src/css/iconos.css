@@ -58,6 +58,8 @@
 .iconoLavadora,
 .iconoWifi,
 .iconoVentana {
+  min-width: 48px;
+  max-width: 48px;
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -123,6 +125,8 @@
 .selectedLavadora,
 .selectedWifi,
 .selectedVentana {
+  min-width: 48px;
+  max-width: 48px;
   width: 48px;
   height: 48px;
   border-radius: 50%;

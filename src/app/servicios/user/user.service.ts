@@ -13,16 +13,6 @@ export class UserService {
 
   constructor(private http : HttpClient) { this.getUpdateAllUser();}
 
-  async updateAllUsers() {
-    try {
-      const response = await axios.get('/api/user');
-      this.allUsers = response.data;
-    } catch (e) {
-      // console.error(e);
-    }
-  }
-
-
   getUpdateAllUser(){
     this.http.get("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/user").subscribe(
       (response) => {
@@ -32,6 +22,7 @@ export class UserService {
   }
 
   getAllUser(){
+      this.getUpdateAllUser();
       return this.allUsers;
   }
 
@@ -68,5 +59,15 @@ export class UserService {
 
   async getEstado() {
     return this.status
+  }
+
+  async getTodosUsuarios() {
+    try {
+      const response = await axios.get('/api/user');
+      return response.data;
+    } catch (e) {
+      // @ts-ignore
+      return e.response.data.status;
+    }
   }
 }

@@ -1,1 +1,345 @@
-<p>form-companero works!</p>
+<app-form-btn *ngIf="!pasar"
+  [titulo]="titulo"
+  [descripcion]="descripcion"
+  (clickedBtn)="pasar = $event"
+></app-form-btn>
+
+<div *ngIf="pasar" class="main_principal">
+  <div class="formulario-container">
+    <form (submit)="$event.preventDefault()" (ngSubmit)="buscar()">
+      <h1 class="tituloRooms">Rooms</h1>
+      <p class="textRooms">
+        Estás a unos minutos de encontrar al
+        compañero perfecto que estás buscando
+      </p>
+      <p class="textRooms textObligatorio">
+        Los campos con <span>*</span> son obligatorios
+      </p>
+      <label>
+        <input
+          type="text"
+          placeholder="¿Dónde vives?*"
+          required
+          [(ngModel)]="user.locality">
+      </label>
+      <label>
+        <p class="title">¿Cuántos compañeros buscas?</p>
+        <p class="textRooms">
+          Indica con cuántos compañeros de piso te gustaría vivir.
+        </p>
+        <div class="countCompañeros">
+          <div class="iconoMenos"
+                (click)="addRoomMate(-1)"></div>
+          <p>{{ user.num_roommate }}</p>
+          <div class="iconoAdd"
+               (click)="addRoomMate(+1)"></div>
+        </div>
+      </label>
+      <div>
+        <p class="title">Preferiría vivir con...</p>
+        <p class="textRooms">
+          Selecciona si prefieres que tus futuros compañeros de piso
+          sean chicos, chicas o no te importa su género.
+        </p>
+        <div class="flex-row-wrap countCompañeros">
+          <label (click)="user.roommate_gender = 2">
+            <input class="options"
+                   type="checkbox"
+                   name="Mixto"
+                   id="sm10">
+            <div class="iconoMixto"
+                 [ngClass]="{selectedMixto: user.roommate_gender === 2}"
+            ></div>
+            Mixto
+          </label>
+          <label (click)="user.roommate_gender = 1">
+            <input class="options"
+                   type="checkbox"
+                   name="Chica"
+                   id="sm11">
+            <div class="iconoChica"
+                 [ngClass]="{selectedChica: user.roommate_gender === 1}"
+            ></div>
+            Chicas
+          </label>
+          <label (click)="user.roommate_gender = 0">
+            <input class="options"
+                   type="checkbox"
+                   name="Chico"
+                   id="sm12">
+            <div class="iconoChico"
+                 [ngClass]="{selectedChico: user.roommate_gender === 0}"
+            ></div>
+            Chicos
+          </label>
+        </div>
+        <div>
+          <p class="title">Ofrezco una habitación...</p>
+          <p class="textRooms">
+            Selecciona qué tipo de  habitación tienes disponible para tu
+            futuro compañero.
+          </p>
+          <div class="flex-row-wrap countCompañeros room">
+            <label (click)="user.bed_type = 1">
+              <input class="options"
+                     type="checkbox"
+                     name="Individual"
+                     id="sm20">
+              <div class="iconoBed"
+                   [ngClass]="{selectedBed: user.bed_type === 1}"
+              ></div>
+              Individual
+            </label>
+            <label (click)="user.bed_type = 2">
+              <input class="options"
+                     type="checkbox"
+                     name="Doble"
+                     id="sm21">
+              <div class="iconoCamaDoble"
+                   [ngClass]="{selectedCamaDoble: user.bed_type === 2}"
+              ></div>
+              Doble
+            </label>
+            <label (click)="user.bed_type = 0">
+              <input class="options"
+                     type="checkbox"
+                     name="Litera"
+                     id="sm22">
+              <div class="iconoLitera"
+                   [ngClass]="{selectedLitera: user.bed_type === 0}"
+              ></div>
+              Litera
+            </label>
+
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Individual"
+                     id="sm23"
+                     [(ngModel)]="user.is_furnished">
+              <div class="iconoMuebles"
+                   [ngClass]="{selectedMuebles: user.is_furnished}"
+              ></div>
+              Amueblada
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="PrivateBath"
+                     id="sm24"
+                     [(ngModel)]="user.has_private_bath">
+              <div class="iconoBath"
+                   [ngClass]="{selectedBath: user.has_private_bath}"
+              ></div>
+              Baño privado
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="externalView"
+                     id="sm25"
+                     [(ngModel)]="user.has_private_view">
+              <div class="iconoVentana"
+                   [ngClass]="{selectedVentana: user.has_private_view}"
+              ></div>
+              Vista exterior
+            </label>
+          </div>
+        </div>
+        <div>
+          <p class="title">La casa consta de...</p>
+          <p class="textRooms">
+            Selecciona las características que hacen que tu casa destaque
+            frente al resto.
+          </p>
+          <div class="flex-row-wrap countCompañeros piso">
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Wifi"
+                     id="sm30"
+                     [(ngModel)]="user.has_internet">
+              <div class="iconoWifi"
+                   [ngClass]="{selectedWifi: user.has_internet}"
+              ></div>
+              WiFi
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Ascensor"
+                     id="sm31"
+                     [(ngModel)]="user.has_elevator">
+              <div class="iconoAscensor"
+                   [ngClass]="{selectedAscensor: user.has_elevator}"
+              ></div>
+              Ascensor
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Lavadora"
+                     id="sm32"
+                     [(ngModel)]="user.has_whashing_machine">
+              <div class="iconoLavadora"
+                   [ngClass]="{selectedLavadora: user.has_whashing_machine}"
+              ></div>
+              Lavadora
+            </label>
+
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Secadora"
+                     id="sm33"
+                     [(ngModel)]="user.has_drying_machine">
+              <div class="iconoSecadora"
+                   [ngClass]="{selectedSecadora: user.has_drying_machine}"
+              ></div>
+              Secadora
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Lavavajillas"
+                     id="sm34"
+                     [(ngModel)]="user.has_dishwasher">
+              <div class="iconoLavavajillas"
+                   [ngClass]="{selectedLavavajillas: user.has_dishwasher}"
+              ></div>
+              Lavavajillas
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Jardin"
+                     id="sm35"
+                     [(ngModel)]="user.has_garden">
+              <div class="iconoJardin"
+                   [ngClass]="{selectedJardin: user.has_garden}"
+              ></div>
+              Jardín
+            </label>
+
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Balcon"
+                     id="sm36"
+                     [(ngModel)]="user.has_balcony">
+              <div class="iconoBalcon"
+                   [ngClass]="{selectedBalcon: user.has_balcony}"
+              ></div>
+              Balcón
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Calefaccion"
+                     id="sm37"
+                     [(ngModel)]="user.has_heating">
+              <div class="iconoCalefaccion"
+                   [ngClass]="{selectedCalefaccion: user.has_heating}"
+              ></div>
+              Calefacción
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Portero"
+                     id="sm38"
+                     [(ngModel)]="user.has_doorman">
+              <div class="iconoDoorman"
+                   [ngClass]="{selectedDoorman: user.has_doorman}"
+              ></div>
+              Portero
+            </label>
+
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Accesible"
+                     id="sm39"
+                     [(ngModel)]="user.is_accessibility">
+              <div class="iconoAccesible"
+                   [ngClass]="{selectedAccesible: user.is_accessibility}"
+              ></div>
+              Accesible
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Parking"
+                     id="sm40"
+                     [(ngModel)]="user.has_parking">
+              <div class="iconoParking"
+                   [ngClass]="{selectedParking: user.has_parking}"
+              ></div>
+              Parking
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="AireAcondicionado"
+                     id="sm41"
+                     [(ngModel)]="user.has_air_conditioning">
+              <div class="iconoAireAcondicionado"
+                   [ngClass]="{selectedAireAcondicionado: user.has_air_conditioning}"
+              ></div>
+              Aire acondicionado
+            </label>
+          </div>
+        </div>
+        <div>
+          <p class="title">En esta casa se permite...</p>
+          <p class="textRooms">
+            Selecciona las normas de convivencia para que quede todo claro
+            desde el principio.
+          </p>
+          <div class="flex-row-wrap countCompañeros">
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="roomFumar"
+                     id="sm60"
+                     [(ngModel)]="user.room_smoke">
+              <div class="iconoFumador"
+                   [ngClass]="{selectedFumador: user.room_smoke}"
+              ></div>
+              Fumar
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="roomMascotas"
+                     id="sm61"
+                     [(ngModel)]="user.room_pet">
+              <div class="iconoMascotas"
+                   [ngClass]="{selectedMascotas: user.room_pet}"
+              ></div>
+              Mascotas
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Parejas"
+                     id="sm62"
+                     [(ngModel)]="user.room_couples">
+              <div class="iconoCouples"
+                   [ngClass]="{selectedCouples: user.room_couples}"
+              ></div>
+              Parejas
+            </label>
+          </div>
+        </div>
+      </div>
+      <div id="btnBox">
+        <button class="guardarBtn" type="submit">
+          Comenzar<br>
+          búsqueda
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<div id="img" *ngIf="pasar"></div>

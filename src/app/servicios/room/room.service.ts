@@ -74,7 +74,7 @@ export class RoomService {
       return this.idRoom;
   }
 
-  async getRoomByLocalityName(locality: string) {
+ /* async getRoomByLocalityName(locality: string) {
     if (this.localityRoom && this.localityRoom.length > 0 && this.localityRoom[0].locality == locality) {
       console.log("Se ha encontrado el locality")
       return this.localityRoom
@@ -89,7 +89,7 @@ export class RoomService {
         return e.response.data
       }
     }
-  }
+  }*/
 
   getRoomByLocality()
   {
@@ -122,11 +122,27 @@ export class RoomService {
       return this.userRoom;
   }
 
-  postNewRoom(room : JSON)
+/*  postNewRoom(room : JSON)
   {
     let json = JSON.stringify(room);
     let params = "json="+json;
     return this.http.post( "http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/", params, this.httpOptions);
+  }*/
+
+  status: any = null
+
+  async postNewRoom(room: any) {
+    try {
+      this.status = await axios.post('/api/room', room)
+    } catch (e) {
+      this.status = {
+        // @ts-ignore
+        estado: e.response.data.status,
+        // @ts-ignore
+        errores: e.response.data.errors
+      }
+    }
+    return this.status;
   }
 
 }

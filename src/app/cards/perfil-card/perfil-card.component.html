@@ -8,7 +8,7 @@
                     <div>
                         <div class="nombre_perfil-card">
                             <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/e15a83804bf36e0562951cb1bc22ab8a5f284561/icons/user.svg" alt="Imagen de perfil" width="30">
-                            <a href="mi-perfil" class="nombreUsuario_card">Nombre usuario</a>
+                            <a href="mi-perfil" class="nombreUsuario_card">{{ nameLogged }}</a>
                         </div>
                         <div class="edit_switch">
                             <a href="editar-perfil">Editar perfil</a>
@@ -28,9 +28,9 @@
                     </div>
 
                     <div class="btn_cerrar_sesion">
-                        <a href="rooms">
-                            <button class="btn_cs">Cerrar sesión</button>
-                        </a>
+                        <div>
+                            <button (click)="logOut()" class="btn_cs">Cerrar sesión</button>
+                        </div>
                     </div>
                 </div>
 
