@@ -7,18 +7,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriasFiltrosComponent implements OnInit {
 
-  mostrarCard = true
-  control = 0
+  //mostrarCard = true
+  //control = 0
 
-  constructor() { }
+  contenedor = document.querySelector('.wrapper')
+  categorias = document.querySelectorAll('.categoria_filtros')
+  tarjetas = document.querySelectorAll('.container_card_filtros')
+  id = 0
 
-  ngOnInit(): void {
+  constructor() {  
+
   }
 
-  mostrarCardFiltros(num:number){
+  ngOnInit(): void {
+
+  }
+
+  //Función cuando estaba usando otro componente
+ /*  mostrarCardFiltros(num:number){
     this.control = num
     this.mostrarCard = true;
     console.log(this.control)
+  } */
+
+  capturarClick(id:number){
+  
+      this.categorias.forEach(categoria=>{
+        categoria.addEventListener('click', function(){
+          //this.id= categoria.dataset.id
+          //this.id = id
+          console.log(categoria)
+
+        })
+
+      })
+  
+
+
   }
+
+
+
+
 
 }
