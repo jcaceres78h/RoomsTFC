@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RoomService } from 'src/app/servicios/room/room.service';
+import { LoginService } from '../../../servicios/login/login.service';
 
 @Component({
   selector: 'app-listar-room-by-user',
@@ -10,10 +11,15 @@ import { RoomService } from 'src/app/servicios/room/room.service';
 export class ListarRoomByUserComponent implements OnInit {
 
   id: any;
-  constructor(private roomService: RoomService, private ac: ActivatedRoute) { }
+  constructor(private roomService: RoomService, private ac: ActivatedRoute,
+              private ls: LoginService) { }
 
   ngOnInit(): void {
-    this.ac.paramMap.subscribe(params => {this.id = params.get('id')});
+    if (this.ls.isLoggeado) {
+      this.id = this.ls.userLogged;
+    } else {
+      this.ac.paramMap.subscribe(params => {this.id = params.get('id')});
+    }
     this.roomService.getUpdateRoomsByUserId(this.id);
   }
 

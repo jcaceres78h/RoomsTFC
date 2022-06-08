@@ -15,7 +15,7 @@
 .container__login{
     display: flex;
 }
-.title_rooms{           
+.title_rooms{
     text-align: center;
     margin-top: 50px;
     font-size: 28px;
@@ -58,7 +58,7 @@
 .password_forget{
     margin-left: 20px;
     font-size: 14px;
-    color: var(--btn_dar);
+    color: var(--btn_dark);
 }
 .password_forget:hover{
     color: var(--dark_blue) ;
@@ -108,4 +108,8 @@
     position: relative;
     margin-right: 30px;
     cursor: pointer;
+}
+.error {
+  border: solid 2px red;
+  color: red;
 }

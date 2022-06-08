@@ -23,7 +23,7 @@ import { FormRoomComponent } from './views/form-room/form-room.component';
 const routes: Routes = [
   { path: 'rooms', component: HomeComponent },
   { path: 'mis-favoritos', component: FavoritosComponent },
-  { path: 'mis-publicaciones/:id', component: PublicacionesComponent },
+  { path: 'mis-publicaciones', component: PublicacionesComponent },
   { path: 'mi-perfil', component: MiPerfilComponent },
   { path: 'perfil/:id', component: PerfilUsuarioComponent },
   { path: 'editar-perfil', component: EditarPerfilUsuarioComponent },

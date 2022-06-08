@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RoomService } from 'src/app/servicios/room/room.service';
 
 @Component({
   selector: 'app-section-filtros',
@@ -10,7 +11,7 @@ export class SectionFiltrosComponent implements OnInit {
 
   mostrarCard = true
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private roomService: RoomService) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +26,9 @@ export class SectionFiltrosComponent implements OnInit {
       // window.location.reload()
       let url = '/resultados-room/';
       this.router.navigate([url, localidad])
+      this.roomService.getUpdateRoomByLocality(localidad)
+      // window.location.reload()
+
     }
   }
 
