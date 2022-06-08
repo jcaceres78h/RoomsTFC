@@ -1,0 +1,159 @@
+#img {
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/free_room.jpg");
+  background-repeat: no-repeat;
+  background-attachment: initial;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  aspect-ratio: 4/3;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+.formulario_container {
+  width: 100%;
+  background: var(--light_blue_a);
+  padding: 65px 6% 200px 6%;
+}
+.mainTextRoom {
+  font-size: 1.5em;
+  color: var(--black_rooms);
+}
+.textRooms, p.textRooms {
+  font-size: .9em;
+  color: var(--black_rooms);
+}
+.textObligatorio {
+  font-size: 1em;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: right;
+}
+.textObligatorio span {
+  font-size: 1.5em;
+}
+.roomSectionTitle {
+  margin-bottom: 8px;
+  font-size: 1.5em;
+  font-weight: normal;
+}
+p.tr2 {
+  font-size: 1.1em;
+}
+#addFoto {
+  border: solid 1px black;
+  width: 70%;
+  aspect-ratio: 16/9;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 150px;
+  margin-top: 50px;
+}
+#btnBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.guardarBtn {
+  max-width: 60%;
+  padding: 32px 10%;
+}
+.formBox2 {
+  margin: auto;
+  margin-top: 36px;
+  width: 85%;
+}
+.fieldTitle {
+  font-size: 1.25em;
+  margin-left: 7%;
+}
+.field_box {
+  margin-top: 15px;
+  margin-bottom: 80px;
+  width: 100%;
+  padding: 30px 7%;
+  background-color: white;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: var(--shadow-g);
+  -moz-box-shadow: var(--shadow-g);
+  box-shadow: var(--shadow-g);
+}
+.dir_row {
+  width: 100%;
+  margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.dir_row input {
+  padding: .75em 1.25em;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  border: solid 1px black;
+  width: 100%;
+  margin-top: 10px;
+}
+.dir_row span {
+  font-size: 16px;
+  margin-left: 20px;
+}
+.dir-left {
+  width: 60%;
+  min-width: 150px;
+}
+.dir-right {
+  width: 30%;
+  min-width: 100px;
+}
+.genderField {
+  margin: auto;
+}
+input[type=checkbox] {
+  display: none;
+}
+.flex-row-wrap {
+  display: flex;
+  justify-content: center;
+}
+.flex-row-wrap label {
+  margin: 15px 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 66px;
+  text-align: center;
+}
+textarea {
+  border: none;
+  width: 100%;
+  height: 130px;
+}
+.price_field {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.price_field input, .price_field span{
+  font-size: 2.5em;
+}
+.input_precio {
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  border: solid 1px black;
+  padding: 10px .5em;
+  width: 130px;
+  max-width: 50%;
+  min-width: 150px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
