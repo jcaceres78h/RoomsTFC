@@ -15,22 +15,26 @@
           </p>
 
           <label class="label_form" for="email">Correo electrónico*</label>
-          <input class="input_login em"
+          <input [ngClass]="{error: errorEmail}"
+                 class="input_login em"
                  placeholder="correo electrónico*"
                  required
                  type="email"
                  id="email"
                  [(ngModel)]="user.email"
+                 (keyup)="errorEmail = false"
           >
 
           <label class="label_form" for="password">Contraseña*</label>
           <div class="container_password">
-            <input class="input_login"
+            <input [ngClass]="{error: errorPassword}"
+                   class="input_login"
                    type="password"
                    placeholder="contraseña*"
                    required
                    id="password"
                    [(ngModel)]="user.password"
+                   (keyup)="errorPassword = false"
             >
             <span class="password_eye"><img
               src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/5217cf84048e4b3b6d7ecbef278af70cf9390dac/images/icons/eye.svg"

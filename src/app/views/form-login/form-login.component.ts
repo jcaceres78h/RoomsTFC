@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../servicios/login/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-login',
@@ -8,9 +9,11 @@ import { LoginService } from '../../servicios/login/login.service';
 })
 export class FormLoginComponent implements OnInit {
 
-  constructor(private ls: LoginService) { }
+  constructor(private ls: LoginService, private router: Router) { }
 
   ngOnInit(): void {
+    if (this.ls.isLoggeado)
+      this.router.navigate([''])
   }
 
   user = {
@@ -18,10 +21,19 @@ export class FormLoginComponent implements OnInit {
     password: ''
   }
 
+  errorEmail = false;
+  errorPassword = false;
   login() {
     this.ls.login(this.user)
       .then( e => {
-        console.log(e)
+        if (e >= 0) {
+          window.history.back();
+        }
+        else if(e == -2) {
+          this.errorEmail = true;
+          this.errorPassword = true;
+        }
+        else if(e == -1) this.errorPassword = true;
       })
   }
 }

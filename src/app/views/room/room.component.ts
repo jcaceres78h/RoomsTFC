@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {RoomService} from "../../servicios/room/room.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import axios from 'axios';
+import { LoginService } from '../../servicios/login/login.service';
 
 @Component({
   selector: 'app-room',
@@ -13,7 +14,7 @@ export class RoomComponent implements OnInit {
   aux: any;
   private id: any;
 
-  constructor(private roomService: RoomService, private ac: ActivatedRoute,
+  constructor(private ls: LoginService, private roomService: RoomService, private ac: ActivatedRoute,
               private router: Router) {
   }
 
@@ -29,6 +30,10 @@ export class RoomComponent implements OnInit {
           this.verMapa()
         }
       })
+  }
+
+  get islogeado() {
+    return this.ls.userLogged
   }
 
   volver() {
@@ -216,7 +221,9 @@ export class RoomComponent implements OnInit {
   }
 
   contactar() {
-    alert("Nombre" + "\n" + "email" + "\n" + "Teléfono")
+    if (this.islogeado) {
+      this.router.navigate(['perfil', this._room.userId])
+    }
   }
 
 

@@ -16,14 +16,17 @@ export class PerfilUsuarioComponent implements OnInit {
 
   ngOnInit(): void {
     this.ac.paramMap.subscribe(params => {this.id = params.get('id')})
-    this.userService.getUserUpdateById(this.id) 
+    this.userService.getUserUpdateById(this.id)
   }
 
   getUser(){
     return this.userService.getUserById()
   }
 
-
+  volver() {
+    //TODO función para volver atrás en la navegación
+    window.history.back();
+  }
 
 
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../../servicios/login/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-companero',
@@ -12,9 +14,12 @@ export class FormCompaneroComponent implements OnInit {
 
   pasar = false;
 
-  constructor() { }
+  constructor(private ls: LoginService, private router: Router) { }
 
   ngOnInit(): void {
+    if (!this.ls.isLoggeado) {
+      this.router.navigate(['iniciar-sesion'])
+    }
   }
 
   user = {

@@ -1,11 +1,11 @@
 <!--TODO Cambiar las condiciones ngif pasar-->
-<app-form-btn *ngIf="pasar"
+<app-form-btn *ngIf="!pasar"
               [titulo]="titulo"
               [descripcion]="descripcion"
               (clickedBtn)="pasar = $event"
 ></app-form-btn>
 
-<main *ngIf="!pasar" class="main_principal">
+<main *ngIf="pasar" class="main_principal">
   <div class="formulario_container">
     <form (submit)="$event.preventDefault()" (ngSubmit)="publicar()">
       <h1 class="tituloRooms">Rooms</h1>
@@ -35,6 +35,8 @@
                   [(ngModel)]="room.street"
                   name="calle"
                   placeholder="calle*"
+                  [ngClass]="{error: errorCalle}"
+                  (keyup)="errorCalle = false"
                 >
               </label>
               <label class="dir-right">
@@ -45,6 +47,8 @@
                   [(ngModel)]="room.number"
                   name="numero"
                   placeholder="numero"
+                  [ngClass]="{error: errorNumero}"
+                  (change)="errorNumero = false;"
                 >
               </label>
             </div>
@@ -57,6 +61,8 @@
                   [(ngModel)]="room.locality"
                   placeholder="localidad*"
                   name="localidad"
+                  [ngClass]="{error: errorLocalidad}"
+                  (keyup)="errorLocalidad = false"
                 >
               </label>
               <label class="dir-right">
@@ -67,6 +73,8 @@
                   [(ngModel)]="room.postcode"
                   placeholder="Código postal"
                   name="postcode"
+                  [ngClass]="{error: errorCP}"
+                  (change)="errorCP = false"
                 >
               </label>
             </div>
@@ -78,6 +86,8 @@
                   required [(ngModel)]="room.province"
                   placeholder="provincia*"
                   name="provincia"
+                  [ngClass]="{error: errorProv}"
+                  (keyup)="errorProv = false"
                 >
               </label>
               <label class="dir-right">
@@ -87,6 +97,8 @@
                   required [(ngModel)]="room.country"
                   placeholder="país*"
                   name="pais"
+                  [ngClass]="{error: errorPais}"
+                  (keyup)="errorPais = false"
                 >
               </label>
             </div>
@@ -195,7 +207,10 @@
           <div class="field_box">
             <textarea name="descripcion"
                 [(ngModel)]="room.room_description"
-                placeholder="Añade una breve descripción sobre la habitación">
+                placeholder="Añade una breve descripción sobre la habitación"
+                      [ngClass]="{error: errorDescripcion}"
+                      (keyup)="errorDescripcion = false"
+            >
             </textarea>
           </div>
           <p class="fieldTitle">Características del piso*</p>
@@ -379,6 +394,8 @@
                    id="precio"
                    class="input_precio"
                     [(ngModel)]="room.price"
+                   [ngClass]="{error: errorPrice}"
+                   (change)="errorPrice = false"
             >
             <span>€/mes</span>
           </div>
@@ -405,4 +422,4 @@
     </form>
   </div>
 </main>
-<div id="img" *ngIf="!pasar"></div>
+<div id="img" *ngIf="pasar"></div>
