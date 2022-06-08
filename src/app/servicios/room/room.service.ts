@@ -45,7 +45,7 @@ export class RoomService {
     } else {
       // console.log("Adios mundo")
       try {
-        const response = await axios.get('/api/room/' + id);
+        const response = await axios.get('http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/' + id);
         this.idRoom = response.data;
         return this.idRoom;
       } catch (e) {
