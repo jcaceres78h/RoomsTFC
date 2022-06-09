@@ -79,7 +79,14 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-
+    margin-right: 10px;
+}
+.iconos_filtros_card_crts{
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-right: 10px;
 }
 .icon_text_filter{
     display: flex;
