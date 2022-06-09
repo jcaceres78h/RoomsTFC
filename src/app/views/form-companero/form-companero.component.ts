@@ -10,7 +10,7 @@ import { UserFiltrosService } from 'src/app/servicios/user/user-filtros.service'
 })
 export class FormCompaneroComponent implements OnInit {
 
-  titulo = "Te ayudamos a encontrar a tu compñaero ideal"
+  titulo = "Te ayudamos a encontrar a tu compañero ideal"
   descripcion = "Si tienes claro cómo sería tu compañero de piso perfecto"
 
   pasar = false;

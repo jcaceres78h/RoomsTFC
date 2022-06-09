@@ -28,7 +28,7 @@ export class UserService {
 
   getUserUpdateById(id: number)
   {
-    this.http.get("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/user/"+id).subscribe(
+    this.http.get("/api/user/"+id).subscribe(
       (response) => {
         // console.log(response);
         this.userId = response

@@ -3,6 +3,15 @@
     flex-direction: row;
     justify-content: space-around;
 }
+.container_categoria{
+    display: flex;
+    flex-direction: column;
+    max-width: 240px ;
+    align-items: center;
+}
+.container_categoria:last-of-type{
+    max-width: 250px;
+}
 .categoria_filtros{
     display: flex;
     align-items: center;
@@ -10,7 +19,114 @@
     padding: 10px 20px;
     border-radius: 10px;
     cursor: pointer;
+
 }
 .categoria_filtros > img {
     margin-right: 20px;
 }
+
+/* TARJETAS */
+.container_cards_filtros{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+.container_card_filtros{
+    position: sticky;
+    width: 350px;
+    height: 100%;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+    padding: 10px;
+    z-index: 1000;
+    margin-top: 20px;
+}
+.card_filtros{
+    display: flex;
+    flex-direction: column ;
+    padding: 0px 0px 0px 20px;
+}
+.close_card{
+    display: flex;
+    justify-content: flex-end;
+}
+.close_card > img{
+    margin-right: 20px;
+    cursor: pointer;
+}
+.text_filtros_card{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+}
+.num_companeros{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.num_companeros > p {
+    font-size: 20px;
+}
+.iconos_filtros_card{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-right: 10px;
+}
+.iconos_filtros_card_crts{
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-right: 31px;
+    justify-content: space-between;
+}
+.iconos_filtros_card_crts > .icon_text_filter{
+    margin: 4px;
+}
+.iconos_filtros_card_crts > .icon_text_filter > label{
+    font-size: 12px;
+
+}
+.icon_text_filter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.icon_text_filter > label{
+    text-align: center;
+    font-size: 14px;
+}
+.container_price{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+.price_range{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.price_range > label{
+    margin-left: 20px;
+}
+.price_range > input{
+    border-radius: 20px;
+    border: .5px solid var(--black_rooms);
+    padding: 10px;
+    width: 90%;
+}
+

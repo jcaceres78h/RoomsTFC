@@ -25,7 +25,7 @@ h2{
 .container_datospersonales{
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 80%;
     align-items: flex-end;
     margin-top: 20px;
 }
@@ -130,7 +130,43 @@ h3{
     align-self: flex-start;
     margin-bottom: 50px;
 }
-
+.gallery{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    width: 80%;
+    height: 400px;
+}
+.gallery > div{
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    background-color: var(--black_rooms);
+}
+.section1 {
+   grid-row-start: 1;
+   grid-row-end: 3;
+}
+.section2{
+    grid-row-start: 1;
+}
+.section3{
+    grid-row-end: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.section3 >label{
+    color: white;
+    font-size: .75em;
+}
+.gallery > div:hover{
+    cursor: pointer;
+    background-color: var(--light_dark);
+}
 /* DATOS DE CONTACTO */
 .container__data_contact{
     width: 100%;

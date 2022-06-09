@@ -54,3 +54,25 @@ header {
   font-weight: normal;
   letter-spacing: .02em;
 }
+.equipoCard{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1280px){
+
+  .listaInfo{
+    flex-direction: column;
+    justify-content: center;
+  }
+  .equipoCard{
+    flex-direction: column;
+  }
+  .listaInfo > li:first-of-type, .listaInfo > li:nth-child(2){
+    margin-bottom: 30px;
+  }
+
+}

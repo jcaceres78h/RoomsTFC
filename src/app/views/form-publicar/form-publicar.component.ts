@@ -11,8 +11,7 @@ import { RoomService } from '../../servicios/room/room.service';
 export class FormPublicarComponent implements OnInit {
 
   titulo = "Publica esa habitación libre que tienes en casa"
-  descripcion = "Estás a punto de darle vida a esa habitación y vivir" +
-    "nuevas experiencias"
+  descripcion = "Estás a punto de darle vida a esa habitación y vivir nuevas experiencias"
 
   pasar = false;
 

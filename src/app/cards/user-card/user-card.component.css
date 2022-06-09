@@ -1,7 +1,7 @@
 .card_user{
     background-color: #7CA6AA;
     height: 350px;
-    width: 380px;
+    width: 350px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -44,4 +44,23 @@
     color: white;
     border: none;
     font-size: 16px;
+}
+
+/* RESPONSIVE*/
+@media screen and (max-width: 1280px){
+    .card_user{
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* RESPONSIVE MÓVIL */
+@media screen and (max-width: 480px){
+    .card_user{
+        width: 300px;
+        height: 300px;
+    }
+    .container_resultados {
+        justify-content: center;
+    }
 }

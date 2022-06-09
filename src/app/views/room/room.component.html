@@ -1,9 +1,10 @@
 <app-loading-page *ngIf="!_room"></app-loading-page>
-<div *ngIf="_room">
-  <header>
-    <div class="iconoAtras" (click)="volver()"></div>
-  </header>
+<div *ngIf="checkUser()"><div *ngIf="_room">
   <section class="main_principal">
+    <div class="pack_btns">
+      <a href="volver()"><img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/back.svg" alt="Atrás" width="30"></a>
+      <a href="editar-publicacion" class="edit_myaccount">Editar habitación</a>
+    </div>
     <article class="art1">
       <div class="div1_1">
         <figure class="fotoPiso">
@@ -59,7 +60,7 @@
         </div>
         <div class="part1_2">
           <h3 class="interesado tituloRoom">Estoy interesado en esta habitación</h3>
-          <button class="btnPrimary" (click)="contactar()">Contactar</button>
+          <button class="btnContactar" (click)="contactar()">Contactar</button>
         </div>
       </div>
     </article>
@@ -69,8 +70,8 @@
       <p class="direction">
         <span *ngIf="islogeado">Calle {{_room.street}}, {{_room.number}}
           {{_room.postcode}}</span>
-        <span *ngIf="!islogeado">Regístrese para ver la hubicación precisa</span>
-        {{_room.locality}} {{_room.province}}
+        <span *ngIf="!islogeado">Para saber la localización exacta debes estar registrado en Rooms, <a class="enlace" href="registrarse">registrarme ahora</a>
+        </span>
       </p>
       <br><br>
       <!--    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6290.7049806082705!2d-1.122276937736596!3d37.968902406885626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1652573815779!5m2!1ses!2ses"
@@ -90,7 +91,7 @@
           ></map-marker>
           <map-circle *ngIf="!islogeado"
             [center]="center"
-            [radius]="150"
+            [radius]="250"
           ></map-circle>
         </google-map>
       </div>
@@ -98,7 +99,7 @@
 
     <div class="part3_3">
       <h3 class="tInteres">Estoy interesado en esta habitación</h3>
-      <button class="btnPrimary" (click)="contactar()">Contactar</button>
+      <button class="btnContactar" (click)="contactar()">Contactar</button>
     </div>
     <article class="art4">
       <h3 class="infoTitle t3">Habitaciones similares</h3>
@@ -108,4 +109,118 @@
       </div>
     </article>
   </section>
+</div>
+</div>
+<div *ngIf="!checkUser()">
+<div *ngIf="_room">
+  hola
+  <section class="main_principal">
+    <div class="pack_btns">
+      <a href="" (click)="volver()" ><img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/back.svg" alt="Atrás" width="30"></a>
+    </div>
+    <article class="art1">
+      <div class="div1_1">
+        <figure class="fotoPiso">
+          <div class="carrusel_imagenes">
+            <div class="flechas_room">
+              <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/left.svg" alt="Izquierda" class="flecha_room" width="20">
+              <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/right.svg" alt="Derecha" class="flecha_room" width="20">
+            </div>
+            <img src="https://github.com/Cintia-Andujar/rooms/blob/main/images/room_mate.jpg?raw=true" alt="Foto de piso en {{_room.street}}, {{_room.locality}}" class="fotoPiso">
+          </div>
+          <figcaption>
+            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/e06ab3cc00bd6f42fe7aaabafc438ac2dfbde2a5/icons/heart_favs.svg" alt="Añadir a favoritos" width="30">
+            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/e06ab3cc00bd6f42fe7aaabafc438ac2dfbde2a5/icons/share.svg" alt="Compartir" width="30">
+          </figcaption>
+        </figure>
+        <div class="info">
+          <h1 class="tituloRoom">Habitación {{cama}}</h1>
+          <p class="lugarRoom"><span *ngIf="islogeado">{{_room.street}},</span> {{_room.locality}}</p>
+          <p class="precio1">{{_room.price}}€/mes</p>
+        </div>
+      </div>
+      <div class="part1">
+        <div class="part1_1">
+          <h4 class="infoTitle">Descripción</h4>
+          <br>
+          <p class="descripcion">{{_room.room_description}}</p>
+          <h4 class="infoTitle">Características de la habitación</h4>
+          <div class="caracteristicas">
+            <div *ngFor="let opt of opcionesRoom"
+                 class="caracteristicaCard">
+              <div class="{{opt.clase}}"></div>
+              <span class="camaDescription">{{opt.texto}}</span>
+            </div>
+          </div>
+          <h4 class="infoTitle">Características del piso</h4>
+          <br>
+          <div class="caracteristicas">
+            <div *ngFor="let opt of opcionesPiso"
+                 class="caracteristicaCard">
+              <div class="{{opt.clase}}"></div>
+              <span class="camaDescription">{{opt.texto}}</span>
+            </div>
+          </div>
+          <h4 class="infoTitle">Normas de convivencia</h4>
+          <br>
+          <div class="caracteristicas">
+            <div *ngFor="let opt of normasConvivencia"
+                 class="caracteristicaCard">
+              <div class="{{opt.clase}}"></div>
+              <span class="camaDescription">{{opt.texto}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="part1_2">
+          <h3 class="interesado tituloRoom">Estoy interesado en esta habitación</h3>
+          <button class="btnContactar" (click)="contactar()">Contactar</button>
+        </div>
+      </div>
+    </article>
+    <article class="art3">
+      <h4 class="infoTitle">Localización</h4>
+      <br>
+      <p class="direction">
+        <span *ngIf="islogeado">Calle {{_room.street}}, {{_room.number}}
+          {{_room.postcode}}</span>
+        <span *ngIf="!islogeado">Para saber la localización exacta debes estar registrado en Rooms, <a class="enlace" href="registrarse">registrarme ahora</a>
+        </span>
+      </p>
+      <br><br>
+      <!--    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6290.7049806082705!2d-1.122276937736596!3d37.968902406885626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1652573815779!5m2!1ses!2ses"
+          style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+      <div class="map">
+        <google-map
+          width="100%"
+          [center]="center"
+          [zoom]="zoom"
+          [options]="mapOptions"
+        >
+          <map-marker *ngIf="islogeado"
+            [position]="center"
+            [label]="markerLabel"
+            [title]="markerTitle"
+            [options]="markerOptions"
+          ></map-marker>
+          <map-circle *ngIf="!islogeado"
+            [center]="center"
+            [radius]="250"
+          ></map-circle>
+        </google-map>
+      </div>
+    </article>
+
+    <div class="part3_3">
+      <h3 class="tInteres">Estoy interesado en esta habitación</h3>
+      <button class="btnContactar" (click)="contactar()">Contactar</button>
+    </div>
+    <article class="art4">
+      <h3 class="infoTitle t3">Habitaciones similares</h3>
+      <br>
+      <div class="similares">
+
+      </div>
+    </article>
+  </section>
+</div>
 </div>

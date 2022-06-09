@@ -1,22 +1,218 @@
-<div class="container_categorias_filtros">
+<div class="wrapper">
 
-    <div class="categoria_filtros" (click)="mostrarCardFiltros(1)">
-        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/flatmates.svg" alt="Icono compañeros de piso" width="20">
-        <p>Compañeros de piso</p>
+    <div class="container_categorias_filtros">
+      
+    <div class="container_categoria" >
+        <div class="categoria_filtros" (click)="mostrarCard1()" data-id="1">
+            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/flatmates.svg" alt="Icono compañeros de piso" width="20" >
+            <p>Compañeros de piso</p>
+        </div>
+        <div *ngIf="card1" class="container_card_filtros" id="1">
+            <div class="card_filtros">
+                <div class="close_card">
+                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/close.svg" alt="Icono cerrar" width="10" (click)="mostrarCard1()">
+                </div>
+                <div class="text_filtros_card">
+                    <h2>Número de compañeros de piso</h2><br>
+                    <p>Indica con cuántos compañeros de piso te gustaría vivir</p>
+                    <div class="num_companeros">
+                        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/minus.svg" alt="" width="40">
+                        <p>0</p>
+                        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/add.svg" alt="" width="40">
+                    </div>
+                    <br><br>
+                    <h2>Preferencias de genéro</h2>
+                    <div class="iconos_filtros_card"> 
+                        <div class="icon_text_filter">
+                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/mixed.svg" alt="mixto" width="50" id="mixto">
+                            <label for="mixto">Mixto</label>    
+                        </div>
+                        <div class="icon_text_filter">
+                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/female.svg" alt="chicas" width="50" id="chicas">   
+                            <label for="chicas">Chicas</label> 
+                        </div>
+                        <div class="icon_text_filter">
+                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/male.svg" alt="chicos" width="50" id="chicos">
+                            <label for="chicos">Chicos</label>    
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>    
+    <div class="container_categoria">
+        <div class="categoria_filtros" (click)="mostrarCard2()" data-id="2">
+            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/type_bed.svg" alt="Icono tipo de habitación" width="20">
+            <p>Tipo de habitación</p>    
+        </div>
+        <div *ngIf="card2" class="container_card_filtros" id="2">
+            <div class="card_filtros">
+                <div class="close_card">
+                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/close.svg" alt="Icono cerrar" width="10" (click)="mostrarCard2()">
+                </div>
+                <div class="text_filtros_card">
+                <h2>Tipo de cama</h2><br>
+                <p>Indica qué tipo de habitación estas buscando</p>
+                <div class="iconos_filtros_card">
+                    <div class="icon_text_filter">
+                        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/bed.svg" alt="individual" width="50" id="individual">
+                        <label for="individual">Individual</label>
+                    </div>
+                    <div class="icon_text_filter">
+                        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/double_bed.svg" alt="doble" width="50" id="doble">
+                        <label for="doble">Doble</label>
+                    </div>
+                    <div class="icon_text_filter">
+                        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/bunk_bed.svg" alt="litera" width="50" id="litera">
+                        <label for="litera">Litera</label>
+                    </div>
+                </div>
+                <br><br>
+                <h2>Preferencias de la habitación</h2>
+                <div class="iconos_filtros_card">
+                    <div class="icon_text_filter">
+                        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/furniture.svg" alt="amueblada" width="50" id="amueblada">
+                        <label for="amueblada">Amueblada</label>
+                    </div>
+                    <div class="icon_text_filter">
+                        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/bath.svg" alt="baño privado" width="50" id="baño">
+                        <label for="baño">Baño <br> privado</label>
+                    </div>
+                    <div class="icon_text_filter">
+                        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/window.svg" alt="vista exterior" width="50" id="ventana">  
+                        <label for="ventana">Vista <br> exterior</label>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="categoria_filtros" (click)="mostrarCardFiltros(2)">
-        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/type_bed.svg" alt="Icono tipo de habitación" width="20">
-        <p>Tipo de habitación</p>
     </div>
-    <div class="categoria_filtros" (click)="mostrarCardFiltros(3)">
+    <div class="container_categoria">
+        <div class="categoria_filtros" (click)="mostrarCard3()" data-id="3">
             <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/living.svg" alt="Icono conviviencia" width="20">
-            <p>Conviviencia</p>
+            <p>Conviviencia</p> 
+        </div>
+
+        <div *ngIf="card3" class="container_card_filtros" id="3">
+                <div class="card_filtros">
+                    <div class="close_card">
+                        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/close.svg" alt="Icono cerrar" width="10" (click)="mostrarCard3()">
+                </div>
+                <div class="text_filtros_card">
+                    <h2>Normas de convivencia</h2><br>
+                    <p>En esta casa se permite</p>
+                    <div class="iconos_filtros_card">
+                        <div class="icon_text_filter">
+                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/smoke.svg" alt="fumar" id="fumar" width="50">
+                            <label for="fumar">Fumar</label>
+                        </div>
+                        <div class="icon_text_filter">
+                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/pets.svg" alt="mascotas" id="mascotas" width="50">
+                            <label for="mascotas">Mascostas</label>
+                        </div>
+                        <div class="icon_text_filter">
+                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/couples.svg" alt="parejas" id="parejas" width="50">
+                            <label for="parejas">Parejas</label>
+                        </div>
+                    </div>
+                    <br><br>
+                    <h2>Características del piso</h2>
+                    <div class="iconos_filtros_card_crts ">
+                        <div class="icon_text_filter">
+                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/wifi.svg" alt="wifi" id="wifi" width="50">
+                            <label for="wifi">WiFi</label>
+                        </div>
+                        <div class="icon_text_filter">
+                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/elevator.svg" alt="ascensor" id="ascensor" width="50">
+                            <label for="ascensor">Ascensor</label>
+                        </div>
+                        <div class="icon_text_filter">
+                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/washer.svg" alt="lavadora" id="lavadora" width="50">
+                            <label for="lavadora">Lavadora</label>
+                        </div>
+                        <div class="icon_text_filter">
+                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/dryer.svg" alt="secadora" id="secadora" width="50">
+                            <label for="secadora">Secadora</label>
+                        </div>
+                        <div class="icon_text_filter">
+                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/dishwasher.svg" alt="lavavajillas" id="lavavajillas" width="50">
+                            <label for="lavavajillas">Lavavajillas</label>
+                        </div>                
+                        <div class="icon_text_filter">
+                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/garden.svg" alt="jardín" id="jardin" width="50">
+                            <label for="jardin">Jardín</label>
+                        </div>                
+                        <div class="icon_text_filter">
+                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/balcony.svg" alt="balcón" id="balcon" width="50">
+                            <label for="balcon">Balcón</label>
+                        </div>                
+                        <div class="icon_text_filter">
+                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/heating.svg" alt="calefacción" id="calefaccion" width="50">
+                            <label for="calefaccion">Calefacción</label>
+                        </div>                
+                        <div class="icon_text_filter">
+                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/doorman.svg" alt="portero" id="portero" width="50">
+                            <label for="portero">Portero</label>
+                        </div>                
+                        <div class="icon_text_filter">
+                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/accessible.svg" alt="accesible" id="accesible" width="50">
+                            <label for="accesible">Accesible</label>
+                        </div>                
+                        <div class="icon_text_filter">
+                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/parking.svg" alt="parking" id="parking" width="50">
+                            <label for="parking">Parking</label>
+                        </div>                
+                        <div class="icon_text_filter">
+                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/air_conditioner.svg" alt="aire acondicionado" id="air" width="50">
+                            <label for="air">Aire <br> acondicionado</label>
+                        </div>                
+                    </div>
+                </div>
+            </div>
     </div>
-    <div class="categoria_filtros" (click)="mostrarCardFiltros(4)">
-        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/budget.svg" alt="Icono presupuesto" width="20">
-        <p>Presupuesto mensual</p>
     </div>
+    <div class="container_categoria" data-id="4">
+        <div class="categoria_filtros" (click)="mostrarCard4()">
+            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/budget.svg" alt="Icono presupuesto" width="20">
+            <p>Presupuesto mensual</p>    
+        </div>
+
+            <div *ngIf="card4" class="container_card_filtros" id="4" >
+                <div class="card_filtros">
+                    <div class="close_card">
+                        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/close.svg" alt="Icono cerrar" width="10" (click)="mostrarCard4()">
+                    </div>
+                    <div class="text_filtros_card">
+                        <h2>Presupuesto mensual</h2><br>
+                        <p>Indica el mínimo o máximo que te gustaría pagar al mes de alquiler</p>
+                        <div class="container_price">
+                            <div class="price_range">
+                                <label for="min">Mínimo</label>
+                                <input type="text" id="min" class="minimo" placeholder="mínimo al mes">
+                            </div>
+                            <div class="price_range">
+                                <label for="max">Máximo</label>
+                                <input type="text" id="max" class="maximo" placeholder="máximo al mes">
+                            </div>
+                        </div>
+                        <br><br>
+                    </div>
+                </div>
+            </div> 
+    </div>
+        
+</div>
+
+<div  class="container_cards_filtros">
+    <!-- TARJETA COMPAÑEROS DE PISO -->
+   
+    <!-- TARJETA TIPO DE HABITACIÓN -->
+   
+<!-- TARJETA CONVIVENCIA -->
+
+<!-- TARJETA PRESUPUESTO MENSUAL -->
 
 </div>
 
-<app-filtros-card [hidden]="mostrarCard" [control]="control"></app-filtros-card>
+</div>
