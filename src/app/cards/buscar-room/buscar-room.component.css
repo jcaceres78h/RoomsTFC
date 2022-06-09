@@ -3,7 +3,7 @@
     width: 406px;
 }
 .buscar_room{
-    background-image: url(https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/form_search.jpg);
+    background-image: url(https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/card_buscarRoom.jpg);
     background-position: center;
     background-size: cover;
     height: 100%;
@@ -17,7 +17,7 @@
     flex-direction: column;
 }
 .buscar_room:hover{
-    background-image: url(https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/form_search2.jpeg);
+    background-image: url(https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/card_buscarRoom_hover.jpg);
     transition: all 0.1s step-end;
     z-index: 0;
 }
@@ -42,7 +42,7 @@
     background-color: white;
     border-radius: 10px;
     width: 100%;
-    padding: 12px 20px;
+    padding: 15px 20px;
     text-align: center;
     align-self: center;
 }
@@ -74,4 +74,20 @@
 }
 a{
     text-decoration: none;
+}
+
+@media screen and (max-width: 820px){
+    .container_buscar_room{
+        margin-bottom: 70px;
+    }
+}
+@media screen and (max-width: 420px){
+    .container_buscar_room{
+        margin-bottom: 30px;
+        width: 350px;
+        height: 350px;
+    }
+    .texto_abajo{
+        visibility: hidden;
+    }
 }

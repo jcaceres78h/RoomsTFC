@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserFiltrosService } from 'src/app/servicios/user/user-filtros.service';
 import { UserService } from 'src/app/servicios/user/user.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { UserService } from 'src/app/servicios/user/user.service';
 })
 export class ListarUsersComponent implements OnInit {
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private userfiltros: UserFiltrosService) { }
 
   ngOnInit(): void {
     this.userService.getUpdateAllUser();
@@ -17,6 +18,10 @@ export class ListarUsersComponent implements OnInit {
   getUsers(){
      console.log(this.userService.getAllUser())
      return this.userService.getAllUser();
+   }
+
+   getLocalidad(){
+     return this.userfiltros.getlocality()
    }
 
 

@@ -3,7 +3,7 @@
     width: 476px;
 }
 .publicar_room{
-    background-image: url(https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/free_room.jpg);
+    background-image: url(https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/card_publicarRoom.jpg);
     background-position: center;
     background-size: cover;
     height: 100%;
@@ -16,7 +16,7 @@
     cursor: pointer;
 }
 .publicar_room:hover{
-    background-image: url(https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/free_room2.jpeg);
+    background-image: url(https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/card_publicarRoom_hover.jpg);
     transition:all .1s ease-in-out;
     z-index: 0;
 }
@@ -36,15 +36,12 @@
     background-color: white;
     border-radius: 10px;
     width: 100%;
-    padding: 15px 20px;
+    padding: 20px 20px;
     text-align: center;
 }
 .texto1 > p {
     font-size: 25px;
     color: var(--dark_blue);
-}
-.texto_arriba:hover{
-    display: none;
 }
 .texto_abajo{
     width: 100%;
@@ -69,4 +66,16 @@
 }
 a{
     text-decoration: none;
+}
+
+@media screen and (max-width: 420px){
+    .container_publicar_room{
+        width: 350px;
+    }
+    .texto_abajo{
+        visibility: hidden;
+    }
+    .texto1{
+       padding: 10px 5px;
+    }
 }

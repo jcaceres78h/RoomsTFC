@@ -1,6 +1,10 @@
 <div class="container_resultados">
 
-    <ng-container *ngFor="let room of rooms">
+    <ng-container *ngFor="let room of rooms | fumador:false | generoCompanero:0
+    | tipoCama:0 | amueblada: false | banoPrivado:false | vistaPrivada:false
+    | internet:false | ascensor:false | lavadora:false | secadora:false | fregaplatos:false
+    | jardin:false | balcon:false | calefaccion:false |portero:false | accesible:false
+    | parking:false | aireAcondicionado:false | mascotas:false | parejas:false | precio:0:0">
         <app-room-card [room]="room" class="card_resultados_rooms" ></app-room-card>
     </ng-container>
 

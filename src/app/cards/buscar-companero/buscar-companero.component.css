@@ -3,7 +3,7 @@
     width: 406px;
 }
 .buscar{
-    background-image: url(https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/card_roommate.jpg);
+    background-image: url(https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/card_buscarCompanero.jpg);
     background-position: center;
     background-size: cover;
     height: 100%;
@@ -17,7 +17,7 @@
     flex-direction: column;
 }
 .buscar:hover{ 
-    background-image: url(https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/card_roommate2.jpg);
+    background-image: url(https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/card_buscarCompanero_hover.jpg);
     transition: all 0.1s step-end;
     z-index: 0;
 }
@@ -42,7 +42,7 @@
     background-color: white;
     border-radius: 10px;
     width: 100%;
-    padding: 12px 20px;
+    padding: 15px 20px;
     text-align: center;
     align-self: center;
 }
@@ -73,4 +73,17 @@
 }
 a{
     text-decoration: none;
+}
+
+@media screen and (max-width: 420px){
+    .container_buscar{
+        width: 350px;
+        height: 350px;
+    }
+    .texto_abajo{
+        visibility: hidden;
+    }
+    .texto1{
+        padding: 10px 2px;
+    }
 }

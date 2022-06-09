@@ -45,6 +45,29 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { MiPerfilComponent } from './views/mi-perfil/mi-perfil.component';
 import { NosotrosComponent } from './views/nosotros/nosotros.component';
 import { EliminarCuentaComponent } from './cards/eliminar-cuenta/eliminar-cuenta.component';
+import { FumadorPipe } from './pipes/Room/fumador.pipe';
+import { GeneroCompañeroPipe } from './pipes/Room/genero-compañero.pipe';
+import { TipoCamaPipe } from './pipes/Room/tipo-cama.pipe';
+import { AmuebladaPipe } from './pipes/Room/amueblada.pipe';
+import { BanoPrivadoPipe } from './pipes/Room/bano-privado.pipe';
+import { VistaPrivadaPipe } from './pipes/Room/vista-privada.pipe';
+import { InternetPipe } from './pipes/Room/internet.pipe';
+import { AscensorPipe } from './pipes/Room/ascensor.pipe';
+import { LavadoraPipe } from './pipes/Room/lavadora.pipe';
+import { SecadoraPipe } from './pipes/Room/secadora.pipe';
+import { FregaplatosPipe } from './pipes/Room/fregaplatos.pipe';
+import { JardinPipe } from './pipes/Room/jardin.pipe';
+import { BalconPipe } from './pipes/Room/balcon.pipe';
+import { CalefaccionPipe } from './pipes/Room/calefaccion.pipe';
+import { PorteroPipe } from './pipes/Room/portero.pipe';
+import { AccesiblePipe } from './pipes/Room/accesible.pipe';
+import { ParkingPipe } from './pipes/Room/parking.pipe';
+import { AireAcondicionadoPipe } from './pipes/Room/aire-acondicionado.pipe';
+import { MascotasPipe } from './pipes/Room/mascotas.pipe';
+import { ParejasPipe } from './pipes/Room/parejas.pipe';
+import { PrecioPipe } from './pipes/Room/precio.pipe';
+import { LocalidadPipe } from './pipes/User/localidad.pipe';
+import { NumCompanerosPipe } from './pipes/User/num-companeros.pipe';
 
 
 @NgModule({
@@ -86,7 +109,30 @@ import { EliminarCuentaComponent } from './cards/eliminar-cuenta/eliminar-cuenta
     MiPerfilComponent,
     ListarRoomByUserComponent,
     NosotrosComponent,
-    EliminarCuentaComponent
+    EliminarCuentaComponent,
+    FumadorPipe,
+    GeneroCompañeroPipe,
+    TipoCamaPipe,
+    AmuebladaPipe,
+    BanoPrivadoPipe,
+    VistaPrivadaPipe,
+    InternetPipe,
+    AscensorPipe,
+    LavadoraPipe,
+    SecadoraPipe,
+    FregaplatosPipe,
+    JardinPipe,
+    BalconPipe,
+    CalefaccionPipe,
+    PorteroPipe,
+    AccesiblePipe,
+    ParkingPipe,
+    AireAcondicionadoPipe,
+    MascotasPipe,
+    ParejasPipe,
+    PrecioPipe,
+    LocalidadPipe,
+    NumCompanerosPipe
   ],
   imports: [
     BrowserModule,

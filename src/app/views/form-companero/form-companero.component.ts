@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../servicios/login/login.service';
 import { Router } from '@angular/router';
+import { UserFiltrosService } from 'src/app/servicios/user/user-filtros.service';
 
 @Component({
   selector: 'app-form-companero',
@@ -9,12 +10,12 @@ import { Router } from '@angular/router';
 })
 export class FormCompaneroComponent implements OnInit {
 
-  titulo = "Te ayudamos a encontrar a tu compñaero ideal"
+  titulo = "Te ayudamos a encontrar a tu compañero ideal"
   descripcion = "Si tienes claro cómo sería tu compañero de piso perfecto"
 
   pasar = false;
 
-  constructor(private ls: LoginService, private router: Router) { }
+  constructor(private ls: LoginService, private router: Router, private userfiltro: UserFiltrosService) { }
 
   ngOnInit(): void {
     if (!this.ls.isLoggeado) {

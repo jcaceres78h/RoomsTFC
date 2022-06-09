@@ -70,4 +70,19 @@ export class UserService {
       return e.response.data.status;
     }
   }
+
+  deleteUser(userId: number)
+  {
+    try{
+    this.http.delete("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/user/"+userId)
+   } catch (e) {
+      this.status = {
+        // @ts-ignore
+        estado: e.response.data.status,
+        // @ts-ignore
+        errores: e.response.data.errors
+      }
+    }
+    return this.status;
+  }
 }
