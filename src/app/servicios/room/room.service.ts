@@ -134,4 +134,19 @@ export class RoomService {
     return this.status;
   }
 
+  deleteRoom(roomId: number)
+  {
+    try{
+    this.http.delete("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/"+roomId)
+   } catch (e) {
+    this.status = {
+      // @ts-ignore
+      estado: e.response.data.status,
+      // @ts-ignore
+      errores: e.response.data.errors
+    }
+  }
+  return this.status;
+}
+
 }
