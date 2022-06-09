@@ -54,6 +54,7 @@
 }
 .close_card > img{
     margin-right: 20px;
+    cursor: pointer;
 }
 .text_filtros_card{
     display: flex;

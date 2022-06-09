@@ -32,15 +32,27 @@ export class CategoriasFiltrosComponent implements OnInit {
 
   mostrarCard1(){
     this.card1 = !this.card1
+    this.card2 = false
+    this.card3 = false
+    this.card4 = false
   }
   mostrarCard2(){
     this.card2 = !this.card2
+    this.card1 = false
+    this.card3 = false
+    this.card4 = false
   }
   mostrarCard3(){
     this.card3 = !this.card3
+    this.card1 = false
+    this.card2 = false
+    this.card4 = false
   }
   mostrarCard4(){
     this.card4 = !this.card4
+    this.card2 = false
+    this.card3 = false
+    this.card1 = false
   }
 
 
