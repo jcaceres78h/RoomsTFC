@@ -86,7 +86,15 @@
     margin-top: 20px;
     align-items: center;
     flex-wrap: wrap;
-    margin-right: 10px;
+    margin-right: 31px;
+    justify-content: space-between;
+}
+.iconos_filtros_card_crts > .icon_text_filter{
+    margin: 4px;
+}
+.iconos_filtros_card_crts > .icon_text_filter > label{
+    font-size: 12px;
+
 }
 .icon_text_filter{
     display: flex;
