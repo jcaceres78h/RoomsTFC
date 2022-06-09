@@ -45,6 +45,10 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { MiPerfilComponent } from './views/mi-perfil/mi-perfil.component';
 import { NosotrosComponent } from './views/nosotros/nosotros.component';
 import { EliminarCuentaComponent } from './cards/eliminar-cuenta/eliminar-cuenta.component';
+import { FumadorPipe } from './pipes/Room/fumador.pipe';
+import { GeneroCompañeroPipe } from './pipes/Room/genero-compañero.pipe';
+import { TipoCamaPipe } from './pipes/Room/tipo-cama.pipe';
+import { AmuebladaPipe } from './pipes/Room/amueblada.pipe';
 
 
 @NgModule({
@@ -86,7 +90,11 @@ import { EliminarCuentaComponent } from './cards/eliminar-cuenta/eliminar-cuenta
     MiPerfilComponent,
     ListarRoomByUserComponent,
     NosotrosComponent,
-    EliminarCuentaComponent
+    EliminarCuentaComponent,
+    FumadorPipe,
+    GeneroCompañeroPipe,
+    TipoCamaPipe,
+    AmuebladaPipe
   ],
   imports: [
     BrowserModule,
