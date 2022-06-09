@@ -278,4 +278,14 @@ export class RoomComponent implements OnInit {
       })
   }
 
+  checkUser(){
+    if(this.ls.usuarioLogeado != null && this.roomService.getRoomById().userId == this.ls.usuarioLogeado.id){
+      return true
+    }
+    if(this.roomService.getRoomById())
+    //console.log(this.roomService.getRoomById().userId)
+    console.log(this.ls.usuarioLogeado)
+    return false
+  }
+
 }

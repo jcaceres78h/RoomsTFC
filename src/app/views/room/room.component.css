@@ -157,3 +157,7 @@ header {
 .btnContactar:hover{
   font-weight: bold;
 }
+.pack_btns{
+  display: flex;
+  justify-content: space-between;
+}
