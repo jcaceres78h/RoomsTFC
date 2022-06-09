@@ -1,0 +1,16 @@
+.container_resultados{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    z-index: 99;
+    margin-top: 50px ;
+    gap: 30px;
+}
+
+@media screen and (max-width: 900px){
+
+    .container_resultados{
+        justify-content: center;
+    }
+    
+}

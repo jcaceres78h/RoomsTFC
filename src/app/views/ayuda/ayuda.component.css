@@ -30,6 +30,7 @@ img.icono {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding-bottom: 55px;
   padding-top: 55px;
   margin-bottom: 100px;
@@ -47,6 +48,7 @@ img.icono {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+
 }
 .equipoCard {
   display: flex;
@@ -83,4 +85,15 @@ strong{
 }
 .iconoHome, .iconoCamera, .iconoRefresh{
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1280px){
+
+  .listaInfo{
+    flex-direction: column;
+  }
+  .listaInfo > li:first-of-type, .listaInfo > li:nth-child(2){
+    margin-bottom: 30px;
+  }
+
 }

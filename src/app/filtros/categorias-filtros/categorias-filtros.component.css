@@ -3,6 +3,15 @@
     flex-direction: row;
     justify-content: space-around;
 }
+.container_categoria{
+    display: flex;
+    flex-direction: column;
+    max-width: 240px ;
+    align-items: center;
+}
+.container_categoria:last-of-type{
+    max-width: 250px;
+}
 .categoria_filtros{
     display: flex;
     align-items: center;
@@ -10,11 +19,11 @@
     padding: 10px 20px;
     border-radius: 10px;
     cursor: pointer;
+
 }
 .categoria_filtros > img {
     margin-right: 20px;
 }
-
 
 /* TARJETAS */
 .container_cards_filtros{
@@ -32,6 +41,7 @@
     box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
     padding: 10px;
     z-index: 1000;
+    margin-top: 20px;
 }
 .card_filtros{
     display: flex;
@@ -65,10 +75,11 @@
 }
 .iconos_filtros_card{
     display: flex;
-    justify-content: space-evenly;
     margin-top: 20px;
-    align-items:flex-start ;
+    justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
+
 }
 .icon_text_filter{
     display: flex;
@@ -80,6 +91,7 @@
 }
 .icon_text_filter > label{
     text-align: center;
+    font-size: 14px;
 }
 .container_price{
     display: flex;
@@ -101,6 +113,4 @@
     padding: 10px;
     width: 90%;
 }
-.showCard{
-    display: none;
-}
+

@@ -26,6 +26,9 @@ a {
   text-decoration: none;
   font-size: 1.1em;
 }
+a:hover {
+  text-decoration: underline;
+}
 a:not(.nombreUsuario) {
   font-weight: normal;
   padding-right: 1.5em;
@@ -75,6 +78,9 @@ app-perfil-card{
 }
 .menu_responsive > div:first-of-type > img{
   display: none;
+}
+.move{
+  margin-right: 30px;
 }
 
 /* RESPONSIVE TABLET */

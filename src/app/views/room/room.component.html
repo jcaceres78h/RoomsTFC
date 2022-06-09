@@ -59,7 +59,7 @@
         </div>
         <div class="part1_2">
           <h3 class="interesado tituloRoom">Estoy interesado en esta habitación</h3>
-          <button class="btnPrimary" (click)="contactar()">Contactar</button>
+          <button class="btnContactar" (click)="contactar()">Contactar</button>
         </div>
       </div>
     </article>
@@ -69,8 +69,8 @@
       <p class="direction">
         <span *ngIf="islogeado">Calle {{_room.street}}, {{_room.number}}
           {{_room.postcode}}</span>
-        <span *ngIf="!islogeado">Regístrese para ver la hubicación precisa</span>
-        {{_room.locality}} {{_room.province}}
+        <span *ngIf="!islogeado">Para saber la localización exacta debes estar registrado en Rooms, <a class="enlace" href="registrarse">registrarme ahora</a>
+        </span>
       </p>
       <br><br>
       <!--    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6290.7049806082705!2d-1.122276937736596!3d37.968902406885626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1652573815779!5m2!1ses!2ses"
@@ -98,7 +98,7 @@
 
     <div class="part3_3">
       <h3 class="tInteres">Estoy interesado en esta habitación</h3>
-      <button class="btnPrimary" (click)="contactar()">Contactar</button>
+      <button class="btnContactar" (click)="contactar()">Contactar</button>
     </div>
     <article class="art4">
       <h3 class="infoTitle t3">Habitaciones similares</h3>

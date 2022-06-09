@@ -86,7 +86,7 @@ h2{
     margin-top: 30px;
 }
 .container_preferences{
-    width: 70%;
+    width: 100%;
     height: 860px;
     background-color: var(--light_blue);
     border-radius: 10px;
@@ -182,7 +182,7 @@ h2{
 }
 .add_picture_container{
     border: .5px solid var(--black_rooms);
-    width: 30%;
+    width: 50%;
     height: 100%;
     display: flex;
     flex-direction: column;

@@ -10,10 +10,10 @@ export class CategoriasFiltrosComponent implements OnInit {
   //mostrarCard = true
   //control = 0
 
-  contenedor = document.querySelector('.wrapper')
-  categorias = document.querySelectorAll('.categoria_filtros')
-  tarjetas = document.querySelectorAll('.container_card_filtros')
-  id = 0
+  public card1 = false
+  public card2 = false
+  public card3 = false
+  public card4 = false
 
   constructor() {  
 
@@ -30,20 +30,17 @@ export class CategoriasFiltrosComponent implements OnInit {
     console.log(this.control)
   } */
 
-  capturarClick(id:number){
-  
-      this.categorias.forEach(categoria=>{
-        categoria.addEventListener('click', function(){
-          //this.id= categoria.dataset.id
-          //this.id = id
-          console.log(categoria)
-
-        })
-
-      })
-  
-
-
+  mostrarCard1(){
+    this.card1 = !this.card1
+  }
+  mostrarCard2(){
+    this.card2 = !this.card2
+  }
+  mostrarCard3(){
+    this.card3 = !this.card3
+  }
+  mostrarCard4(){
+    this.card4 = !this.card4
   }
 
 
