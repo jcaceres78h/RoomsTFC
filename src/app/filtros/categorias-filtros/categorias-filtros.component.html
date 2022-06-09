@@ -93,7 +93,8 @@
             <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/living.svg" alt="Icono conviviencia" width="20">
             <p>Conviviencia</p> 
         </div>
-            <div *ngIf="card3" class="container_card_filtros" id="3">
+
+        <div *ngIf="card3" class="container_card_filtros" id="3">
                 <div class="card_filtros">
                     <div class="close_card">
                         <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/close.svg" alt="Icono cerrar" width="10">
@@ -171,11 +172,12 @@
             </div>
     </div>
     </div>
-    <div class="container_categoria" (click)="mostrarCard4()" data-id="4">
-        <div class="categoria_filtros">
+    <div class="container_categoria" data-id="4">
+        <div class="categoria_filtros" (click)="mostrarCard4()">
             <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/budget.svg" alt="Icono presupuesto" width="20">
             <p>Presupuesto mensual</p>    
         </div>
+
             <div *ngIf="card4" class="container_card_filtros" id="4" >
                 <div class="card_filtros">
                     <div class="close_card">
