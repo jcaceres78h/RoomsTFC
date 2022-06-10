@@ -24,5 +24,24 @@ export class ListarUsersComponent implements OnInit {
      return this.userfiltros.getlocality()
    }
 
+   getnumCompaneros(){
+    return this.userfiltros.getnumCompaneros()
+  }
+   getgenCompaneros(){
+    return this.userfiltros.getgenCompaneros()
+  }
+   getTipoCama(){
+    return this.userfiltros.getTipoCama()
+  }
+   getAmueblada(){
+    return this.userfiltros.getAmueblada()
+  }
+   getBanoPrivado(){
+    return this.userfiltros.getbanoPrivado()
+  }
+   getVistaPrivada(){
+    return this.userfiltros.getVistaPrivada()
+  }
+
 
 }

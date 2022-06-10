@@ -1,15 +1,16 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'numCompaneros'
+  name: 'uTipoCama'
 })
-export class NumCompanerosPipe implements PipeTransform {
+export class UTipoCamaPipe implements PipeTransform {
 
   transform(users: any[], num:number): any[] {
     if(users && users.length && num != 0){
-      return users.filter(user => num >= user.num_roommate)
+      return users.filter(user => num == user.bed_type)
 
     }else{ return users}
-  }
+
+}
 
 }
