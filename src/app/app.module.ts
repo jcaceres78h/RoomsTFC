@@ -68,6 +68,11 @@ import { ParejasPipe } from './pipes/Room/parejas.pipe';
 import { PrecioPipe } from './pipes/Room/precio.pipe';
 import { LocalidadPipe } from './pipes/User/localidad.pipe';
 import { NumCompanerosPipe } from './pipes/User/num-companeros.pipe';
+import { GenCompanerosPipe } from './pipes/User/gen-companeros.pipe';
+import { UTipoCamaPipe } from './pipes/User/u-tipo-cama.pipe';
+import { UAmuebladaPipe } from './pipes/User/u-amueblada.pipe';
+import { UBanoPrivadoPipe } from './pipes/User/u-bano-privado.pipe';
+import { UVistaPrivadaPipe } from './pipes/User/u-vista-privada.pipe';
 
 
 @NgModule({
@@ -132,7 +137,12 @@ import { NumCompanerosPipe } from './pipes/User/num-companeros.pipe';
     ParejasPipe,
     PrecioPipe,
     LocalidadPipe,
-    NumCompanerosPipe
+    NumCompanerosPipe,
+    GenCompanerosPipe,
+    UTipoCamaPipe,
+    UAmuebladaPipe,
+    UBanoPrivadoPipe,
+    UVistaPrivadaPipe
   ],
   imports: [
     BrowserModule,
