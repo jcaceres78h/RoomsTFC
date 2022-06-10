@@ -73,6 +73,17 @@ import { UTipoCamaPipe } from './pipes/User/u-tipo-cama.pipe';
 import { UAmuebladaPipe } from './pipes/User/u-amueblada.pipe';
 import { UBanoPrivadoPipe } from './pipes/User/u-bano-privado.pipe';
 import { UVistaPrivadaPipe } from './pipes/User/u-vista-privada.pipe';
+import { UInternetPipe } from './pipes/User/u-internet.pipe';
+import { UAscensorPipe } from './pipes/User/u-ascensor.pipe';
+import { ULavadoraPipe } from './pipes/User/u-lavadora.pipe';
+import { USecadoraPipe } from './pipes/User/u-secadora.pipe';
+import { ULavavajillasPipe } from './pipes/User/u-lavavajillas.pipe';
+import { UJardinPipe } from './pipes/User/u-jardin.pipe';
+import { UBalconPipe } from './pipes/User/u-balcon.pipe';
+import { UCalefaccionPipe } from './pipes/User/u-calefaccion.pipe';
+import { UPorteroPipe } from './pipes/User/u-portero.pipe';
+import { UAccesiblePipe } from './pipes/User/u-accesible.pipe';
+import { UParkingPipe } from './pipes/User/u-parking.pipe';
 
 
 @NgModule({
@@ -142,7 +153,18 @@ import { UVistaPrivadaPipe } from './pipes/User/u-vista-privada.pipe';
     UTipoCamaPipe,
     UAmuebladaPipe,
     UBanoPrivadoPipe,
-    UVistaPrivadaPipe
+    UVistaPrivadaPipe,
+    UInternetPipe,
+    UAscensorPipe,
+    ULavadoraPipe,
+    USecadoraPipe,
+    ULavavajillasPipe,
+    UJardinPipe,
+    UBalconPipe,
+    UCalefaccionPipe,
+    UPorteroPipe,
+    UAccesiblePipe,
+    UParkingPipe
   ],
   imports: [
     BrowserModule,

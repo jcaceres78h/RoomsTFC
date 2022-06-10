@@ -2,7 +2,9 @@
 
   <ng-container *ngFor="let user of getUsers() | localidad:getLocalidad() | numCompaneros:getnumCompaneros()
   | genCompaneros:getgenCompaneros() | uTipoCama:getTipoCama() | uAmueblada:getAmueblada() | uBanoPrivado:getBanoPrivado()
-  | uVistaPrivada:getVistaPrivada() ">
+  | uVistaPrivada:getVistaPrivada() | uInternet:getInternet() | uAscensor:getAscensor() | uLavadora:getLavadora()
+  | uSecadora:getSecadora() |uLavavajillas:getLavavajillas() | uJardin:getJardin() | uBalcon:getBalcon()
+  | uCalefaccion:getCalefaccion() | uPortero:getPortero() | uAccesible:getAccesible() | uParking:getParking() ">
       <app-user-card [user]="user" class="card_resultados_users" ></app-user-card>
   </ng-container>
 

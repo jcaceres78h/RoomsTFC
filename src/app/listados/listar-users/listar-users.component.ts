@@ -42,6 +42,39 @@ export class ListarUsersComponent implements OnInit {
    getVistaPrivada(){
     return this.userfiltros.getVistaPrivada()
   }
+   getInternet(){
+    return this.userfiltros.getInternet()
+  }
+   getAscensor(){
+    return this.userfiltros.getAscensor()
+  }
+   getLavadora(){
+    return this.userfiltros.getLavadora()
+  }
+   getSecadora(){
+    return this.userfiltros.getSecadora()
+  }
+   getLavavajillas(){
+    return this.userfiltros.getLavavajillas()
+  }
+   getJardin(){
+    return this.userfiltros.getJardin()
+  }
+   getBalcon(){
+    return this.userfiltros.getBalcon()
+  }
+   getCalefaccion(){
+    return this.userfiltros.getCalefaccion()
+  }
+   getPortero(){
+    return this.userfiltros.getPortero()
+  }
+   getAccesible(){
+    return this.userfiltros.getAccesible()
+  }
+   getParking(){
+    return this.userfiltros.getParking()
+  }
 
 
 }
