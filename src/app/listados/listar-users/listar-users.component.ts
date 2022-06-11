@@ -75,6 +75,18 @@ export class ListarUsersComponent implements OnInit {
    getParking(){
     return this.userfiltros.getParking()
   }
+   getAireAcondicionado(){
+    return this.userfiltros.getAireAcondicionado()
+  }
+   getFumar(){
+    return this.userfiltros.getFumar()
+  }
+   getMascota(){
+    return this.userfiltros.getMascota()
+  }
+   getParejas(){
+    return this.userfiltros.getParejas()
+  }
 
 
 }

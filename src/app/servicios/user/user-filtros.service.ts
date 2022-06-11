@@ -26,7 +26,11 @@ export class UserFiltrosService {
   private calefaccion = false;
   private portero = false;
   private accesible = false;
-  private parking = true;
+  private parking = false;
+  private aireAcondicionado = false;
+  private fumar = false;
+  private mascota = false;
+  private parejas = false;
 
 
   setLocality(localidad : string) {
@@ -156,6 +160,58 @@ export class UserFiltrosService {
   getParking(){
     return this.parking;
   }
+  setAireAcondicionado(bool : boolean) {
+    this.aireAcondicionado = bool;
+  }
 
+  getAireAcondicionado(){
+    return this.aireAcondicionado;
+  }
+  setFumar(bool : boolean) {
+    this.fumar = bool;
+  }
+
+  getFumar(){
+    return this.fumar;
+  }
+  setMascota(bool : boolean) {
+    this.mascota = bool;
+  }
+
+  getMascota(){
+    return this.mascota;
+  }
+  setParejas(bool : boolean) {
+    this.parejas = bool;
+  }
+
+  getParejas(){
+    return this.parejas;
+  }
+
+  reset(){
+    this.locality= "";
+    this.numCompaneros = 0;
+    this.genCompañeros = 10;
+    this.tipoCama = 0;
+    this.amueblada= false;
+    this.banoPrivado = false;
+    this.vistaPrivada = false;
+    this.internet = false;
+    this.ascensor = false;
+    this.lavadora = false;
+    this.secadora = false;
+    this.lavavajillas = false;
+    this.jardin = false;
+    this.balcon = false;
+    this.calefaccion = false;
+    this.portero = false;
+    this.accesible = false;
+    this.parking = false;
+    this.aireAcondicionado = false;
+    this.fumar = false;
+    this.mascota = false;
+    this.parejas = false;
+  }
 
 }

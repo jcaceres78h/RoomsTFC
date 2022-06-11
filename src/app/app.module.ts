@@ -84,6 +84,10 @@ import { UCalefaccionPipe } from './pipes/User/u-calefaccion.pipe';
 import { UPorteroPipe } from './pipes/User/u-portero.pipe';
 import { UAccesiblePipe } from './pipes/User/u-accesible.pipe';
 import { UParkingPipe } from './pipes/User/u-parking.pipe';
+import { UAireAcondicionadoPipe } from './pipes/User/u-aire-acondicionado.pipe';
+import { UFumarPipe } from './pipes/User/u-fumar.pipe';
+import { UMascotaPipe } from './pipes/User/u-mascota.pipe';
+import { UParejasPipe } from './pipes/User/u-parejas.pipe';
 
 
 @NgModule({
@@ -164,7 +168,11 @@ import { UParkingPipe } from './pipes/User/u-parking.pipe';
     UCalefaccionPipe,
     UPorteroPipe,
     UAccesiblePipe,
-    UParkingPipe
+    UParkingPipe,
+    UAireAcondicionadoPipe,
+    UFumarPipe,
+    UMascotaPipe,
+    UParejasPipe
   ],
   imports: [
     BrowserModule,
