@@ -22,7 +22,7 @@ export class UserService {
   }
 
   getAllUser(){
-      this.getUpdateAllUser();
+      //this.getUpdateAllUser();
       return this.allUsers;
   }
 
@@ -75,7 +75,7 @@ export class UserService {
   {
     try{
     this.http.delete("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/user/"+userId)
-   } catch (e) {
+   } catch (e) {  
       this.status = {
         // @ts-ignore
         estado: e.response.data.status,
