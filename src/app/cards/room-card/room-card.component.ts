@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FavoritosService } from 'src/app/servicios/favoritos/favoritos.service';
 
 @Component({
   selector: 'app-room-card',
@@ -11,7 +12,7 @@ export class RoomCardComponent implements OnInit {
   public type_bed : any
   public enlace:any
 
-  constructor() { }
+  constructor(private favoritoService: FavoritosService) { }
 
   ngOnInit(): void {
     this.tipoHabitacion()
@@ -23,10 +24,10 @@ export class RoomCardComponent implements OnInit {
       case 0:
           this.type_bed = 'Habitación con literas'
         break;
-        case 1: 
+        case 1:
           this.type_bed = 'Habitación individual'
         break;
-        case 2: 
+        case 2:
           this.type_bed = 'Habitación doble'
         break;
       default: this.type_bed = 'Habitación'
@@ -43,8 +44,12 @@ export class RoomCardComponent implements OnInit {
     }
   }
 
-  addFavs(){
-    alert('añadir a favoritos')
+  setFavorito(room:any): void {
+    this.favoritoService.setFavoritoRoom(room);
+  }
+
+  isFavorito(room:any){
+    return this.favoritoService.getFavoritosRoom().includes(room);
   }
 
 }

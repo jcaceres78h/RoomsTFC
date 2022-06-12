@@ -1,16 +1,20 @@
 <div class="container_card_room">
 
     <div class="card_room">
-        
+
         <div class="img_carrusel">
-           
-            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/heart_favs_white.svg" alt="corazón favoritos" width="30" class="heart_favs_room" (click)="addFavs()">
-            
-            <div class="flechas_room"> 
+          <ng-container *ngIf="!isFavorito(room)" >
+            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/heart_favs_white.svg" alt="corazón favoritos" width="30" class="heart_favs_room" (click)="setFavorito(room)">
+          </ng-container>
+          <ng-container *ngIf="isFavorito(room)" >
+            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/heart.svg" alt="corazón favoritos" width="30" class="heart_favs_room" (click)="setFavorito(room)">
+          </ng-container>
+
+            <div class="flechas_room">
                 <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/left.svg" alt="Izquierda" class="flecha_room" width="20" (click)="next('left')">
                 <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/right.svg" alt="Derecha" class="flecha_room" width="20" (click)="next('right')">
             </div>
-    
+
             <a href={{this.enlace}}>
                 <div class="info_room">
                     <div class="container_text_info_room">
@@ -21,10 +25,10 @@
                         <div class="precio">
                             <p>{{room.price}}€</p>
                         </div>
-                    </div>            
+                    </div>
                 </div>
             </a>
-        </div>   
+        </div>
 
     </div>
 

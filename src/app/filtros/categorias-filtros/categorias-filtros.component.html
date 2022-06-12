@@ -70,8 +70,8 @@
                              src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/double_bed.svg" alt="doble" width="50" id="doble">
                         <label for="doble">Doble</label>
                     </div>
-                    <div class="icon_text_filter" (click)="selectCama(0)">
-                        <img [ngClass]="{selected: cama == 0}"
+                    <div class="icon_text_filter" (click)="selectCama(3)">
+                        <img [ngClass]="{selected: cama == 3}"
                              src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/bunk_bed.svg" alt="litera" width="50" id="litera">
                         <label for="litera">Litera</label>
                     </div>
@@ -216,18 +216,20 @@
                             <div class="price_range">
                                 <label for="min">Mínimo</label>
                                 <input type="text" id="min"
+                                        #minimo
                                        class="minimo"
                                        placeholder="mínimo al mes"
                                         [(ngModel)]="presupuestoMinimo"
-                                        (keyup)="changeValorMinimo()">
+                                        (keyup)="changeValorMinimo(minimo.value)">
                             </div>
                             <div class="price_range">
                                 <label for="max">Máximo</label>
                                 <input type="text" id="max"
+                                        #maximo
                                        class="maximo"
                                        placeholder="máximo al mes"
                                 [(ngModel)]="presupeustoMaximo"
-                                (keyup)="changeValorMaximo()">
+                                (keyup)="changeValorMaximo(maximo.value)">
                             </div>
                         </div>
                         <br><br>
