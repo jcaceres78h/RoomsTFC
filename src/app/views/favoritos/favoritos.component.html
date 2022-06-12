@@ -1,3 +1,18 @@
 <main class="main_principal">
     <h1 class="title_view">Mis favoritos</h1>
-</main>
+    <p>Habitaciones Favoritas</p>
+    <ng-container *ngIf="getFavoritosRoom()">
+      <ng-container *ngFor="let room of getFavoritosRoom()">
+        <app-room-card [room]="room"></app-room-card>
+      </ng-container>
+    </ng-container>
+    <br>
+    <br>
+    <p>Usuarios Favoritos</p>
+    <ng-container *ngIf="getFavoritosUser()">
+      <ng-container *ngFor="let user of getFavoritosUser()">
+        <app-user-card [user]="user"></app-user-card>
+      </ng-container>
+    </ng-container>
+
+  </main>
