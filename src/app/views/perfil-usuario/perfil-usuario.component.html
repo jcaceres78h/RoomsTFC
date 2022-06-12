@@ -1,5 +1,5 @@
 <main class="main_principal">
-    <h1 class="title_view">El perfil de</h1>
+    <h1 class="title_view">El perfil de {{getUser().name}}</h1>
 
     <div class="pack_btns">
        <a href="" (click)="volver()" ><img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/back.svg" alt="Atrás" width="30"></a>
@@ -16,26 +16,50 @@
                 <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/user.svg" alt="" width="30">
             </div>
             <div class="datos_personales">
-                <h2>NombreUsuario, EdadUsuario <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/50d24df13c00ba2a1434057f97430bd360815234/icons/verify.svg" alt="perfil verificado" width="20"></h2>
+                <h2>{{getUser().name}}, {{getUser().age}} <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/50d24df13c00ba2a1434057f97430bd360815234/icons/verify.svg" alt="perfil verificado" width="20"></h2>
                 <p>
-                    Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.
+                  {{getUser().about_me}}
                 </p>
                 <!--
                     TENDRÁN QUE RECORRESE LOS ICONOS QUE HAYA SELECCIONADO EL USUARIO EN SU PERFIL
                 -->
                 <div class="sobremi">
+                  <ng-container *ngIf="estudioTrabajo()==0" >
                     <div class="icono_sobremi">
                         <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/study_and_work.svg" alt="" width="50">
                         <label for="">Estudio y trabajo</label>
                     </div>
+                  </ng-container>
+                  <ng-container *ngIf="estudioTrabajo()==1" >
+                    <div class="icono_sobremi">
+                        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/study.svg" alt="" width="50">
+                        <label for="">Estudio</label>
+                    </div>
+                  </ng-container>
+                  <ng-container *ngIf="estudioTrabajo()==2" >
+                    <div class="icono_sobremi">
+                        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/work.svg" alt="" width="50">
+                        <label for="">Trabajo</label>
+                    </div>
+                  </ng-container>
+                  <ng-container *ngIf="getUser().user_vegan" >
                     <div class="icono_sobremi">
                         <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/vegan.svg" alt="" width="50">
                         <label for="">Vegano</label>
                     </div>
+                  </ng-container>
+                    <ng-container *ngIf="getUser().user_smoke" >
+                    <div class="icono_sobremi">
+                        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/smoke.svg" alt="" width="50">
+                        <label for="">Fumador</label>
+                    </div>
+                  </ng-container>
+                    <ng-container *ngIf="!getUser().user_smoke" >
                     <div class="icono_sobremi">
                         <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/no_smoke.svg" alt="" width="50">
                         <label for="">No fumador</label>
                     </div>
+                  </ng-container>
                 </div>
             </div>
 
@@ -51,15 +75,15 @@
                 <div class="checks">
                     <div>
                         <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/check_preferences.svg" alt="check" width="20">
-                        <p>Le gustaría vivir en <b>localidad</b></p>
+                        <p>Le gustaría vivir en <b>{{getUser().locality}}</b></p>
                     </div>
                     <div>
                         <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/check_preferences.svg" alt="check" width="20">
-                        <p>En un piso compartido con <b>num compañeros</b> compañero (en el caso de 1) compañeros (>2)</p>
+                        <p>En un piso compartido con <b>{{getUser().num_roommate}}</b> {{companeroPluralSingular()}}</p>
                     </div>
                     <div>
                         <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/check_preferences.svg" alt="check" width="20">
-                        <p>En el que vivan <b>chicas/chicos</b> / <b>Sin preferencias de género</b></p>
+                        <p>En el que vivan <b>{{generoCompanero()}}</b></p>
                     </div>
 
                 </div>
@@ -71,11 +95,48 @@
                             PREFERENCIAS DE LA HABITACIÓN IDEAL QUE HAYA ELEGIDO EL USUARIO
                         -->
                         <div class="box">
+                          <div>
+                          <ng-container *ngIf="getUser().bed_type == 1" >
                             <div class="icono_sobremi">
-                                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/no_smoke.svg" alt="" width="50">
-                                <label for="">No fumador</label>
+                                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/bed.svg" alt="" width="50">
+                                <label for="">Cama simple</label>
                             </div>
+                          </ng-container>
+                          <ng-container *ngIf="getUser().bed_type == 2" >
+                            <div class="icono_sobremi">
+                                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/double_bed.svg" alt="" width="50">
+                                <label for="">Cama doble</label>
+                            </div>
+                          </ng-container>
+                          <ng-container *ngIf="getUser().bed_type == 1" >
+                            <div class="icono_sobremi">
+                                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/bunk_bed.svg" alt="" width="50">
+                                <label for="">Litera</label>
+                            </div>
+                          </ng-container>
+                          <ng-container *ngIf="getUser().is_furnished" >
+                            <div class="icono_sobremi">
+                                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/furniture.svg" alt="" width="50">
+                                <label for="">Amueblada</label>
+                            </div>
+                          </ng-container>
                         </div>
+                        <div>
+                          <ng-container *ngIf="getUser().has_private_bath" >
+                            <div class="icono_sobremi">
+                                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/bath.svg" alt="" width="50">
+                                <label for="">Baño privado</label>
+                            </div>
+                          </ng-container>
+                          <ng-container *ngIf="getUser().has_private_view" >
+                            <div class="icono_sobremi">
+                                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/window.svg
+                                " alt="" width="50">
+                                <label for="">Vistas</label>
+                            </div>
+                          </ng-container>
+                        </div>
+                      </div>
                     </div>
                     <div class="box_preference">
                         <h3>Tus imprescindibles...</h3>
@@ -85,32 +146,93 @@
                         -->
                         <div class="box">
                             <div>
+                              <ng-container *ngIf="getUser().has_internet" >
                                 <div class="icono_sobremi">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/no_smoke.svg" alt="" width="50">
-                                    <label for="">No fumador</label>
+                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/wifi.svg" alt="" width="50">
+                                    <label for="">Wiffi</label>
                                 </div>
+                              </ng-container>
+                              <ng-container *ngIf="getUser().has_elevator" >
                                 <div class="icono_sobremi">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/no_smoke.svg" alt="" width="50">
-                                    <label for="">No fumador</label>
+                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/elevator.svg
+                                    " alt="" width="50">
+                                    <label for="">Ascensor</label>
                                 </div>
+                              </ng-container>
+                              <ng-container *ngIf="getUser().has_whashing_machine" >
                                 <div class="icono_sobremi">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/no_smoke.svg" alt="" width="50">
-                                    <label for="">No fumador</label>
+                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/washer.svg
+                                    " alt="" width="50">
+                                    <label for="">Lavadora</label>
                                 </div>
+                              </ng-container>
+                              <ng-container *ngIf="getUser().has_garden" >
+                                <div class="icono_sobremi">
+                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/garden.svg
+                                    " alt="" width="50">
+                                    <label for="">Jardín</label>
+                                </div>
+                              </ng-container>
                             </div>
                             <div>
+                              <ng-container *ngIf="getUser().has_balcony" >
                                 <div class="icono_sobremi">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/no_smoke.svg" alt="" width="50">
-                                    <label for="">No fumador</label>
+                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/balcony.svg
+                                    " alt="" width="50">
+                                    <label for="">Balcón</label>
                                 </div>
+                              </ng-container>
+                              <ng-container *ngIf="getUser().has_heating" >
                                 <div class="icono_sobremi">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/no_smoke.svg" alt="" width="50">
-                                    <label for="">No fumador</label>
+                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/heating.svg
+                                    " alt="" width="50">
+                                    <label for="">Calefacción</label>
                                 </div>
+                              </ng-container>
+                              <ng-container *ngIf="getUser().has_drying_machine" >
                                 <div class="icono_sobremi">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/no_smoke.svg" alt="" width="50">
-                                    <label for="">No fumador</label>
+                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/washer.svg
+                                    " alt="" width="50">
+                                    <label for="">Secadora</label>
                                 </div>
+                              </ng-container>
+                              <ng-container *ngIf="getUser().has_has_doorman" >
+                                <div class="icono_sobremi">
+                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/doorman.svg
+                                    " alt="" width="50">
+                                    <label for="">Portero</label>
+                                </div>
+                              </ng-container>
+                            </div>
+                            <div>
+                              <ng-container *ngIf="getUser().is_accessibility" >
+                                <div class="icono_sobremi">
+                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/accessible.svg
+                                    " alt="" width="50">
+                                    <label for="">Accesible</label>
+                                </div>
+                              </ng-container>
+                              <ng-container *ngIf="getUser().has_parking" >
+                                <div class="icono_sobremi">
+                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/parking.svg
+                                    " alt="" width="50">
+                                    <label for="">Parking</label>
+                                </div>
+                              </ng-container>
+                              <ng-container *ngIf="getUser().has_dishwasher" >
+                                <div class="icono_sobremi">
+                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/dishwasher.svg
+                                    " alt="" width="50">
+                                    <label for="">Lavaplatos</label>
+                                </div>
+                              </ng-container>
+                              <ng-container *ngIf="getUser().has_air_conditioning" >
+                                <div class="icono_sobremi">
+                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/air_conditioner.svg
+                                    " alt="" width="50">
+                                    <label for="">Aire<br>acondicionado</label>
+                                </div>
+                              </ng-container>
                             </div>
                         </div>
                     </div>
@@ -120,10 +242,30 @@
                             PREFERENCIAS DE LA CONVIVENCIA QUE HAYA ELEGIDO EL USUARIO
                         -->
                         <div class="box">
+                          <div>
+                            <ng-container *ngIf="getUser().room_smoke" >
+                              <div class="icono_sobremi">
+                                  <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/smoke.svg
+                                  " alt="" width="50">
+                                  <label for="">Fumadores</label>
+                              </div>
+                            </ng-container>
+                          <ng-container *ngIf="getUser().room_pet" >
                             <div class="icono_sobremi">
-                                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/no_smoke.svg" alt="" width="50">
-                                <label for="">No fumador</label>
+                                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/pets.svg
+                                " alt="" width="50">
+                                <label for="">Mascotas</label>
                             </div>
+                          </ng-container>
+                          <ng-container *ngIf="getUser().room_couples" >
+                            <div class="icono_sobremi">
+                                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/couples.svg
+                                " alt="" width="50">
+                                <label for="">Parejas</label>
+                            </div>
+                          </ng-container>
+
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -160,21 +302,21 @@
 
         <div class="container__data_contact">
 
-            <h2>¿Te gustaría compartir piso con nombreUsuario?</h2>
+            <h2>¿Te gustaría compartir piso con {{getUser().name}}?</h2>
 
             <div class="data_contact">
                 <div class="data">
                     <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/phone.svg" alt="Teléfono" width="50">
                     <div>
                        <p> <b>Teléfono</b> </p>
-                       <a href="tel:">num.TeléfonoUsuario</a>
+                       <a href="tel:">{{getUser().phone}}</a>
                     </div>
                 </div>
                 <div class="data">
                     <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/email.svg" alt="Correo  electrónico" width="50">
                     <div>
                         <p> <b>Correo electrónico</b> </p>
-                        <a href="mailto:">correoElectronicoUsuario</a>
+                        <a href="mailto:">{{getUser().email}}</a>
                     </div>
                 </div>
 

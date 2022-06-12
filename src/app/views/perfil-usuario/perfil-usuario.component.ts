@@ -28,6 +28,33 @@ export class PerfilUsuarioComponent implements OnInit {
     window.history.back();
   }
 
+  estudioTrabajo(){
+    if(this.getUser().studing && this.getUser().working)
+      return 0
+    else if (this.getUser().studing && !this.getUser().working)
+      return 1
+    else if(!this.getUser().studing && this.getUser().working)
+      return 2
+    else
+      return 3
+  }
+
+  companeroPluralSingular(){
+    if (this.getUser().num_roommate <= 1)
+      return "compañero"
+    else
+    return "compañeros"
+  }
+
+  generoCompanero(){
+    if (this.getUser().gen_roommate == 0)
+      return "chicos"
+    else if (this.getUser().gen_roommate == 1)
+     return "chicas"
+     else
+      return "sin preferencias de género"
+  }
+
 
 
 }
