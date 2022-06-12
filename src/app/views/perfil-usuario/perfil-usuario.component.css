@@ -105,11 +105,15 @@ h2{
     background-color: white;
     padding: 20px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
 .box > div > div {
     margin: 10px;
+}
+.box_preference {
+  width: 32%;
 }
 h3{
     font-weight: 400;
@@ -198,5 +202,40 @@ h3{
 }
 a{
     text-decoration: none;
+}
+.img_perfil {
+  width: 100%;
+  height: 100%;
+}
+.fotos {
+  width: 30%;
+}
+.gallery  img {
+  width: 100%;
+  height: 100%;
+}
+.container__data_contact {
+  clear: both;
+}
+
+.galeria {
+  width: 100%;
+  margin-top: 50px;
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
+}
+.galeria_fotos {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.galeria_fotos img {
+  width: 33%;
+  height: fit-content;
+  margin-bottom: 5px;
 }
 
