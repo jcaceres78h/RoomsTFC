@@ -67,14 +67,17 @@ export class CategoriasFiltrosComponent implements OnInit {
       this.num_roommates--;
   }
 
-  gender = 0;
+  gender = 2;
   selectGender(gender: number) {
     this.gender = gender;
   }
 
-  cama = 1;
+  cama = 0;
   selectCama(tipo: number) {
-    this.cama = tipo;
+    if(this.cama == tipo)
+      this.cama =0
+    else
+      this.cama = tipo;
   }
 
   amueblada = false
