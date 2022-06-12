@@ -30,6 +30,7 @@ export class RoomComponent implements OnInit {
           this.verMapa()
         }
       })
+    this.getFotos()
   }
 
   get islogeado() {
@@ -279,13 +280,26 @@ export class RoomComponent implements OnInit {
   }
 
   checkUser(){
-    if(this.ls.usuarioLogeado != null && this.roomService.getRoomById().userId == this.ls.usuarioLogeado.id){
+    if(this.ls.isLoggeado && this.roomService.getRoomById().userId == this.ls.isLoggeado){
       return true
     }
     if(this.roomService.getRoomById())
     //console.log(this.roomService.getRoomById().userId)
     console.log(this.ls.usuarioLogeado)
     return false
+  }
+
+
+  //---PARA LAS FOTOS---
+  fotos: any
+  foto_perfil = '';
+  getFotos() {
+    axios.get(`http://167.99.46.205/index.php/api/images?type=room&id=${this.id}`)
+      .then(e => {
+        this.fotos = e.data.data;
+        this.foto_perfil = this.fotos[0].file_path
+        console.log(this.foto_perfil)
+      })
   }
 
 }

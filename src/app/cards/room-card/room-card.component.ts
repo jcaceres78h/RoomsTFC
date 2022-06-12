@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FavoritosService } from 'src/app/servicios/favoritos/favoritos.service';
+import axios from 'axios';
 
 @Component({
   selector: 'app-room-card',
@@ -17,6 +18,7 @@ export class RoomCardComponent implements OnInit {
   ngOnInit(): void {
     this.tipoHabitacion()
     this.enlace = '/room/'+this.room.id;
+    this.getFotos()
   }
 
   tipoHabitacion(){
@@ -50,6 +52,20 @@ export class RoomCardComponent implements OnInit {
 
   isFavorito(room:any){
     return this.favoritoService.getFavoritosRoom().includes(room);
+  }
+
+  foto_perfil = '';
+  getFotos() {
+    axios.get(`http://167.99.46.205/index.php/api/images?type=room&id=${this.room.id}`)
+      .then(e => {
+        let foto = e.data.data[0]
+        // this.fotos = e.data.data;
+        this.foto_perfil = foto.file_path
+        this.foto_perfil = "background: url('http://167.99.46.205"+this.foto_perfil+"') no-repeat center; background-size: cover;"
+        console.log(this.foto_perfil)
+      })
+      .catch(e => {
+      })
   }
 
 }

@@ -135,12 +135,17 @@ header {
 }
 .carrusel_imagenes{
   width: 100%;
+  height: 350px;
   display: flex;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
+  position: relative;
 }
 .carrusel_imagenes > img {
   width: 100%;
+  justify-self: center;
+  align-self: center;
 }
 .enlace{
   color: var(--dark_blue);
