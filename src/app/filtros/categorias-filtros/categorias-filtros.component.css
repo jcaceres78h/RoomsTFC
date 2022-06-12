@@ -129,4 +129,15 @@
     padding: 10px;
     width: 90%;
 }
+.selected,
+.changeNum {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.selected,
+.changeNum:active {
+  background-color: var(--dark_blue);
+  box-shadow: var(--shadow-g);
+}
 
