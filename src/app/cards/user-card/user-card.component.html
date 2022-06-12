@@ -1,4 +1,9 @@
-<div class="card_user">
+<div *ngIf="foto_perfil" class="card_user" [style]="foto_perfil">
+<!--  <img *ngIf="foto_perfil"
+       src="http://167.99.46.205{{ foto_perfil }}"
+       alt="Foto de {{ user.name }}"
+       class="foto_perfil"
+  >-->
   <ng-container *ngIf="!isFavorito(user)" >
     <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/heart_favs_white.svg" alt="corazón favoritos" width="30" class="heart_favs_room" (click)="setFavorito(user)">
   </ng-container>
