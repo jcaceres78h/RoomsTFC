@@ -280,13 +280,24 @@ export class RoomComponent implements OnInit {
   }
 
   checkUser(){
-    if(this.ls.isLoggeado && this.roomService.getRoomById().userId == this.ls.isLoggeado){
-      return true
-    }
-    if(this.roomService.getRoomById())
+    if (!this.ls.isLoggeado)
+      return false;
+
+    return this.roomService.getRoomById().userId == this.ls.userLogged;
+
+
+/*    if (this.ls.isLoggeado) {
+      if (this.ls.isLoggeado && (this.roomService.getRoomById().userId == this.ls.userLogged)) {
+        console.log(this.ls.isLoggeado)
+        console.log(this.roomService.getRoomById())
+        this.ls.userLogged
+        return true
+      }
+    }*/
+    // if(this.roomService.getRoomById())
     //console.log(this.roomService.getRoomById().userId)
-    console.log(this.ls.usuarioLogeado)
-    return false
+    // console.log(this.ls.usuarioLogeado)
+    // return true;
   }
 
 
