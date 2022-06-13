@@ -224,6 +224,8 @@ export class RoomComponent implements OnInit {
   contactar() {
     if (this.islogeado) {
       this.router.navigate(['perfil', this._room.userId])
+    } else {
+      this.router.navigate(['iniciar-sesion'])
     }
   }
 
