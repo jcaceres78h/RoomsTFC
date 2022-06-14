@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from "../../servicios/user/user.service";
 import {Router} from "@angular/router"
+import { LoginService } from '../../servicios/login/login.service';
 
 @Component({
   selector: 'app-form-crear-cuenta',
@@ -49,10 +50,13 @@ export class FormCrearCuentaComponent implements OnInit {
 
   step = 1;
 
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private userService: UserService, private ls: LoginService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
+    if (this.ls.isLoggeado)
+      this.router.navigate([''])
   }
 
   stepDiscount() {
