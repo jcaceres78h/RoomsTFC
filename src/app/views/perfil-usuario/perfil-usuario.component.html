@@ -1,4 +1,5 @@
-<main class="main_principal">
+<app-loading-page *ngIf="!usuario"></app-loading-page>
+<main *ngIf="usuario" class="main_principal">
     <h1 class="title_view">El perfil de {{ usuario.name }}</h1>
 
     <div class="pack_btns">
