@@ -315,4 +315,7 @@ export class RoomComponent implements OnInit {
       })
   }
 
+  editarRoom() {
+    this.router.navigate(['editar-publicacion', this._room.id])
+  }
 }

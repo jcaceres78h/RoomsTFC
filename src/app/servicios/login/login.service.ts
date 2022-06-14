@@ -18,7 +18,7 @@ export class LoginService {
       .then(e => {
         id = this.comprobarContrasena(e, user)
         if (id >= 0) {
-          Cookies.set("userLogged", id)
+          Cookies.set("userLogged", id.toString(), {expires: 1})
         }
       })
     return id;
@@ -32,7 +32,7 @@ export class LoginService {
     for (let i = 0; i < users.length && !encontrado; i++) {
       if (user.email.toLowerCase() === users[i].email.toLowerCase()) {
         if (user.password === users[i].password) {
-          Cookies.set("nombreLogged", users[i].name)
+          Cookies.set("nombreLogged", users[i].name, {expires: 1})
           return users[i].id;
         }
         return -1;

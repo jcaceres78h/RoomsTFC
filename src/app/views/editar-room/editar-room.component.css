@@ -1,19 +1,6 @@
-#img {
-  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/publicar_room.jpg");
-  background-repeat: no-repeat;
-  background-attachment: initial;
-  background-position: center center;
-  background-size: cover;
-  width: 100%;
-  aspect-ratio: 4/3;
-  z-index: -1;
-  position: fixed;
-  top: 0;
-  right: 0;
-}
 .formulario_container {
   width: 100%;
-  background: var(--light_blue_a);
+  background: var(--light_blue);
   padding: 65px 6% 200px 6%;
   border-radius: 20px;
 }
@@ -157,8 +144,26 @@ textarea {
   margin-right: 15px;
   margin-left: 15px;
 }
+.pack_btns{
+  display: flex;
+  justify-content: space-between;
+}
+.title_view {
+  margin-top: 50px;
+  font-weight: 400;
+  font-size: 30px;
+}
 .error {
   border: solid 2px red;
   color: red;
 }
-
+.btn_delete_room > button {
+  border: solid 1px black;
+  color: var(--light_blue);
+  background: white;
+  padding: 8px 12px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  font-size: 16px;
+}

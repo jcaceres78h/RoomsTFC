@@ -5,7 +5,11 @@
       <div (click)="volver()" style="cursor: pointer">
         <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/back.svg" alt="Atrás" width="30">
       </div>
-      <a *ngIf="checkUser()" href="editar-publicacion" class="edit_myaccount">Editar habitación</a>
+      <a *ngIf="checkUser()"
+         (click)="editarRoom()"
+         class="edit_myaccount"
+         style="cursor: pointer; text-decoration: underline"
+      >Editar habitación</a>
     </div>
     <article class="art1">
       <div class="div1_1">

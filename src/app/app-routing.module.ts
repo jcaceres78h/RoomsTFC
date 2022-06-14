@@ -19,6 +19,7 @@ import { FormRegistroComponent } from './views/form-registro/form-registro.compo
 import { FormBtnComponent } from './form-btn/form-btn.component';
 import { MiPerfilComponent } from './views/mi-perfil/mi-perfil.component';
 import { FormRoomComponent } from './views/form-room/form-room.component';
+import { EditarRoomComponent } from './views/editar-room/editar-room.component';
 
 const routes: Routes = [
   { path: 'rooms', component: HomeComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'mi-perfil', component: MiPerfilComponent },
   { path: 'perfil/:id', component: PerfilUsuarioComponent },
   { path: 'editar-perfil', component: EditarPerfilUsuarioComponent },
+  {path: 'editar-publicacion/:id', component: EditarRoomComponent},
   { path: 'resultados-room', component: ResultadosRoomComponent },
   { path: 'resultados-companeros', component: ResultadosCompanerosComponent },
   { path: 'user/:id', component: PerfilUsuarioComponent },

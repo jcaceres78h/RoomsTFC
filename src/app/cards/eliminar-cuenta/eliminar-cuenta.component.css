@@ -29,11 +29,13 @@
 .texto_eliminar > h2{
     font-size: 1.25em;
 }
-a{
+.a{
     font-size: 1.25em;
     color: var(--dark_blue);
     margin-top: 5px;
+    text-decoration: underline;
+  cursor: pointer;
 }
-a:hover{
+.a:hover{
     font-weight: bold;
 }

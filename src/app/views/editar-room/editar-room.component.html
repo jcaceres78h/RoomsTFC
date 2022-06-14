@@ -1,0 +1,429 @@
+<app-loading-page *ngIf="!room"></app-loading-page>
+<main *ngIf="room" class="main_principal">
+
+
+  <div class="pack_btns">
+    <div (click)="volver()" style="cursor: pointer"><img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/back.svg" alt="Atrás" width="30"></div>
+    <div class="btn_delete_room" (click)="abrirEliminarCard()" ><button>Eliminar cuenta</button></div>
+  </div>
+
+  <app-eliminar-room [hidden]="mostrarCardEliminar"></app-eliminar-room>
+
+  <h1 class="title_view">Editar mi publicación</h1>
+
+  <div class="formulario_container">
+    <form (submit)="$event.preventDefault()" (ngSubmit)="publicar()">
+      <h1 class="tituloRooms">Rooms</h1>
+      <p class="mainTextRoom">
+        Rellena el siguiente formulario para que tus posibles futuros compañeros
+        puedan encontrar la habitación que tienes disponible, sabemos que tus
+        necesidades pueden cambiar, así que no te preocupes, más adelante podrás
+        hacer cambios en tu publicación.
+      </p>
+      <p class="textRooms textObligatorio">
+        Los campos con <span>*</span> son obligatorios
+      </p>
+      <div id="formBox">
+        <h2 class="roomSectionTitle">Sobre la habitación</h2>
+        <p class="textRooms tr2">
+          Añade la información necesaria sobre tu casa y la habitación
+        </p>
+        <div class="formBox2">
+          <p class="fieldTitle">Dirección</p>
+          <div class="field_box">
+            <div class="dir_row">
+              <label class="dir-left">
+                <span>Calle*</span>
+                <input
+                  type="text"
+                  required
+                  [(ngModel)]="room.street"
+                  name="calle"
+                  placeholder="calle*"
+                  [ngClass]="{error: errorCalle}"
+                  (keyup)="errorCalle = false"
+                >
+              </label>
+              <label class="dir-right">
+                <span>Número*</span>
+                <input
+                  type="number"
+                  required
+                  [(ngModel)]="room.number"
+                  name="numero"
+                  placeholder="numero"
+                  [ngClass]="{error: errorNumero}"
+                  (change)="errorNumero = false;"
+                >
+              </label>
+            </div>
+            <div class="dir_row">
+              <label class="dir-left">
+                <span>Localidad*</span>
+                <input
+                  type="text"
+                  required
+                  [(ngModel)]="room.locality"
+                  placeholder="localidad*"
+                  name="localidad"
+                  [ngClass]="{error: errorLocalidad}"
+                  (keyup)="errorLocalidad = false"
+                >
+              </label>
+              <label class="dir-right">
+                <span>Código postal*</span>
+                <input
+                  type="number"
+                  required
+                  [(ngModel)]="room.postcode"
+                  placeholder="Código postal"
+                  name="postcode"
+                  [ngClass]="{error: errorCP}"
+                  (change)="errorCP = false"
+                >
+              </label>
+            </div>
+            <div class="dir_row">
+              <label class="dir-left">
+                <span>Provincia*</span>
+                <input
+                  type="text"
+                  required [(ngModel)]="room.province"
+                  placeholder="provincia*"
+                  name="provincia"
+                  [ngClass]="{error: errorProv}"
+                  (keyup)="errorProv = false"
+                >
+              </label>
+              <label class="dir-right">
+                <span>País*</span>
+                <input
+                  type="text"
+                  required [(ngModel)]="room.country"
+                  placeholder="país*"
+                  name="pais"
+                  [ngClass]="{error: errorPais}"
+                  (keyup)="errorPais = false"
+                >
+              </label>
+            </div>
+          </div>
+          <p class="fieldTitle">¿Quién vive aquí?*</p>
+          <div class="field_box flex-row-wrap">
+            <label (click)="room.roommate_gender = 2">
+              <input class="options"
+                     type="checkbox"
+                     name="Mixto"
+                     id="sm10">
+              <div class="iconoMixto"
+                   [ngClass]="{selectedMixto: room.roommate_gender === 2}"
+              ></div>
+              Mixto
+            </label>
+            <label (click)="room.roommate_gender = 1">
+              <input class="options"
+                     type="checkbox"
+                     name="Chica"
+                     id="sm11">
+              <div class="iconoChica"
+                   [ngClass]="{selectedChica: room.roommate_gender === 1}"
+              ></div>
+              Chicas
+            </label>
+            <label (click)="room.roommate_gender = 0">
+              <input class="options"
+                     type="checkbox"
+                     name="Chico"
+                     id="sm12">
+              <div class="iconoChico"
+                   [ngClass]="{selectedChico: room.roommate_gender === 0}"
+              ></div>
+              Chicos
+            </label>
+          </div>
+          <p class="fieldTitle">Características de la habitación*</p>
+          <div class="field_box flex-row-wrap">
+            <label (click)="room.bed_type = 1">
+              <input class="options"
+                     type="checkbox"
+                     name="Individual"
+                     id="sm20">
+              <div class="iconoBed"
+                   [ngClass]="{selectedBed: room.bed_type === 1}"
+              ></div>
+              Individual
+            </label>
+            <label (click)="room.bed_type = 2">
+              <input class="options"
+                     type="checkbox"
+                     name="Doble"
+                     id="sm21">
+              <div class="iconoCamaDoble"
+                   [ngClass]="{selectedCamaDoble: room.bed_type === 2}"
+              ></div>
+              Doble
+            </label>
+            <label (click)="room.bed_type = 0">
+              <input class="options"
+                     type="checkbox"
+                     name="Litera"
+                     id="sm22">
+              <div class="iconoLitera"
+                   [ngClass]="{selectedLitera: room.bed_type === 0}"
+              ></div>
+              Litera
+            </label>
+
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Amueblada"
+                     id="sm23"
+                     [(ngModel)]="room.is_furnished">
+              <div class="iconoMuebles"
+                   [ngClass]="{selectedMuebles: room.is_furnished}"
+              ></div>
+              Amueblada
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="PrivateBath"
+                     id="sm24"
+                     [(ngModel)]="room.has_private_bath">
+              <div class="iconoBath"
+                   [ngClass]="{selectedBath: room.has_private_bath}"
+              ></div>
+              Baño privado
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="externalView"
+                     id="sm25"
+                     [(ngModel)]="room.has_private_view">
+              <div class="iconoVentana"
+                   [ngClass]="{selectedVentana: room.has_private_view}"
+              ></div>
+              Vista exterior
+            </label>
+          </div>
+          <p class="fieldTitle">Descripción*</p>
+          <div class="field_box">
+            <textarea name="descripcion"
+                      [(ngModel)]="room.room_description"
+                      placeholder="Añade una breve descripción sobre la habitación"
+                      [ngClass]="{error: errorDescripcion}"
+                      (keyup)="errorDescripcion = false"
+            >
+            </textarea>
+          </div>
+          <p class="fieldTitle">Características del piso*</p>
+          <div class="field_box flex-row-wrap">
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Wifi"
+                     id="sm30"
+                     [(ngModel)]="room.has_internet">
+              <div class="iconoWifi"
+                   [ngClass]="{selectedWifi: room.has_internet}"
+              ></div>
+              WiFi
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Ascensor"
+                     id="sm31"
+                     [(ngModel)]="room.has_elevator">
+              <div class="iconoAscensor"
+                   [ngClass]="{selectedAscensor: room.has_elevator}"
+              ></div>
+              Ascensor
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Lavadora"
+                     id="sm32"
+                     [(ngModel)]="room.has_whashing_machine">
+              <div class="iconoLavadora"
+                   [ngClass]="{selectedLavadora: room.has_whashing_machine}"
+              ></div>
+              Lavadora
+            </label>
+
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Secadora"
+                     id="sm33"
+                     [(ngModel)]="room.has_drying_machine">
+              <div class="iconoSecadora"
+                   [ngClass]="{selectedSecadora: room.has_drying_machine}"
+              ></div>
+              Secadora
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Lavavajillas"
+                     id="sm34"
+                     [(ngModel)]="room.has_dishwasher">
+              <div class="iconoLavavajillas"
+                   [ngClass]="{selectedLavavajillas: room.has_dishwasher}"
+              ></div>
+              Lavavajillas
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Jardin"
+                     id="sm35"
+                     [(ngModel)]="room.has_garden">
+              <div class="iconoJardin"
+                   [ngClass]="{selectedJardin: room.has_garden}"
+              ></div>
+              Jardín
+            </label>
+
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Balcon"
+                     id="sm36"
+                     [(ngModel)]="room.has_balcony">
+              <div class="iconoBalcon"
+                   [ngClass]="{selectedBalcon: room.has_balcony}"
+              ></div>
+              Balcón
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Calefaccion"
+                     id="sm37"
+                     [(ngModel)]="room.has_heating">
+              <div class="iconoCalefaccion"
+                   [ngClass]="{selectedCalefaccion: room.has_heating}"
+              ></div>
+              Calefacción
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Portero"
+                     id="sm38"
+                     [(ngModel)]="room.has_doorman">
+              <div class="iconoDoorman"
+                   [ngClass]="{selectedDoorman: room.has_doorman}"
+              ></div>
+              Portero
+            </label>
+
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Accesible"
+                     id="sm39"
+                     [(ngModel)]="room.is_accessibility">
+              <div class="iconoAccesible"
+                   [ngClass]="{selectedAccesible: room.is_accessibility}"
+              ></div>
+              Accesible
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Parking"
+                     id="sm40"
+                     [(ngModel)]="room.has_parking">
+              <div class="iconoParking"
+                   [ngClass]="{selectedParking: room.has_parking}"
+              ></div>
+              Parking
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="AireAcondicionado"
+                     id="sm41"
+                     [(ngModel)]="room.has_air_conditioning">
+              <div class="iconoAireAcondicionado"
+                   [ngClass]="{selectedAireAcondicionado: room.has_air_conditioning}"
+              ></div>
+              Aire acondicionado
+            </label>
+          </div>
+          <p class="fieldTitle">Normas de convivencia*</p>
+          <div class="field_box flex-row-wrap">
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="roomFumar"
+                     id="sm60"
+                     [(ngModel)]="room.room_smoke">
+              <div class="iconoFumador"
+                   [ngClass]="{selectedFumador: room.room_smoke}"
+              ></div>
+              Fumar
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="roomMascotas"
+                     id="sm61"
+                     [(ngModel)]="room.room_pet">
+              <div class="iconoMascotas"
+                   [ngClass]="{selectedMascotas: room.room_pet}"
+              ></div>
+              Mascotas
+            </label>
+            <label>
+              <input class="options"
+                     type="checkbox"
+                     name="Parejas"
+                     id="sm62"
+                     [(ngModel)]="room.room_couples">
+              <div class="iconoCouples"
+                   [ngClass]="{selectedCouples: room.room_couples}"
+              ></div>
+              Parejas
+            </label>
+          </div>
+          <p class="fieldTitle">Precio del alquiler*</p>
+          <div class="field_box price_field">
+            <input type="number"
+                   name="precio"
+                   id="precio"
+                   class="input_precio"
+                   [(ngModel)]="room.price"
+                   [ngClass]="{error: errorPrice}"
+                   (change)="errorPrice = false"
+            >
+            <span>€/mes</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2 class="roomSectionTitle">Galería de imágenes</h2>
+        <p class="textRooms tr2">
+          Comparte algunas fotos sobre la habitación o la casa, así ayudarás a
+          que tu nuevo compañero de piso pueda imaginarse viviendo en ella.
+        </p>
+        <div id="addFoto">
+          <input class="iconoAdd" type="file" id="subirFoto" name="subirFoto" accept=".jpg, .jpeg, .png" multiple>
+          <button class="iconoAdd"></button>
+          <p id="addText">Añadir foto a la galería</p>
+        </div>
+      </div>
+
+      <div id="btnBox">
+        <button class="guardarBtn" type="submit">
+          Publicar habitación
+        </button>
+      </div>
+    </form>
+  </div>
+</main>
