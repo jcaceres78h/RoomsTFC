@@ -23,7 +23,7 @@
       <span [ngClass]="{
             'icono3': step < 3,
             'selected3': step >= 3
-          }" (click)="step = 3"></span>
+          }"></span>
     </div>
     <div id="stepText">
       <span [ngClass]="{ activeText: step >= 1 }">Datos personales</span>
@@ -69,6 +69,11 @@
                    [(ngModel)]="user.phone">
           </label>
           <label>
+            <span>Edad</span>
+            <input type="number" placeholder="edad"
+                   [(ngModel)]="user.age" class="edad">
+          </label>
+          <label>
             <span>Descripción</span>
             <textarea name="" id="" cols="30" rows="10"
                       placeholder="¿cómo te describes?"
@@ -81,6 +86,31 @@
           </div>
         </div>
       </div>
+      <label>
+        <span>Género</span>
+        <div class="flex-row-wrap countCompañeros genero">
+          <label (click)="user.gender = 1">
+            <input class="options"
+                   type="checkbox"
+                   name="Chica"
+                   id="smchica">
+            <div class="iconoChica"
+                 [ngClass]="{selectedChica: user.gender === 1}"
+            ></div>
+            Chica
+          </label>
+          <label (click)="user.gender = 0">
+            <input class="options"
+                   type="checkbox"
+                   name="Chico"
+                   id="smchico">
+            <div class="iconoChico"
+                 [ngClass]="{selectedChico: user.gender === 0}"
+            ></div>
+            Chico
+          </label>
+        </div>
+      </label>
       <div>
         <p id="sobreMi">Sobre mí</p>
         <div class="opCard">

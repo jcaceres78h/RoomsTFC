@@ -288,3 +288,9 @@ header {
 .buscarHabitacion>.formulario {
   margin-left: 7%;
 }
+input.edad {
+}
+.genero {
+  width: 250px;
+  margin-bottom: 40px;
+}
