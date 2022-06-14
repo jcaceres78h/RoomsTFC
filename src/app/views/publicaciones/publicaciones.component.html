@@ -1,6 +1,8 @@
 <main class="main_principal">
 
-    <h1 class="title_view">Mis publicaciones</h1>
+    <h1 *ngIf="!user" class="title_view">Mis publicaciones</h1>
+    <h1 *ngIf="user" class="title_view">Publicaciones de {{ user.name }}</h1>
+
 
     <app-listar-room-by-user></app-listar-room-by-user>
 </main>

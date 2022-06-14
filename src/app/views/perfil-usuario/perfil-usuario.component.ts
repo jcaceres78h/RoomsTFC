@@ -276,4 +276,8 @@ export class PerfilUsuarioComponent implements OnInit {
     return this.userService.getUserById().id == this.ls.userLogged;
   }
 
+
+  verPublicaciones() {
+    this.router.navigate(['publicaciones', this.usuario.id])
+  }
 }
