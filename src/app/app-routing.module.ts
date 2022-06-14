@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'resultados-room/:localidad', component: ResultadosRoomComponent },
   { path: 'form-companero', component: FormCompaneroComponent },
   { path: 'form-room', component: FormRoomComponent},
-  { path: 'form', component: FormBtnComponent },
+  { path: 'form', component: FormRoomComponent },
   { path: 'iniciar-sesion', component: FormLoginComponent },
   { path: 'registrarse', component: FormRegistroComponent },
   { path: 'nosotros', component: NosotrosComponent},

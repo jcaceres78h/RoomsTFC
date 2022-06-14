@@ -281,12 +281,12 @@ export class RoomComponent implements OnInit {
       })
   }
 
-  checkUser(){
+  checkUser() {
     if (!this.ls.isLoggeado)
       return false;
 
     return this.roomService.getRoomById().userId == this.ls.userLogged;
-
+  }
 
 /*    if (this.ls.isLoggeado) {
       if (this.ls.isLoggeado && (this.roomService.getRoomById().userId == this.ls.userLogged)) {
@@ -300,7 +300,7 @@ export class RoomComponent implements OnInit {
     //console.log(this.roomService.getRoomById().userId)
     // console.log(this.ls.usuarioLogeado)
     // return true;
-  }
+  // }
 
 
   //---PARA LAS FOTOS---

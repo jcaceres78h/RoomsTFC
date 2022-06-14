@@ -135,7 +135,8 @@ header {
 }
 .carrusel_imagenes{
   width: 100%;
-  height: 350px;
+  height: fit-content;
+  max-height: 500px;
   display: flex;
   align-items: center;
   flex-direction: column;

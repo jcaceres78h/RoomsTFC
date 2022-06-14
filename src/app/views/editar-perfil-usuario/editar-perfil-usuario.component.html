@@ -1,250 +1,372 @@
-<main class="main_principal">
-    <h1 class="title_view">Editar perfil</h1>
+<app-loading-page *ngIf="!usuario"></app-loading-page>
+<main *ngIf="usuario" class="main_principal">
+  <h1 class="title_view">Editar perfil</h1>
 
-    <div class="pack_btns">
-        <a href="mi-perfil"><img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/back.svg" alt="Atrás" width="30"></a>
-        <div class="btn_delete_myaccount" (click)="abrirEliminarCard()" ><button>Eliminar cuenta</button></div>
+  <div class="pack_btns">
+    <div (click)="volver()" style="cursor: pointer"><img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/back.svg" alt="Atrás" width="30"></div>
+    <div class="btn_delete_myaccount" (click)="abrirEliminarCard()" ><button>Eliminar cuenta</button></div>
+  </div>
+
+  <app-eliminar-cuenta [hidden]="mostrarCardEliminar"></app-eliminar-cuenta>
+
+  <div class="container_form_edit_profile">
+    <br><br>
+    <h2>Datos personales</h2>
+    <p>Añade tus datos para que tus compañeros de piso puedan encontrarte y contactar contigo.</p>
+    <br><br>
+
+    <div class="container_container_form_edit_profile">
+      <div class="form_edit_profile">
+        <label for="name">Nombre de usuario*</label>
+        <input type="text" id="name"
+               class="input_form_edit_profile"
+               placeholder="nombre*"
+               [(ngModel)]="usuario.name"
+               [ngClass]="{error: errorName}"
+               (change)="errorName = false"
+        >
+        <label for="email">Correo electrónico*</label>
+        <input type="text" id="email"
+               class="input_form_edit_profile"
+               placeholder="correo electrónico*"
+               [(ngModel)]="usuario.email"
+               [ngClass]="{error: errorEmail}"
+               (change)="errorEmail = false"
+        >
+        <label for="phone">Teléfono*</label>
+        <input type="text" id="phone"
+               class="input_form_edit_profile"
+               placeholder="teléfono*"
+               [(ngModel)]="usuario.phone"
+               [ngClass]="{error: errorTelefono}"
+               (change)="errorTelefono = false"
+        >
+        <label for="description">Descripción*</label>
+        <textarea id="description" cols="10" rows="10"
+                  placeholder="¿Cómo te describirías?"
+                  [(ngModel)]="usuario.about_me"
+                  [ngClass]="{error: errorAboutMe}"
+                  (change)="errorAboutMe = false"
+        ></textarea>
+        <label for="about_me">Sobre mí</label>
+        <div id="about_me">
+          <p>Selecciona las etiquetas que te identifiquen si quieres que tus posibles compañeros te conozcan un poco mejor</p>
+          <div class="iconos_sobremi">
+            <div class="icon">
+              <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/study_and_work.svg"
+                   alt="" width="50"
+                   [ngClass]="{selected: usuario.studing && usuario.working}"
+              >
+              <label>Estudio <br> y trabajo</label>
+            </div>
+            <div class="icon" (click)="usuario.studing = !usuario.studing">
+              <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/study.svg"
+                   alt="" width="50"
+                   [ngClass]="{selected: usuario.studing}"
+              >
+              <label>Estudio</label>
+            </div>
+            <div class="icon" (click)="usuario.working = !usuario.working">
+              <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/work.svg"
+                   alt="" width="50"
+                   [ngClass]="{selected: usuario.working}"
+              >
+              <label>Trabajo</label>
+            </div>
+            <div class="icon" (click)="usuario.user_vegan = !usuario.user_vegan">
+              <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/vegan.svg"
+                   alt="" width="50"
+                   [ngClass]="{selected: usuario.user_vegan}"
+              >
+              <label>Vegano</label>
+            </div>
+            <div class="icon" (click)="usuario.user_smoke = !usuario.user_smoke">
+              <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/smoke.svg"
+                   alt="" width="50"
+                   [ngClass]="{selected: usuario.user_smoke}"
+              >
+              <label>Fumador</label>
+            </div>
+            <div class="icon">
+              <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/no_smoke.svg"
+                   alt="" width="50"
+                   [ngClass]="{selected: !usuario.user_smoke}"
+              >
+              <label>No <br> fumador</label>
+            </div>
+            <div class="icon" (click)="usuario.user_pet = !usuario.user_pet">
+              <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/pets.svg"
+                   alt="" width="50"
+                   [ngClass]="{selected: usuario.user_pet}"
+              >
+              <label>Mascotas</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile_picture">
+        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/user.svg" alt="" width="30">
+        <p>Añadir foto de perfil</p>
+      </div>
     </div>
 
-    <app-eliminar-cuenta [hidden]="mostrarCardEliminar"></app-eliminar-cuenta>
+    <br><br>
+    <h2>Preferencias</h2>
+    <p>Selecciona tus preferencias para conocerte mejor y ayudarte a encontrar tu habitación ideal.</p>
+    <br><br>
 
-    <div class="container_form_edit_profile">
-        <br><br>
-        <h2>Datos personales</h2>
-        <p>Añade tus datos para que tus compañeros de piso puedan encontrarte y contactar contigo.</p>
-        <br><br>
+    <div class="container_preferences_1">
 
-        <div class="container_container_form_edit_profile">
-            <div class="form_edit_profile">
-                <label for="name">Nombre de usuario*</label>
-                <input type="text" id="name" class="input_form_edit_profile" placeholder="nombre*">
-                <label for="email">Correo electrónico*</label>
-                <input type="text" id="email" class="input_form_edit_profile" placeholder="correo electrónico*">
-                <label for="phone">Teléfono*</label>
-                <input type="text" id="phone" class="input_form_edit_profile" placeholder="teléfono*">
-                <label for="description">Descripción*</label>
-                <textarea id="description" cols="10" rows="10" placeholder="¿Cómo te describirías?"></textarea>
-                <label for="about_me">Sobre mí</label>
-                <div id="about_me">
-                    <p>Selecciona las etiquetas que te identifiquen si quieres que tus posibles compañeros te conozcan un poco mejor</p>
-                    <div class="iconos_sobremi">
-                        <div class="icon">
-                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/study_and_work.svg" alt="" width="50">
-                            <label for="">Estudio <br> y trabajo</label>
-                        </div>
-                        <div class="icon">
-                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/study.svg" alt="" width="50">
-                            <label for="">Estudio</label>
-                        </div>
-                        <div class="icon">
-                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/work.svg" alt="" width="50">
-                            <label for="">Trabajo</label>
-                        </div>
-                        <div class="icon">
-                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/vegan.svg" alt="" width="50">
-                            <label for="">Vegano</label>
-                        </div>
-                        <div class="icon">
-                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/smoke.svg" alt="" width="50">
-                            <label for="">Fumador</label>
-                        </div>
-                        <div class="icon">
-                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/no_smoke.svg" alt="" width="50">
-                            <label for="">No <br> fumador</label>
-                        </div>
-                        <div class="icon">
-                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/pets.svg" alt="" width="50">
-                            <label for="">Mascotas</label>
-                        </div>
-                    </div>
-                </div>
+      <div class="container_preferences">
+
+        <div class="questions_preferences">
+          <div class="question">
+            <label>¿Dónde quieres vivir?*</label>
+            <input type="text"
+                   placeholder="¿Dónde quieres vivir?*"
+                   [(ngModel)]="usuario.locality"
+                   [ngClass]="{error: errorLocality}"
+                   (change)="errorLocality = false"
+            >
+          </div>
+          <div class="question">
+            <label>¿Con cuántos compañeros?</label>
+            <div class="question_box">
+              <img (click)="restarMate()" src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/minus.svg" alt="" width="40">
+              <p>{{ usuario.num_roommate }}</p>
+              <img (click)="sumarMate()" src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/add.svg" alt="" width="40">
             </div>
-           
-            <div class="profile_picture">
-                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/user.svg" alt="" width="30">
-                <p>Añadir foto de perfil</p>
-            </div>  
-        </div>
-
-        <br><br>
-        <h2>Preferencias</h2>
-        <p>Selecciona tus preferencias para conocerte mejor y ayudarte a encontrar tu habitación ideal.</p>
-        <br><br>
-
-        <div class="container_preferences_1">
-
-            <div class="container_preferences">
-
-                <div class="questions_preferences">
-                    <div class="question">
-                        <label for="">¿Dónde quieres vivir?*</label>
-                        <input type="text" placeholder="¿Dónde quieres vivir?*">
-                    </div>
-                    <div class="question">
-                        <label for="">¿Con cuántos compañeros?</label>
-                        <div class="question_box">
-                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/minus.svg" alt="" width="40">
-                            <p>número</p>
-                            <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/add.svg" alt="" width="40">
-                        </div>                  
-                    </div>
-                    <div class="question">
-                        <label for="">Preferiría vivir con...</label>
-                        <div class="question_box">
-                            <div>
-                                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/mixed.svg" alt="" width="40">
-                                <label for="">Mixto</label>
-                            </div>
-                            <div>
-                                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/female.svg" alt="" width="40">
-                                <label for="">Chicas</label>
-                            </div>
-                            <div>
-                                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/male.svg" alt="" width="40">
-                                <label for="">Chicos</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="preferences_icons">
-                    <div class="container_box_preferences">
-                        <h3>Tu habitación ideal...</h3>
-                        <div class="box_preference">
-                            <div>
-                                <div class="icon_preference">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/bed.svg" alt="Cama individual" width="40">
-                                    <label for="">Individual</label>
-                                </div>
-                                <div class="icon_preference">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/double_bed.svg" alt="Cama doble" width="40">
-                                    <label for="">Doble</label>
-                                </div>
-                                <div class="icon_preference">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/bunk_bed.svg" alt="Cama litera" width="40">
-                                    <label for="">Litera</label>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="icon_preference">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/furniture.svg" alt="Amueblada" width="40">
-                                    <label for="">Amueblada</label>
-                                </div>
-                                <div class="icon_preference">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/bath.svg" alt="Baño privado" width="40">
-                                    <label for="">Baño <br> privado</label>
-                                </div>
-                                <div class="icon_preference">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/window.svg" alt="Vista exterior" width="40">
-                                    <label for="">Vista <br> exterior</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container_box_preferences">
-                        <h3>Tus imprescindibles...</h3>
-                        <div class="box_preference">
-                            <div>
-                                <div class="icon_preference">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/wifi.svg" alt="Wifi" width="40">
-                                    <label for="">Wifi</label>
-                                </div>
-                                <div class="icon_preference">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/elevator.svg" alt="Ascensor" width="40">
-                                    <label for="">Ascensor</label>
-                                </div>
-                                <div class="icon_preference">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/washer.svg" alt="Lavadora" width="40">
-                                    <label for="">Lavadora</label>
-                                </div>
-                                <div class="icon_preference">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/dryer.svg" alt="Secadora" width="40">
-                                    <label for="">Secadora</label>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="icon_preference">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/dishwasher.svg" alt="Lavavajillas" width="40">
-                                    <label for="">Lavavajillas</label>
-                                </div>
-                                <div class="icon_preference">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/garden.svg" alt="Jardín" width="40">
-                                    <label for="">Jardín</label>
-                                </div>
-                                <div class="icon_preference">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/balcony.svg" alt="Balcón" width="40">
-                                    <label for="">Balcón</label>
-                                </div>
-                                <div class="icon_preference">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/heating.svg" alt="Calefacción" width="40">
-                                    <label for="">Calefacción</label>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="icon_preference">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/doorman.svg" alt="Portero" width="40">
-                                    <label for="">Portero</label>
-                                </div>
-                                <div class="icon_preference">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/accessible.svg" alt="Accesible" width="40">
-                                    <label for="">Accesible</label>
-                                </div>
-                                <div class="icon_preference">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/parking.svg" alt="Parking" width="40">
-                                    <label for="">Parking</label>
-                                </div>
-                                <div class="icon_preference">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/air_conditioner.svg" alt="Aire acondicionado" width="40">
-                                    <label for="">Aire acondicionado</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container_box_preferences">
-                        <h3>Conviviendo buscas...</h3>
-                        <div class="box_preference">
-                            <div>
-                                <div class="icon_preference">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/smoke.svg" alt="Fumar" width="40">
-                                    <label for="">Fumar</label>
-                                </div>
-                                <div class="icon_preference">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/pets.svg" alt="Mascotas" width="40">
-                                    <label for="">Mascotas</label>
-                                </div>
-                                <div class="icon_preference">
-                                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/couples.svg" alt="Parejas" width="40">
-                                    <label for="">Parejas</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                
+          </div>
+          <div class="question">
+            <label>Preferiría vivir con...</label>
+            <div class="question_box">
+              <div (click)="usuario.roommate_gender = 2">
+                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/mixed.svg"
+                     alt="" width="40"
+                     [ngClass]="{selected: usuario.roommate_gender == 2}"
+                >
+                <label>Mixto</label>
+              </div>
+              <div (click)="usuario.roommate_gender = 1">
+                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/female.svg"
+                     alt="" width="40"
+                     [ngClass]="{selected: usuario.roommate_gender == 1}"
+                >
+                <label>Chicas</label>
+              </div>
+              <div (click)="usuario.roommate_gender = 0">
+                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/male.svg"
+                     alt="" width="40"
+                     [ngClass]="{selected: usuario.roommate_gender == 0}"
+                >
+                <label>Chicos</label>
+              </div>
             </div>
-            
+          </div>
         </div>
-
-
-        <div class="container__galeria">
-
-            <h2>Galería de imágenes</h2>
-            <p>Comparte algunas fotos sobre tí, ¿cuáles son tus hobbies?, ¿tienes mascotas?, ¿qué te apasiona hacer? <br> Quizás sean puntos en común con tus nuevos compañeros de piso.  </p>
-
-            <div class="container_gallery">
-                <div class="add_picture_container">
-                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/add.svg" alt="Añadir foto" width="50">
-                    <label for="">Añadir foto a la galería</label>
+        <div class="preferences_icons">
+          <div class="container_box_preferences">
+            <h3>Tu habitación ideal...</h3>
+            <div class="box_preference">
+              <div>
+                <div class="icon_preference" (click)="usuario.bed_type = 1">
+                  <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/bed.svg"
+                       alt="Cama individual" width="40"
+                       [ngClass]="{selected: usuario.bed_type == 1}"
+                  >
+                  <label>Individual</label>
                 </div>
+                <div class="icon_preference" (click)="usuario.bed_type = 2">
+                  <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/double_bed.svg"
+                       alt="Cama doble" width="40"
+                       [ngClass]="{selected: usuario.bed_type == 2}"
+                  >
+                  <label >Doble</label>
+                </div>
+                <div class="icon_preference" (click)="usuario.bed_type = 0">
+                  <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/bunk_bed.svg"
+                       alt="Cama litera" width="40"
+                       [ngClass]="{selected: usuario.bed_type == 0}"
+                  >
+                  <label >Litera</label>
+                </div>
+              </div>
+              <div>
+                <div class="icon_preference" (click)="usuario.is_furnished = !usuario.is_furnished">
+                  <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/furniture.svg"
+                       alt="Amueblada" width="40"
+                       [ngClass]="{selected: usuario.is_furnished}"
+                  >
+                  <label >Amueblada</label>
+                </div>
+                <div class="icon_preference" (click)="usuario.has_private_bath = !usuario.has_private_bath">
+                  <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/bath.svg"
+                       alt="Baño privado" width="40"
+                       [ngClass]="{selected: usuario.has_private_bath}"
+                  >
+                  <label >Baño <br> privado</label>
+                </div>
+                <div class="icon_preference" (click)="usuario.has_private_view = !usuario.has_private_view">
+                  <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/window.svg"
+                       alt="Vista exterior" width="40"
+                       [ngClass]="{selected: usuario.has_private_view}"
+                  >
+                  <label >Vista <br> exterior</label>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="container_box_preferences">
+            <h3>Tus imprescindibles...</h3>
+            <div class="box_preference">
+              <div>
+                <div class="icon_preference" (click)="usuario.has_internet = !usuario.has_internet">
+                  <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/wifi.svg"
+                       alt="Wifi" width="40"
+                       [ngClass]="{selected: usuario.has_internet}"
+                  >
+                  <label >Wifi</label>
+                </div>
+                <div class="icon_preference" (click)="usuario.has_elevator = !usuario.has_elevator">
+                  <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/elevator.svg"
+                       alt="Ascensor" width="40"
+                       [ngClass]="{selected: usuario.has_elevator}"
+                  >
+                  <label >Ascensor</label>
+                </div>
+                <div class="icon_preference" (click)="usuario.has_whashing_machine = !usuario.has_whashing_machine">
+                  <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/washer.svg"
+                       alt="Lavadora" width="40"
+                       [ngClass]="{selected: usuario.has_whashing_machine}"
+                  >
+                  <label >Lavadora</label>
+                </div>
+                <div class="icon_preference" (click)="usuario.has_drying_machine = !usuario.has_drying_machine">
+                  <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/dryer.svg"
+                       alt="Secadora" width="40"
+                       [ngClass]="{selected: usuario.has_drying_machine}"
+                  >
+                  <label >Secadora</label>
+                </div>
+              </div>
+              <div>
+                <div class="icon_preference" (click)="usuario.has_dishwasher = !usuario.has_dishwasher">
+                  <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/dishwasher.svg"
+                       alt="Lavavajillas" width="40"
+                       [ngClass]="{selected: usuario.has_dishwasher}"
+                  >
+                  <label >Lavavajillas</label>
+                </div>
+                <div class="icon_preference" (click)="usuario.has_garden = !usuario.has_garden">
+                  <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/garden.svg"
+                       alt="Jardín" width="40"
+                       [ngClass]="{selected: usuario.has_garden}"
+                  >
+                  <label >Jardín</label>
+                </div>
+                <div class="icon_preference" (click)="usuario.has_balcony = !usuario.has_balcony">
+                  <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/balcony.svg"
+                       alt="Balcón" width="40"
+                       [ngClass]="{selected: usuario.has_balcony}"
+                  >
+                  <label >Balcón</label>
+                </div>
+                <div class="icon_preference" (click)="usuario.has_heating = !usuario.has_heating">
+                  <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/heating.svg"
+                       alt="Calefacción" width="40"
+                       [ngClass]="{selected: usuario.has_heating}"
+                  >
+                  <label >Calefacción</label>
+                </div>
+              </div>
+              <div>
+                <div class="icon_preference" (click)="usuario.has_doorman = !usuario.has_doorman">
+                  <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/doorman.svg"
+                       alt="Portero" width="40"
+                       [ngClass]="{selected: usuario.has_doorman}"
+                  >
+                  <label >Portero</label>
+                </div>
+                <div class="icon_preference" (click)="usuario.is_accessibility = !usuario.is_accessibility">
+                  <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/accessible.svg"
+                       alt="Accesible" width="40"
+                       [ngClass]="{selected: usuario.is_accessibility}"
+                  >
+                  <label >Accesible</label>
+                </div>
+                <div class="icon_preference" (click)="usuario.has_parking = !usuario.has_parking">
+                  <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/parking.svg"
+                       alt="Parking" width="40"
+                       [ngClass]="{selected: usuario.has_parking}"
+                  >
+                  <label >Parking</label>
+                </div>
+                <div class="icon_preference" (click)="usuario.has_air_conditioning = !usuario.has_air_conditioning">
+                  <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/air_conditioner.svg"
+                       alt="Aire acondicionado" width="40"
+                       [ngClass]="{selected: usuario.has_air_conditioning}"
+                  >
+                  <label >Aire acondicionado</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container_box_preferences">
+            <h3>Conviviendo buscas...</h3>
+            <div class="box_preference">
+              <div>
+                <div class="icon_preference" (click)="usuario.room_smoke = !usuario.room_smoke">
+                  <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/smoke.svg"
+                       alt="Fumar" width="40"
+                       [ngClass]="{selected: usuario.room_smoke}"
+                  >
+                  <label >Fumar</label>
+                </div>
+                <div class="icon_preference" (click)="usuario.room_pet = !usuario.room_pet">
+                  <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/pets.svg"
+                       alt="Mascotas" width="40"
+                       [ngClass]="{selected: usuario.room_pet}"
+                  >
+                  <label >Mascotas</label>
+                </div>
+                <div class="icon_preference" (click)="usuario.room_couples = !usuario.room_couples">
+                  <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/couples.svg"
+                       alt="Parejas" width="40"
+                       [ngClass]="{selected: usuario.room_couples}"
+                  >
+                  <label >Parejas</label>
+                </div>
+              </div>
+            </div>
+          </div>
 
         </div>
 
-        <div class="btn_save_container">
-            <a href="">
-                <button class="btn_save">Guardar cambios</button>
-            </a>
-        </div>
+      </div>
 
     </div>
+
+
+    <div class="container__galeria">
+
+      <h2>Galería de imágenes</h2>
+      <p>Comparte algunas fotos sobre tí, ¿cuáles son tus hobbies?, ¿tienes mascotas?, ¿qué te apasiona hacer? <br> Quizás sean puntos en común con tus nuevos compañeros de piso.  </p>
+
+      <div class="container_gallery">
+        <div class="add_picture_container">
+          <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/add.svg" alt="Añadir foto" width="50">
+          <label >Añadir foto a la galería</label>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="btn_save_container">
+      <div>
+        <button class="btn_save" (click)="guardar()">Guardar cambios</button>
+      </div>
+    </div>
+
+  </div>
 </main>

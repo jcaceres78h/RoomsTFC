@@ -268,4 +268,12 @@ export class PerfilUsuarioComponent implements OnInit {
     window.history.back();
   }
 
+
+  checkUser() {
+    if (!this.ls.isLoggeado)
+      return false;
+
+    return this.userService.getUserById().id == this.ls.userLogged;
+  }
+
 }

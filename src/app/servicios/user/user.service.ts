@@ -26,12 +26,18 @@ export class UserService {
       return this.allUsers;
   }
 
+  editUser: any
+  get editUsuario() {
+    return this.editUser
+  }
+
   getUserUpdateById(id: number)
   {
     this.http.get("/api/user/"+id).subscribe(
       (response) => {
         // console.log(response);
         this.userId = response
+        this.editUser = this.userId
       })
       //return user;
   }
