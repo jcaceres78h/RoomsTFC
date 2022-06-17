@@ -88,6 +88,7 @@ import { UAireAcondicionadoPipe } from './pipes/User/u-aire-acondicionado.pipe';
 import { UFumarPipe } from './pipes/User/u-fumar.pipe';
 import { UMascotaPipe } from './pipes/User/u-mascota.pipe';
 import { UParejasPipe } from './pipes/User/u-parejas.pipe';
+import { EliminarPublicacionComponent } from './cards/eliminar-publicacion/eliminar-publicacion.component';
 
 
 @NgModule({
@@ -172,7 +173,8 @@ import { UParejasPipe } from './pipes/User/u-parejas.pipe';
     UAireAcondicionadoPipe,
     UFumarPipe,
     UMascotaPipe,
-    UParejasPipe
+    UParejasPipe,
+    EliminarPublicacionComponent
   ],
   imports: [
     BrowserModule,

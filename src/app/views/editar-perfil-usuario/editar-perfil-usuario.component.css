@@ -134,7 +134,7 @@ h2{
 }
 .question_box > img:active,
 .selected {
-  background-color: var(--dark_blue);
+  background-color: var(--light_blue);
   box-shadow: var(--shadow-g);
   border-radius: 50%;
 }

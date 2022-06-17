@@ -15,7 +15,7 @@
                  alt=""
                  class="img_perfil">
             <div *ngIf="!foto_perfil">
-              <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/user.svg" alt="" width="30">
+              <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/user.svg" alt="Icono perfil usuario" width="30" class="icon_profile">
               <p>Añadir foto de perfil</p>
             </div>
           </div>
@@ -55,10 +55,21 @@
               </div>
               <div *ngIf="usuario.num_roommate">
                 <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/check_preferences.svg" alt="check" width="20">
-                <p>En un piso compartido con <b>{{ usuario.num_roommate }}</b> compañero(s)</p>
+                <ng-container *ngIf="usuario.num_roommate > 1">
+                  <p>En un piso compartido con <b>{{ usuario.num_roommate }}</b> compañeros</p>
+                </ng-container>
+                <ng-container *ngIf="usuario.num_roommate ==  1">
+                  <p>En un piso compartido con <b>un</b> compañero</p>
+                </ng-container>
+                <ng-container *ngIf="usuario.num_roommate < 1 ">
+                  <p>No quiere compartir, quiere vivir <b>solo</b></p>
+                </ng-container>
               </div>
               <div>
                 <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/check_preferences.svg" alt="check" width="20">
+                <ng-container *ngIf="mateGender == 'sin preferencias de genero' ">
+                  <p><b>Sin preferencias de género</b></p>
+                </ng-container>
                 <p>En el que vivan <b>{{ mateGender }}</b></p>
               </div>
 
@@ -111,39 +122,38 @@
 
         </div>
 
-      <div class="galeria">
+    <!--  <div class="galeria">
         <h2>La galería de {{ usuario.name }}</h2>
-        <div class="galeria_fotos">
-          <img *ngFor="let image of fotos"
-               src="http://167.99.46.205{{ image.file_path }}">
+        <div class="galeria_fotos">        
+            <img *ngFor="let image of fotos" src="http://167.99.46.205{{ image.file_path }}">
         </div>
-      </div>
+      </div> -->
 
-        <!--<div class="container__gallery">
+        <div class="container__gallery">
 
             <h2>Mi galería</h2>
 
             <div class="gallery">
                 <div class="section1">
-                    <img src="" alt="">
+                    <img  src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-2.jpg" alt="">
                 </div>
                 <div class="section2">
-                    <img src="" alt="">
+                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-3.jpg" alt="">
 
                 </div>
                 <div class="section2">
-                    <img src="" alt="">
+                    <img  src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-4.jpg" alt="">
                 </div>
                 <div class="section3">
-                    <img src="" alt="">
+                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-5.jpg" alt="">
                 </div>
                 <div class="section3">
-                    <img src="" alt="">
-                    <label for="">+(num)fotos</label>
+                    <label for="">+(x)fotos</label>
+                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-6.jpg" alt="">
                 </div>
             </div>
 
-        </div>-->
+        </div>
 
         <div class="container__data_contact">
 
