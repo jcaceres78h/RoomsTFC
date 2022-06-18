@@ -7,7 +7,7 @@
         <span [ngClass]="{
             'icono1': step < 1,
             'selected1': step >= 1
-          }" (click)="step = 1"></span>
+          }" (click)="setStep(1)"></span>
       <div [ngClass]="{
             'linea': step < 2,
             'activeLinea': step >= 2
@@ -15,7 +15,7 @@
       <span [ngClass]="{
             'icono2': step < 2,
             'selected2': step >= 2
-          }" (click)="step = 2"></span>
+          }" (click)="setStep(2)"></span>
       <div [ngClass]="{
             'linea': step < 3,
             'activeLinea': step >= 3
@@ -56,28 +56,67 @@
           <label>
             <span>Nombre de usuario*</span>
             <input type="text" placeholder="nombre*"
-                   [(ngModel)]="user.name">
+                   [(ngModel)]="user.name"
+                    minlength="3"
+                   maxlength="16"
+                   (keyup)="errorNombre = false"
+                   (change)="errorNombre = false"
+                   [ngClass]="{error: errorNombre}"
+            >
+            <span *ngIf="errorNombre" [ngClass]="{error: errorNombre}" style="border: none">
+              El usuario puede tener letras, números, espacios y guiones,
+              longitud minima de 3.
+            </span>
           </label>
           <label>
             <span>Correo electrónico*</span>
             <input type="email" placeholder="correo electrónico*"
-                   [(ngModel)]="user.email">
+                   [(ngModel)]="user.email"
+                   (keyup)="errorEmail = false"
+                   (change)="errorEmail = false"
+                   [ngClass]="{error: errorEmail}"
+            >
+            <span *ngIf="errorEmail" [ngClass]="{error: errorEmail}" style="border: none">
+              Formato de email incorrecto
+            </span>
           </label>
           <label>
             <span>Teléfono</span>
             <input type="tel" placeholder="telefono"
-                   [(ngModel)]="user.phone">
+                   [(ngModel)]="user.phone"
+                   (keyup)="errorPhone = false"
+                   (change)="errorPhone = false"
+                   [ngClass]="{error: errorPhone}"
+            >
+            <span *ngIf="errorPhone" [ngClass]="{error: errorPhone}" style="border: none">
+              El teléfono tiene que empezar por 6, 7, 8 o 9 debe tener 9 dígitos
+            </span>
           </label>
           <label>
             <span>Edad</span>
             <input type="number" placeholder="edad"
-                   [(ngModel)]="user.age" class="edad">
+                   [(ngModel)]="user.age" class="edad"
+                    min="0" max="127"
+                   (keyup)="errorEdad = false"
+                   (change)="errorEdad = false"
+                   [ngClass]="{error: errorEdad}"
+            >
+            <span *ngIf="errorEdad" [ngClass]="{error: errorEdad}" style="border: none">
+              Edad debe estar entre 16 y 65
+            </span>
           </label>
           <label>
             <span>Descripción</span>
             <textarea name="" id="" cols="30" rows="10"
                       placeholder="¿cómo te describes?"
-                      [(ngModel)]="user.about_me"></textarea>
+                      [(ngModel)]="user.about_me"
+                      (keyup)="errorDescripcion = false"
+                      (change)="errorDescripcion= false"
+                      [ngClass]="{error: errorDescripcion}"
+            ></textarea>
+            <span *ngIf="errorDescripcion" [ngClass]="{error: errorDescripcion}" style="border: none">
+              La descripción debe tener al menos 5 caracteres.
+            </span>
           </label>
         </div>
         <div class="fotoPerfil">
@@ -233,7 +272,14 @@
           <label>
             <span>¿Dónde quieres vivir?</span>
             <input type="text" placeholder="¿Dónde quieres vivir?"
-                   [(ngModel)]="user.locality">
+                   [(ngModel)]="user.locality"
+                   (keyup)="errorLocality = false"
+                   (change)="errorLocality = false"
+                   [ngClass]="{error: errorLocality}"
+            >
+            <span *ngIf="errorLocality" [ngClass]="{error: errorLocality}" style="border: none">
+              El lugar debe tener caractéres alfanuméricos con longitud entre 3 y 64
+            </span>
           </label>
           <label>
             <span>¿Con cuántos compañeros?</span>

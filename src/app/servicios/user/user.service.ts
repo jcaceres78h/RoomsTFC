@@ -51,6 +51,7 @@ export class UserService {
 
   async postNewUser(user: any) {
     try {
+      user.locality = user.locality.toLowerCase()
       this.status = await axios.post('/api/user', user)
     } catch (e) {
       this.status = {

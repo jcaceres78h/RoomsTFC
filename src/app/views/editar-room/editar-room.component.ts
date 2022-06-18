@@ -62,7 +62,7 @@ export class EditarRoomComponent implements OnInit {
       this.errorLocalidad = true;
       validation = false;
     }
-    if (this.room.postcode < 10000 || this.room.postcode > 99999) {
+    if (this.room.postcode < 1000 || this.room.postcode > 99999) {
       this.errorCP = true;
       validation = false;
     }
