@@ -6,7 +6,7 @@
 
 <div *ngIf="pasar" class="main_principal">
   <div class="formulario-container">
-    <form (submit)="$event.preventDefault()" (ngSubmit)="buscar()">
+    <div>
       <h1 class="tituloRooms">Rooms</h1>
       <p class="textRooms">
         Estás a unos minutos de encontrar la habitación
@@ -20,11 +20,18 @@
           type="text"
           placeholder="¿Dónde vives?*"
           required
-          [(ngModel)]="room.locality">
+          [(ngModel)]="room.locality"
+          [ngClass]="{error: errorLocality}"
+          (keyup)="errorLocality = false"
+          (change)="errorLocality = false"
+        >
+        <span *ngIf="errorLocality" class="error" style="border: none">
+          La localidad debe tener entre 3 y 64 caracteres alfanuméricos, espacios o guiones
+        </span>
       </label>
       <label>
-        <p class="title">¿Cuántos compañeros buscas?</p>
-        <p class="textRooms">
+        <p class="title" style="align-self: flex-start">¿Cuántos compañeros buscas?</p>
+        <p class="textRooms" style="align-self: flex-start">
           Indica con cuántos compañeros de piso te gustaría vivir.
         </p>
         <div class="countCompañeros">
@@ -42,7 +49,7 @@
           sean chicos, chicas o no te importa su género.
         </p>
         <div class="flex-row-wrap countCompañeros">
-          <label (click)="room.roommate_gender = 2">
+          <label (mouseup)="setGender(2)">
             <input class="options"
                    type="checkbox"
                    name="Mixto"
@@ -52,7 +59,7 @@
             ></div>
             Mixto
           </label>
-          <label (click)="room.roommate_gender = 1">
+          <label (mouseup)="setGender(1)">
             <input class="options"
                    type="checkbox"
                    name="Chica"
@@ -62,7 +69,7 @@
             ></div>
             Chicas
           </label>
-          <label (click)="room.roommate_gender = 0">
+          <label (mouseup)="setGender(0)">
             <input class="options"
                    type="checkbox"
                    name="Chico"
@@ -334,11 +341,11 @@
         </div>
       </div>
       <div id="btnBox">
-        <button class="guardarBtn" type="submit">
+        <button class="guardarBtn" (click)="buscar()">
           Aplicar mis filtros
         </button>
       </div>
-    </form>
+    </div>
   </div>
 </div>
 <div id="img" *ngIf="pasar"></div>

@@ -93,12 +93,9 @@ export class FormCompaneroComponent implements OnInit {
   }
 
   setGender(gender: number) {
-    console.log(gender)
     if (this.user.roommate_gender === gender) {
-      console.log("Son iguales")
       this.user.roommate_gender = 10
     } else {
-      console.log("No son iguales")
       this.user.roommate_gender = gender
     }
   }
@@ -108,7 +105,6 @@ export class FormCompaneroComponent implements OnInit {
       this.aplicarFiltros()
       this.router.navigate(['resultados-companeros'])
     }
-    console.log("Enviado")
   }
 
 

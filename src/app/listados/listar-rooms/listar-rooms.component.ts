@@ -16,7 +16,7 @@ export class ListarRoomsComponent implements OnInit {
   constructor(private roomfiltros: RoomFiltrosService) { }
 
   ngOnInit(): void {
-    this.roomfiltros.reset()
+    // this.roomfiltros.reset()
   }
 
   getpriceMax(){
