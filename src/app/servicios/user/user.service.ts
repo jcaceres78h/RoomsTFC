@@ -53,6 +53,7 @@ export class UserService {
     try {
       user.locality = user.locality.toLowerCase()
       this.status = await axios.post('/api/user', user)
+      console.log(this.status)
     } catch (e) {
       this.status = {
         // @ts-ignore
