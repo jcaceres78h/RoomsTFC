@@ -54,22 +54,40 @@
                 <div class="checks">
                     <div *ngIf="usuario.locality">
                         <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/check_preferences.svg" alt="check" width="20">
-                        <p>Le gustaría vivir en <b>{{ usuario.locality }}</b></p>
+                        <p>Le gustaría vivir en <b class="ciudad">{{ usuario.locality}}</b></p>
                     </div>
                     <div *ngIf="usuario.num_roommate">
                         <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/check_preferences.svg" alt="check" width="20">
-                        <p>En un piso compartido con <b>{{ usuario.num_roommate }}</b> compañero(s)</p>
+                       
+                        <ng-container *ngIf="usuario.num_roommate > 1">
+                            <p>En un piso compartido con <b>{{ usuario.num_roommate }}</b> compañeros</p>
+                        </ng-container>
+
+                        <ng-container *ngIf="usuario.num_roommate ==  1">
+                            <p>En un piso compartido con <b>un</b> compañero</p>
+                        </ng-container>
+
+                        <ng-container *ngIf="usuario.num_roommate < 1 ">
+                            <p>No quiere compartir, quiere vivir <b>solo</b></p>
+                        </ng-container>
                     </div>
+
                     <div>
                         <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/check_preferences.svg" alt="check" width="20">
-                        <p>En el que vivan <b>{{ mateGender }}</b></p>
+
+                        <ng-container *ngIf="mateGender == 'sin preferencias de genero' ">
+                            <p><b>Sin preferencias de género</b></p>
+                        </ng-container>
+                        <ng-container *ngIf="mateGender == 'chicos' || 'chicas'">
+                            <p>En el que vivan <b>{{ mateGender }}</b></p> 
+                        </ng-container>              
                     </div>
 
                 </div>
 
                 <div class="boxes_preferences">
                     <div class="box_preference">
-                        <h3>Tu habitación ideal...</h3>
+                        <h3>Su habitación ideal...</h3>
                         <!--
                             PREFERENCIAS DE LA HABITACIÓN IDEAL QUE HAYA ELEGIDO EL USUARIO
                         -->
@@ -82,7 +100,7 @@
                         </div>
                     </div>
                     <div class="box_preference">
-                        <h3>Tus imprescindibles...</h3>
+                        <h3>Sus imprescindibles...</h3>
                         <!--
                             PREFERENCIAS DE LOS IMPRESCINDIBLES QUE HAYA ELEGIDO EL USUARIO
                             CADA 3 ICONOS DEBE CREARSE UN DIV QUE LOS SEPARE
@@ -96,7 +114,7 @@
                         </div>
                     </div>
                     <div class="box_preference">
-                        <h3>Conviviendo buscas...</h3>
+                        <h3>Conviviendo busca...</h3>
                         <!--
                             PREFERENCIAS DE LA CONVIVENCIA QUE HAYA ELEGIDO EL USUARIO
                         -->
@@ -128,21 +146,22 @@
 
         <div class="gallery">
             <div class="section1">
-                <img  src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-2.jpg" alt="">
+                <a href="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-1.jpg" target="_blank">
+                    <img  src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-1.jpg" alt="">
+                </a>
             </div>
             <div class="section2">
-                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-3.jpg" alt="">
-
+                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-2.jpg" alt="">
             </div>
             <div class="section2">
-                <img  src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-4.jpg" alt="">
+                    <img  src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-3.jpg" alt="">
             </div>
             <div class="section3">
-                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-5.jpg" alt="">
+                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-4.jpg" alt="">
             </div>
             <div class="section3">
-                <label for="">+(x)fotos</label>
-                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-6.jpg" alt="">
+                <label for="">+3 fotos</label>
+                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-5.jpg" alt=""> 
             </div>
         </div>
 

@@ -4,16 +4,18 @@
        alt="Foto de {{ user.name }}"
        class="foto_perfil"
   >-->
-  <ng-container *ngIf="!isFavorito(user)" >
-    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/heart_favs_white.svg" alt="corazón favoritos" width="30" class="heart_favs_room" (click)="setFavorito(user)">
-  </ng-container>
-  <ng-container *ngIf="isFavorito(user)" >
-    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/heart.svg" alt="corazón favoritos" width="30" class="heart_favs_room" (click)="setFavorito(user)">
-  </ng-container>
+  <div class="heart_fav">
+    <ng-container *ngIf="!isFavorito(user)" >
+      <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/heart_favs_white.svg" alt="corazón favoritos" width="30" class="heart_favs_room" (click)="setFavorito(user)">
+    </ng-container>
+    <ng-container *ngIf="isFavorito(user)" >
+      <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/heart_favs_white_solid.svg" alt="corazón favoritos" width="30" class="heart_favs_room" (click)="setFavorito(user)">
+    </ng-container>
+  </div>
 
     <div class="flechas_user">
-      <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/left.svg" alt="Icono felcha izquierda" class="flecha-izq_user" width="20" (click)="next('left')">
-      <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/right.svg" alt="Icono flecha derecha" class="flecha-der_user" width="20" (click)="next('right')">
+      <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/b6e96b8f99976b926ae90273b59215c18ac1c604/icons/left.svg" alt="Icono felcha izquierda" class="flecha-izq_user" (click)="next('left')">
+      <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/8cb5320cefdee5373561ddb34681ffdfaf60826d/icons/right.svg" alt="Icono flecha derecha" class="flecha-der_user" (click)="next('right')">
     </div>
 
   <div class="info_user">

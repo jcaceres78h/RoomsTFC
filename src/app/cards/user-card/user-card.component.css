@@ -5,22 +5,38 @@
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-between;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: relative;
 }
 .flechas_user{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 60px;
+    position: relative;
+
+}
+.flechas_user > img {
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+}
+.flechas_user > img:hover {
+    cursor: pointer;
 }
 .flecha-izq_user, .flecha-der_user{
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     margin: 0 10px;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    height: 40px;
     padding: 10px;
+}
+.heart_fav{
+    position: relative;
+    margin-top: 20px;
+    margin-right: 10px;
+    align-self: flex-end;
+}
+.heart_fav > img {
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
 }
 .info_user{
     background-color: white;

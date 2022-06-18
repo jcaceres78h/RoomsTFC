@@ -121,6 +121,9 @@ h3{
     margin-left: 20px;
     margin-bottom: 10px;
 }
+.ciudad{
+  text-transform: capitalize;
+}
 /* GALERIA DE FOTOS */
 .container__gallery{
     width: 100%;
@@ -199,6 +202,9 @@ h3{
     justify-content: space-between;
     margin-top: 50px;
 }
+.data_contact > div:first-of-type{
+  margin-right: 90px;
+} 
 .data_contact, .data {
     display: flex;
     align-items: center;
@@ -251,6 +257,7 @@ a{
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  margin-top: 40px;
 }
 .verPublicaciones {
   -webkit-border-radius: 50px;
@@ -259,9 +266,11 @@ a{
   background-color: #fff;
   border: solid 1px black;
   padding: 20px 15px;
-  font-weight: bold;
   font-size: 20px;
   color: var(--dark_blue);
+}
+.verPublicaciones:hover {
+  font-weight: bold;
 }
 
 
