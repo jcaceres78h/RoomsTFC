@@ -84,4 +84,5 @@ export class EditarPerfilUsuarioComponent implements OnInit {
     console.log(this.usuario)
     if (!this.validation()) return
   }
+
 }

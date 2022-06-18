@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../servicios/login/login.service';
 import { Router } from '@angular/router';
 import { UserFiltrosService } from 'src/app/servicios/user/user-filtros.service';
+import { ValidacionesService } from '../../servicios/validaciones/validaciones.service';
 
 @Component({
   selector: 'app-form-companero',
@@ -15,7 +16,8 @@ export class FormCompaneroComponent implements OnInit {
 
   pasar = false;
 
-  constructor(private ls: LoginService, private router: Router, private userfiltro: UserFiltrosService) { }
+  constructor(private ls: LoginService, private validation: ValidacionesService,
+              private router: Router, private userfiltro: UserFiltrosService) { }
 
   ngOnInit(): void {
     if (!this.ls.isLoggeado) {
@@ -26,7 +28,7 @@ export class FormCompaneroComponent implements OnInit {
   user = {
     locality: '',
     num_roommate: 0,
-    roommate_gender: 0,
+    roommate_gender: 10,
     bed_type: 0,
     is_furnished: false,
     has_private_bath: false,
@@ -55,8 +57,60 @@ export class FormCompaneroComponent implements OnInit {
       this.user.num_roommate++;
   }
 
+  errorLocality = false
+  validate() {
+    let validation = true
+    if (!this.validation.validateLocalidad(this.user.locality)) {
+      validation = false
+      this.errorLocality = true
+    }
+    return validation;
+  }
+
+  aplicarFiltros() {
+    this.userfiltro.setLocality(this.user.locality.toLowerCase())
+    this.userfiltro.setnumCompaneros(this.user.num_roommate)
+    this.userfiltro.setgenCompaneros(this.user.roommate_gender)
+    this.userfiltro.setTipoCama(this.user.bed_type)
+    this.userfiltro.setAmueblada(this.user.is_furnished)
+    this.userfiltro.setbanoPrivado(this.user.has_private_bath)
+    this.userfiltro.setVistaPrivada(this.user.has_private_view)
+    this.userfiltro.setInternet(this.user.has_internet)
+    this.userfiltro.setAscensor(this.user.has_elevator)
+    this.userfiltro.setLavadora(this.user.has_whashing_machine)
+    this.userfiltro.setSecadora(this.user.has_drying_machine)
+    this.userfiltro.setLavavajillas(this.user.has_dishwasher)
+    this.userfiltro.setJardin(this.user.has_garden)
+    this.userfiltro.setBalcon(this.user.has_balcony)
+    this.userfiltro.setCalefaccion(this.user.has_heating)
+    this.userfiltro.setPortero(this.user.has_doorman)
+    this.userfiltro.setAccesible(this.user.is_accessibility)
+    this.userfiltro.setParking(this.user.has_parking)
+    this.userfiltro.setAireAcondicionado(this.user.has_air_conditioning)
+    this.userfiltro.setFumar(this.user.room_smoke)
+    this.userfiltro.setMascota(this.user.room_pet)
+    this.userfiltro.setParejas(this.user.room_couples)
+  }
+
+  setGender(gender: number) {
+    console.log(gender)
+    if (this.user.roommate_gender === gender) {
+      console.log("Son iguales")
+      this.user.roommate_gender = 10
+    } else {
+      console.log("No son iguales")
+      this.user.roommate_gender = gender
+    }
+  }
+
   buscar() {
+    if (this.validate()) {
+      this.aplicarFiltros()
+      this.router.navigate(['resultados-companeros'])
+    }
     console.log("Enviado")
   }
+
+
 
 }
