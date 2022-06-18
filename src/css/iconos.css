@@ -659,10 +659,10 @@
 }
 
 .iconoLitera {
-  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/d1f4ae1391598570dc22bec8e6912971386f6cef/icons/bunk_bed.svg");
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/b6e96b8f99976b926ae90273b59215c18ac1c604/icons/bunk_bed.svg");
 }
 .selectedLitera {
-  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/d1f4ae1391598570dc22bec8e6912971386f6cef/icons/bunk_bed.svg"),
+  background: url("https://raw.githubusercontent.com/Cintia-Andujar/rooms/b6e96b8f99976b926ae90273b59215c18ac1c604/icons/bunk_bed.svg"),
   var(--light_blue);
 }
 
