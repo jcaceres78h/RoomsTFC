@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../servicios/login/login.service';
 import { Router } from '@angular/router';
 import { RoomService } from '../../servicios/room/room.service';
+import { ValidacionesService } from '../../servicios/validaciones/validaciones.service';
 
 @Component({
   selector: 'app-form-publicar',
@@ -24,7 +25,8 @@ export class FormPublicarComponent implements OnInit {
   errorDescripcion = false;
   errorPrice = false;
 
-  constructor(private rs: RoomService, private ls: LoginService, private router: Router) { }
+  constructor(private rs: RoomService, private ls: LoginService,
+              private validation: ValidacionesService, private router: Router) { }
 
   ngOnInit(): void {
     if (!this.ls.isLoggeado) this.router.navigate(['iniciar-sesion'])
@@ -33,7 +35,6 @@ export class FormPublicarComponent implements OnInit {
 
 
   publicar() {
-    console.log(this.room)
     if(this.validar()) {
       console.log("validado")
       this.rs.postNewRoom(this.room)
@@ -86,35 +87,37 @@ export class FormPublicarComponent implements OnInit {
 
   validar() {
     let validation = true;
-    if (this.room.street === "") {
+    if (!this.validation.validateCalle(this.room.street)) {
       this.errorCalle = true;
       validation = false;
     }
-    if (this.room.number <= 0) {
+    if (!this.validation.validateNumero(this.room.number)) {
       this.errorNumero = true;
       validation = false;
     }
-    if (this.room.locality === "") {
+    if (!this.validation.validateLocalidad(this.room.locality)) {
       this.errorLocalidad = true;
       validation = false;
     }
-    if (this.room.postcode < 10000 || this.room.postcode > 99999) {
+    if (!this.validation.validatePostCode(this.room.postcode)) {
       this.errorCP = true;
       validation = false;
     }
-    if (this.room.province === "" ) {
+    if (!this.validation.validateProvincia(this.room.province)) {
       this.errorProv = true;
       validation = false;
     }
-    if (this.room.country === "") {
+    if (!this.validation.validatePais(this.room.country)) {
       this.errorPais = true;
       validation = false;
     }
-    if (this.room.room_description === "") {
-      this.errorDescripcion = false;
+    if (!this.validation.validateDescription(this.room.room_description)) {
+      this.errorDescripcion = true;
       validation = false;
+    } else {
+      this.errorDescripcion = false
     }
-    if (this.room.price <= 0) {
+    if (!this.validation.validatePrecio(this.room.price)) {
       this.errorPrice = true;
       validation = false;
     }

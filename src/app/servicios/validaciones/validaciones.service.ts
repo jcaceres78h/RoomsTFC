@@ -32,11 +32,11 @@ export class ValidacionesService {
   }
 
   validateLocalidad(localidad: string): boolean {
-    return !!localidad.match(/^[a-zA-ZÁÉÍÓÚÑÜáéíóúñü]{3,16}$/);
+    return !!localidad.match(/^[a-zA-ZÁÉÍÓÚÑÜáéíóúñü\s\d]{3,64}$/);
   }
 
   validateLocalidadUser(localidad: string): boolean {
-    return !(localidad.length > 0 && !localidad.match(/^[a-zA-ZÁÉÍÓÚÑÜáéíóúñü\d]{3,64}$/));
+    return !(localidad.length > 0 && !localidad.match(/^[a-zA-ZÁÉÍÓÚÑÜáéíóúñü\d\s]{3,64}$/));
   }
 
   validatePhone(phone: string): boolean {
@@ -49,7 +49,7 @@ export class ValidacionesService {
   }
 
   validateDescription(description: string): boolean {
-    return description.length >= 5;
+    return description.length >= 5
   }
 
   validateAboutMe(aboutMe: string): boolean {
@@ -57,15 +57,15 @@ export class ValidacionesService {
   }
 
   validateCalle(calle: string): boolean {
-    return !!calle.match(/^[a-zA-ZÁÉÍÓÚÑÜáéíóúñü\d_-]{3,16}$/);
+    return !!calle.match(/^[a-zA-ZÁÉÍÓÚÑÜáéíóúñü\d\s._-]{3,64}$/);
   }
 
   validateProvincia(provincia: string): boolean {
-    return !!provincia.match(/^[a-zA-ZÁÉÍÓÚÑÜáéíóúñü\d_-]{3,16}$/);
+    return !!provincia.match(/^[a-zA-ZÁÉÍÓÚÑÜáéíóúñü\d\s]{3,32}$/);
   }
 
   validatePais(pais: string): boolean {
-    return !!pais.match(/^[a-zA-ZÁÉÍÓÚÑÜáéíóúñü\d_-]{3,16}$/);
+    return !!pais.match(/^[a-zA-ZÁÉÍÓÚÑÜáéíóúñü\d\s]{3,32}$/);
   }
 
   validatePrecio(precio: number): boolean {

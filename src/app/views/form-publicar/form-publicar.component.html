@@ -7,7 +7,7 @@
 
 <main *ngIf="pasar" class="main_principal">
   <div class="formulario_container">
-    <form (submit)="$event.preventDefault()" (ngSubmit)="publicar()">
+    <div>
       <h1 class="tituloRooms">Rooms</h1>
       <p class="mainTextRoom">
         Rellena el siguiente formulario para que tus posibles futuros compañeros
@@ -38,6 +38,10 @@
                   [ngClass]="{error: errorCalle}"
                   (keyup)="errorCalle = false"
                 >
+                <label *ngIf="errorCalle" class="error" style="border: none">
+                  La calle debe tener una longitud entre 3 y 64 caracteres
+                  entre letras, números, punto y guiones
+                </label>
               </label>
               <label class="dir-right">
                 <span>Número*</span>
@@ -49,7 +53,11 @@
                   placeholder="numero"
                   [ngClass]="{error: errorNumero}"
                   (change)="errorNumero = false;"
+                  (keyup)="errorNumero = false"
                 >
+                <label *ngIf="errorNumero" class="error" style="border: none">
+                  El número debe ser mayor o igual a 0
+                </label>
               </label>
             </div>
             <div class="dir_row">
@@ -63,7 +71,12 @@
                   name="localidad"
                   [ngClass]="{error: errorLocalidad}"
                   (keyup)="errorLocalidad = false"
+                  (change)="errorLocalidad = false"
                 >
+                <label *ngIf="errorLocalidad" class="error" style="border: none">
+                  La localidad debe tener una longitud entre 3 y 64 caracteres
+                  entre letras, números y espacios
+                </label>
               </label>
               <label class="dir-right">
                 <span>Código postal*</span>
@@ -76,7 +89,11 @@
                   name="postcode"
                   [ngClass]="{error: errorCP}"
                   (change)="errorCP = false"
+                  (keyup)="errorCP = false"
                 >
+                <label *ngIf="errorCP" class="error" style="border: none">
+                  El código postal debe estar entre 01000 y 52999
+                </label>
               </label>
             </div>
             <div class="dir_row">
@@ -89,7 +106,12 @@
                   name="provincia"
                   [ngClass]="{error: errorProv}"
                   (keyup)="errorProv = false"
+                  (change)="errorProv = false"
                 >
+                <label *ngIf="errorProv" class="error" style="border: none">
+                  La provincia debe tener entre 3 y 32 caracteres entre letras,
+                  números y espacios
+                </label>
               </label>
               <label class="dir-right">
                 <span>País*</span>
@@ -100,7 +122,12 @@
                   name="pais"
                   [ngClass]="{error: errorPais}"
                   (keyup)="errorPais = false"
+                  (change)="errorPais = false"
                 >
+                <label *ngIf="errorPais" class="error" style="border: none">
+                  El país debe tener una longitud entre 3 y 32 caracteres entre
+                  letras, número y espacios
+                </label>
               </label>
             </div>
           </div>
@@ -211,8 +238,11 @@
                 placeholder="Añade una breve descripción sobre la habitación"
                       [ngClass]="{error: errorDescripcion}"
                       (keyup)="errorDescripcion = false"
-            >
-            </textarea>
+                      (change)="errorDescripcion = false"
+            ></textarea>
+            <label *ngIf="errorCalle" class="error" style="border: none">
+              La descripción debe tener al menos 5 caracteres
+            </label>
           </div>
           <p class="fieldTitle">Características del piso*</p>
           <div class="field_box flex-row-wrap">
@@ -397,9 +427,14 @@
                     [(ngModel)]="room.price"
                    [ngClass]="{error: errorPrice}"
                    (change)="errorPrice = false"
+                   (keyup)="errorPrice = false"
             >
             <span>€/mes</span>
+            <label *ngIf="errorPrice" class="error" style="border: none; font-size: 16px">
+              El precio debe ser mayor o igual a cero
+          </label>
           </div>
+
         </div>
       </div>
       <div>
@@ -416,11 +451,11 @@
       </div>
 
       <div id="btnBox">
-        <button class="guardarBtn" type="submit">
+        <button class="guardarBtn" type="submit" (click)="publicar()">
           Publicar habitación
         </button>
       </div>
-    </form>
+    </div>
   </div>
 </main>
 <div id="img" *ngIf="pasar"></div>
