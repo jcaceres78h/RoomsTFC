@@ -81,9 +81,11 @@ export class UserService {
 
   deleteUser(userId: number)
   {
-    console.log(userId)
     try{
     this.http.delete("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/user/"+userId)
+      .subscribe(e => {
+        console.log(e)
+      })
    } catch (e) {
       this.status = {
         // @ts-ignore
