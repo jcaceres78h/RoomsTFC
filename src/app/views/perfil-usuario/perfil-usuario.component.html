@@ -19,7 +19,7 @@
                    src="http://167.99.46.205{{ foto_perfil }}"
                    alt=""
                     class="img_perfil">
-              <img *ngIf="!foto_perfil" src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/user.svg" alt="" width="30">
+              <img *ngIf="!foto_perfil" src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/user.svg" alt="" width="30"  class="icon_profile">
             </div>
             <div class="datos_personales">
                 <h2>{{ usuario.name }}, {{ usuario.age }} <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/50d24df13c00ba2a1434057f97430bd360815234/icons/verify.svg" alt="perfil verificado" width="20"></h2>
@@ -114,13 +114,39 @@
 
         </div>
 
-      <div class="galeria">
+     <!-- <div class="galeria">
         <h2>La galería de {{ usuario.name }}</h2>
         <div class="galeria_fotos">
           <img *ngFor="let image of fotos"
                src="http://167.99.46.205{{ image.file_path }}">
         </div>
-      </div>
+      </div> -->
+
+      <div class="container__gallery">
+
+        <h2>La galería de {{ usuario.name }}</h2>
+
+        <div class="gallery">
+            <div class="section1">
+                <img  src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-2.jpg" alt="">
+            </div>
+            <div class="section2">
+                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-3.jpg" alt="">
+
+            </div>
+            <div class="section2">
+                <img  src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-4.jpg" alt="">
+            </div>
+            <div class="section3">
+                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-5.jpg" alt="">
+            </div>
+            <div class="section3">
+                <label for="">+(x)fotos</label>
+                <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-6.jpg" alt="">
+            </div>
+        </div>
+
+    </div>
 
         <!--<div class="container__gallery">
 

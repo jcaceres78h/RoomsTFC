@@ -36,11 +36,16 @@ export class UserCardComponent implements OnInit {
 }
 setFavorito(user:any): void {
   this.favoritoService.setFavoritoUser(user);
-  console.log("setFavorito")
 }
 
 isFavorito(user:any){
-  return this.favoritoService.getFavoritosUser().includes(user);
+  var favoritos = this.favoritoService.getFavoritosUser();
+  var res = false;
+  favoritos.forEach(usuario => {
+    if(user.id == usuario.id)
+      res = true;
+  });
+  return res;
 }
 
   // fotos: any

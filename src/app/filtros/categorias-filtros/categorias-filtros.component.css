@@ -137,7 +137,7 @@
 }
 .selected,
 .changeNum:active {
-  background-color: var(--dark_blue);
+  background-color: var(--light_blue);
   box-shadow: var(--shadow-g);
 }
 

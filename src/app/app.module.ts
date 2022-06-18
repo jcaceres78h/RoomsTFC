@@ -90,6 +90,7 @@ import { UMascotaPipe } from './pipes/User/u-mascota.pipe';
 import { UParejasPipe } from './pipes/User/u-parejas.pipe';
 import { EditarRoomComponent } from './views/editar-room/editar-room.component';
 import { EliminarRoomComponent } from './cards/eliminar-room/eliminar-room.component';
+import { EliminarPublicacionComponent } from './cards/eliminar-publicacion/eliminar-publicacion.component';
 
 
 @NgModule({
@@ -177,6 +178,7 @@ import { EliminarRoomComponent } from './cards/eliminar-room/eliminar-room.compo
     UParejasPipe,
     EditarRoomComponent,
     EliminarRoomComponent,
+    EliminarPublicacionComponent
   ],
   imports: [
     BrowserModule,

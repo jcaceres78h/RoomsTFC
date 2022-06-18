@@ -1,0 +1,18 @@
+.container_favs{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+h2{
+    font-weight: 400;
+    font-size: 18px;
+}
+.container_rooms, .container_users{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    z-index: 99;
+    gap: 30px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}

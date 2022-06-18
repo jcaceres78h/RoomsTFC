@@ -51,7 +51,13 @@ export class RoomCardComponent implements OnInit {
   }
 
   isFavorito(room:any){
-    return this.favoritoService.getFavoritosRoom().includes(room);
+    var favoritos = this.favoritoService.getFavoritosRoom();
+    var res = false;
+    favoritos.forEach(habitacion => {
+      if(room.id == habitacion.id)
+        res = true;
+    });
+    return res;
   }
 
   foto_perfil = '';

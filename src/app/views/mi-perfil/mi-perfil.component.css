@@ -46,7 +46,7 @@ h2{
   width: 300px;
   height: 400px;
 }
-.profile_picture:hover > img{
+.profile_picture:hover > .icon_profile{
   background-color: white;
   border-radius: 50%;
 }
@@ -140,14 +140,14 @@ h3{
   grid-template-rows: 1fr 1fr;
   gap: 10px;
   width: 80%;
-  height: 400px;
+ /*  height: 400px; */
 }
 .gallery > div{
-  background-color: rgba(255, 255, 255, 0.8);
+ /*background-color: rgba(255, 255, 255, 0.8);  */
   text-align: center;
-  padding: 20px 0;
+  /* padding: 20px 0; */
   font-size: 30px;
-  background-color: var(--black_rooms);
+   background-color: white  
 }
 .section1 {
   grid-row-start: 1;
@@ -162,15 +162,25 @@ h3{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 .section3 >label{
   color: white;
   font-size: .75em;
+  position: absolute;
+  align-self: center;
 }
 .gallery > div:hover{
   cursor: pointer;
-  background-color: var(--light_dark);
+  filter: opacity(80%);
 }
+.gallery > div > img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+
 /* DATOS DE CONTACTO */
 .container__data_contact{
   width: 100%;
@@ -233,9 +243,11 @@ a{
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.galeria_fotos img {
+.galeria_fotos > img {
   width: 33%;
   height: fit-content;
   margin-bottom: 5px;
 }
+
+
 
