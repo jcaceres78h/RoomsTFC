@@ -4,6 +4,7 @@ import {Router} from "@angular/router"
 import { LoginService } from '../../servicios/login/login.service';
 import { ValidacionesService } from '../../servicios/validaciones/validaciones.service';
 import { RegistroService } from '../../servicios/registro/registro.service';
+import { ImageService } from '../../servicios/imagen/image.service';
 
 @Component({
   selector: 'app-form-crear-cuenta',
@@ -53,7 +54,8 @@ export class FormCrearCuentaComponent implements OnInit {
   step = 1;
 
   constructor(private userService: UserService, private ls: LoginService, private register: RegistroService,
-              private validation: ValidacionesService, private router: Router) {
+              private validation: ValidacionesService, private imageService: ImageService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -121,6 +123,9 @@ export class FormCrearCuentaComponent implements OnInit {
             } else {
               this.register.resetData();
               this.ls.login(this.user);
+              if (this.file != null) {
+                this.imageService.uploadImage(this.file, 'room', this.ls.userLogged)
+              }
             }
           })
       }
@@ -145,4 +150,28 @@ export class FormCrearCuentaComponent implements OnInit {
       this.user.num_roommate++;
   }
 
+  // --- PARA LAS FOTOS ---
+  urlFoto: string = ''
+  seleccionarFoto = false
+  errorImage = false
+  file: File|null = null
+  useImage(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      if (event.target.files[0].size >= 2097152) {
+        this.errorImage = true;
+        this.urlFoto = ''
+        this.file = null
+      } else {
+        const reader = new FileReader();
+        this.file = event.target.files[0]
+        reader.readAsDataURL(event.target.files[0])
+        reader.onloadend = ((e) => {
+          // @ts-ignore
+          this.urlFoto = e.target.result
+          this.errorImage = false
+          // console.log(this.file)
+        })
+      }
+    }
+  }
 }
