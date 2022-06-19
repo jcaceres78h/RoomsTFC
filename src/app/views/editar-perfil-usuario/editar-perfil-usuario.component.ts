@@ -3,6 +3,7 @@ import { LoginService } from '../../servicios/login/login.service';
 import { Router } from '@angular/router';
 import { UserService } from '../../servicios/user/user.service';
 import axios from 'axios';
+import { ValidacionesService } from '../../servicios/validaciones/validaciones.service';
 
 @Component({
   selector: 'app-editar-perfil-usuario',
@@ -14,7 +15,7 @@ export class EditarPerfilUsuarioComponent implements OnInit {
   mostrarCardEliminar = true
 
   constructor(private us: UserService, private ls: LoginService,
-              private router: Router) { }
+              private validation: ValidacionesService, private router: Router) { }
 
   ngOnInit(): void {
     if (!this.ls.isLoggeado) {
@@ -70,19 +71,38 @@ export class EditarPerfilUsuarioComponent implements OnInit {
   errorTelefono = false
   errorAboutMe = false
   errorLocality = false
-  validation(): boolean {
-    let validate = false
-    if (this.usuario.name.length <= 2) this.errorName = true
-    if (!this.usuario.email.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) this.errorEmail = true
-    if (!this.usuario.phone.match(/[6-9]\d{8,11}/)) this.errorTelefono = true
-    if (this.usuario.about_me.length <= 5) this.errorAboutMe = true
-    if (this.usuario.locality.length <= 2) this.errorLocality = true
-    return validate
+  validate(): boolean {
+    let validation = true;
+    if (!this.validation.validateUser(this.usuario.name)) {
+      validation = false;
+      this.errorName = true
+    }
+    if (!this.validation.validateEmail(this.usuario.email)) {
+      validation = false;
+      this.errorEmail = true;
+    }
+    if (!this.validation.validateEditPhone(this.usuario.phone)) {
+      validation = false;
+      this.errorTelefono = true
+    }
+    if (!this.validation.validateDescription(this.usuario.about_me)) {
+      validation = false;
+      this.errorAboutMe = true;
+    }
+    if (!this.validation.validateLocalidad(this.usuario.locality)) {
+      validation = false
+      this.errorLocality = true
+    }
+    return validation
   }
 
   guardar() {
-    console.log(this.usuario)
-    if (!this.validation()) return
+    if (this.validate()) {
+      this.us.editarUsuario(this.usuario)
+        .then(e => {
+          console.log(e)
+        })
+    }
   }
 
 }

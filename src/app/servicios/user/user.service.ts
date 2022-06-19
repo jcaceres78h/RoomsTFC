@@ -96,4 +96,19 @@ export class UserService {
     }
     return this.status;
   }
+
+  async editarUsuario(user: any) {
+    user.locality = user.locality.toLowerCase();
+    await axios.put('/api/user', user)
+      .then(e => {
+        this.status = e
+      })
+      .catch(e => {
+        this.status = {
+          estado: e.response.data.status,
+          errores: e.response.data.errors
+        }
+      })
+    return this.status
+  }
 }
