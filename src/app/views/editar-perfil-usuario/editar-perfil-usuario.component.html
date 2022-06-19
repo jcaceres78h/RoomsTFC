@@ -123,8 +123,8 @@
       </div>
 
       <div class="profile_picture">
-        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/user.svg" alt="" width="30">
-        <p>Añadir foto de perfil</p>
+        <img *ngIf="!foto_perfil" src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/user.svg" alt="" width="30">
+        <p *ngIf="!foto_perfil">Añadir foto de perfil</p>
       </div>
     </div>
 
@@ -376,8 +376,14 @@
 
       <div class="container_gallery">
         <div class="add_picture_container">
-          <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/add.svg" alt="Añadir foto" width="50">
-          <label >Añadir foto a la galería</label>
+          <img *ngIf="!seleccionarFoto" src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/add.svg" alt="Añadir foto" width="50" (click)="seleccionarFoto = true">
+          <label *ngIf="!seleccionarFoto">Añadir foto a la galería</label>
+          <input *ngIf="seleccionarFoto && urlFoto == ''"
+                 type="file" accept=".jpg, .jpeg, .png"
+                 #imageInput (change)="useImage($event); processFile(imageInput)">
+          <img *ngIf="urlFoto != ''" [src]="urlFoto" style="width: 100%; height: 100%">
+          <span *ngIf="errorImage" class="error" style="border: none">La imagen debe ser inferior a 2MB</span>
+
         </div>
       </div>
 

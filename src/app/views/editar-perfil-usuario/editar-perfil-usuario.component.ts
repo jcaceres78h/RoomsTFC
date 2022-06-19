@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { UserService } from '../../servicios/user/user.service';
 import axios from 'axios';
 import { ValidacionesService } from '../../servicios/validaciones/validaciones.service';
+import { ImageService } from '../../servicios/imagen/image.service';
 
 @Component({
   selector: 'app-editar-perfil-usuario',
@@ -15,7 +16,8 @@ export class EditarPerfilUsuarioComponent implements OnInit {
   mostrarCardEliminar = true
 
   constructor(private us: UserService, private ls: LoginService,
-              private validation: ValidacionesService, private router: Router) { }
+              private validation: ValidacionesService, private imageService: ImageService,
+              private router: Router) { }
 
   ngOnInit(): void {
     if (!this.ls.isLoggeado) {
@@ -41,6 +43,7 @@ export class EditarPerfilUsuarioComponent implements OnInit {
     axios.get(`http://167.99.46.205/index.php/api/images?type=user&id=${this.ls.userLogged}`)
       .then(e => {
         this.fotos = e.data.data;
+        if (this.fotos[0])
         this.foto_perfil = this.fotos[0].file_path
       })
   }
@@ -105,4 +108,31 @@ export class EditarPerfilUsuarioComponent implements OnInit {
     }
   }
 
+  // --- PARA LAS FOTOS ---
+  urlFoto: string = ""
+  seleccionarFoto = false
+  useImage(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0])
+      reader.onloadend = ((e) => {
+        // @ts-ignore
+        this.urlFoto = e.target.result
+      })
+    }
+  }
+
+  errorImage = false
+  processFile(imageInput: any) {
+    const file: File = imageInput.files[0];
+    this.imageService.uploadImage(file, 'user', this.usuario.id)
+      .then(e => {
+        console.log(e.data)
+        this.errorImage = false
+      })
+      .catch(e => {
+        this.errorImage = true
+        this.urlFoto = ''
+      })
+  }
 }

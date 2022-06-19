@@ -3,6 +3,7 @@ import { RoomService } from '../../servicios/room/room.service';
 import { LoginService } from '../../servicios/login/login.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ValidacionesService } from '../../servicios/validaciones/validaciones.service';
+import { ImageService } from '../../servicios/imagen/image.service';
 
 @Component({
   selector: 'app-editar-room',
@@ -14,7 +15,7 @@ export class EditarRoomComponent implements OnInit {
   private id: any
   private _room: any
   constructor(private rs: RoomService, private ls: LoginService, private validation: ValidacionesService,
-              private ac: ActivatedRoute, private router: Router) { }
+              private imageService: ImageService, private ac: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     if (!this.ls.isLoggeado) {
@@ -113,5 +114,33 @@ export class EditarRoomComponent implements OnInit {
       return false;
 
     return this.room.userId == this.ls.userLogged;
+  }
+
+  // --- PARA LAS FOTOS ---
+  urlFoto: string = ""
+  seleccionarFoto = false
+  useImage(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0])
+      reader.onloadend = ((e) => {
+        // @ts-ignore
+        this.urlFoto = e.target.result
+      })
+    }
+  }
+
+  errorImage = false
+  processFile(imageInput: any) {
+    const file: File = imageInput.files[0];
+    this.imageService.uploadImage(file, 'room', this.room.id)
+      .then(e => {
+        console.log(e.data)
+        this.errorImage = false
+      })
+      .catch(e => {
+        this.errorImage = true
+        this.urlFoto = ''
+      })
   }
 }
