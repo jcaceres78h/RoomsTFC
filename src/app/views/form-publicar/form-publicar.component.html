@@ -37,6 +37,7 @@
                   placeholder="calle*"
                   [ngClass]="{error: errorCalle}"
                   (keyup)="errorCalle = false"
+                  (change)="errorCalle = false"
                 >
                 <label *ngIf="errorCalle" class="error" style="border: none">
                   La calle debe tener una longitud entre 3 y 64 caracteres
