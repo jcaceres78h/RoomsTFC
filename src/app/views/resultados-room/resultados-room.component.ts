@@ -20,6 +20,7 @@ export class ResultadosRoomComponent implements OnInit{
     console.log("Entrando a ngOnInit")
     this.ac.paramMap.subscribe((params: { get: (arg0: string) => any; }) => {this.localidad = params.get('localidad')})
     this.roomService.getUpdateRoomByLocality(this.localidad);
+    this.localityRooms = this.roomService.getRoomByLocality();
     /*this.roomService.getRoomByLocalityName(this.localidad)
       .then(e => {
         // console.log(e)
