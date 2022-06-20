@@ -124,4 +124,29 @@ export class FormPublicarComponent implements OnInit {
     return validation;
   }
 
+
+  // --- PARA LAS FOTOS ---
+  urlFoto: string = ''
+  seleccionarFoto = false
+  errorImage = false
+  file: File|null = null
+  useImage(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      if (event.target.files[0].size >= 2097152) {
+        this.errorImage = true;
+        this.urlFoto = ''
+        this.file = null
+      } else {
+        const reader = new FileReader();
+        this.file = event.target.files[0]
+        reader.readAsDataURL(event.target.files[0])
+        reader.onloadend = ((e) => {
+          // @ts-ignore
+          this.urlFoto = e.target.result
+          this.errorImage = false
+          // console.log(this.file)
+        })
+      }
+    }
+  }
 }

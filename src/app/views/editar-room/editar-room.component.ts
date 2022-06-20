@@ -89,11 +89,18 @@ export class EditarRoomComponent implements OnInit {
     return validation;
   }
 
+  msg = "";
+
   editar() {
     if (this.validar()) {
       this.rs.editarRoom(this.room)
         .then(e => {
-          console.log(e)
+            if (e.status == 200) {
+              this.msg = "Cambios aplicados correctamente"
+              this.router.navigate(['room', this.room.id])
+            } else {
+              this.msg = ""
+            }
         })
     }
   }

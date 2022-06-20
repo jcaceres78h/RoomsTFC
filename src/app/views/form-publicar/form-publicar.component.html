@@ -445,9 +445,13 @@
           que tu nuevo compañero de piso pueda imaginarse viviendo en ella.
         </p>
         <div id="addFoto">
-          <input class="iconoAdd" type="file" id="subirFoto" name="subirFoto" accept=".jpg, .jpeg, .png" multiple>
-          <button class="iconoAdd"></button>
-          <p id="addText">Añadir foto a la galería</p>
+          <button *ngIf="!seleccionarFoto" class="iconoAdd" (click)="seleccionarFoto = true"></button>
+          <label *ngIf="!seleccionarFoto">Añadir foto a la galería</label>
+          <input *ngIf="seleccionarFoto && urlFoto == ''"
+                 type="file" accept=".jpg, .jpeg, .png"
+                 #imageInput (change)="useImage($event);">
+          <img *ngIf="urlFoto != ''" [src]="urlFoto" style="width: 100%; height: 100%">
+          <span *ngIf="errorImage" class="error" style="border: none">La imagen debe ser inferior a 2MB</span>
         </div>
       </div>
 
