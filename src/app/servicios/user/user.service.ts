@@ -14,7 +14,7 @@ export class UserService {
   constructor(private http : HttpClient) { this.getUpdateAllUser();}
 
   getUpdateAllUser(){
-    this.http.get("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/user").subscribe(
+    this.http.get("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/user/").subscribe(
       (response) => {
         console.log(response);
         this.allUsers = response;
@@ -33,7 +33,7 @@ export class UserService {
 
   getUserUpdateById(id: number)
   {
-    this.http.get("/api/user/"+id).subscribe(
+    this.http.get("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/user/"+id).subscribe(
       (response) => {
         // console.log(response);
         this.userId = response
@@ -52,7 +52,7 @@ export class UserService {
   async postNewUser(user: any) {
     try {
       user.locality = user.locality.toLowerCase()
-      this.status = await axios.post('/api/user', user)
+      this.status = await axios.post('http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/user/', user)
       console.log(this.status)
     } catch (e) {
       this.status = {
@@ -71,7 +71,7 @@ export class UserService {
 
   async getTodosUsuarios() {
     try {
-      const response = await axios.get('/api/user');
+      const response = await axios.get('http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/user/');
       return response.data;
     } catch (e) {
       // @ts-ignore
@@ -99,7 +99,7 @@ export class UserService {
 
   async editarUsuario(user: any) {
     user.locality = user.locality.toLowerCase();
-    await axios.put('/api/user', user)
+    await axios.put('http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/user/', user)
       .then(e => {
         this.status = e
       })

@@ -44,7 +44,7 @@ export class PerfilUsuarioComponent implements OnInit {
       if (this.usuario.studing) {
         icon.clase = 'iconoEstudio'
         icon.texto = 'Estudio'
-      } else {
+      } else if (this.usuario.working) {
         icon.clase = 'iconoTrabajo'
         icon.texto = 'Trabajo'
       }

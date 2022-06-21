@@ -123,7 +123,7 @@ export class RoomService {
   async postNewRoom(room: any) {
     try {
       room.locality = room.locality.toLowerCase()
-      this.status = await axios.post('/api/room', room)
+      this.status = await axios.post('http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/user/', room)
     } catch (e) {
       this.status = {
         // @ts-ignore
@@ -140,7 +140,7 @@ export class RoomService {
       try{
         console.log(roomId)
       // this.http.delete("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/"+roomId)
-        axios.delete('/api/room/'+roomId)
+        axios.delete('http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/user/'+roomId)
           .then(e => {
             console.log(e)
           })
@@ -157,7 +157,7 @@ export class RoomService {
 
   async editarRoom(room: any) {
     room.locality = room.locality.toLowerCase();
-    await axios.put('/api/room', room)
+    await axios.put('http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/user/', room)
       .then(e => {
         this.status = e
       })
