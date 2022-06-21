@@ -103,7 +103,7 @@ export class EditarPerfilUsuarioComponent implements OnInit {
     if (this.validate()) {
       this.us.editarUsuario(this.usuario)
         .then(e => {
-          console.log(e)
+          // console.log(e)
         })
     }
   }
@@ -127,7 +127,7 @@ export class EditarPerfilUsuarioComponent implements OnInit {
     const file: File = imageInput.files[0];
     this.imageService.uploadImage(file, 'user', this.usuario.id)
       .then(e => {
-        console.log(e.data)
+        // console.log(e.data)
         this.errorImage = false
       })
       .catch(e => {

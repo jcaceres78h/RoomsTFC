@@ -14,7 +14,7 @@ export class FavoritosComponent implements OnInit {
   }
 
   getFavoritosRoom(){
-    console.log(this.favoritoService.getFavoritosRoom())
+    // console.log(this.favoritoService.getFavoritosRoom())
     return this.favoritoService.getFavoritosRoom();
   }
   getFavoritosUser(){

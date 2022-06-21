@@ -17,7 +17,7 @@ export class ResultadosRoomComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    console.log("Entrando a ngOnInit")
+    // console.log("Entrando a ngOnInit")
     this.ac.paramMap.subscribe((params: { get: (arg0: string) => any; }) => {this.localidad = params.get('localidad')})
     this.roomService.getUpdateRoomByLocality(this.localidad);
     this.localityRooms = this.roomService.getRoomByLocality();
@@ -36,7 +36,7 @@ export class ResultadosRoomComponent implements OnInit{
     })*/
   }
   ngOnChanges(ac: any):void {
-    console.log("cambio")
+    // console.log("cambio")
     this.ac.paramMap.subscribe((params: { get: (arg0: string) => any; }) => {this.localidad = params.get('localidad')})
     this.roomService.getUpdateRoomByLocality(this.localidad);
     this.localityRooms = this.roomService.getRoomByLocality();

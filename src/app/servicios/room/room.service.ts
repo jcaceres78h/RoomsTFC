@@ -82,17 +82,17 @@ export class RoomService {
 
   getRoomByLocality()
   {
-     console.log("Entrando a room")
-     console.log(this.localityRoom)
+     // console.log("Entrando a room")
+     // console.log(this.localityRoom)
       return this.localityRoom;
   }
 
   getUpdateRoomByLocality(locality: string)
   {
-    console.log(`Entrando a getUpdateRoomByLocality con ${locality}`)
+    // console.log(`Entrando a getUpdateRoomByLocality con ${locality}`)
     this.http.get("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/locality/"+locality).subscribe(
       (response) => {
-         console.log(response);
+         // console.log(response);
         this.localityRoom = response
       })
   }
@@ -138,11 +138,11 @@ export class RoomService {
   deleteRoom(roomId: number)
   {
       try{
-        console.log(roomId)
+        // console.log(roomId)
       // this.http.delete("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/"+roomId)
         axios.delete('http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/'+roomId)
           .then(e => {
-            console.log(e)
+            // console.log(e)
           })
       } catch (e) {
       this.status = {

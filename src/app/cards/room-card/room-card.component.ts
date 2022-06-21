@@ -68,7 +68,7 @@ export class RoomCardComponent implements OnInit {
         // this.fotos = e.data.data;
         this.foto_perfil = foto.file_path
         this.foto_perfil = "background: url('http://167.99.46.205"+this.foto_perfil+"') no-repeat center; background-size: cover;"
-        console.log(this.foto_perfil)
+        // console.log(this.foto_perfil)
       })
       .catch(e => {
       })

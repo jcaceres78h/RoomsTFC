@@ -118,7 +118,7 @@ export class FormCrearCuentaComponent implements OnInit {
         this.userService.postNewUser(this.user)
           .then(e => {
             if (e.estado == 400) {
-              console.log(e.errores)
+              // console.log(e.errores)
               this.router.navigate(['/error', 5])
             } else {
               this.register.resetData();

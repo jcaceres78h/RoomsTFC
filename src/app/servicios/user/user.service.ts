@@ -16,7 +16,7 @@ export class UserService {
   getUpdateAllUser(){
     this.http.get("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/user/").subscribe(
       (response) => {
-        console.log(response);
+        // console.log(response);
         this.allUsers = response;
       })
   }
@@ -53,7 +53,7 @@ export class UserService {
     try {
       user.locality = user.locality.toLowerCase()
       this.status = await axios.post('http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/user/', user)
-      console.log(this.status)
+      // console.log(this.status)
     } catch (e) {
       this.status = {
         // @ts-ignore
@@ -84,7 +84,7 @@ export class UserService {
     try{
     this.http.delete("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/user/"+userId)
       .subscribe(e => {
-        console.log(e)
+        // console.log(e)
       })
    } catch (e) {
       this.status = {

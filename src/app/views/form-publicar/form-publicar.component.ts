@@ -36,18 +36,18 @@ export class FormPublicarComponent implements OnInit {
 
   publicar() {
     if(this.validar()) {
-      console.log("validado")
+      // console.log("validado")
       this.rs.postNewRoom(this.room)
         .then(e => {
           if (e.estado == 400) {
-            console.log(e.errores)
+            // console.log(e.errores)
             this.router.navigate(['/error', 5])
           } else {
             this.router.navigate(['mis-publicaciones'])
           }
         })
     } else {
-      console.log("No validado")
+      // console.log("No validado")
     }
   }
 

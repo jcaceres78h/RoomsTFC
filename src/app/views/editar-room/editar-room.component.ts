@@ -142,7 +142,7 @@ export class EditarRoomComponent implements OnInit {
     const file: File = imageInput.files[0];
     this.imageService.uploadImage(file, 'room', this.room.id)
       .then(e => {
-        console.log(e.data)
+        // console.log(e.data)
         this.errorImage = false
       })
       .catch(e => {

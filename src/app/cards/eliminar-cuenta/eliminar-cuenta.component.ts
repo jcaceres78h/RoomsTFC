@@ -19,7 +19,7 @@ export class EliminarCuentaComponent implements OnInit {
 
   cerrarPopUp(){
     this.mostrarCardEliminar = !this.mostrarCardEliminar
-    console.log(this.mostrarCardEliminar)
+    // console.log(this.mostrarCardEliminar)
   }
 
   eliminarPerfil() {

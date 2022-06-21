@@ -26,7 +26,7 @@ export class ListarRoomByUserComponent implements OnInit {
   }
 
   get rooms(){
-    console.log(this.roomService.getRoomsByUserId())
+    // console.log(this.roomService.getRoomsByUserId())
      return this.roomService.getRoomsByUserId();
   }
 
