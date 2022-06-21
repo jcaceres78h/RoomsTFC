@@ -8,9 +8,8 @@
 }
 
 @media screen and (max-width: 900px){
-
     .container_resultados{
         justify-content: center;
+        gap: 20px;
     }
-    
 }

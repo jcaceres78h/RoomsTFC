@@ -107,3 +107,22 @@ label {
 .guardarBtn:hover{
   background-color: var(--btn_dark);
 }
+
+@media screen and (max-width: 820px) {
+
+  .main_principal{
+    display: flex;
+    justify-content: center;
+  }
+
+  .formulario-container{
+    filter: opacity(80%);
+  }
+  .formulario-container > div:first-of-type{
+    filter: opacity(100%);
+  }
+  #img{
+    width: 100%;
+  }
+  
+}

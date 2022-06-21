@@ -53,3 +53,36 @@ button{
     margin-bottom: 20px;
     font-size: 20px;
 }
+
+@media  screen and (max-width: 820px) {
+
+    .container__ec{
+        width: 80%;
+    }
+    .container_eliminar_cuenta{
+        margin-top: 20px;
+    }
+    .texto_eliminar > h2{
+        font-size: 18px;
+    }
+    :hover{
+        pointer-events: none;
+    }
+    
+}
+@media  screen and (max-width: 420px) {
+
+    .container__ec{
+        width: 100%;
+    }
+    .container_eliminar_cuenta{
+        margin-top: 20px;
+    }
+    .texto_eliminar > h2{
+        font-size: 18px;
+    }
+    :hover{
+        pointer-events: none;
+    }
+    
+}

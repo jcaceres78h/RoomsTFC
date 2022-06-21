@@ -29,3 +29,14 @@
 .texto > p:last-of-type{
     font-size: 20px;
 } 
+
+@media screen and (max-width: 480px) {
+
+    .texto > p:first-of-type{
+        font-size: 20px;
+    }
+    .texto > p:last-of-type{
+        font-size: 16px;
+    } 
+    
+}
