@@ -213,3 +213,17 @@ h2{
   color: white;
   width: 300px;
 }
+
+@media screen and (max-width: 820px){
+  .preferences_icons{
+    flex-direction: column;
+    margin-left: 46px;
+  }
+  .container_preferences{
+    height: auto;
+    padding-bottom: 30px ;
+  }
+  .add_picture_container{
+    width: 80%;
+  }
+}

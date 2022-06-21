@@ -248,6 +248,38 @@ a{
   height: fit-content;
   margin-bottom: 5px;
 }
+.data_contact{
+  justify-content: center;
+  margin-top: 20px;
+}
+.data:first-of-type {
+  margin-right: 30px;
+}
+
+@media screen and (max-width: 820px) {
+
+  .data_contact{
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .data:first-of-type {
+    margin-right: 30px;
+  }
+  .container_datospersonales{
+    width: 100%;
+  }
+  .container_container_preferences{
+    width: 100%;
+  }
+  .box_preference > h3 {
+    font-size: 15px;
+  }
+  .container__data_contact{
+    margin-bottom: 23px;
+    font-size: 30px;
+  }
+
+}
 
 
 
