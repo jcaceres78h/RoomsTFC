@@ -123,3 +123,17 @@
     margin-right: 30px;
     cursor: pointer;
 }
+
+@media screen and (max-width: 480px){
+
+    .main_principal_login{
+        padding-top: 65px;
+        padding-left: 47px;
+    }
+    .mitad1 {
+        width: 93%;
+    }
+    .container_img{
+        display: none;
+    }
+}

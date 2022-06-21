@@ -53,4 +53,14 @@ export class FormRegistroComponent implements OnInit {
     }
   }
 
+  verString(inputContra:any){
+    if(inputContra){
+      if(inputContra.type == "password"){
+        inputContra.type = "text";
+      }else{
+        inputContra.type = "password";
+      }
+    }
+  }
+
 }

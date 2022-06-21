@@ -2,3 +2,10 @@
     text-transform: capitalize;
     font-size: 1em;
 }
+
+@media screen and (max-width: 480px){
+
+    .main_principal{
+        padding: 50px 69px;
+    }
+}
