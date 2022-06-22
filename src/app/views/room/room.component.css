@@ -169,7 +169,6 @@ header {
 }
 
 @media screen and (max-width: 480px) {
-
   .div1_1 > figure {
     width: 100%;
   }
@@ -194,15 +193,12 @@ header {
   .part1_1{
     width: 100%;
   }
-  
 }
 @media screen and (max-width: 820px) {
-
   .part1_2{
     display: none;
   }
   .part1_1{
     width: 100%;
   }
-  
 }
