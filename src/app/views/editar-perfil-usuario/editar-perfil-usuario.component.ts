@@ -3,6 +3,8 @@ import { LoginService } from '../../servicios/login/login.service';
 import { Router } from '@angular/router';
 import { UserService } from '../../servicios/user/user.service';
 import axios from 'axios';
+import { ValidacionesService } from '../../servicios/validaciones/validaciones.service';
+import { ImageService } from '../../servicios/imagen/image.service';
 
 @Component({
   selector: 'app-editar-perfil-usuario',
@@ -14,6 +16,7 @@ export class EditarPerfilUsuarioComponent implements OnInit {
   mostrarCardEliminar = true
 
   constructor(private us: UserService, private ls: LoginService,
+              private validation: ValidacionesService, private imageService: ImageService,
               private router: Router) { }
 
   ngOnInit(): void {
@@ -40,6 +43,7 @@ export class EditarPerfilUsuarioComponent implements OnInit {
     axios.get(`http://167.99.46.205/index.php/api/images?type=user&id=${this.ls.userLogged}`)
       .then(e => {
         this.fotos = e.data.data;
+        if (this.fotos[0])
         this.foto_perfil = this.fotos[0].file_path
       })
   }
@@ -70,19 +74,65 @@ export class EditarPerfilUsuarioComponent implements OnInit {
   errorTelefono = false
   errorAboutMe = false
   errorLocality = false
-  validation(): boolean {
-    let validate = false
-    if (this.usuario.name.length <= 2) this.errorName = true
-    if (!this.usuario.email.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) this.errorEmail = true
-    if (!this.usuario.phone.match(/[6-9]\d{8,11}/)) this.errorTelefono = true
-    if (this.usuario.about_me.length <= 5) this.errorAboutMe = true
-    if (this.usuario.locality.length <= 2) this.errorLocality = true
-    return validate
+  validate(): boolean {
+    let validation = true;
+    if (!this.validation.validateUser(this.usuario.name)) {
+      validation = false;
+      this.errorName = true
+    }
+    if (!this.validation.validateEmail(this.usuario.email)) {
+      validation = false;
+      this.errorEmail = true;
+    }
+    if (!this.validation.validateEditPhone(this.usuario.phone)) {
+      validation = false;
+      this.errorTelefono = true
+    }
+    if (!this.validation.validateDescription(this.usuario.about_me)) {
+      validation = false;
+      this.errorAboutMe = true;
+    }
+    if (!this.validation.validateLocalidad(this.usuario.locality)) {
+      validation = false
+      this.errorLocality = true
+    }
+    return validation
   }
 
   guardar() {
-    console.log(this.usuario)
-    if (!this.validation()) return
+    if (this.validate()) {
+      this.us.editarUsuario(this.usuario)
+        .then(e => {
+          // console.log(e)
+        })
+    }
   }
 
+  // --- PARA LAS FOTOS ---
+  urlFoto: string = ""
+  seleccionarFoto = false
+  useImage(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0])
+      reader.onloadend = ((e) => {
+        // @ts-ignore
+        this.urlFoto = e.target.result
+      })
+    }
+  }
+
+  errorImage = false
+  processFile(imageInput: any) {
+    const file: File = imageInput.files[0];
+    this.imageService.uploadImage(file, 'user', this.usuario.id)
+      .then(e => {
+        // console.log(e.data)
+        this.errorImage = false
+      })
+      .catch(e => {
+        this.errorImage = true
+        this.urlFoto = ''
+      })
+  }
 }

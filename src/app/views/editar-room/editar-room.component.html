@@ -4,15 +4,15 @@
 
   <div class="pack_btns">
     <div (click)="volver()" style="cursor: pointer"><img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/back.svg" alt="Atrás" width="30"></div>
-    <div class="btn_delete_room" (click)="abrirEliminarCard()" ><button>Eliminar cuenta</button></div>
+    <div class="btn_delete_room" (click)="abrirEliminarCard()" ><button>Eliminar publicación</button></div>
   </div>
 
-  <app-eliminar-room [hidden]="mostrarCardEliminar"></app-eliminar-room>
+  <app-eliminar-publicacion [hidden]="mostrarCardEliminar"></app-eliminar-publicacion>
 
   <h1 class="title_view">Editar mi publicación</h1>
 
   <div class="formulario_container">
-    <form (submit)="$event.preventDefault()" (ngSubmit)="publicar()">
+    <div>
       <h1 class="tituloRooms">Rooms</h1>
       <p class="mainTextRoom">
         Rellena el siguiente formulario para que tus posibles futuros compañeros
@@ -42,7 +42,12 @@
                   placeholder="calle*"
                   [ngClass]="{error: errorCalle}"
                   (keyup)="errorCalle = false"
+                  (change)="errorCalle = false"
                 >
+                <label *ngIf="errorCalle" class="error" style="border: none">
+                  La calle debe tener una longitud entre 3 y 64 caracteres
+                  entre letras, números, punto y guiones
+                </label>
               </label>
               <label class="dir-right">
                 <span>Número*</span>
@@ -54,7 +59,11 @@
                   placeholder="numero"
                   [ngClass]="{error: errorNumero}"
                   (change)="errorNumero = false;"
+                  (keyup)="errorNumero = false"
                 >
+                <label *ngIf="errorNumero" class="error" style="border: none">
+                  El número debe ser mayor o igual a 0
+                </label>
               </label>
             </div>
             <div class="dir_row">
@@ -68,7 +77,12 @@
                   name="localidad"
                   [ngClass]="{error: errorLocalidad}"
                   (keyup)="errorLocalidad = false"
+                  (change)="errorLocalidad = false"
                 >
+                <label *ngIf="errorLocalidad" class="error" style="border: none">
+                  La localidad debe tener una longitud entre 3 y 64 caracteres
+                  entre letras, números y espacios
+                </label>
               </label>
               <label class="dir-right">
                 <span>Código postal*</span>
@@ -81,7 +95,11 @@
                   name="postcode"
                   [ngClass]="{error: errorCP}"
                   (change)="errorCP = false"
+                  (keyup)="errorCP = false"
                 >
+                <label *ngIf="errorCP" class="error" style="border: none">
+                  El código postal debe estar entre 01000 y 52999
+                </label>
               </label>
             </div>
             <div class="dir_row">
@@ -94,7 +112,12 @@
                   name="provincia"
                   [ngClass]="{error: errorProv}"
                   (keyup)="errorProv = false"
+                  (change)="errorProv = false"
                 >
+                <label *ngIf="errorProv" class="error" style="border: none">
+                  La provincia debe tener entre 3 y 32 caracteres entre letras,
+                  números y espacios
+                </label>
               </label>
               <label class="dir-right">
                 <span>País*</span>
@@ -216,8 +239,12 @@
                       placeholder="Añade una breve descripción sobre la habitación"
                       [ngClass]="{error: errorDescripcion}"
                       (keyup)="errorDescripcion = false"
+                      (change)="errorDescripcion = false"
             >
             </textarea>
+            <label *ngIf="errorCalle" class="error" style="border: none">
+              La descripción debe tener al menos 5 caracteres
+            </label>
           </div>
           <p class="fieldTitle">Características del piso*</p>
           <div class="field_box flex-row-wrap">
@@ -402,8 +429,12 @@
                    [(ngModel)]="room.price"
                    [ngClass]="{error: errorPrice}"
                    (change)="errorPrice = false"
+                   (keyup)="errorPrice = false"
             >
             <span>€/mes</span>
+            <label *ngIf="errorPrice" class="error" style="border: none; font-size: 16px">
+              El precio debe ser mayor o igual a cero
+            </label>
           </div>
         </div>
       </div>
@@ -414,17 +445,24 @@
           que tu nuevo compañero de piso pueda imaginarse viviendo en ella.
         </p>
         <div id="addFoto">
-          <input class="iconoAdd" type="file" id="subirFoto" name="subirFoto" accept=".jpg, .jpeg, .png" multiple>
-          <button class="iconoAdd"></button>
-          <p id="addText">Añadir foto a la galería</p>
+          <button *ngIf="!seleccionarFoto" class="iconoAdd" (click)="seleccionarFoto = true"></button>
+          <label *ngIf="!seleccionarFoto">Añadir foto a la galería</label>
+          <input *ngIf="seleccionarFoto && urlFoto == ''"
+                 type="file" accept=".jpg, .jpeg, .png"
+                 #imageInput (change)="useImage($event); processFile(imageInput)">
+
+          <img *ngIf="urlFoto != ''" [src]="urlFoto" style="width: 100%; height: 100%">
+          <span *ngIf="errorImage" class="error" style="border: none">La imagen debe ser inferior a 2MB</span>
         </div>
       </div>
 
+      <p style="text-align:center;">{{ msg }}</p>
+
       <div id="btnBox">
-        <button class="guardarBtn" type="submit">
-          Publicar habitación
+        <button class="guardarBtn" type="submit" (click)="editar()">
+          Editar habitación
         </button>
       </div>
-    </form>
+    </div>
   </div>
 </main>

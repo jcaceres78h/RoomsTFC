@@ -82,7 +82,24 @@ button {
     padding: 120px 50px;
     width: 100%;
   }
+  
   .title_view{
     font-size: 16px;
   }
 }
+
+@media screen and (max-width: 480px){
+
+  .main_principal{
+    padding: 50px 69px;
+  }
+
+}
+@media screen and (max-width: 820px){
+
+  .main_principal{
+    padding: 40px 95px;
+  }
+
+}
+

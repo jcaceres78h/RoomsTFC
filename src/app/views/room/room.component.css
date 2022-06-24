@@ -167,3 +167,42 @@ header {
   display: flex;
   justify-content: space-between;
 }
+
+@media screen and (max-width: 480px) {
+
+  .div1_1 > figure {
+    width: 100%;
+  }
+  .info{
+    margin: 0;
+  }
+  .tituloRoom{
+    font-size: 20px;
+  }
+  .flecha_room{
+    width: 12px;
+  }
+  .flechas_room{
+    top: 115px;
+  }
+  .infoTitle{
+    font-size: 20px;
+  }
+  .part1_2{
+    display: none;
+  }
+  .part1_1{
+    width: 100%;
+  }
+  
+}
+@media screen and (max-width: 820px) {
+
+  .part1_2{
+    display: none;
+  }
+  .part1_1{
+    width: 100%;
+  }
+  
+}

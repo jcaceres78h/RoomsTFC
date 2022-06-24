@@ -16,7 +16,7 @@ export class ListarUsersComponent implements OnInit {
   }
 
   getUsers(){
-     console.log(this.userService.getAllUser())
+     // console.log(this.userService.getAllUser())
      return this.userService.getAllUser();
    }
 

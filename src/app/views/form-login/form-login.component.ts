@@ -36,4 +36,14 @@ export class FormLoginComponent implements OnInit {
         else if(e == -1) this.errorPassword = true;
       })
   }
+
+  verContra(inputContra:any){
+    if(inputContra){
+      if(inputContra.type == "password"){
+        inputContra.type = "text";
+      }else{
+        inputContra.type = "password";
+      }
+    }
+  }
 }

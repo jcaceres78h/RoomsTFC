@@ -80,7 +80,7 @@
 
 }
 /* RESPONSIVE MÓVIL */
-@media screen and (max-width: 420px){
+@media screen and (max-width: 480px){
     .container {
         margin-left: 34px;
         margin-right: 80px;
@@ -94,6 +94,8 @@
     }
     .title_home{
         font-size: 22px;
+        padding-top: 52px;
+        margin-bottom: 28px;
     }
     .img_lupa{
         width: 20px;

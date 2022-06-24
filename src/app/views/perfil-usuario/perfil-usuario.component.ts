@@ -44,7 +44,7 @@ export class PerfilUsuarioComponent implements OnInit {
       if (this.usuario.studing) {
         icon.clase = 'iconoEstudio'
         icon.texto = 'Estudio'
-      } else {
+      } else if (this.usuario.working) {
         icon.clase = 'iconoTrabajo'
         icon.texto = 'Trabajo'
       }
@@ -259,7 +259,7 @@ export class PerfilUsuarioComponent implements OnInit {
       .then(e => {
         this.fotos = e.data.data;
         this.foto_perfil = this.fotos[0].file_path
-        console.log(this.foto_perfil)
+        // console.log(this.foto_perfil)
       })
   }
 

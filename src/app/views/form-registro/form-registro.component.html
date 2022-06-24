@@ -44,7 +44,8 @@
                   </label>
                     <label class="label_form" for="password">Contraseña*</label>
                     <div class="container_password">
-                        <input class="input_login"
+                        <input #inputContra
+                                class="input_login"
                                type="password"
                                placeholder="contraseña*"
                                required id="password"
@@ -53,7 +54,7 @@
                                (keyup)="errorPassword = false"
                                (change)="errorPassword = false"
                         >
-                        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/5217cf84048e4b3b6d7ecbef278af70cf9390dac/images/icons/eye.svg" alt="Ver contraseña" class="password_eye" width="25">
+                        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/5217cf84048e4b3b6d7ecbef278af70cf9390dac/images/icons/eye.svg" alt="Ver contraseña" class="password_eye" width="25" (click)="verString(inputContra)">
                     </div>
                   <label *ngIf="errorPassword" class="error" style="border: none">
                     La contraseña debe tener al menos 4 caracteres

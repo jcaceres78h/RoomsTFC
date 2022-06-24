@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    console.log("entrando a oninit")
+    // console.log("entrando a oninit")
 
     /* //this.ancho = document.querySelector('.main_principal')?.clientWidth;
     this.ancho = screen.width
@@ -55,7 +55,7 @@ export class HeaderComponent implements OnInit{
     this.mostrarMenu = !this.mostrarMenu
     this.enlace = document.querySelectorAll('li')
     this.enlace.addEventListener("click", this.showMenu())
-    console.log(this.enlace)
+    // console.log(this.enlace)
   }
 
   logOut() {

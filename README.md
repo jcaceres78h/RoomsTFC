@@ -30,6 +30,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 * ng build --prod --base-href="./"
 * npx angular-cli-ghpages –-dir=dist
+* ó ng deploy --base-href=/RoomsTFC/
 * Enlace: https://jcaceres78h.github.io/RoomsTFC/
 
 ```

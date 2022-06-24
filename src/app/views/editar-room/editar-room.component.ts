@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { RoomService } from '../../servicios/room/room.service';
 import { LoginService } from '../../servicios/login/login.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ValidacionesService } from '../../servicios/validaciones/validaciones.service';
+import { ImageService } from '../../servicios/imagen/image.service';
 
 @Component({
   selector: 'app-editar-room',
@@ -12,8 +14,8 @@ export class EditarRoomComponent implements OnInit {
 
   private id: any
   private _room: any
-  constructor(private rs: RoomService, private ls: LoginService,
-              private ac: ActivatedRoute, private router: Router) { }
+  constructor(private rs: RoomService, private ls: LoginService, private validation: ValidacionesService,
+              private imageService: ImageService, private ac: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     if (!this.ls.isLoggeado) {
@@ -50,60 +52,58 @@ export class EditarRoomComponent implements OnInit {
 
   validar() {
     let validation = true;
-    if (this.room.street === "") {
+    if (!this.validation.validateCalle(this.room.street)) {
       this.errorCalle = true;
       validation = false;
     }
-    if (this.room.number <= 0) {
+    if (!this.validation.validateNumero(this.room.number)) {
       this.errorNumero = true;
       validation = false;
     }
-    if (this.room.locality === "") {
+    if (!this.validation.validateLocalidad(this.room.locality)) {
       this.errorLocalidad = true;
       validation = false;
     }
-    if (this.room.postcode < 1000 || this.room.postcode > 99999) {
+    if (!this.validation.validatePostCode(this.room.postcode)) {
       this.errorCP = true;
       validation = false;
     }
-    if (this.room.province === "" ) {
+    if (!this.validation.validateProvincia(this.room.province)) {
       this.errorProv = true;
       validation = false;
     }
-    if (this.room.country === "") {
+    if (!this.validation.validatePais(this.room.country)) {
       this.errorPais = true;
       validation = false;
     }
-    if (this.room.room_description === "") {
-      this.errorDescripcion = false;
+    if (!this.validation.validateDescription(this.room.room_description)) {
+      this.errorDescripcion = true;
       validation = false;
+    } else {
+      this.errorDescripcion = false
     }
-    if (this.room.price <= 0) {
+    if (!this.validation.validatePrecio(this.room.price)) {
       this.errorPrice = true;
       validation = false;
     }
     return validation;
   }
 
-  publicar() {
-    console.log(this.room)
-    if(this.validar()) {
-      console.log("validado")
-      this.rs.postNewRoom(this.room)
+  msg = "";
+
+  editar() {
+    if (this.validar()) {
+      this.rs.editarRoom(this.room)
         .then(e => {
-          if (e.estado == 400) {
-            console.log(e.errores)
-            this.router.navigate(['/error', 5])
-          } else {
-            this.router.navigate(['mis-publicaciones'])
-          }
+            if (e.status == 200) {
+              this.msg = "Cambios aplicados correctamente"
+              this.router.navigate(['room', this.room.id])
+            } else {
+              this.msg = ""
+            }
         })
-    } else {
-      console.log("No validado")
     }
   }
-
-
 
   //Botón volver
   volver() {
@@ -121,5 +121,33 @@ export class EditarRoomComponent implements OnInit {
       return false;
 
     return this.room.userId == this.ls.userLogged;
+  }
+
+  // --- PARA LAS FOTOS ---
+  urlFoto: string = ""
+  seleccionarFoto = false
+  useImage(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0])
+      reader.onloadend = ((e) => {
+        // @ts-ignore
+        this.urlFoto = e.target.result
+      })
+    }
+  }
+
+  errorImage = false
+  processFile(imageInput: any) {
+    const file: File = imageInput.files[0];
+    this.imageService.uploadImage(file, 'room', this.room.id)
+      .then(e => {
+        // console.log(e.data)
+        this.errorImage = false
+      })
+      .catch(e => {
+        this.errorImage = true
+        this.urlFoto = ''
+      })
   }
 }

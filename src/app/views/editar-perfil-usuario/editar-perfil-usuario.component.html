@@ -24,7 +24,12 @@
                [(ngModel)]="usuario.name"
                [ngClass]="{error: errorName}"
                (change)="errorName = false"
+               (keyup)="errorName = false"
         >
+            <span *ngIf="errorName" [ngClass]="{error: errorName}" style="border: none">
+              El usuario puede tener letras, números, espacios y guiones,
+              longitud minima de 3.
+            </span>
         <label for="email">Correo electrónico*</label>
         <input type="text" id="email"
                class="input_form_edit_profile"
@@ -32,7 +37,11 @@
                [(ngModel)]="usuario.email"
                [ngClass]="{error: errorEmail}"
                (change)="errorEmail = false"
+               (keyup)="errorEmail = false"
         >
+        <span *ngIf="errorEmail" [ngClass]="{error: errorEmail}" style="border: none">
+              Formato de email incorrecto
+            </span>
         <label for="phone">Teléfono*</label>
         <input type="text" id="phone"
                class="input_form_edit_profile"
@@ -40,14 +49,22 @@
                [(ngModel)]="usuario.phone"
                [ngClass]="{error: errorTelefono}"
                (change)="errorTelefono = false"
+               (keyup)="errorTelefono = false"
         >
+        <span *ngIf="errorTelefono" [ngClass]="{error: errorTelefono}" style="border: none">
+              El teléfono tiene que empezar por 6, 7, 8 o 9 debe tener 9 dígitos
+            </span>
         <label for="description">Descripción*</label>
         <textarea id="description" cols="10" rows="10"
                   placeholder="¿Cómo te describirías?"
                   [(ngModel)]="usuario.about_me"
                   [ngClass]="{error: errorAboutMe}"
                   (change)="errorAboutMe = false"
+                  (keyup)="errorAboutMe = false"
         ></textarea>
+        <span *ngIf="errorAboutMe" [ngClass]="{error: errorAboutMe}" style="border: none">
+              La descripción debe tener al menos 5 caracteres.
+            </span>
         <label for="about_me">Sobre mí</label>
         <div id="about_me">
           <p>Selecciona las etiquetas que te identifiquen si quieres que tus posibles compañeros te conozcan un poco mejor</p>
@@ -106,8 +123,8 @@
       </div>
 
       <div class="profile_picture">
-        <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/user.svg" alt="" width="30">
-        <p>Añadir foto de perfil</p>
+        <img *ngIf="!foto_perfil" src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/user.svg" alt="" width="30">
+        <p *ngIf="!foto_perfil">Añadir foto de perfil</p>
       </div>
     </div>
 
@@ -128,7 +145,11 @@
                    [(ngModel)]="usuario.locality"
                    [ngClass]="{error: errorLocality}"
                    (change)="errorLocality = false"
+                   (keyup)="errorLocality = false"
             >
+            <span *ngIf="errorLocality" [ngClass]="{error: errorLocality}" style="border: none">
+              El lugar debe tener caractéres alfanuméricos con longitud entre 3 y 64
+            </span>
           </div>
           <div class="question">
             <label>¿Con cuántos compañeros?</label>
@@ -355,8 +376,14 @@
 
       <div class="container_gallery">
         <div class="add_picture_container">
-          <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/add.svg" alt="Añadir foto" width="50">
-          <label >Añadir foto a la galería</label>
+          <img *ngIf="!seleccionarFoto" src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/add.svg" alt="Añadir foto" width="50" (click)="seleccionarFoto = true">
+          <label *ngIf="!seleccionarFoto">Añadir foto a la galería</label>
+          <input *ngIf="seleccionarFoto && urlFoto == ''"
+                 type="file" accept=".jpg, .jpeg, .png"
+                 #imageInput (change)="useImage($event); processFile(imageInput)">
+          <img *ngIf="urlFoto != ''" [src]="urlFoto" style="width: 100%; height: 100%">
+          <span *ngIf="errorImage" class="error" style="border: none">La imagen debe ser inferior a 2MB</span>
+
         </div>
       </div>
 

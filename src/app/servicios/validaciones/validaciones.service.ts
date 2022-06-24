@@ -43,6 +43,10 @@ export class ValidacionesService {
     return !(phone.length > 0 && !phone.match(/^[6789]\d{8}$/));
   }
 
+  validateEditPhone(phone: string): boolean {
+    return !!phone.match(/^[6789]\d{8}$/);
+  }
+
   validateEdad(edad: number): boolean {
     if (edad == 0) return true;
     else return edad >= 16 && edad <= 65;

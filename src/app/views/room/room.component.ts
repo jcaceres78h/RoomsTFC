@@ -277,7 +277,7 @@ export class RoomComponent implements OnInit {
           lat: this.lat,
           lng: this.lng
         }
-        console.log(this.center)
+        // console.log(this.center)
       })
   }
 
@@ -311,7 +311,7 @@ export class RoomComponent implements OnInit {
       .then(e => {
         this.fotos = e.data.data;
         this.foto_perfil = this.fotos[0].file_path
-        console.log(this.foto_perfil)
+        // console.log(this.foto_perfil)
       })
   }
 

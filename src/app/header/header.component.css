@@ -204,4 +204,7 @@ app-perfil-card{
     border: .5px solid var(--black_rooms);
     padding: 10px;
   }
+  .cerrar_ss:hover {
+    font-weight: bold;
+  } 
 }

@@ -82,17 +82,17 @@ export class RoomService {
 
   getRoomByLocality()
   {
-     console.log("Entrando a room")
-     console.log(this.localityRoom)
+     // console.log("Entrando a room")
+     // console.log(this.localityRoom)
       return this.localityRoom;
   }
 
   getUpdateRoomByLocality(locality: string)
   {
-    console.log(`Entrando a getUpdateRoomByLocality con ${locality}`)
+    // console.log(`Entrando a getUpdateRoomByLocality con ${locality}`)
     this.http.get("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/locality/"+locality).subscribe(
       (response) => {
-         console.log(response);
+         // console.log(response);
         this.localityRoom = response
       })
   }
@@ -122,7 +122,8 @@ export class RoomService {
 
   async postNewRoom(room: any) {
     try {
-      this.status = await axios.post('/api/room', room)
+      room.locality = room.locality.toLowerCase()
+      this.status = await axios.post('http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/', room)
     } catch (e) {
       this.status = {
         // @ts-ignore
@@ -136,17 +137,36 @@ export class RoomService {
 
   deleteRoom(roomId: number)
   {
-    try{
-    this.http.delete("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/"+roomId)
-   } catch (e) {
-    this.status = {
-      // @ts-ignore
-      estado: e.response.data.status,
-      // @ts-ignore
-      errores: e.response.data.errors
+      try{
+        // console.log(roomId)
+      // this.http.delete("http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/"+roomId)
+        axios.delete('http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/'+roomId)
+          .then(e => {
+            // console.log(e)
+          })
+      } catch (e) {
+      this.status = {
+        // @ts-ignore
+        estado: e.response.data.status,
+        // @ts-ignore
+        errores: e.response.data.errors
+      }
     }
+    return this.status;
   }
-  return this.status;
-}
 
+  async editarRoom(room: any) {
+    room.locality = room.locality.toLowerCase();
+    await axios.put('http://loadbalancerroom-1781365273.us-east-1.elb.amazonaws.com/room/', room)
+      .then(e => {
+        this.status = e
+      })
+      .catch(e => {
+        this.status = {
+          estado: e.response.data.status,
+          errores: e.response.data.errors
+        }
+      })
+    return this.status
+  }
 }

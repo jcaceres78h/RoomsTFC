@@ -58,7 +58,7 @@
                     </div>
                     <div *ngIf="usuario.num_roommate">
                         <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/9894900870d59144fe8104b7a87a4eb62d37504a/icons/check_preferences.svg" alt="check" width="20">
-                       
+
                         <ng-container *ngIf="usuario.num_roommate > 1">
                             <p>En un piso compartido con <b>{{ usuario.num_roommate }}</b> compañeros</p>
                         </ng-container>
@@ -79,8 +79,8 @@
                             <p><b>Sin preferencias de género</b></p>
                         </ng-container>
                         <ng-container *ngIf="mateGender == 'chicos' || 'chicas'">
-                            <p>En el que vivan <b>{{ mateGender }}</b></p> 
-                        </ng-container>              
+                            <p>En el que vivan <b>{{ mateGender }}</b></p>
+                        </ng-container>
                     </div>
 
                 </div>
@@ -140,7 +140,7 @@
         </div>
       </div> -->
 
-      <div class="container__gallery">
+       <div class="container__gallery">
 
         <h2>La galería de {{ usuario.name }}</h2>
 
@@ -160,12 +160,12 @@
                     <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-4.jpg" alt="">
             </div>
             <div class="section3">
-                <label for="">+3 fotos</label>
-                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-5.jpg" alt=""> 
+                <label>+3 fotos</label>
+                    <img src="https://raw.githubusercontent.com/Cintia-Andujar/rooms/main/images/users/{{usuario.name.toLowerCase()}}/{{usuario.name.toLowerCase()}}-5.jpg" alt="">
             </div>
         </div>
 
-    </div>
+    </div> 
 
         <!--<div class="container__gallery">
 
